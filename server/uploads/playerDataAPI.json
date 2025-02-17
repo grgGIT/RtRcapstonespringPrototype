@@ -1,0 +1,11 @@
+{
+    "userRFID": "123456",
+    "playerData": {
+        "name": "Fluffy Panda",
+        "score": 0,
+        "questionsAnswered": 0,
+        "questionsCorrect": 0,
+        "questionsIncorrect": 0,
+        "createdAt": ""
+    }
+}
