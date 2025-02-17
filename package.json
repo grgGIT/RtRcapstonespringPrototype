@@ -1,0 +1,16 @@
+{
+  "name": "rtrcapstonespringprototype",
+  "version": "1.0.0",
+  "description": "prototype project for Capstone Spring 25",
+  "main": "pathToMain",
+  "dependencies": {
+        "express": "^4.21.1",
+        "socket.io": "^4.8.1"
+    },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "Geoff Gracia",
+  "license": "ISC"
+}
