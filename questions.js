@@ -10,6 +10,7 @@ const Questions = {
                     correctAnswer: choiceA,
                     points: 10,
                     aiHint, // AI hint, reach out to the AI to create a clue for the question
+                    image: "", // Image for the question (if any)
                 },
 
                 q2: {
