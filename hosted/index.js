@@ -1,6 +1,7 @@
 const GameController = {
     init() {
         this.wheelActive = false;
+        this.player = null;
         this.setupEventListeners();
     },
 
@@ -9,6 +10,7 @@ const GameController = {
         document.getElementById('BigRed').addEventListener('click', () => {
             document.getElementById('BigRed').style.display = 'none';
             document.getElementById('welcomeScreen').style.display = 'block';
+            this.resetDifficultySelector();
             this.animateWelcomeText();
 
             // Create a new player object
@@ -22,16 +24,11 @@ const GameController = {
                 this.showContinueButton();
             }
         });
+    },
 
-        // Spin Button
-        document.querySelector('.spin-button').addEventListener('click', () => {
-            if (!this.wheelActive) {
-                this.spinWheel();
-
-                // update player lastUpdated time
-                this.Player.playerData.lastUpdated = new Date().toISOString();
-            }
-        });
+    resetDifficultySelector() {
+        this.difficultySelect.value = "";
+        this.toggleContinueButton(false);
     },
 
     animateWelcomeText() {
@@ -72,43 +69,6 @@ const GameController = {
         }
     },
 
-    spinWheel() {
-        this.wheelActive = true;
-        const wheel = document.querySelector('.wheel');
-        const resultText = document.querySelector('.result-text');
-        const spinButton = document.querySelector('.spin-button');
-        const scoreLabel = document.querySelector('.score-label');
-
-        spinButton.disabled = true;
-        const rotation = 1800 + Math.random() * 360;
-        wheel.style.transform = `rotate(${rotation}deg)`;
-
-        setTimeout(() => {
-            const result = this.determineResult(rotation);
-            resultText.textContent = result;
-            resultText.style.display = 'block';
-
-            // update player score if Blue wins
-            if (result === "BLUE WINS!") {
-                this.Player.playerData.score += 10;
-                scoreLabel.textContent = `Score: ${this.Player.playerData.score}`;
-            }
-
-            setTimeout(() => {
-                resultText.style.display = 'none';
-                this.wheelActive = false;
-                spinButton.disabled = false;
-            }, 3000);
-        }, 3000);
-    },
-
-    determineResult(rotation) {
-        const normalizedRotation = rotation % 360;
-        if (normalizedRotation < 120) return "RED WINS!";
-        if (normalizedRotation < 240) return "GREEN WINS!";
-        return "BLUE WINS!";
-    },
-
     // create a new player object when the game starts
     createPlayer() {
         this.Player = {
@@ -126,8 +86,8 @@ const GameController = {
         // log it
         console.log("New Player created: ", this.Player);
     }
-};
 
+};
 document.addEventListener('DOMContentLoaded', () => {
     GameController.init();
 });

@@ -15,13 +15,36 @@
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            font-family: 'Arial', sans-serif;
         }
 
-        .button-grid {
+        .menu-grid {
             display: grid;
-            grid-template-rows: auto auto auto;
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            justify-items: center;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .menu-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .difficulty-section {
+            background: linear-gradient(145deg, #4CAF50, #1b5e20);
+            
+        }
+
+        .time-section {
+            background: linear-gradient(145deg, #ff4444, #cc0000);
+        }
+
+        .other-section {
+            background: linear-gradient(145deg, #2196F3, #0d47a1);
         }
 
         button {
@@ -30,25 +53,11 @@
             cursor: pointer;
             position: relative;
             transition: transform 0.1s;
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
             color: white;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
             box-shadow: 
                 0 10px 0 rgba(0, 0, 0, 0.3),
                 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-
-        button::before {
-            content: '';
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 30%;
-            height: 30%;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            pointer-events: none;
         }
 
         button:active {
@@ -58,31 +67,36 @@
                 0 0 10px rgba(0, 0, 0, 0.5);
         }
 
-        #TimeButt { 
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(145deg, #c800ff, #8c00ff);
-            font-size: 20px;
+        .difficulty-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .time-era-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            
+        }
+
+        .time-era-button {
+            width: 140px;
+            height: 140px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: space-around;
-            padding: 15px;
+            justify-content: center;
+            font-size: 18px;
+            background: linear-gradient(145deg, #ff9800, #f57c00);
+            font-weight: bolder;
         }
 
-        /* .hourglass-placeholder {
-            width: 40px;
-            height: 40px;
-            background: image();
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            margin: 5px 0;
-        } */
-        
-        .icon-image {
-            width: 90px;
-            height: 80px;
-            object-fit: contain; /* This will maintain the image's aspect ratio */
+        .time-era-button img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
 
         .answer-buttons {
@@ -95,55 +109,77 @@
             width: 140px;
             height: 140px;
             font-size: 32px;
-            background: linear-gradient(145deg, #ff4444, #cc0000);
+            font-weight: bolder;
         }
 
         #A { background: linear-gradient(145deg, #ff4444, #cc0000); }
         #B { background: linear-gradient(145deg, #2196F3, #0d47a1); }
         #C { background: linear-gradient(145deg, #4CAF50, #1b5e20); }
         #D { background: linear-gradient(145deg, #b0ae27, #fffc64); }
-        
-        #PhoneButt {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(145deg, #ff9800, #f57c00);
-            font-size: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            padding: 15px;
+        #ez { background: linear-gradient(145deg, #95ff44, #00cc03);font-weight: bolder; color: #2c2c2c; padding: 3px;}
+        #mdm { background: linear-gradient(145deg, #f6ff44, #ccc900); font-weight: bolder;color: #2c2c2c;padding: 3px;}
+        #hrd { background: linear-gradient(145deg, #ff4444, #cc0000); font-weight: bolder; color: #2c2c2c;padding: 3px;}
+        .PhoneButt{
+            background: linear-gradient(145deg, #0083ff, #0000ff);
+            color: white;
+            font-weight: bolder;
+            padding: 10px 20px;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
         }
-
-        /* .phone-icon-placeholder {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.3);
-            border-radius: 5px;
-            margin: 5px 0;
-        } */
     </style>
 </head>
 <body>
-    <div class="button-grid">
-        <button id="TimeButt">
-            Time Spin
-            <img src="./assets/hourglass.png" alt="hourglass" class="icon-image">
-            <!-- <div class="hourglass-placeholder"></div> -->
-        </button>
-        
-        <div class="answer-buttons">
-            <button id="A" class="answer-button">A</button>
-            <button id="B" class="answer-button">B</button>
-            <button id="C" class="answer-button">C</button>
-            <button id="D" class="answer-button">D</button>
+    <div class="menu-grid">
+        <div class="menu-section difficulty-section">
+            <h2>Difficulty</h2>
+            <div class="difficulty-buttons">
+                <button class="answer-button"id='ez'>EASY</button>
+                <button class="answer-button"id='mdm'>MEDIUM</button>
+                <button class="answer-button"id='hrd'>HARD</button>
+            </div>
         </div>
 
-        <button id="PhoneButt">
-            Phone a Friend
-            <img src="./assets/phone-ringing.png" alt="hourglass" class="icon-image" >
-            <!-- <div class="phone-icon-placeholder"></div> -->
-        </button>
+        <div class="menu-section time-section">
+            <h2>Time Eras</h2>
+            <div class="time-era-buttons">
+                <button class="time-era-button">
+                    <!-- <img src="./assets/radio.png" alt="Radio"> -->
+                    Radio
+                </button>
+                <button class="time-era-button">
+                    <!-- <img src="./assets/60s.png" alt="60s"> -->
+                    60s
+                </button>
+                <button class="time-era-button">
+                    <!-- <img src="./assets/70s.png" alt="70s"> -->
+                    70s
+                </button>
+                <button class="time-era-button">
+                    <!-- <img src="./assets/80s-90s.png" alt="80s-90s"> -->
+                    80s-90s
+                </button>
+                <button class="time-era-button">
+                    <!-- <img src="./assets/current.png" alt="Current"> -->
+                    Current
+                </button>
+            </div>
+        </div>
+
+        <div class="menu-section other-section">
+            <h2>Actions</h2>
+            <div class="answer-buttons">
+                <button id="A" class="answer-button">A</button>
+                <button id="B" class="answer-button">B</button>
+                <button id="C" class="answer-button">C</button>
+                <button id="D" class="answer-button">D</button>
+            </div>
+            <button class="PhoneButt">
+                Phone a Friend
+                <img src="./assets/phone-ringing.png" alt="Phone" class="PhoneButt">
+            </button>
+        </div>
     </div>
 </body>
 </html>

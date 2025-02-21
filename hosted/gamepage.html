@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Add to existing styles */
+    .game-menu {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    .question-bubble {
+      position: absolute;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 150px;
+      background: #FFD00A;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Tomorrow', sans-serif;
+      font-size: 24px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+    
+    .answer-button {
+      position: absolute;
+      width: 200px;
+      height: 60px;
+      border-radius: 30px;
+      border: none;
+      font-family: 'Tomorrow', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .answer-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    
+    #btnA { background: #EC5A5A; top: 45%; left: 30%; }
+    #btnB { background: #4F74E5; top: 45%; right: 30%; }
+    #btnC { background: #62C159; top: 65%; left: 30%; }
+    #btnD { background: #FFC350; top: 65%; right: 30%; }
+    
+    .phone-friend {
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: #F29FF9;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Tomorrow', sans-serif;
+      font-size: 14px;
+      text-transform: uppercase;
+      transition: transform 0.2s;
+    }
+    
+    .phone-friend:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .correct { animation: greenPulse 0.5s; }
+.incorrect { animation: redShake 0.5s; }
+
+@keyframes greenPulse {
+    0% { background: #0f0; }
+    100% { background: initial; }
+}
+
+@keyframes redShake {
+    0% { transform: translateX(-5px); }
+    25% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+
+.answer-btn {
+    background: #222;
+    color: white;
+    border: 2px solid #444;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+    background: #333;
+    border-color: #666;
+}
+
+#game-ui {
+    position: relative;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+}
+
+#timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    color: #ff0000;
+    text-shadow: 0 0 10px #ff0000;
+}
+    </style>
+</head>
+<body>
+    <div class="game-menu">
+      <div class="question-bubble">
+        Which planet is known as the Red Planet?
+      </div>
+      
+      <button class="answer-button" id="btnA">A) Venus</button>
+      <button class="answer-button" id="btnB">B) Mars</button>
+      <button class="answer-button" id="btnC">C) Jupiter</button>
+      <button class="answer-button" id="btnD">D) Saturn</button>
+      
+      <button class="phone-friend">
+        Phone<br>Friend
+      </button>
+    </div>
+    <div id="game-ui">
+      <div id="timer">15</div>
+      <div id="question-container">
+          <h2 id="question-text"></h2>
+          <div id="answers"></div>
+      </div>
+  </div>
+  <script src="gameLogic.js"></script>
+
+
+      
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            padding: 20px;
+        }
+        
+        .era-btn {
+            background: #111;
+            border: 2px solid #0f0;
+            padding: 20px;
+            font-size: 1.5em;
+            color: #0f0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .era-btn:hover {
+            background: #0f0;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <button class="era-btn" data-era="radio">Radio Era</button>
+    <button class="era-btn" data-era="60s">60s</button>
+    <button class="era-btn" data-era="70s">70s</button>
+    <button class="era-btn" data-era="80s-2010s">80s-2010s</button>
+
+    <script>
+        document.querySelectorAll('.era-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const playState = JSON.parse(localStorage.getItem('playState'));
+                playState.selectedEra = e.target.dataset.era;
+                localStorage.setItem('playState', JSON.stringify(playState));
+                window.location.href = 'gamepage.html';
+            });
+        });
+    </script>
+</body>
+</html>

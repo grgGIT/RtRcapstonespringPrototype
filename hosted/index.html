@@ -1,11 +1,25 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Race to Riches</title>
-    <link rel="stylesheet" href="./general.css">
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        #timeMenu{
+            display: none;
+        }
+        #timeMenu button{
+            width: 100%;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            background-color: #ba4bd6;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,7 +30,7 @@
             <h1 class="welcome-text">WELCOME TO RACE TO RICHES</h1>
             <p class="welcome-text">SYSTEM INITIALIZED</p>
             <p class="welcome-text">SELECT DIFFICULTY LEVEL:</p>
-            <select class="difficulty-select">
+            <select class="difficulty-select" required>
                 <option value="" disabled selected>select here</option>
                 <option value="easy">EASY - FIRST TIME TRAVELER</option>
                 <option value="medium">MEDIUM - SEASONED TRAVELER</option>
@@ -36,7 +50,67 @@
         <button class="spin-button">SPIN</button>
         <div class="score-label">Score: 0</div>
     </div>
-    <script src="./main.js"></script>
+    <div id="timeMenu">
+        <button id="rad">Radios</button>
+        <button id="6">60s</button>
+        <button id="7">70s</button>
+        <button id="89">80s-90s</button>
+        <button id="cur">Current</button>
+    </div>
+    <script src="./index.js"></script>
 </body>
 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race to Riches</title>
+    <style>
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        #BigRed {
+            background: #ff0000;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: none;
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 0 0 10px #fff;
+            box-shadow: 0 0 50px 20px rgba(255,0,0,0.5);
+            cursor: pointer;
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <button id="BigRed">PRESS</button>
+    <script>
+        document.getElementById('BigRed').addEventListener('click', () => {
+            localStorage.setItem('playState', JSON.stringify({
+                score: 0,
+                selectedEra: null,
+                startTime: Date.now()
+            }));
+            window.location.href = 'erachoice.html';
+        });
+    </script>
+</body>
 </html>
