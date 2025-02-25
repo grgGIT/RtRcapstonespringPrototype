@@ -30,9 +30,9 @@ const Questions = {
                     image: ""
                 },
                 q4: {
-                    question: "What is the name of the NBC theme sound ?",
-                    options: [choiceA = "", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
-                    correctAnswer: choiceA,
+                    question: "What is the name of the NBC theme sound that first showed up on the radio in 1929 and is still used today?",
+                    options: [choiceA = "Three Chords", choiceB = "Four Chords", choiceC = "Four Chimes", choiceD = "Three Chimes"],
+                    correctAnswer: choiceD,
                     points: 10,
                     aiHint,
                     image: ""
@@ -46,41 +46,41 @@ const Questions = {
                     image: ""
                 },
                 q6: {
-                    question: "When did the first radio quiz show air?",
-                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    question: "When did the first AM radio broadcast air?",
+                    options: [choiceA = "1909", choiceB = "1913", choiceC = "1886", choiceD = "1900"],
                     correctAnswer: choiceA,
                     points: 10,
                     aiHint,
                     image: ""
                 },
                 q7: {
-                    question: "When did the first radio quiz show air?",
-                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
-                    correctAnswer: choiceA,
+                    question: "What was the first commercial radio station called?",
+                    options: [choiceA = "RNBC", choiceB = "WQHZ", choiceC = "HGCB", choiceD = "KDKA"],
+                    correctAnswer: choiceD,
                     points: 10,
                     aiHint,
                     image: ""
                 },
                 q8: {
-                    question: "When did the first radio quiz show air?",
-                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    question: "Which company developed the first radio network",
+                    options: [choiceA = "AT&T", choiceB = "Verizon", choiceC = "Motorola", choiceD = "Bell&Howell"],
                     correctAnswer: choiceA,
                     points: 10,
                     aiHint,
                     image: ""
                 },
                 q9: {
-                    question: "When did the first radio quiz show air?",
-                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
-                    correctAnswer: choiceA,
+                    question: "Which innovator created signals and transmissions through radio?",
+                    options: [choiceA = "Nikola Tesla", choiceB = "Berghartt Radiola", choiceC = "Heinrich Hertz", choiceD = "James Watt"],
+                    correctAnswer: choiceC,
                     points: 10,
                     aiHint,
                     image: ""
                 },
                 q10: {
-                    question: "When did the first radio quiz show air?",
-                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
-                    correctAnswer: choiceA,
+                    question: "Where does the term 'Broadcasting' come from?",
+                    options: [choiceA = "Theatre", choiceB = "Factories", choiceC = "Agriculture", choiceD = "Policing"],
+                    correctAnswer: choiceC,
                     points: 10,
                     aiHint,
                     image: ""
