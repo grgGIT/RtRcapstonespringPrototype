@@ -19,15 +19,72 @@ const Questions = {
                     correctAnswer: choiceA,
                     points: 10,
                     aiHint,
+                    image: ""
                 },
-                q3: {},
-                q4: {},
-                q5: {},
-                q6: {},
-                q7: {},
-                q8: {},
-                q9: {},
-                q10: {},
+                q3: {
+                    question: "What was the first commercial product aired on the radio?",
+                    options: [choiceA = "Automobile", choiceB = "Housing", choiceC = "Clothing", choiceD = "Biscuits"],
+                    correctAnswer: choiceB,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q4: {
+                    question: "What is the name of the NBC theme sound ?",
+                    options: [choiceA = "", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q5: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q6: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q7: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q8: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q9: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
+                q10: {
+                    question: "When did the first radio quiz show air?",
+                    options: [choiceA = "1920", choiceB = "1930", choiceC = "1940", choiceD = "1950"],
+                    correctAnswer: choiceA,
+                    points: 10,
+                    aiHint,
+                    image: ""
+                },
             }, // EASY END
 
             medium: {

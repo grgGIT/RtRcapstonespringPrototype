@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <style>
         body {
-            background: #000;
+            background: #ffffff;
             color: #0f0;
             font-family: 'Courier New', monospace;
             display: grid;
@@ -13,12 +13,39 @@
             padding: 20px;
         }
         
-        .era-btn {
-            background: #111;
-            border: 2px solid #0f0;
+        .era-btn1 {
+            background: #ff0000;
+            border: 2px solid #ff0000;
             padding: 20px;
             font-size: 1.5em;
-            color: #0f0;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .era-btn2 {
+            background: #004cff;
+            border: 2px solid #004cff;
+            padding: 20px;
+            font-size: 1.5em;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .era-btn3 {
+            background: #009222;
+            border: 2px solid #009222;
+            padding: 20px;
+            font-size: 1.5em;
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .era-btn4 {
+            background: #ffea00;
+            border: 2px solid #ffea00;
+            padding: 20px;
+            font-size: 1.5em;
+            color: rgb(0, 0, 0);
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -30,10 +57,10 @@
     </style>
 </head>
 <body>
-    <button class="era-btn" data-era="radio">Radio Era</button>
-    <button class="era-btn" data-era="60s">60s</button>
-    <button class="era-btn" data-era="70s">70s</button>
-    <button class="era-btn" data-era="80s-2010s">80s-2010s</button>
+    <button class="era-btn1" data-era="radio">Radio Era</button>
+    <button class="era-btn2" data-era="60s">60s</button>
+    <button class="era-btn3" data-era="70s">70s</button>
+    <button class="era-btn4" data-era="80s-2010s">80s-2010s</button>
 
     <script>
         document.querySelectorAll('.era-btn').forEach(btn => {
