@@ -220,18 +220,114 @@
                     ],
                     "correctAnswer": "Card Sharks",
                     "points": 25,
-                    "aiHint":"Reach out to the AI for a clue",
+                    "aiHint": "Reach out to the AI for a clue",
                     "image": "",
-                    "additionalInfo":""
+                    "additionalInfo": ""
                 },
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
+                "q3": {
+                    "question": "What was the first commercial product aired on the radio?",
+                    "options": [
+                        "Automobile",
+                        "Housing",
+                        "Clothing",
+                        "Biscuits"
+                    ],
+                    "correctAnswer": "Housing",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q4": {
+                    "question": "What is the name of the NBC theme sound that first showed up on the radio in 1929 and is still used today?",
+                    "options": [
+                        "Three Chords",
+                        "Four Chords",
+                        "Four Chimes",
+                        "Three Chimes"
+                    ],
+                    "correctAnswer": "Three Chimes",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q5": {
+                    "question": "When did the first radio quiz show air?",
+                    "options": [
+                        "1920",
+                        "1930",
+                        "1940",
+                        "1950"
+                    ],
+                    "correctAnswer": "1920",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q6": {
+                    "question": "When did the first AM radio broadcast air?",
+                    "options": [
+                        "1909",
+                        "1913",
+                        "1886",
+                        "1900"
+                    ],
+                    "correctAnswer": "1909",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q7": {
+                    "question": "What was the first commercial radio station called?",
+                    "options": [
+                        "RNBC",
+                        "WQHZ",
+                        "HGCB",
+                        "KDKA"
+                    ],
+                    "correctAnswer": "KDKA",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q8": {
+                    "question": "Which company developed the first radio network?",
+                    "options": [
+                        "AT&T",
+                        "Verizon",
+                        "Motorola",
+                        "Bell&Howell"
+                    ],
+                    "correctAnswer": "AT&T",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q9": {
+                    "question": "Which innovator created signals and transmissions through radio?",
+                    "options": [
+                        "Nikola Tesla",
+                        "Berghartt Radiola",
+                        "Heinrich Hertz",
+                        "James Watt"
+                    ],
+                    "correctAnswer": "Heinrich Hertz",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                },
+                "q10": {
+                    "question": "Where does the term 'Broadcasting' come from?",
+                    "options": [
+                        "Theatre",
+                        "Factories",
+                        "Agriculture",
+                        "Policing"
+                    ],
+                    "correctAnswer": "Agriculture",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": ""
+                }
             }
         },
         "eightiesEra": {
