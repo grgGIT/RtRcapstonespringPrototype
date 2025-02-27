@@ -17,7 +17,7 @@
                     "additionalInfo": "Professor Quiz was the first successful radio quiz show that offered cash prizes to contestants."
                 },
                 "q2": {
-                    "question": "When did the first radio quiz show air?",
+                    "question": "When did the first radio quiz show appear on air?",
                     "options": [
                         "1920",
                         "1936",
@@ -44,13 +44,104 @@
                     "image": "",
                     "additionalInfo": ""
                 },
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
+                "q4": {
+                    "question": "Which musical quiz show gave constentants the chance to sumbit their own questions to band memebers?",
+                    "options": [
+                        "Beat the Band",
+                        "Name that Tune",
+                        "The Quiz Show",
+                        "Guess the Song"
+                    ],
+                    "correctAnswer": "Beat the Band",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q5": {
+                    "questions": "What radio quiz show included a 'kollege' segment that featured contestants submitting and answering questions?",
+                    "options": [
+                        "The Quiz Show",
+                        "The $64,000 Question",
+                        "Professor Quiz",
+                        "Kay Kyser's Kollege of Musical Knowledge"
+                    ],
+                    "correctAnswer": "Kay Kyser's Kollege of Musical Knowledge",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q6": {
+                    "questions": "Which radio game show included interviewing women about their lives with the chance of winning a big prize?",
+                    "options": [
+                        "The Quiz Show",
+                        "How About You?",
+                        "Queen for a Day",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "Queen for a Day",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "In 1945, Host Jack Bailey would interview women about their lives and (usually) the contestant with the most tragic story would win a big prize."
+                },
+                "q7": {
+                    "question": "What 1940 radio quiz show often featured contestants who were children?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "Kids Quiz",
+                        "Professor Quiz",
+                        "Quiz Kids"
+                    ],
+                    "correctAnswer": "Quiz Kids",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Quiz Kids was a popular radio quiz show that aired from 1940 to 1953. The show featured a panel of children who would answer questions and compete for prizes."
+                },
+                "q8": {
+                    "question": "Which radio quiz show, hosted by Jim McWilliams featured contestants answering questions to win prizes?",
+                    "options": [
+                        "The Quiz Show",
+                        "Jim's Quiz",
+                        "Professor Quiz",
+                        "Uncle Jim's Question Bee"
+                    ],
+                    "correctAnswer": "Uncle Jim's Question Bee",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q9": {
+                    "question": "Which radio game show featured a panel of celebrities who would try to guess the speaker of a quote?",
+                    "options": [
+                        "Quote, Unquote",
+                        "The Quiz Show",
+                        "Celebrity Quotes",
+                        "Who Said That?"
+                    ],
+                    "correctAnswer": "Who Said That?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q10": {
+                    "question": "Which radio quiz show required contestants to identify a mystery person from 10 clues?",
+                    "options": [
+                        "What's My Name?",
+                        "Who Am I?",
+                        "Whats My Line?",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "What's My Name?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                }
             },
             "medium": {
                 "q1": {
@@ -92,9 +183,33 @@
             },
             "hard": {
                 "q1": {
-                    "points": 25
+                    "question": "Which radio quiz show is known for its scandal involving the rigging of the game?",
+                    "options": [
+                        "The $64,000 Question",
+                        "Jeopardy",
+                        "The Quiz Show",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "The $64,000 Question",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "The show was involved in a scandal in the late 1950s when it was revealed that some contestants were given the answers in advance, eventually leading to the show's cancellation."
                 },
-                "q2": {},
+                "q2": {
+                    "question": "In the 1940s, the hit radio game show 'Stop the Music' introduced what new concept to the genre?",
+                    "options": [
+                        "Prize wheel",
+                        "randomly chosen call-in contestants",
+                        "audience participation",
+                        "live bands"
+                    ],
+                    "correctAnswer": "randomly chosen call-in contestants",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Stop the Music was the first radio quiz show to introduce the concept of randomly chosen call-in contestants. They would interupt regular radio programming to call listners and quiz them."
+                },
                 "q3": {},
                 "q4": {},
                 "q5": {},
@@ -173,7 +288,7 @@
                     "additionalInfo": ""
                 },
                 "q2": {
-                    "question": "Who hosted the 1970s hit game show, Match Game?",
+                    "question": "Who host the 1970s hit game show, Match Game?",
                     "options": [
                         "Gene Rayburn",
                         "Bob Belcher",
