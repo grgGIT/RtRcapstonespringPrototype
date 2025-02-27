@@ -87,7 +87,7 @@
                     "additionalInfo": "In 1945, Host Jack Bailey would interview women about their lives and (usually) the contestant with the most tragic story would win a big prize."
                 },
                 "q7": {
-                    "question": "What 1940 radio quiz show often featured contestants who were children?",
+                    "question": "What 1940 radio quiz show often featured a panel of children chosen for their high IQs?",
                     "options": [
                         "Dr. I.Q.",
                         "Kids Quiz",
@@ -172,9 +172,48 @@
                     "image": "",
                     "additionalInfo": "Twenty Questions was a popular radio quiz show that aired from 1946 to 1954. Contestants would ask yes-or-no questions to guess the identity of a mystery celebrity."
                 },
-                "q3": {},
-                "q4": {},
-                "q5": {},
+                "q3": {
+                    "question": "Which radio quiz show was hosted by Joe Kelly?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "The $64,000 Question",
+                        "Quiz Kids",
+                        "The Quiz Bee"
+                    ],
+                    "correctAnswer": "Quiz Kids",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q4": {
+                    "question": "Which radio game show was often reffered to as 'The quiz show with a heart'?",
+                    "options": [
+                        "The Quiz Show",
+                        "Rags to Riches",
+                        "Strike it Rich",
+                        "What's My Name?"
+                    ],
+                    "correctAnswer": "Strike it Rich",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q5": {
+                    "question": "Which radio quiz show was hosted by Groucho Marx?",
+                    "options": [
+                        "You Bet Your Life",
+                        "The $64,000 Question",
+                        "The Quiz Show",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "You Bet Your Life",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
                 "q6": {},
                 "q7": {},
                 "q8": {},
@@ -210,7 +249,20 @@
                     "image": "",
                     "additionalInfo": "Stop the Music was the first radio quiz show to introduce the concept of randomly chosen call-in contestants. They would interupt regular radio programming to call listners and quiz them."
                 },
-                "q3": {},
+                "q3": {
+                    "question": "Which radio game show, hosted by Arlene Francis, started off as a 'rather drab show', as the contestants often weren't able to win?",
+                    "options": [
+                        "What's My Name?",
+                        "The Quiz Show",
+                        "Who's Line is it Anyway?",
+                        "Dr. I.Q."
+                    ],
+                    "correctAnswer": "What's My Name?",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
                 "q4": {},
                 "q5": {},
                 "q6": {},
