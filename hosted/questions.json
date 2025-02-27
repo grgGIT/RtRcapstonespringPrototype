@@ -92,33 +92,9 @@
             },
             "hard": {
                 "q1": {
-                    "question": "Which radio quiz show is known for its scandal involving the rigging of the game?",
-                    "options": [
-                        "The $64,000 Question",
-                        "Jeopardy",
-                        "The Quiz Show",
-                        "Truth or Consequences"
-                    ],
-                    "correctAnswer": "The $64,000 Question",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "The show was involved in a scandal in the late 1950s when it was revealed that some contestants were given the answers in advance, eventually leading to the show's cancellation."
+                    "points": 25
                 },
-                "q2": {
-                    "question": "In the 1940s, the hit radio game show 'Stop the Music' introduced what new concept to the genre?",
-                    "options": [
-                        "Prize wheel",
-                        "randomly chosen call-in contestants",
-                        "audience participation",
-                        "live bands"
-                    ],
-                    "correctAnswer": "randomly chosen call-in contestants",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "Stop the Music was the first radio quiz show to introduce the concept of randomly chosen call-in contestants. They would interupt regular radio programming to call listners and quiz them."
-                },
+                "q2": {},
                 "q3": {},
                 "q4": {},
                 "q5": {},
