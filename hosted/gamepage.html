@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,7 +27,6 @@
       gap: 10px;
     }
     .option {
-      background-color: #e0e0e0;
       border: none;
       border-radius: 4px;
       padding: 15px;
@@ -37,15 +35,21 @@
       transition: background-color 0.3s;
     }
     .option:hover {
-      background-color: #d0d0d0;
+      opacity: 0.9;
     }
+    /* Styles when an option is marked as correct or incorrect */
     .option.selected {
-      background-color: #4caf50;
-      color: white;
+      background-color: #4caf50 !important;
+      color: white !important;
     }
     .option.incorrect {
-      background-color: #f44336;
-      color: white;
+      background-color: #f44336 !important;
+      color: white !important;
+    }
+    /* Grey out other options once a selection is made */
+    .option.greyed {
+      background-color: #ccc !important;
+      color: #666 !important;
     }
     .additional-info {
       margin-top: 20px;
@@ -71,11 +75,9 @@
     }
   </style>
 </head>
-
 <body>
   <h1>Quiz Game</h1>
   <div class="score">Score: <span id="score">0</span></div>
-
   <div id="question-container" class="question-container">
     <div id="question" class="question">Loading question...</div>
     <div id="options" class="options">
@@ -83,12 +85,19 @@
     </div>
     <div id="additional-info" class="additional-info"></div>
   </div>
-
   <div class="controls">
     <button id="next-btn" disabled>Next Question</button>
   </div>
 
   <script>
+    // Color mapping for answer choices by letter
+    const colorMapping = {
+      A: { background: "red", text: "white" },
+      B: { background: "blue", text: "white" },
+      C: { background: "green", text: "white" },
+      D: { background: "yellow", text: "black" }
+    };
+
     // Game state
     let currentQuestions = [];
     let currentQuestionIndex = 0;
@@ -105,18 +114,15 @@
 
     // WebSocket connection
     const ws = new WebSocket('ws://localhost:3000');
-
-    // Handle WebSocket messages
     ws.onmessage = (event) => {
       const message = event.data;
       console.log(`Button Pressed: "${message}"`);
-      // Process the message to extract the letter (e.g., "A") from "Button A pressed"
       handleButtonPress(message);
     };
 
-    // Function to handle button press from WebSocket message
+    // Function to handle button press from WebSocket
     function handleButtonPress(message) {
-      // Expected message format: "Button A pressed"
+      // Expected format: "Button A pressed"
       const match = message.match(/Button\s+([A-Z])\s+pressed/i);
       if (match && match[1]) {
         const letter = match[1].toUpperCase(); // e.g., "A"
@@ -143,7 +149,7 @@
           return response.json();
         })
         .then(data => {
-          console.log(data); // Log to ensure data is available
+          console.log(data);
           currentQuestions = data[difficulty];
           displayQuestion();
         })
@@ -156,28 +162,27 @@
     // Display current question
     function displayQuestion() {
       console.log("Displaying question...");
-      // Get the current question object
       const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
       console.log(questionObj);
-      // Update the question text
       questionElement.textContent = questionObj.question || questionObj.questions;
-      // Clear previous options
       optionsElement.innerHTML = '';
-      // Add options and assign IDs based on letters: option-A, option-B, etc.
+      // Create option buttons with IDs based on letter (A, B, C, D)
       questionObj.options.forEach((option, index) => {
         const optionButton = document.createElement('button');
         optionButton.classList.add('option');
-        // Use letters: A, B, C, etc.
-        const letter = String.fromCharCode(65 + index);
-        optionButton.id = `option-${letter}`; // e.g., option-A
-        optionButton.textContent = option;
+        const letter = String.fromCharCode(65 + index); // A, B, C, D...
+        optionButton.id = `option-${letter}`;
+        optionButton.textContent = `${letter}: ${option}`;
+        // Set background and text color based on mapping
+        if (colorMapping[letter]) {
+          optionButton.style.backgroundColor = colorMapping[letter].background;
+          optionButton.style.color = colorMapping[letter].text;
+        }
         optionButton.setAttribute('data-answer', questionObj.correctAnswer);
         optionButton.addEventListener('click', () => selectOption(optionButton, option, questionObj.correctAnswer));
         optionsElement.appendChild(optionButton);
       });
-      // Hide additional info
       additionalInfoElement.style.display = 'none';
-      // Disable next button until an option is selected
       nextButton.disabled = true;
     }
 
@@ -185,39 +190,41 @@
     function selectOption(optionElement, selectedOption, correctAnswer) {
       console.log("Option Selected:", selectedOption);
       console.log("Correct Answer:", correctAnswer);
-      // Disable all options to prevent further clicks
-      document.querySelectorAll('.option').forEach(option => {
-        option.disabled = true;
+      // Disable all option buttons
+      document.querySelectorAll('.option').forEach(button => {
+        button.disabled = true;
       });
-      // Check if the answer is correct
+      // Check correctness and add class
       if (selectedOption === correctAnswer) {
         optionElement.classList.add('selected');
         score += Object.values(currentQuestions)[currentQuestionIndex].points;
         scoreElement.textContent = score;
       } else {
         optionElement.classList.add('incorrect');
-        // Highlight the correct answer
-        document.querySelectorAll('.option').forEach(option => {
-          if (option.textContent === correctAnswer) {
-            option.classList.add('selected');
+        document.querySelectorAll('.option').forEach(button => {
+          if (button.textContent.endsWith(correctAnswer)) {
+            button.classList.add('selected');
           }
         });
       }
-      // Show additional info if available
+      // Grey out all options that are not marked as selected/incorrect
+      document.querySelectorAll('.option').forEach(button => {
+        if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
+          button.classList.add('greyed');
+        }
+      });
       const additionalInfo = Object.values(currentQuestions)[currentQuestionIndex].additionalInfo;
       if (additionalInfo && additionalInfo.trim() !== '') {
         additionalInfoElement.textContent = additionalInfo;
         additionalInfoElement.style.display = 'block';
       }
-      // Enable the Next button after a selection
       nextButton.disabled = false;
     }
 
-    // (Optional) Handler for Next Question button
+    // Next question handler
     nextButton.addEventListener('click', () => {
       currentQuestionIndex++;
       if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
-        // End game
         questionElement.textContent = 'Game Over! Your final score is: ' + score;
         optionsElement.innerHTML = '';
         additionalInfoElement.style.display = 'none';
@@ -227,9 +234,7 @@
       }
     });
 
-    // Start the game when the page loads
     document.addEventListener('DOMContentLoaded', fetchQuestions);
   </script>
 </body>
-
 </html>
