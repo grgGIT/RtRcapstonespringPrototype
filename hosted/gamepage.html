@@ -1,216 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
-    <style>
-        body {
-            font-family: 'Courier New', monospace;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .question-container {
-            background-color: #f5f5f5;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .question {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        
-        .options {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-        
-        .option {
-            background-color: #e0e0e0;
-            border: none;
-            border-radius: 4px;
-            padding: 15px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .option:hover {
-            background-color: #d0d0d0;
-        }
-        
-        .option.selected {
-            background-color: #4caf50;
-            color: white;
-        }
-        
-        .option.incorrect {
-            background-color: #f44336;
-            color: white;
-        }
-        
-        .additional-info {
-            margin-top: 20px;
-            padding: 15px;
-            background-color: #e8f5e9;
-            border-radius: 4px;
-            display: none;
-        }
-        
-        .controls {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-        }
-        
-        .score {
-            font-size: 1.2em;
-            text-align: right;
-            margin-bottom: 20px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Game</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .question-container {
+      background-color: #f5f5f5;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .question {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    .option {
+      background-color: #e0e0e0;
+      border: none;
+      border-radius: 4px;
+      padding: 15px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .option:hover {
+      background-color: #d0d0d0;
+    }
+    .option.selected {
+      background-color: #4caf50;
+      color: white;
+    }
+    .option.incorrect {
+      background-color: #f44336;
+      color: white;
+    }
+    .additional-info {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #e8f5e9;
+      border-radius: 4px;
+      display: none;
+    }
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .score {
+      font-size: 1.2em;
+      text-align: right;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Quiz Game</h1>
-    <div class="score">Score: <span id="score">0</span></div>
-    
-    <div id="question-container" class="question-container">
-        <div id="question" class="question">Loading question...</div>
-        <div id="options" class="options">
-            <!-- Options will be populated by JavaScript -->
-        </div>
-        <div id="additional-info" class="additional-info"></div>
+  <h1>Quiz Game</h1>
+  <div class="score">Score: <span id="score">0</span></div>
+
+  <div id="question-container" class="question-container">
+    <div id="question" class="question">Loading question...</div>
+    <div id="options" class="options">
+      <!-- Options will be populated by JavaScript -->
     </div>
-    
-    <div class="controls">
-        <button id="next-btn" disabled>Next Question</button>
-    </div>
-    
-    <script>
-        // Game state
-        let currentQuestions = [];
-        let currentQuestionIndex = 0;
-        let score = 0;
-        let selectedEra = sessionStorage.getItem('selectedEra') || 'radioEra';
-        let difficulty = 'easy'; // Default to easy questions
-        
-        // DOM elements
-        const questionElement = document.getElementById('question');
-        const optionsElement = document.getElementById('options');
-        const additionalInfoElement = document.getElementById('additional-info');
-        const nextButton = document.getElementById('next-btn');
-        const scoreElement = document.getElementById('score');
-        
-        // Fetch questions from server
-        function fetchQuestions() {
-            fetch(`/getQuestions?era=${selectedEra}`)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    // Store questions and start the game
-                    currentQuestions = data[difficulty];
-                    displayQuestion();
-                })
-                .catch(error => {
-                    console.error('Error fetching questions:', error);
-                    questionElement.textContent = 'Error loading questions. Please try again.';
-                });
+    <div id="additional-info" class="additional-info"></div>
+  </div>
+
+  <div class="controls">
+    <button id="next-btn" disabled>Next Question</button>
+  </div>
+
+  <script>
+    // Game state
+    let currentQuestions = [];
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedEra = sessionStorage.getItem('selectedEra') || 'radioEra';
+    let difficulty = 'easy'; // Default to easy questions
+
+    // DOM elements
+    const questionElement = document.getElementById('question');
+    const optionsElement = document.getElementById('options');
+    const additionalInfoElement = document.getElementById('additional-info');
+    const nextButton = document.getElementById('next-btn');
+    const scoreElement = document.getElementById('score');
+
+    // WebSocket connection
+    const ws = new WebSocket('ws://localhost:3000');
+
+    // Handle WebSocket messages
+    ws.onmessage = (event) => {
+      const message = event.data;
+      console.log(`Button Pressed: "${message}"`);
+      // Process the message to extract the letter (e.g., "A") from "Button A pressed"
+      handleButtonPress(message);
+    };
+
+    // Function to handle button press from WebSocket message
+    function handleButtonPress(message) {
+      // Expected message format: "Button A pressed"
+      const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+      if (match && match[1]) {
+        const letter = match[1].toUpperCase(); // e.g., "A"
+        const buttonId = `option-${letter}`;    // e.g., "option-A"
+        console.log(`Mapping message "${message}" to button ID "${buttonId}"`);
+        const button = document.getElementById(buttonId);
+        if (button) {
+          button.click();
+        } else {
+          console.log(`Button with ID ${buttonId} not found.`);
         }
-        
-        // Display current question
-        function displayQuestion() {
-            // Get the current question object
-            const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
-            
-            // Update the question text
-            questionElement.textContent = questionObj.question || questionObj.questions; // Handle both property names
-            
-            // Clear previous options
-            optionsElement.innerHTML = '';
-            
-            // Add options
-            questionObj.options.forEach((option, index) => {
-                const optionButton = document.createElement('button');
-                optionButton.classList.add('option');
-                optionButton.textContent = option;
-                optionButton.addEventListener('click', () => selectOption(optionButton, option, questionObj.correctAnswer));
-                optionsElement.appendChild(optionButton);
-            });
-            
-            // Hide additional info
-            additionalInfoElement.style.display = 'none';
-            
-            // Disable next button until an option is selected
-            nextButton.disabled = true;
-        }
-        
-        // Handle option selection
-        function selectOption(optionElement, selectedOption, correctAnswer) {
-            // Disable all options
-            document.querySelectorAll('.option').forEach(option => {
-                option.disabled = true;
-            });
-            
-            // Check if the answer is correct
-            if (selectedOption === correctAnswer) {
-                optionElement.classList.add('selected');
-                score += Object.values(currentQuestions)[currentQuestionIndex].points;
-                scoreElement.textContent = score;
-            } else {
-                optionElement.classList.add('incorrect');
-                // Highlight the correct answer
-                document.querySelectorAll('.option').forEach(option => {
-                    if (option.textContent === correctAnswer) {
-                        option.classList.add('selected');
-                    }
-                });
-            }
-            
-            // Show additional info if available
-            const additionalInfo = Object.values(currentQuestions)[currentQuestionIndex].additionalInfo;
-            if (additionalInfo && additionalInfo.trim() !== '') {
-                additionalInfoElement.textContent = additionalInfo;
-                additionalInfoElement.style.display = 'block';
-            }
-            
-            // Enable next button
-            nextButton.disabled = false;
-        }
-        
-        // Handle next button click
-        nextButton.addEventListener('click', () => {
-            currentQuestionIndex++;
-            
-            // Check if we've reached the end of the questions
-            if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
-                // End of game
-                questionElement.textContent = 'Game Over! Your final score is: ' + score;
-                optionsElement.innerHTML = '';
-                additionalInfoElement.style.display = 'none';
-                nextButton.disabled = true;
-            } else {
-                // Display next question
-                displayQuestion();
-            }
+      } else {
+        console.log(`Message does not match expected format: "${message}"`);
+      }
+    }
+
+    // Fetch questions from server
+    function fetchQuestions() {
+      fetch(`/getQuestions?era=${selectedEra}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log(data); // Log to ensure data is available
+          currentQuestions = data[difficulty];
+          displayQuestion();
+        })
+        .catch(error => {
+          console.error('Error fetching questions:', error);
+          questionElement.textContent = 'Error loading questions. Please try again.';
         });
-        
-        // Start the game when the page loads
-        document.addEventListener('DOMContentLoaded', fetchQuestions);
-    </script>
+    }
+
+    // Display current question
+    function displayQuestion() {
+      console.log("Displaying question...");
+      // Get the current question object
+      const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
+      console.log(questionObj);
+      // Update the question text
+      questionElement.textContent = questionObj.question || questionObj.questions;
+      // Clear previous options
+      optionsElement.innerHTML = '';
+      // Add options and assign IDs based on letters: option-A, option-B, etc.
+      questionObj.options.forEach((option, index) => {
+        const optionButton = document.createElement('button');
+        optionButton.classList.add('option');
+        // Use letters: A, B, C, etc.
+        const letter = String.fromCharCode(65 + index);
+        optionButton.id = `option-${letter}`; // e.g., option-A
+        optionButton.textContent = option;
+        optionButton.setAttribute('data-answer', questionObj.correctAnswer);
+        optionButton.addEventListener('click', () => selectOption(optionButton, option, questionObj.correctAnswer));
+        optionsElement.appendChild(optionButton);
+      });
+      // Hide additional info
+      additionalInfoElement.style.display = 'none';
+      // Disable next button until an option is selected
+      nextButton.disabled = true;
+    }
+
+    // Handle option selection
+    function selectOption(optionElement, selectedOption, correctAnswer) {
+      console.log("Option Selected:", selectedOption);
+      console.log("Correct Answer:", correctAnswer);
+      // Disable all options to prevent further clicks
+      document.querySelectorAll('.option').forEach(option => {
+        option.disabled = true;
+      });
+      // Check if the answer is correct
+      if (selectedOption === correctAnswer) {
+        optionElement.classList.add('selected');
+        score += Object.values(currentQuestions)[currentQuestionIndex].points;
+        scoreElement.textContent = score;
+      } else {
+        optionElement.classList.add('incorrect');
+        // Highlight the correct answer
+        document.querySelectorAll('.option').forEach(option => {
+          if (option.textContent === correctAnswer) {
+            option.classList.add('selected');
+          }
+        });
+      }
+      // Show additional info if available
+      const additionalInfo = Object.values(currentQuestions)[currentQuestionIndex].additionalInfo;
+      if (additionalInfo && additionalInfo.trim() !== '') {
+        additionalInfoElement.textContent = additionalInfo;
+        additionalInfoElement.style.display = 'block';
+      }
+      // Enable the Next button after a selection
+      nextButton.disabled = false;
+    }
+
+    // (Optional) Handler for Next Question button
+    nextButton.addEventListener('click', () => {
+      currentQuestionIndex++;
+      if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
+        // End game
+        questionElement.textContent = 'Game Over! Your final score is: ' + score;
+        optionsElement.innerHTML = '';
+        additionalInfoElement.style.display = 'none';
+        nextButton.disabled = true;
+      } else {
+        displayQuestion();
+      }
+    });
+
+    // Start the game when the page loads
+    document.addEventListener('DOMContentLoaded', fetchQuestions);
+  </script>
 </body>
+
 </html>

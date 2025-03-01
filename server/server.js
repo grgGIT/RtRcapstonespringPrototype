@@ -1,64 +1,87 @@
+// Importing required libraries using require (CommonJS)
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const http = require('http');
+const WebSocket = require('ws');
+const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
+const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
+
+// Express setup
 const app = express();
-const port = process.env.PORT || process.env.NODE_PORT || 3000;
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
 
 const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
 
-//list of questions json
 const originalsPath = path.join(__dirname, './questions.json');
 
-///
-//Our code for this project goes here
-//////
+// Store connected clients
+let clients = [];
 
-
-
-// this will equal the era object
-let selectedEra = '';
-
-// Endpoint to set the selected era
-app.post('/setSelectedEra', (req, res) => {
-    selectedEra = req.body.era;
-    console.log(`Selected Era: ${selectedEra}`);
-    res.json({ message: 'Era selection saved successfully' });
+// Serial port setup
+const serialPort = new SerialPort({
+  path: 'COM6',  // Replace with your actual serial port path
+  baudRate: 115200,
 });
 
-//get question file by era selected
-app.get('/getQuestions', (req, res) => {
-    // If the era is passed as a query parameter, use that instead
-    const era = req.query.era || selectedEra;
-    
-    if (!era) {
-        return res.status(400).json({ error: 'No era selected' });
+const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+
+// Listen for incoming data on the serial port
+parser.on('data', (data) => {
+  console.log(`Received from ESP32: ${data}`);
+  // Broadcast the data to all WebSocket clients
+  clients.forEach(client => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(data);
     }
-
-    fs.readFile(originalsPath, (err, data) => {
-        if (err) {
-            return res.status(500).json({ error: 'Failed to read questions file' });
-        }
-
-        try {
-            const allQuestions = JSON.parse(data);
-            
-            // Check if the selected era exists in the questions
-            if (!allQuestions.era[era]) {
-                return res.status(404).json({ error: `Questions for era "${era}" not found` });
-            }
-            
-            // Return the questions for the selected era
-            res.json(allQuestions.era[era]);
-        } catch (error) {
-            res.status(500).json({ error: 'Failed to parse questions data' });
-        }
-    });
+  });
 });
 
+wss.on('connection', (ws) => {
+  console.log('Client connected');
+  clients.push(ws);
+  
+  ws.on('message', (message) => {
+    console.log(`Received: ${message}`);
+    // Broadcast message to all clients
+    clients.forEach(client => {
+      if (client.readyState === WebSocket.OPEN) {
+        client.send(message);
+      }
+    });
+  });
 
+  ws.on('close', () => {
+    console.log('Client disconnected');
+    clients = clients.filter(client => client !== ws);
+  });
+});
 
+// Endpoint to get questions
+app.get('/getQuestions', (req, res) => {
+  const era = req.query.era;
+  if (!era) {
+    return res.status(400).json({ error: 'No era selected' });
+  }
+
+  fs.readFile(originalsPath, (err, data) => {
+    if (err) {
+      return res.status(500).json({ error: 'Failed to read questions file' });
+    }
+    try {
+      const allQuestions = JSON.parse(data);
+      res.json(allQuestions.era[era] || {});
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to parse questions data' });
+    }
+  });
+});
+
+server.listen(port, () => console.log(`Server running on port ${port}`));
 
 /////
 //Example code beyond this point (from Geoff in capstone 1)
@@ -146,9 +169,3 @@ app.get('/getQuestions', (req, res) => {
 //Server starting stuff beyond this point (don't change)
 ///////////////////////////////
 //////////////
-
-// Define a route to serve the homepage
-app.get('/', (req, res) => {
-    res.sendFile(path.join( __dirname, '../hosted/index.html'));
-});
-app.listen(port, () => console.log(`Server running on port ${port}`));
