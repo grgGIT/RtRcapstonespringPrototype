@@ -57,20 +57,48 @@
 </head>
 <body>
     <!-- keep era-btn as a class and then use the id's to edit the individual html's -->
-    <button class="era-btn" id="era-btn1">Radio Era</button>
-    <button class="era-btn"  id="era-btn2">60s</button>
-    <button class="era-btn"  id="era-btn3">70s</button>
-    <button class="era-btn"  id="era-btn4">80s-2010s</button>
+    <button class="era-btn" data-era="radioEra" id="era-btn1">Radio Era</button>
+    <button class="era-btn"  data-era="seventiesEra"id="era-btn2">60s</button>
+    <button class="era-btn"  data-era="eightiesEra"id="era-btn3">70s</button>
+    <button class="era-btn"  data-era="modernEra"id="era-btn4">80s-2010s</button>
 
     <script>
         document.querySelectorAll('.era-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const playState = JSON.parse(localStorage.getItem('playState'));
-                playState.selectedEra = e.target.dataset.era;
-                localStorage.setItem('playState', JSON.stringify(playState));
-                window.location.href = 'gamepage.html';
+
+                 // Get the era from the data-era attribute
+                 const selectedEra = e.target.dataset.era;
+                console.log(selectedEra)
+                // Save to sessionStorage
+                sessionStorage.setItem('selectedEra', selectedEra);
+                
+                // Also send to server
+                fetch('/setSelectedEra', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ era: selectedEra }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Redirect to game page after successful server update
+                    window.location.href = 'gamepage.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Still redirect even if there's an error
+                    window.location.href = 'gamepage.html';
+                });
+
+                // const playState = JSON.parse(localStorage.getItem('playState'));
+                // playState.selectedEra = e.target.dataset.era;
+                // localStorage.setItem('playState', JSON.stringify(playState));
+                // window.location.href = 'gamepage.html';
             });
         });
+        
     </script>
 </body>
 </html>

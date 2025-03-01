@@ -8,6 +8,62 @@ const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
 
+//list of questions json
+const originalsPath = path.join(__dirname, './questions.json');
+
+///
+//Our code for this project goes here
+//////
+
+
+
+// this will equal the era object
+let selectedEra = '';
+
+// Endpoint to set the selected era
+app.post('/setSelectedEra', (req, res) => {
+    selectedEra = req.body.era;
+    console.log(`Selected Era: ${selectedEra}`);
+    res.json({ message: 'Era selection saved successfully' });
+});
+
+//get question file by era selected
+app.get('/getQuestions', (req, res) => {
+    // If the era is passed as a query parameter, use that instead
+    const era = req.query.era || selectedEra;
+    
+    if (!era) {
+        return res.status(400).json({ error: 'No era selected' });
+    }
+
+    fs.readFile(originalsPath, (err, data) => {
+        if (err) {
+            return res.status(500).json({ error: 'Failed to read questions file' });
+        }
+
+        try {
+            const allQuestions = JSON.parse(data);
+            
+            // Check if the selected era exists in the questions
+            if (!allQuestions.era[era]) {
+                return res.status(404).json({ error: `Questions for era "${era}" not found` });
+            }
+            
+            // Return the questions for the selected era
+            res.json(allQuestions.era[era]);
+        } catch (error) {
+            res.status(500).json({ error: 'Failed to parse questions data' });
+        }
+    });
+});
+
+
+
+
+/////
+//Example code beyond this point (from Geoff in capstone 1)
+///////////
+
 
 
 // const originalsPath = path.join(__dirname, 'posters.json');
@@ -87,7 +143,7 @@ app.use(express.json());
 
 ///////////////
 ///////////////////////////////
-//Server starting stuff beyond this point
+//Server starting stuff beyond this point (don't change)
 ///////////////////////////////
 //////////////
 
