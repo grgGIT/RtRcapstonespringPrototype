@@ -13,7 +13,7 @@
             padding: 20px;
         }
         
-        .era-btn1 {
+        #era-btn1 {
             background: #ff0000;
             border: 2px solid #ff0000;
             padding: 20px;
@@ -22,7 +22,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .era-btn2 {
+        #era-btn2 {
             background: #004cff;
             border: 2px solid #004cff;
             padding: 20px;
@@ -31,7 +31,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .era-btn3 {
+        #era-btn3 {
             background: #009222;
             border: 2px solid #009222;
             padding: 20px;
@@ -40,7 +40,7 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .era-btn4 {
+        #era-btn4 {
             background: #ffea00;
             border: 2px solid #ffea00;
             padding: 20px;
@@ -49,7 +49,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-
         .era-btn:hover {
             background: #0f0;
             color: #000;
@@ -57,10 +56,11 @@
     </style>
 </head>
 <body>
-    <button class="era-btn1" data-era="radio">Radio Era</button>
-    <button class="era-btn2" data-era="60s">60s</button>
-    <button class="era-btn3" data-era="70s">70s</button>
-    <button class="era-btn4" data-era="80s-2010s">80s-2010s</button>
+    <!-- keep era-btn as a class and then use the id's to edit the individual html's -->
+    <button class="era-btn" id="era-btn1">Radio Era</button>
+    <button class="era-btn"  id="era-btn2">60s</button>
+    <button class="era-btn"  id="era-btn3">70s</button>
+    <button class="era-btn"  id="era-btn4">80s-2010s</button>
 
     <script>
         document.querySelectorAll('.era-btn').forEach(btn => {
