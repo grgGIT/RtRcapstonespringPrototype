@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +36,7 @@
 
         .difficulty-section {
             background: linear-gradient(145deg, #4CAF50, #1b5e20);
-
+            
         }
 
         .time-section {
@@ -56,14 +55,14 @@
             transition: transform 0.1s;
             color: white;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            box-shadow:
+            box-shadow: 
                 0 10px 0 rgba(0, 0, 0, 0.3),
                 0 0 20px rgba(0, 0, 0, 0.5);
         }
 
         button:active {
             transform: translateY(8px);
-            box-shadow:
+            box-shadow: 
                 0 2px 0 rgba(0, 0, 0, 0.3),
                 0 0 10px rgba(0, 0, 0, 0.5);
         }
@@ -78,7 +77,7 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-
+            
         }
 
         .time-era-button {
@@ -113,44 +112,14 @@
             font-weight: bolder;
         }
 
-        #A {
-            background: linear-gradient(145deg, #ff4444, #cc0000);
-        }
-
-        #B {
-            background: linear-gradient(145deg, #2196F3, #0d47a1);
-        }
-
-        #C {
-            background: linear-gradient(145deg, #4CAF50, #1b5e20);
-        }
-
-        #D {
-            background: linear-gradient(145deg, #b0ae27, #fffc64);
-        }
-
-        #ez {
-            background: linear-gradient(145deg, #95ff44, #00cc03);
-            font-weight: bolder;
-            color: #2c2c2c;
-            padding: 3px;
-        }
-
-        #mdm {
-            background: linear-gradient(145deg, #f6ff44, #ccc900);
-            font-weight: bolder;
-            color: #2c2c2c;
-            padding: 3px;
-        }
-
-        #hrd {
-            background: linear-gradient(145deg, #ff4444, #cc0000);
-            font-weight: bolder;
-            color: #2c2c2c;
-            padding: 3px;
-        }
-
-        .PhoneButt {
+        #A { background: linear-gradient(145deg, #ff4444, #cc0000); }
+        #B { background: linear-gradient(145deg, #2196F3, #0d47a1); }
+        #C { background: linear-gradient(145deg, #4CAF50, #1b5e20); }
+        #D { background: linear-gradient(145deg, #b0ae27, #fffc64); }
+        #ez { background: linear-gradient(145deg, #95ff44, #00cc03);font-weight: bolder; color: #2c2c2c; padding: 3px;}
+        #mdm { background: linear-gradient(145deg, #f6ff44, #ccc900); font-weight: bolder;color: #2c2c2c;padding: 3px;}
+        #hrd { background: linear-gradient(145deg, #ff4444, #cc0000); font-weight: bolder; color: #2c2c2c;padding: 3px;}
+        .PhoneButt{
             background: linear-gradient(145deg, #0083ff, #0000ff);
             color: white;
             font-weight: bolder;
@@ -159,22 +128,16 @@
             width: 300px;
             height: 300px;
         }
-
-        button.active {
-            transform: translateY(8px);
-            box-shadow: 0 2px 0 rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.5);
-        }
     </style>
 </head>
-
 <body>
     <div class="menu-grid">
         <div class="menu-section difficulty-section">
             <h2>Difficulty</h2>
             <div class="difficulty-buttons">
-                <button class="answer-button" id='ez'>EASY</button>
-                <button class="answer-button" id='mdm'>MEDIUM</button>
-                <button class="answer-button" id='hrd'>HARD</button>
+                <button class="answer-button"id='ez'>EASY</button>
+                <button class="answer-button"id='mdm'>MEDIUM</button>
+                <button class="answer-button"id='hrd'>HARD</button>
             </div>
         </div>
 
@@ -218,65 +181,5 @@
             </button>
         </div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = {
-                'A': document.getElementById('A'),
-                'B': document.getElementById('B'),
-                'C': document.getElementById('C'),
-                'D': document.getElementById('D'),
-            };
-
-            function pressButton(letter) {
-                const button = buttons[letter];
-                if (button) {
-                    button.classList.add('active');
-                    button.click();
-                    setTimeout(() => button.classList.remove('active'), 200);
-                }
-            }
-
-            async function connectSerial() {
-                try {
-                    const port = await navigator.serial.requestPort();
-                    await port.open({ baudRate: 9600 });
-
-                    const decoder = new TextDecoderStream('utf-8');
-                    const readableStreamClosed = port.readable.pipeTo(decoder.writable);
-                    const reader = decoder.readable.getReader();
-
-                    console.log('Serial connected.');
-
-                    while (true) {
-                        const { value, done } = await reader.read();
-                        if (done) {
-                            console.log('Reader closed.');
-                            break;
-                        }
-                        if (value) {
-                            const letter = value.trim().toUpperCase();
-                            console.log('Received:', letter); // Debug output
-                            if (buttons[letter]) {
-                                pressButton(letter);
-                            }
-                        }
-                    }
-
-                    await readableStreamClosed.catch(() => { console.log('Stream closed.'); });
-                } catch (err) {
-                    console.error('Serial connection error:', err);
-                    alert('Serial connection failed. Make sure you selected the correct port.');
-                }
-            }
-
-            const connectBtn = document.createElement('button');
-            connectBtn.textContent = 'Connect Arduino';
-            connectBtn.style.cssText = 'position:fixed;top:10px;right:10px;padding:10px;';
-            connectBtn.addEventListener('click', connectSerial);
-            document.body.appendChild(connectBtn);
-        });
-    </script>
-
 </body>
-
 </html>
