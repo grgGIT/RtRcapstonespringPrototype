@@ -13,10 +13,12 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+// send hosted assets
 const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
 
+// Path to the questions file
 const originalsPath = path.join(__dirname, './questions.json');
 
 // Store connected clients
@@ -44,7 +46,7 @@ parser.on('data', (data) => {
 wss.on('connection', (ws) => {
   console.log('Client connected');
   clients.push(ws);
-  
+
   ws.on('message', (message) => {
     console.log(`Received: ${message}`);
     // Broadcast message to all clients
@@ -65,14 +67,17 @@ wss.on('connection', (ws) => {
 app.get('/getQuestions', (req, res) => {
   const era = req.query.era;
   if (!era) {
+    // ensure that an era is selected
     return res.status(400).json({ error: 'No era selected' });
   }
 
+  // Read the questions file
   fs.readFile(originalsPath, (err, data) => {
     if (err) {
       return res.status(500).json({ error: 'Failed to read questions file' });
     }
     try {
+      // Parse the JSON data and send the questions for the selected era
       const allQuestions = JSON.parse(data);
       res.json(allQuestions.era[era] || {});
     } catch (error) {

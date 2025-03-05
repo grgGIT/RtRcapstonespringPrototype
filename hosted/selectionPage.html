@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Selection Page</title>
     <style>
-        button{
+        button {
             background-color: transparent;
             border: none;
             cursor: pointer;
             position: absolute;
             top: 45%;
             left: 50%;
-    transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
-        #radio_btn{
+
+        #radio_btn {
             top: 45%;
             left: 30%;
         }
-        #new_btn{
+
+        #new_btn {
             top: 27%;
             left: 40%;
         }
-        #golden_btn{
+
+        #golden_btn {
             top: 30%;
             left: 60%;
         }
-        #revitalize_btn{
+
+        #revitalize_btn {
             top: 45%;
             left: 70%;
         }
+
         /* Hover and Focus Styles */
-        button:hover, button:focus {
-            outline: 3px solid yellow; /* Highlight effect */
+        button:hover,
+        button:focus {
+            outline: 3px solid yellow;
+            /* Highlight effect */
             border-radius: 10px;
         }
     </style>
 </head>
+
 <body background="assets/UI/selectionPage.png" style=" background-repeat:no-repeat; background-size:100% 100vh;">
-    <button id="radio_btn" tabindex="1"><img src = "assets/UI/radio_btn.png"></button>
-    <button id="new_btn" tabindex="2"><img src = "assets/UI/new_btn.png"></button>
-    <button id="golden_btn" tabindex="3"><img src = "assets/UI/golden_btn.png"></button>      
-    <button id="revitalize_btn" tabindex="4"><img src = "assets/UI/revitalize_btn.png"></button>
-    <button id ="play_btn" tabindex="5"><img src = "assets/UI/play_btn.png"></button>
+    <button id="radio_btn" tabindex="1"><img src="assets/UI/radio_btn.png"></button>
+    <button id="new_btn" tabindex="2"><img src="assets/UI/new_btn.png"></button>
+    <button id="golden_btn" tabindex="3"><img src="assets/UI/golden_btn.png"></button>
+    <button id="revitalize_btn" tabindex="4"><img src="assets/UI/revitalize_btn.png"></button>
+    <button id="play_btn" tabindex="5"><img src="assets/UI/play_btn.png"></button>
 
 </body>
 <script>
-  // List of buttons in order
-  const buttons = [
-            document.getElementById("radio_btn"),
-            document.getElementById("new_btn"),
-            document.getElementById("golden_btn"),
-            document.getElementById("revitalize_btn"),
-            document.getElementById("play_btn")
-        ];
+    // List of buttons in order
+    const buttons = [
+        document.getElementById("radio_btn"),
+        document.getElementById("new_btn"),
+        document.getElementById("golden_btn"),
+        document.getElementById("revitalize_btn"),
+        document.getElementById("play_btn")
+    ];
 
-        let currentIndex = 0; // Track currently focused button
+    let currentIndex = 0; // Track currently focused button
 
-        // Set initial focus
-        buttons[currentIndex].focus();
+    // Set initial focus
+    buttons[currentIndex].focus();
 
-        document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowRight") {
-                // Move focus to next button
-                currentIndex = (currentIndex + 1) % buttons.length;
-                buttons[currentIndex].focus();
-            } 
-            else if (event.key === "ArrowLeft") {
-                // Move focus to previous button
-                currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
-                buttons[currentIndex].focus();
-            }
-            else if (event.key === "Enter" || event.key === " ") {
-                event.preventDefault();
-                buttons[currentIndex].click(); // Simulate button click
-            }
-        });
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowRight") {
+            // Move focus to next button
+            currentIndex = (currentIndex + 1) % buttons.length;
+            buttons[currentIndex].focus();
+        }
+        else if (event.key === "ArrowLeft") {
+            // Move focus to previous button
+            currentIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+            buttons[currentIndex].focus();
+        }
+        else if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            buttons[currentIndex].click(); // Simulate button click
+        }
+    });
 
-        // Add event listener for Play button click
-        document.getElementById("play_btn").addEventListener("click", function() {
-            window.location.href = "selectionPage.html";
-        });
+    // Add event listener for Play button click
+    document.getElementById("play_btn").addEventListener("click", function () {
+        window.location.href = "selectionPage.html";
+    });
 </script>
+
 </html>
