@@ -17,6 +17,21 @@ const wss = new WebSocket.Server({ server });
 const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
+// New endpoint to receive button press POST requests from ESP32
+app.post('/button', (req, res) => {
+  const { message } = req.body;
+  console.log(`Received button press over WiFi: ${message}`);
+
+  // Send this message to all connected WebSocket clients (your game)
+  clients.forEach(client => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(message);
+    }
+  });
+
+  res.json({ status: 'Button press received' });
+});
+
 
 // Path to the questions file
 const originalsPath = path.join(__dirname, './questions.json');
