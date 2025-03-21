@@ -330,14 +330,42 @@
         <button id="BigRed">PRESS</button>
     </div>
     <script>
-        document.getElementById('BigRed').addEventListener('click', () => {
-            localStorage.setItem('playState', JSON.stringify({
-                score: 0,
-                selectedEra: null,
-                startTime: Date.now()
-            }));
-            window.location.href = 'erachoice.html';
-        });
-    </script>
-</body>
-</html>
+        // Function to handle Big Red button click
+        function startGame() {
+          // Reset game state: score, selected era, and start time
+          localStorage.setItem('playState', JSON.stringify({
+            score: 0,
+            selectedEra: null,
+            startTime: Date.now()
+          }));
+          // Redirect to era choice page
+          window.location.href = 'erachoice.html';
+        }
+      
+        // Manual click for Big Red button
+        document.getElementById('BigRed').addEventListener('click', startGame);
+      
+        // WebSocket connection for Arduino input on index.html
+        const wsIndex = new WebSocket('ws://localhost:3000');
+        wsIndex.onopen = () => {
+          console.log('WebSocket connection for Big Red button opened.');
+        };
+      
+        wsIndex.onmessage = (event) => {
+          const message = event.data;
+          console.log(`Received WebSocket message on index.html: "${message}"`);
+          // Remap "Button A pressed" to be treated as if Button E is pressed for the Big Red button.
+          if (/Button\s+E\s+pressed/i.test(message)) {
+            console.log('Mapping "Button E pressed" to Big Red button press');
+            document.getElementById('BigRed').click();
+          } else {
+            console.log('Message did not match expected pattern for Big Red.');
+          }
+        };
+      
+        wsIndex.onerror = (error) => {
+          console.error('WebSocket error:', error);
+        };
+      </script>
+    </body>
+    </html>
