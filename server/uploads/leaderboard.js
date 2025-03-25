@@ -39,10 +39,15 @@ const gameArchive = {
             uniqueUsers.forEach(user => {
                 user.totalScore = allUsers.filter(u => u.name === user.name).reduce((acc, u) => acc + u.score, 0);
             });
-            return uniqueUsers.sort((a, b) => b.totalScore - a.totalScore);
+            return uniqueUsers.sort((a, b) => b.totalScore - a.totalScore); // Sort in descending order
         },
-    }
+    },
+};
+
+// add a new game log
+const logNewGame = (gameNumber, gameDate, users) => {
+    gameArchive.logs.push(new GameLog(gameNumber, gameDate, users));
 };
 
 // Export the leaderboard data
-module.exports = gameArchive;
+module.exports = gameArchive, logNewGame;
