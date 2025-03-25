@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFID Registration</title>
+    <script>
+        let gameSession = {
+            gameId: Date.now(),
+            players: {}
+        };
+        let playerCount = 0;
+        const minPlayers = 2;
+        const maxPlayers = 4;
+
+        function generateRFID() {
+            return Math.floor(100000000000 + Math.random() * 900000000000); // 12-digit random number
+        }
+
+        function handleButtonPress(message) {
+            const match = message.match(/Button\s+F\s+pressed/i);
+            if (match) {
+                if (playerCount < maxPlayers) {
+                    const playerId = generateRFID().toString();
+                    gameSession.players[playerId] = 0; // Initialize score
+                    playerCount++;
+                    document.getElementById("player-list").innerHTML += `<p>Player ${playerCount}: ${playerId} joined!</p>`;
+                }
+                if (playerCount === maxPlayers) {
+                    document.getElementById("player-list").innerHTML += `<p style="color:red;">Max players reached!</p>`;
+                }
+            }
+        }
+
+        function sendPlayerDataToGame() {
+            if (playerCount >= minPlayers) {
+                localStorage.setItem("gameSession", JSON.stringify(gameSession));
+                window.location.href = "gamepage.html";
+            } else {
+                alert("At least 2 players are required to start.");
+            }
+        }
+
+        // WebSocket Connection
+        const ws = new WebSocket("ws://your-websocket-server");
+        ws.onmessage = (event) => handleButtonPress(event.data);
+    </script>
+</head>
+<body>
+    <h2>RFID Registration</h2>
+    <div id="player-list"></div>
+    <button onclick="sendPlayerDataToGame()">Start Game</button>
+</body>
+</html>
