@@ -1,13 +1,16 @@
-// leaderboardData.js
-
+// leaderboard.js
 
 // Class for GameLog
 class GameLog {
-    constructor(gameNumber, gameDate, users, winner) {
+    constructor(gameNumber, gameDate, users) {
         this.gameNumber = gameNumber;
         this.gameDate = gameDate;
         this.users = users;
-        this.winner = winner;
+    }
+
+    // Method to calculate the winner dynamically
+    getWinner() {
+        return this.users.reduce((prev, current) => (prev.score > current.score) ? prev : current);
     }
 }
 
@@ -22,19 +25,24 @@ const gameArchive = {
                 { name: 'Jane', score: 2 },
                 { name: 'Jack', score: 1 },
                 { name: 'Jill', score: 0 }
-            ],
-            { name: 'John', score: 3 }
+            ]
         ),
-        // Additional game logs will be added here
-    ]
+        // Additional game logs can be added here
+    ],
+
+    // Make leaderboard and rank the highest scores first
+    topScores: {
+        // Rank all users across all games
+        getTopScores: () => {
+            const allUsers = gameArchive.logs.flatMap(log => log.users);
+            const uniqueUsers = [...new Map(allUsers.map(user => [user.name, user])).values()];
+            uniqueUsers.forEach(user => {
+                user.totalScore = allUsers.filter(u => u.name === user.name).reduce((acc, u) => acc + u.score, 0);
+            });
+            return uniqueUsers.sort((a, b) => b.totalScore - a.totalScore);
+        },
+    }
 };
-
-// Make leaderboard and rank the highest scores first
-// this will often be the winner of each game
-const topScores = {
-
-}
-
 
 // Export the leaderboard data
 module.exports = gameArchive;
