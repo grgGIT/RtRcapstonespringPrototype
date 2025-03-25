@@ -21,25 +21,37 @@ const gameArchive = {
             1,
             new Date('2023-10-05T14:48:00.000Z'),
             [
-                { name: 'John', score: 3 },
-                { name: 'Jane', score: 2 },
-                { name: 'Jack', score: 1 },
-                { name: 'Jill', score: 0 }
+                // User ID and tracked score
+                { RFID: 12323, score: 3 },
+                { RFID: 5675675, score: 2 },
+                { RFID: 444444, score: 1 },
+                { RFID: 767567567, score: 3 },
             ]
         ),
         // Additional game logs can be added here
     ],
 
-    // Make leaderboard and rank the highest scores first
+    // gather top scores from all games and create a leaderboard
     topScores: {
-        // Rank all users across all games
-        getTopScores: () => {
-            const allUsers = gameArchive.logs.flatMap(log => log.users);
-            const uniqueUsers = [...new Map(allUsers.map(user => [user.name, user])).values()];
-            uniqueUsers.forEach(user => {
-                user.totalScore = allUsers.filter(u => u.name === user.name).reduce((acc, u) => acc + u.score, 0);
+        // Method to get the highest score from each game
+        getLeaderboard() {
+            // Get the highest score from each game along with the RFID
+            const highestScores = gameArchive.logs.map(log => {
+                // Find the user with the highest score in this game
+                const winner = log.getWinner();
+                return {
+                    gameNumber: log.gameNumber,
+                    gameDate: log.gameDate,
+                    RFID: winner.RFID,
+                    highestScore: winner.score
+                };
             });
-            return uniqueUsers.sort((a, b) => b.totalScore - a.totalScore); // Sort in descending order
+
+            // Sort by highest score in descending order
+            highestScores.sort((a, b) => b.highestScore - a.highestScore);
+
+            // Return the top 5 highest scores
+            return highestScores.slice(0, 5);
         },
     },
 };
@@ -49,5 +61,5 @@ const logNewGame = (gameNumber, gameDate, users) => {
     gameArchive.logs.push(new GameLog(gameNumber, gameDate, users));
 };
 
-// Export the leaderboard data
-module.exports = gameArchive, logNewGame;
+// Export the gameArchive and logNewGame function
+module.exports = { gameArchive, logNewGame };
