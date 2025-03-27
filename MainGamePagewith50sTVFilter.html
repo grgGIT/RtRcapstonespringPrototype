@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,7 +15,8 @@
             top: 45%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index: 10; /* Ensure button is above TV effects */
+            z-index: 10;
+            /* Ensure button is above TV effects */
         }
 
         /* 50s TV Filter Effects */
@@ -47,11 +48,8 @@
             height: 100%;
             background-repeat: no-repeat;
             background-size: 100% 100vh;
-            filter: 
-                brightness(1.1) 
-                contrast(1.2) 
-                sepia(0.2) 
-                saturate(1.3);
+            filter:
+                brightness(1.1) contrast(1.2) sepia(0.2) saturate(1.3);
             animation: flicker 0.15s infinite;
         }
 
@@ -63,10 +61,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(
-                rgba(18, 16, 16, 0) 50%, 
-                rgba(0, 0, 0, 0.25) 50%
-            );
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+                    rgba(0, 0, 0, 0.25) 50%);
             background-size: 100% 4px;
             pointer-events: none;
             z-index: 2;
@@ -80,11 +76,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(
-                circle at center,
-                transparent 60%,
-                rgba(0, 0, 0, 0.7) 100%
-            );
+            background: radial-gradient(circle at center,
+                    transparent 60%,
+                    rgba(0, 0, 0, 0.7) 100%);
             pointer-events: none;
             z-index: 3;
         }
@@ -104,56 +98,127 @@
 
         /* Flicker animation */
         @keyframes flicker {
-            0% { opacity: 0.97; }
-            5% { opacity: 0.95; }
-            10% { opacity: 0.97; }
-            15% { opacity: 0.94; }
-            20% { opacity: 0.98; }
-            25% { opacity: 0.95; }
-            30% { opacity: 0.97; }
-            35% { opacity: 0.96; }
-            40% { opacity: 0.97; }
-            45% { opacity: 0.95; }
-            50% { opacity: 0.98; }
-            55% { opacity: 0.97; }
-            60% { opacity: 0.95; }
-            65% { opacity: 0.97; }
-            70% { opacity: 0.96; }
-            75% { opacity: 0.98; }
-            80% { opacity: 0.97; }
-            85% { opacity: 0.95; }
-            90% { opacity: 0.96; }
-            95% { opacity: 0.97; }
-            100% { opacity: 0.98; }
+            0% {
+                opacity: 0.97;
+            }
+
+            5% {
+                opacity: 0.95;
+            }
+
+            10% {
+                opacity: 0.97;
+            }
+
+            15% {
+                opacity: 0.94;
+            }
+
+            20% {
+                opacity: 0.98;
+            }
+
+            25% {
+                opacity: 0.95;
+            }
+
+            30% {
+                opacity: 0.97;
+            }
+
+            35% {
+                opacity: 0.96;
+            }
+
+            40% {
+                opacity: 0.97;
+            }
+
+            45% {
+                opacity: 0.95;
+            }
+
+            50% {
+                opacity: 0.98;
+            }
+
+            55% {
+                opacity: 0.97;
+            }
+
+            60% {
+                opacity: 0.95;
+            }
+
+            65% {
+                opacity: 0.97;
+            }
+
+            70% {
+                opacity: 0.96;
+            }
+
+            75% {
+                opacity: 0.98;
+            }
+
+            80% {
+                opacity: 0.97;
+            }
+
+            85% {
+                opacity: 0.95;
+            }
+
+            90% {
+                opacity: 0.96;
+            }
+
+            95% {
+                opacity: 0.97;
+            }
+
+            100% {
+                opacity: 0.98;
+            }
         }
 
         /* Horizontal distortion animation */
         @keyframes horizontalDistortion {
-            0% { transform: scaleY(1.000); }
-            50% { transform: scaleY(1.015); }
-            100% { transform: scaleY(1.000); }
+            0% {
+                transform: scaleY(1.000);
+            }
+
+            50% {
+                transform: scaleY(1.015);
+            }
+
+            100% {
+                transform: scaleY(1.000);
+            }
         }
     </style>
 </head>
+
 <body>
     <!-- TV Container -->
     <div class="tv-container">
         <!-- TV Screen with background -->
-        <div class="tv-screen" style="background-image: url('assets/UI/mainGamePage.png');">
+        <div class="tv-screen" style="background-image: url('./hosted/assets/UI/mainGamePage.png');">
             <!-- TV Static Overlay -->
             <div class="tv-static"></div>
         </div>
     </div>
 
     <!-- Play Button -->
-    <button id="play_btn"><img src="assets/UI/play_btn.png"></button>
+    <button id="play_btn"><img src="./hosted/assets/UI/play_btn.png"></button>
 
     <script>
-        document.getElementById("play_btn").addEventListener("click", function() {
+        document.getElementById("play_btn").addEventListener("click", function () {
             window.location.href = "selectionPage.html";
         });
-        
-        document.getElementById("play_btn").addEventListener("keydown", function(event) {
+
+        document.getElementById("play_btn").addEventListener("keydown", function (event) {
             if (event.key === "Enter" || event.key === " ") {
                 event.preventDefault();
                 window.location.href = "selectionPage.html";
@@ -161,16 +226,17 @@
         });
 
         // Add random horizontal distortion effect
-        setInterval(function() {
+        setInterval(function () {
             if (Math.random() > 0.95) {
                 document.querySelector('.tv-screen').style.animation = 'horizontalDistortion 0.2s ease-in-out';
-                setTimeout(function() {
+                setTimeout(function () {
                     document.querySelector('.tv-screen').style.animation = 'flicker 0.15s infinite';
                 }, 200);
             }
         }, 2000);
     </script>
 </body>
+
 </html>
 </qodoArtifact>
 
@@ -190,6 +256,8 @@ I've added a comprehensive 50s TV filter to your page with several classic vinta
 
 7. **Random Distortion**: Occasional horizontal distortion that happens randomly to simulate signal interference.
 
-The background image is now applied to a div inside the TV container rather than directly to the body, and I've made sure the play button remains clickable by setting its z-index higher than the TV effects.
+The background image is now applied to a div inside the TV container rather than directly to the body, and I've made
+sure the play button remains clickable by setting its z-index higher than the TV effects.
 
-This should give your page that authentic 50s television look while maintaining all the functionality of your original design. You can adjust the intensity of any effect by modifying the opacity values or filter strengths in the CSS.
+This should give your page that authentic 50s television look while maintaining all the functionality of your original
+design. You can adjust the intensity of any effect by modifying the opacity values or filter strengths in the CSS.

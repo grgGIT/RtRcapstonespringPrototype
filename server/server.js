@@ -101,6 +101,15 @@ app.get('/getQuestions', (req, res) => {
   });
 });
 
+
+/// ENDPOINT TO GET RFID DATA
+app.get('/getRFID', (req, res) => {
+
+  // grab the RFID data from 
+});
+
+
+
 server.listen(port, () => console.log(`Server running on port ${port}`));
 
 /////

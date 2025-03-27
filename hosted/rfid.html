@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,9 +14,12 @@
         const minPlayers = 2;
         const maxPlayers = 4;
 
-        function generateRFID() {
-            return Math.floor(100000000000 + Math.random() * 900000000000); // 12-digit random number
-        }
+        // WE DO NOT NEED TO GENERATE AN RFID NUMBER
+        // THEY WILL BE GENERATED AND PROVIDED TO US FROM AN API
+
+        // function generateRFID() {
+        //     return Math.floor(100000000000 + Math.random() * 900000000000); // 12-digit random number
+        // }
 
         function handleButtonPress(message) {
             const match = message.match(/Button\s+F\s+pressed/i);
@@ -42,13 +46,15 @@
         }
 
         // WebSocket Connection
-        const ws = new WebSocket("ws://your-websocket-server");
+        const ws = new WebSocket("ws://");
         ws.onmessage = (event) => handleButtonPress(event.data);
     </script>
 </head>
+
 <body>
     <h2>RFID Registration</h2>
     <div id="player-list"></div>
     <button onclick="sendPlayerDataToGame()">Start Game</button>
 </body>
+
 </html>
