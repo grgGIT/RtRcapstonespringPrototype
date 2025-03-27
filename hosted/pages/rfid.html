@@ -49,7 +49,14 @@
 
             // Testing
             const id = uuidv4();
-            fetch("/RFIDscanner", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ id: id }) });
+            fetch("/RFIDscanner", {
+                method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(
+
+                    // the id is the RFID number
+                    {
+                        id: id,
+                    })
+            });
         }
 
         // WebSocket Connection
