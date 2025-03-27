@@ -17,6 +17,8 @@ const wss = new WebSocket.Server({ server });
 const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
+
+
 // New endpoint to receive button press POST requests from ESP32
 app.post('/button', (req, res) => {
   const { message } = req.body;
@@ -39,24 +41,24 @@ const originalsPath = path.join(__dirname, './questions.json');
 // Store connected clients
 let clients = [];
 
-// Serial port setup
-const serialPort = new SerialPort({
-  path: 'COM6',  // Replace with your actual serial port path
-  baudRate: 115200,
-});
+// // Serial port setup
+// const serialPort = new SerialPort({
+//   path: 'COM6',  // Replace with your actual serial port path
+//   baudRate: 115200,
+// });
 
-const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+// const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
 
 // Listen for incoming data on the serial port
-parser.on('data', (data) => {
-  console.log(`Received from ESP32: ${data}`);
-  // Broadcast the data to all WebSocket clients
-  clients.forEach(client => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
-    }
-  });
-});
+// parser.on('data', (data) => {
+//   console.log(`Received from ESP32: ${data}`);
+//   // Broadcast the data to all WebSocket clients
+//   clients.forEach(client => {
+//     if (client.readyState === WebSocket.OPEN) {
+//       client.send(data);
+//     }
+//   });
+// });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
@@ -103,14 +105,24 @@ app.get('/getQuestions', (req, res) => {
 
 
 /// ENDPOINT TO GET RFID DATA
-app.get('/getRFID', (req, res) => {
+app.post('/RFIDscanner', (req, res) => {
+  // GRAB THE RFID DATA FROM THE PROVIDED API
+  const id = req.body.id;
+  console.log(req.body);
 
-  // grab the RFID data from 
+  // Player has scanned in at this point
+  // Game should be kicked off here
+
+  console.log(`RFID Scanned: ${id}`);
+  res.status(200).json({ message: 'RFID scanned successfully' });
 });
 
 
 
 server.listen(port, () => console.log(`Server running on port ${port}`));
+
+
+
 
 /////
 //Example code beyond this point (from Geoff in capstone 1)
