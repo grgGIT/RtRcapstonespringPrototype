@@ -60,7 +60,7 @@
         }
 
         // WebSocket Connection
-        const ws = new WebSocket("ws://");
+        const ws = new WebSocket("ws://localhost:3000");
         ws.onmessage = (event) => handleButtonPress(event.data);
     </script>
 </head>
