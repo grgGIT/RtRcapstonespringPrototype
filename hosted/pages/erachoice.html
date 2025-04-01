@@ -332,8 +332,8 @@
     <script>
         document.querySelectorAll('.era-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const selectedEra = e.target.dataset.era;
-                console.log("Era selected:", selectedEra);
+                let selectedEra = e.target.dataset.era;
+
                 // Save selected era to sessionStorage
                 sessionStorage.setItem('selectedEra', selectedEra);
                 // Send selected era to server
@@ -384,7 +384,7 @@
                         buttonId = 'era-btn3';
                         break;
                     case 'D':
-                        buttonId = 'era-btn4';
+                        buttonId = 'era-btn3';
                         break;
                 }
                 if (buttonId) {

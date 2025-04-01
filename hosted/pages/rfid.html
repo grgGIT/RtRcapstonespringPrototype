@@ -40,12 +40,12 @@
         }
 
         function sendPlayerDataToGame() {
-            // if (playerCount >= minPlayers) {
-            //     localStorage.setItem("gameSession", JSON.stringify(gameSession));
-            //     window.location.href = "gamepage.html";
-            // } else {
-            //     alert("At least 2 players are required to start.");
-            // }
+            if (playerCount >= minPlayers) {
+                localStorage.setItem("gameSession", JSON.stringify(gameSession));
+                window.location.href = "gamepage.html";
+            } else {
+                alert("At least 2 players are required to start.");
+            }
 
             // Testing
             const id = uuidv4();

@@ -42,6 +42,8 @@ const originalsPath = path.join(__dirname, './questions.json');
 let clients = [];
 
 // // Serial port setup
+// UNCOMMENT THIS CODE TO ENABLE SERIAL PORT COMMUNICATION (CONNECT ARDUINO BUTTONS)
+
 // const serialPort = new SerialPort({
 //   path: 'COM6',  // Replace with your actual serial port path
 //   baudRate: 115200,
@@ -96,6 +98,7 @@ app.get('/getQuestions', (req, res) => {
     try {
       // Parse the JSON data and send the questions for the selected era
       const allQuestions = JSON.parse(data);
+      console.log(allQuestions.era[era]);
       res.json(allQuestions.era[era] || {});
     } catch (error) {
       res.status(500).json({ error: 'Failed to parse questions data' });

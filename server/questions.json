@@ -901,8 +901,23 @@
         },
         "ninetiesEra": {
             "easy": {
-                "q1": {},
-                "q2": {},
+                "q1": {
+                    "question": "Which popular quiz game show includes powerups such as phone-a-friend, 50/50, and ask the audience?",
+                    "options": [
+                        "Who Wants to Be a Millionaire?",
+                        "Jeopardy!",
+                        "Deal or No Deal",
+                        "The Price is Right"
+                    ],
+                    "correctAnswer": "Who Wants to Be a Millionaire?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Who Wants to Be a Millionaire? was a popular quiz show that first aired in the UK in 1998."
+                },
+                "q2": {
+                   
+                },
                 "q3": {},
                 "q4": {},
                 "q5": {},
