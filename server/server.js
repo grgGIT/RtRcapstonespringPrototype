@@ -113,10 +113,15 @@ app.post('/RFIDscanner', (req, res) => {
   const id = req.body.id;
   console.log(req.body);
 
+  // put the ids in an team array
+  const teamArray = [];
+  teamArray.push(id);
+
   // Player has scanned in at this point
+  // Run this at the start of the game
   // Game should be kicked off here
 
-  console.log(`RFID Scanned: ${id}`);
+  console.log(`RFID Scanned: ${id}, Team:${teamArray}`);
   res.status(200).json({ message: 'RFID scanned successfully' });
 });
 
