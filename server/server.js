@@ -36,7 +36,7 @@ app.post('/button', (req, res) => {
 
 
 // Path to the questions file
-const originalsPath = path.join(__dirname, './questions.json');
+const originalsPath = path.join(__dirname, './finalQuestions.json');
 
 // Store connected clients
 let clients = [];
@@ -121,7 +121,7 @@ app.post('/RFIDscanner', (req, res) => {
   // Run this at the start of the game
   // Game should be kicked off here
 
-  console.log(`RFID Scanned: ${id}, Team:${teamArray}`);
+  console.log(`RFID Scanned: ${id}, Team: 1:${teamArray}`);
   res.status(200).json({ message: 'RFID scanned successfully' });
 });
 

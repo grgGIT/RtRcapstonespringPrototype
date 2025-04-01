@@ -308,9 +308,9 @@
         <!-- keep era-btn as a class and then use the id's to edit the individual html's -->
         <div class="bubbles-container">
             <button class="era-btn" data-era="radioEra" id="era-btn1"> ------ 30s-50s ------ (Radio Era)</button>
-            <button class="era-btn" data-era="seventiesEra" id="era-btn2"> --- 60s-70s --- (Golden Era)</button>
+            <button class="era-btn" data-era="discoEra" id="era-btn2"> --- 60s-70s --- (Disco Era)</button>
             <!-- <button class="era-btn" data-era="eightiesEra" id="era-btn3">70s</button> -->
-            <button class="era-btn" data-era="modernEra" id="era-btn4"> -- 80s-2010s -- (Modern Era)</button>
+            <button class="era-btn" data-era="presentEra" id="era-btn4"> -- 80s-2010s -- (Present Era)</button>
         </div>
     </div>
     <!-- Sidebar for era information -->
@@ -381,10 +381,10 @@
                         buttonId = 'era-btn2';
                         break;
                     case 'C':
-                        buttonId = 'era-btn3';
+                        buttonId = 'era-btn4';
                         break;
                     case 'D':
-                        buttonId = 'era-btn3';
+                        buttonId = 'era-btn4';
                         break;
                 }
                 if (buttonId) {
@@ -438,7 +438,7 @@
                     .catch((error) => {
                         console.error('Error:', error);
                         // Still redirect even if there's an error
-                        window.location.href = 'gamepage.html';
+                       // window.location.href = 'gamepage.html';
                     });
             }
         });
