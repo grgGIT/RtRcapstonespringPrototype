@@ -41,26 +41,26 @@ const originalsPath = path.join(__dirname, './finalQuestions.json');
 // Store connected clients
 let clients = [];
 
-// // Serial port setup
-// UNCOMMENT THIS CODE TO ENABLE SERIAL PORT COMMUNICATION (CONNECT ARDUINO BUTTONS)
+// Serial port setup
 
-// const serialPort = new SerialPort({
-//   path: 'COM6',  // Replace with your actual serial port path
-//   baudRate: 115200,
-// });
 
-// const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+const serialPort = new SerialPort({
+  path: 'COM6',  // Replace with your actual serial port path
+  baudRate: 115200,
+});
 
-// Listen for incoming data on the serial port
-// parser.on('data', (data) => {
-//   console.log(`Received from ESP32: ${data}`);
-//   // Broadcast the data to all WebSocket clients
-//   clients.forEach(client => {
-//     if (client.readyState === WebSocket.OPEN) {
-//       client.send(data);
-//     }
-//   });
-// });
+const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+
+
+parser.on('data', (data) => {
+  console.log(`Received from ESP32: ${data}`);
+  // Broadcast the data to all WebSocket clients
+  clients.forEach(client => {
+    if (client.readyState === WebSocket.OPEN) {
+      client.send(data);
+    }
+  });
+});
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
