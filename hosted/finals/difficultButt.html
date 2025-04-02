@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difficulty</title>
+    <style>
+        body{
+            background-image: url("./internalAssets/spacebg.png");
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #difficultBorder {
+            width: 2000px;
+            height: 1200px;
+            background-color: #3F3667;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #SelDiff {
+            color: whitesmoke;
+            font-size: 200px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        #SelDiff2 {
+            color: whitesmoke;
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 1000px;
+        }
+#interior {
+            width: 700px;
+            background-color: #DBC6FF;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        /* Button icon */
+        #A {
+            height: 200px;
+            width: 200px;
+        }
+        #B {
+            height: 200px;
+            width: 200px;
+        }
+        #C {
+            height: 200px;
+            width: 200px;
+        }
+
+        #pz {
+            width: 900px;
+            height: 110px;
+            background-color: #3A2C5F;
+            color: white;
+            font-size: 50px;
+        }
+        #disco {
+            width: 750px;
+            height: 110px;
+            background-color: #3A2C5F;
+            color: white;
+            font-size: 50px;
+        }
+        #radio {
+            width: 750px;
+            height: 110px;
+            background-color: #3A2C5F;
+            color: white;
+            font-size: 50px;
+        }
+        /* #pzBorder {
+            width: 800px;
+            height: 140px;
+            background-color: green;
+            color: white;
+        }
+        #discoBorder {
+            width: 800px;
+            height: 140px;
+            background-color: green;
+            color: white;
+        }
+        #radioBorder {
+            width: 800px;
+            height: 140px;
+            background-color: green;
+            color: white;
+        } */
+        .difficulty-button {
+            width: 600px;
+            height: 80px;
+            background-color: #3A2C5F;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 3px solid transparent;
+        }
+
+        .difficulty-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            border-color: #FDB813;
+        }
+
+        /* Button icon */
+        .button-icon {
+            height: 60px;
+            width: 60px;
+        }
+
+        /* Button container */
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="difficultBorder">
+        <h1 id="SelDiff">Select Difficulty</h1>
+        <h3 id="SelDiff2">Each level has 21 questions from the gameshows of that era</h3>
+    
+        <div id="interior">
+            <div class="button-container">
+                <div class="difficulty-button" id="pz">
+                    <span id="pzTxt">Present</span>
+                    <img class="button-icon" src="./internalAssets/A_Button_icon.png" alt="A Button">
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div class="difficulty-button" id="disco">
+                    <span>Disco Era</span>
+                    <img class="button-icon" src="./internalAssets/B_Button_icon.png" alt="B Button">
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div class="difficulty-button" id="radio">
+                    <span>Radio Era</span>
+                    <img class="button-icon" src="./internalAssets/C_Button_icon.png" alt="C Button">
+                </div>
+            </div>
+        </div>
+    <!-- end of 'interior' -->
+    
+</div>
+<!-- end of 'difficultBorder' -->
+    
+</body>
+</html>

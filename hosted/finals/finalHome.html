@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Home Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        /* Floating animation keyframes */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        #logo {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin: 50px auto 0;
+            max-width: 80%;
+            animation: float 3s ease-in-out infinite; 
+        }
+        
+        #TitleText {
+            color: #FDB813;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 30px;
+        }
+        
+        #S img {
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <!-- space background -->
+    <video autoplay muted loop id="background-video">
+        <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- png for logo -->
+     <img id="logo" src="./internalAssets/Race_to_Riches.png" alt="Race_to_Riches Logo">
+    
+    <div id="TitleText">
+        <h1>Press <span id="S"> <img src="./internalAssets/S Button icon.png" alt=""></span> to play</h1>
+                                                                 
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wristbands</title>
+    <style>
+        body{
+            background-image: url(./internalAssets/spacebg.png);
+        }
+        #bigMssg{
+            width: 978px;
+            height: 213px;
+            font-size: 90px;
+            background-color: #2C1F65;
+            color: whitesmoke;
+
+        }
+        #smallTxt{
+            width: 1500px;
+            height: 370px;
+            font-size: 36px;
+            background-color: #3F3667;
+            color: whitesmoke;
+        }
+        #limitMessage{
+            color: #D56F4B;
+            font-weight: bolder;
+        }
+        #continueMssg{
+            color: white;
+        }
+        #SystemMessage{
+            font-size: 54px;
+            color: white;
+        }
+        #BigPlayerSection{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        /* #BigPlayerSection > div {
+            flex: 1;
+            text-align: center;
+            margin: 0 10px;
+        } */
+         #bt{
+            font-size: 200px;
+         }
+
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the button element
+            const button = document.getElementById('bt');
+            // Track which player is next to be activated
+            let currentPlayer = 1;
+            
+            // Add click event listener to the button
+            button.addEventListener('click', function() {
+                // Only proceed if we haven't activated all 4 players yet
+                if (currentPlayer <= 4) {
+                    // Get the current player's image element
+                    const playerImg = document.querySelector(`#Player${currentPlayer} img`);
+                    
+                    // Change the image source to the corresponding gif
+                    playerImg.src = `./internalAssets/Player-${currentPlayer}-activated-gif.gif`;
+                    
+                    // Update system message after at least one player has joined
+                    if (currentPlayer === 1) {
+                        document.getElementById('SystemMessage').textContent = 'Player 1 has joined! Press S to continue or add more players.';
+                        
+                        // Enable the S button and Continue arrow (replace with enabled versions)
+                        const sButton = document.querySelector('.wristband img:first-of-type');
+                        const continueArrow = document.querySelector('.wristband img:nth-of-type(2)');
+                        
+                        sButton.src = './internalAssets/S Button icon.png';
+                        continueArrow.src = './internalAssets/Continue arrow.png';
+                    } else {
+                        document.getElementById('SystemMessage').textContent = `Player ${currentPlayer} has joined! Press S to continue or add more players.`;
+                    }
+                    
+                    // Move to the next player
+                    currentPlayer++;
+                    
+                    // If we've reached the maximum number of players, disable the button
+                    if (currentPlayer > 4) {
+                        button.textContent = 'Maximum Players Reached';
+                        button.disabled = true;
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="wristband">
+        <!-- <h4 id="continueMssg">Press your <span><img src="./internalAssets/S Button icon.png" alt=""></span>button after ALL have scanned
+        <span></span></h4> -->
+        <img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection">
+        <img src="./internalAssets/Continue_disabled arrow.png" alt="Continue button is disabled until selection">
+        
+
+        <h1 id="bigMssg">Scan your RFID</h1>
+
+        <h2 id="smallTxt">Please scan your RIFD tag to join the game and begin.
+        <span><h2 id="limitMessage">Limit: 4 People</h2></span></h2>
+
+        <div id="BigPlayerSection">
+            <div id="Player1">
+                <img src="./internalAssets/Player 1 State Indicator.png" alt="">
+            </div>
+            <div id="Player2">Player 2
+                <img src="./internalAssets/Player 2 State Indicator.png" alt="">
+            </div>
+            <div id="Player3">Player 3
+                <img src="./internalAssets/Player 3 State Indicator.png" alt="">
+            </div>
+            <div id="Player4">Player 4
+                <img src="./internalAssets/Player 4 State Indicator.png" alt="">
+            </div>
+        </div>
+
+        <button id="bt">Click for RFID</button>
+
+        <h1 id="SystemMessage">At least ONE player must scan their wristband!</h1>
+    </div>
+</body>
+</html>
