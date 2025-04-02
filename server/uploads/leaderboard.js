@@ -22,10 +22,7 @@ const gameArchive = {
             new Date('2023-10-05T14:48:00.000Z'),
             [
                 // User ID and tracked score
-                { RFID: 12323, score: 3 },
-                { RFID: 5675675, score: 2 },
-                { RFID: 444444, score: 1 },
-                { RFID: 767567567, score: 3 },
+
             ]
         ),
         // Additional game logs can be added here

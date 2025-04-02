@@ -272,232 +272,7 @@
                 "q10": {}
             }
         },
-        "seventiesEra": {
-            "easy": {
-                "q1": {
-                    "question": "What game show required contestants to guess the price of various items?",
-                    "options": [
-                        "The Price is Right",
-                        "Let's Make a Deal",
-                        "Family Feud",
-                        "Wheel of Fortune"
-                    ],
-                    "correctAnswer": "The Price is Right",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q2": {
-                    "question": "Who was the original host of the game show, Family Feud, when it aired in the 1976?",
-                    "options": [
-                        "Richard Dawson",
-                        "Steve Harvey",
-                        "Louie Anderson",
-                        "Ray Combs"
-                    ],
-                    "correctAnswer": "Richard Dawson",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q3": {
-                    "question": "Which game show featured contestants in teams answering questions to climb a pyramid?",
-                    "options": [
-                        "The Price is Right",
-                        "Let's Make a Deal",
-                        "Family Feud",
-                        "The $10,000 Pyramid"
-                    ],
-                    "correctAnswer": "The $10,000 Pyramid",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
-            },
-            "medium": {
-                "q1": {
-                    "question": "Which show featured a celebrity panel that had to fill in the missing words of a sentence?",
-                    "options": [
-                        "Match Game",
-                        "Hollywood Squares",
-                        "The Newlywed Game",
-                        "The Gong Show"
-                    ],
-                    "correctAnswer": "Match Game",
-                    "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q2": {
-                    "question": "Who host the 1970s hit game show, Match Game?",
-                    "options": [
-                        "Gene Rayburn",
-                        "Bob Belcher",
-                        "Alex Trebek",
-                        "Monty Hall"
-                    ],
-                    "correctAnswer": "Gene Rayburn",
-                    "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
-            },
-            "hard": {
-                "q1": {
-                    "question": "Who hosted the famous game show, The $10,000 Pyramid'? ",
-                    "options": [
-                        "Bob Barker",
-                        "Dick Clark",
-                        "Clark Kent",
-                        "Rory Gutsy"
-                    ],
-                    "correctAnswer": "Dick Clark",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q2": {
-                    "question": "Which game show involved contestants guessing higher or lower using a deck of cards?",
-                    "options": [
-                        "Gambit",
-                        "Card Sharks",
-                        "Bet It All",
-                        "Poker Face"
-                    ],
-                    "correctAnswer": "Card Sharks",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": ""
-                },
-                "q3": {
-                    "question": "What was the first commercial product aired on the radio?",
-                    "options": [
-                        "Automobile",
-                        "Housing",
-                        "Clothing",
-                        "Biscuits"
-                    ],
-                    "correctAnswer": "Housing",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q4": {
-                    "question": "What is the name of the NBC theme sound that first showed up on the radio in 1929 and is still used today?",
-                    "options": [
-                        "Three Chords",
-                        "Four Chords",
-                        "Four Chimes",
-                        "Three Chimes"
-                    ],
-                    "correctAnswer": "Three Chimes",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q5": {
-                    "question": "When did the first radio quiz show air?",
-                    "options": [
-                        "1920",
-                        "1930",
-                        "1940",
-                        "1950"
-                    ],
-                    "correctAnswer": "1920",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q6": {
-                    "question": "When did the first AM radio broadcast air?",
-                    "options": [
-                        "1909",
-                        "1913",
-                        "1886",
-                        "1900"
-                    ],
-                    "correctAnswer": "1909",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q7": {
-                    "question": "What was the first commercial radio station called?",
-                    "options": [
-                        "RNBC",
-                        "WQHZ",
-                        "HGCB",
-                        "KDKA"
-                    ],
-                    "correctAnswer": "KDKA",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q8": {
-                    "question": "Which company developed the first radio network?",
-                    "options": [
-                        "AT&T",
-                        "Verizon",
-                        "Motorola",
-                        "Bell&Howell"
-                    ],
-                    "correctAnswer": "AT&T",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q9": {
-                    "question": "Which innovator created signals and transmissions through radio?",
-                    "options": [
-                        "Nikola Tesla",
-                        "Berghartt Radiola",
-                        "Heinrich Hertz",
-                        "James Watt"
-                    ],
-                    "correctAnswer": "Heinrich Hertz",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                },
-                "q10": {
-                    "question": "Where does the term 'Broadcasting' come from?",
-                    "options": [
-                        "Theatre",
-                        "Factories",
-                        "Agriculture",
-                        "Policing"
-                    ],
-                    "correctAnswer": "Agriculture",
-                    "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": ""
-                }
-            }
-        },
-        "eightiesEra": {
+        "discoEra": {
             "easy": {
                 "q1": {
                     "question": "What year did the game show, Countdown, first air?",
@@ -728,7 +503,7 @@
                     "additionalInfo": "Knightmare debuted in 1987 and was one of the first TV shows to use virtual reality-style graphics."
                 },
                 "q9": {
-                    "question": "What show featured contestants trying to match celebrities’ answers?",
+                    "question": "What show featured contestants trying to match celebrities\u2019 answers?",
                     "options": [
                         "Blankety Blank",
                         "Play Your Cards Right",
@@ -839,7 +614,7 @@
                     "points": 25,
                     "aiHint": "It was a favorite among students and involved a honeycomb board.",
                     "image": "",
-                    "additionalInfo": "Blockbusters’ 'Gold Run' was the climactic challenge where contestants navigated the board to win prizes."
+                    "additionalInfo": "Blockbusters\u2019 'Gold Run' was the climactic challenge where contestants navigated the board to win prizes."
                 },
                 "q7": {
                     "question": "Which 80s game show featured a giant board where players selected letters to form words?",
@@ -899,7 +674,7 @@
                 }
             }
         },
-        "ninetiesEra": {
+        "presentEra": {
             "easy": {
                 "q1": {
                     "question": "Which popular quiz game show includes powerups such as phone-a-friend, 50/50, and ask the audience?",
@@ -916,7 +691,7 @@
                     "additionalInfo": "Who Wants to Be a Millionaire? was a popular quiz show that first aired in the UK in 1998."
                 },
                 "q2": {
-                   "question": "Which game show often featured a vocal group called the 'Rockapellas'?",
+                    "question": "Which game show often featured a vocal group called the 'Rockapellas'?",
                     "options": [
                         "American Idol",
                         "Where in the World is Carmen Sandiego?",
@@ -1018,44 +793,6 @@
                     "image": "",
                     "additionalInfo": "Nick Arcade was a popular game show that aired from 1992 to 1993. The show used a 'blue screen' to create a virtual reality world for contestants to explore."
                 },
-                "q2": {},
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
-            },
-            "hard": {
-                "q1": {},
-                "q2": {},
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
-            }
-        },
-        "modernEra": {
-            "easy": {
-                "q1": {},
-                "q2": {},
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
-            },
-            "medium": {
-                "q1": {},
                 "q2": {},
                 "q3": {},
                 "q4": {},

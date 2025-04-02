@@ -16,10 +16,13 @@
 
         // WE DO NOT NEED TO GENERATE AN RFID NUMBER
         // THEY WILL BE GENERATED AND PROVIDED TO US FROM AN API
+        // THIS FUNCTION IS JUST FOR TESTING
+        function uuidv4() {
+            return "10000000-1000-4000-8000-100000000000".replace(/[018]/g, c =>
+                (+c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> +c / 4).toString(16)
+            );
+        }
 
-        // function generateRFID() {
-        //     return Math.floor(100000000000 + Math.random() * 900000000000); // 12-digit random number
-        // }
 
         function handleButtonPress(message) {
             const match = message.match(/Button\s+F\s+pressed/i);
@@ -43,10 +46,21 @@
             } else {
                 alert("At least 2 players are required to start.");
             }
+
+            // Testing
+            const id = uuidv4();
+            fetch("/RFIDscanner", {
+                method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(
+
+                    // the id is the RFID number
+                    {
+                        id: id,
+                    })
+            });
         }
 
         // WebSocket Connection
-        const ws = new WebSocket("ws://");
+        const ws = new WebSocket("ws://localhost:3000");
         ws.onmessage = (event) => handleButtonPress(event.data);
     </script>
 </head>

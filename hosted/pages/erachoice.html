@@ -134,16 +134,16 @@
 
         #era-btn1 {
             width: 662.683px;
-height: 101.844px;
-flex-shrink: 0;
+            height: 101.844px;
+            flex-shrink: 0;
             background: radial-gradient(circle at 30% 30%, #ff5e5e, #ff0000);
             animation-delay: 0s;
         }
 
         #era-btn2 {
             width: 718px;
-height: 139.649px;
-flex-shrink: 0;
+            height: 139.649px;
+            flex-shrink: 0;
             background: radial-gradient(circle at 30% 30%, #5e8eff, #004cff);
             animation-delay: 1s;
         }
@@ -155,12 +155,12 @@ flex-shrink: 0;
 
         #era-btn4 {
             width: 690px;
-height: 134.203px;
-flex-shrink: 0;
+            height: 134.203px;
+            flex-shrink: 0;
             background: radial-gradient(circle at 30% 30%, #ffff5e, #ffea00);
             color: #000;
             animation-delay: 3s;
-            
+
         }
 
         @keyframes float {
@@ -307,10 +307,10 @@ flex-shrink: 0;
         <h1>Choose Your Gameshow Era!</h1>
         <!-- keep era-btn as a class and then use the id's to edit the individual html's -->
         <div class="bubbles-container">
-            <button class="era-btn" data-era="radioEra" id="era-btn1"> ------ 30s-50s  ------  (Radio Era)</button>
-            <button class="era-btn" data-era="seventiesEra" id="era-btn2"> --- 60s-70s --- (Golden Era)</button>
+            <button class="era-btn" data-era="radioEra" id="era-btn1"> ------ 30s-50s ------ (Radio Era)</button>
+            <button class="era-btn" data-era="discoEra" id="era-btn2"> --- 60s-70s --- (Disco Era)</button>
             <!-- <button class="era-btn" data-era="eightiesEra" id="era-btn3">70s</button> -->
-            <button class="era-btn" data-era="modernEra" id="era-btn4"> -- 80s-2010s -- (Modern Era)</button>
+            <button class="era-btn" data-era="presentEra" id="era-btn4"> -- 80s-2010s -- (Present Era)</button>
         </div>
     </div>
     <!-- Sidebar for era information -->
@@ -332,8 +332,8 @@ flex-shrink: 0;
     <script>
         document.querySelectorAll('.era-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
-                const selectedEra = e.target.dataset.era;
-                console.log("Era selected:", selectedEra);
+                let selectedEra = e.target.dataset.era;
+
                 // Save selected era to sessionStorage
                 sessionStorage.setItem('selectedEra', selectedEra);
                 // Send selected era to server
@@ -381,7 +381,7 @@ flex-shrink: 0;
                         buttonId = 'era-btn2';
                         break;
                     case 'C':
-                        buttonId = 'era-btn3';
+                        buttonId = 'era-btn4';
                         break;
                     case 'D':
                         buttonId = 'era-btn4';
@@ -438,7 +438,7 @@ flex-shrink: 0;
                     .catch((error) => {
                         console.error('Error:', error);
                         // Still redirect even if there's an error
-                        window.location.href = 'gamepage.html';
+                       // window.location.href = 'gamepage.html';
                     });
             }
         });

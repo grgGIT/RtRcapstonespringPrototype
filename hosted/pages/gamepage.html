@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Race To Riches Quiz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #00b8ff;
+      --secondary-color: #ff00e6;
+      --background-dark: #0a0a1a;
+      --background-light: #1a1a3a;
+      --text-color: #e0e0ff;
+      --success-color: #00ff9d;
+      --error-color: #ff3860;
+      --warning-color: #ffdd57;
+      --info-color: #209cee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: var(--background-dark);
+      color: var(--text-color);
+      min-height: 100vh;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(128, 0, 128, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(0, 128, 128, 0.15) 0%, transparent 40%);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .game-container {
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(0, 184, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 0 0 10px var(--primary-color);
+      margin: 0;
+    }
+
+    .game-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .info-panel {
+      background-color: var(--background-light);
+      border-radius: 10px;
+      padding: 15px;
+      margin: 0 10px;
+      flex: 1;
+      border: 1px solid rgba(0, 184, 255, 0.3);
+      box-shadow: 0 0 15px rgba(0, 184, 255, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .info-label {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      opacity: 0.7;
+    }
+
+    .info-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .timer {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timer-circle {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary-color) 0%, transparent 0%);
+      transform: rotate(-90deg);
+    }
+
+    .timer-text {
+      position: relative;
+      font-size: 1.5rem;
+      font-weight: bold;
+      z-index: 1;
+    }
+
+    .question-container {
+      background-color: var(--background-light);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(0, 184, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 184, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .question-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+
+    .question {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      line-height: 1.4;
+      text-shadow: 0 0 5px rgba(0, 184, 255, 0.5);
+    }
+
+    .options {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .option {
+      border: none;
+      border-radius: 8px;
+      padding: 20px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .option::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .option:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+    }
+
+    .option:active {
+      transform: translateY(1px);
+    }
+
+    /* Styles when an option is marked as correct or incorrect */
+    .option.selected {
+      background-color: var(--success-color) !important;
+      color: #000 !important;
+      box-shadow: 0 0 20px var(--success-color);
+    }
+
+    .option.incorrect {
+      background-color: var(--error-color) !important;
+      color: white !important;
+      box-shadow: 0 0 20px var(--error-color);
+    }
+
+    /* Grey out other options once a selection is made */
+    .option.greyed {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      color: rgba(255, 255, 255, 0.5) !important;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .additional-info {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: rgba(32, 156, 238, 0.1);
+      border-radius: 8px;
+      display: none;
+      border-left: 4px solid var(--info-color);
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 25px;
+    }
+
+    button#next-btn {
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-family: 'Orbitron', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 184, 255, 0.3);
+    }
+
+    button#next-btn:hover:not(:disabled) {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 184, 255, 0.5);
+    }
+
+    button#next-btn:disabled {
+      background: linear-gradient(135deg, #666, #999);
+      cursor: not-allowed;
+      opacity: 0.7;
+      box-shadow: none;
+    }
+
+    /* Star background */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: twinkle 5s infinite;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Difficulty badge */
+    .difficulty-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .difficulty-easy {
+      background-color: rgba(0, 255, 157, 0.2);
+      color: var(--success-color);
+      border: 1px solid var(--success-color);
+    }
+
+    .difficulty-medium {
+      background-color: rgba(255, 221, 87, 0.2);
+      color: var(--warning-color);
+      border: 1px solid var(--warning-color);
+    }
+
+    .difficulty-hard {
+      background-color: rgba(255, 56, 96, 0.2);
+      color: var(--error-color);
+      border: 1px solid var(--error-color);
+    }
+
+    /* Glowing effect for buttons */
+    @keyframes glow {
+
+      0%,
+      100% {
+        box-shadow: 0 0 5px currentColor;
+      }
+
+      50% {
+        box-shadow: 0 0 20px currentColor;
+      }
+    }
+    /*  
+    .starcash {
+      position: absolute;
+      left: 76.7%;
+      right: 3.36%;
+      top: 0.17%;
+      bottom: 84.9%;
+    }
+
+    
+    .tvtimer {
+      position: absolute;
+      width: 624.28px;
+      height: 771px;
+      left: 5631px;
+      top: 1230px;
+    }
+
+    .questionbanner {
+      position: absolute;
+      width: 4284px;
+      height: 1640px;
+      left: 288.02px;
+      top: 215px;
+      transform: rotate(1.43deg);
+    }
+
+    .zilby {
+      position: absolute;
+      width: 588.07px;
+      height: 750.25px;
+      left: 4887.58px;
+      top: 711.79px;
+
+      background: url(zilby-05.png);
+      transform: matrix(1, -0.06, 0.08, 1, 0, 0);
+    }
+
+    .choicea {
+      position: absolute;
+      width: 2833px;
+      height: 574px;
+      left: calc(50% - 2833px/2 + 1369.5px);
+      top: 2125px;
+
+      background: #ECCCAD;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+
+    .choiceb {
+      position: absolute;
+      width: 2824px;
+      height: 574px;
+      left: calc(50% - 2824px/2 + 1469px);
+      top: 2125px;
+
+      background: #BEB472;
+
+    }
+
+    .choicec {
+      position: absolute;
+      width: 2833px;
+      height: 574px;
+      left: calc(50% - 2833px/2 + 1369.5px);
+      top: 3436px;
+
+      background: #ECCCAD;
+      transform: rotate(180deg);
+
+    }
+
+    .choiced {
+      position: absolute;
+      width: 2824px;
+      height: 574px;
+      left: calc(50% - 2824px/2 + 1469px);
+      top: 3436px;
+
+      background: #BEB472;
+      transform: matrix(1, 0, 0, -1, 0, 0);
+    }
+
+    .middlebit {
+      position: absolute;
+      width: 700px;
+      height: 580px;
+      left: 2818px;
+      top: 2565px;
+
+      background: #699215;
+      border-radius: 40px;
+
+    }
+
+    .innermiddlebit {
+      position: absolute;
+      width: 522px;
+      height: 426px;
+      left: 2907px;
+      top: 2637px;
+
+      background: #FFDFA4;
+      border-radius: 40px;
+    }
+
+    .darkstar {
+      position: absolute;
+      width: 401px;
+      height: 406px;
+      left: 2968px;
+      top: 2652px;
+
+      background: #DCAF5C;
+    }
+
+    .lightstar {
+      position: absolute;
+      width: 299px;
+      height: 240px;
+      left: 3018px;
+      top: 2735.72px;
+
+      background: #FFFFFF;
+      transform: rotate(-0.14deg);
+    }
+
+    .questionbubble {
+      position: absolute;
+      width: 658px;
+      height: 407px;
+      left: 5428px;
+      top: 487px;
+    }
+
+    .page {
+
+      position: relative;
+      width: 6336px;
+      height: 3636px;
+      left: 713px;
+      top: 6050px;
+    }
+
+    .greenrectangle {
+      position: absolute;
+      width: 6336px;
+      height: 1635px;
+      left: 0px;
+      top: 2000.76px;
+
+      background: #699215;
+      border-radius: 25px;
+
+    }
+
+    .beigerectangle {
+      position: absolute;
+      width: 6290px;
+      height: 4280px;
+      left: -238px;
+      top: 31px;
+
+      background: #EEDCBB;
+      border-radius: 25px;
+    }
+    */
+  </style>
+</head>
+
+<body>
+  <div class="stars" id="stars"></div>
+
+  <div class="game-container">
+    <div class="header">
+      <h1>Race to Riches</h1>
+    </div>
+   
+    <div class="background"></div>
+
+    <div class="game-info">
+      <div class="info-panel">
+        <div class="info-label">Score</div>
+        <div class="info-value" id="score">0</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-label">Question</div>
+        <div class="info-value" id="question-number">0/0</div>
+      </div>
+
+      <div class="info-panel">
+        <div class="info-label">Time</div>
+        <div class="timer">
+          <div class="timer-circle" id="timer-circle"></div>
+          <div class="timer-text" id="timer">3:00</div>
+        </div>
+      </div>
+    </div>
+    <div class="score">Score: <span id="score">0</span></div>
+    <div id="question-container" class="question-container">
+      <div id="question" class="question">Loading question...</div>
+      <div id="options" class="options">
+        <!-- Options will be populated by JavaScript -->
+      </div>
+      <div id="additional-info" class="additional-info"></div>
+    </div>
+    <div class="controls">
+      <button id="next-btn" disabled>Next Question</button>
+    </div>
+
+    <script>
+      // Color mapping for answer choices by letter
+      const colorMapping = {
+        A: { background: "#ff3860", text: "white" },
+        B: { background: "#209cee", text: "white" },
+        C: { background: "#00d1b2", text: "white" },
+        D: { background: "#ffdd57", text: "black" }
+      };
+
+      // Game state
+      let currentQuestions = [];
+      let currentQuestionIndex = 0;
+      let score = 0;
+      let selectedEra = sessionStorage.getItem('selectedEra') || 'radioEra';
+      let difficulty = 'easy'; // Default to easy questions
+      let totalQuestions = 0;
+      let timerInterval;
+      let timeLeft = 180; // 3 minutes in seconds
+
+      // DOM elements
+      const questionElement = document.getElementById('question');
+      const optionsElement = document.getElementById('options');
+      const additionalInfoElement = document.getElementById('additional-info');
+      const nextButton = document.getElementById('next-btn');
+      const scoreElement = document.getElementById('score');
+      const questionNumberElement = document.getElementById('question-number');
+      const timerElement = document.getElementById('timer');
+      const timerCircleElement = document.getElementById('timer-circle');
+      const difficultyBadgeElement = document.getElementById('difficulty-badge');
+
+      // WebSocket connection
+      const ws = new WebSocket('ws://localhost:3000');
+      ws.onmessage = (event) => {
+        const message = event.data;
+        console.log(`Button Pressed: "${message}"`);
+        handleButtonPress(message);
+      };
+
+      // Function to handle button press from WebSocket
+      function handleButtonPress(message) {
+        // Expected format: "Button A pressed"
+        const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+        if (match && match[1]) {
+          const letter = match[1].toUpperCase(); // e.g., "A"
+          const buttonId = `option-${letter}`;    // e.g., "option-A"
+          console.log(`Mapping message "${message}" to button ID "${buttonId}"`);
+          const button = document.getElementById(buttonId);
+          if (button) {
+            button.click();
+          } else {
+            console.log(`Button with ID ${buttonId} not found.`);
+          }
+        } else {
+          console.log(`Message does not match expected format: "${message}"`);
+        }
+      }
+
+      // Fetch questions from server
+      function fetchQuestions() {
+        fetch(`/getQuestions?era=${selectedEra}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log(data);
+            currentQuestions = data[difficulty];
+            displayQuestion();
+          })
+          .catch(error => {
+            console.error('Error fetching questions:', error);
+            questionElement.textContent = 'Error loading questions. Please try again.';
+          });
+      }
+
+      // Display current question
+      function displayQuestion() {
+        console.log("Displaying question...");
+        const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
+        console.log(questionObj);
+        questionElement.textContent = questionObj.question || questionObj.questions;
+        optionsElement.innerHTML = '';
+        // Create option buttons with IDs based on letter (A, B, C, D)
+        questionObj.options.forEach((option, index) => {
+          const optionButton = document.createElement('button');
+          optionButton.classList.add('option');
+          const letter = String.fromCharCode(65 + index); // A, B, C, D...
+          optionButton.id = `option-${letter}`;
+          optionButton.textContent = `${letter}: ${option}`;
+          // Set background and text color based on mapping
+          if (colorMapping[letter]) {
+            optionButton.style.backgroundColor = colorMapping[letter].background;
+            optionButton.style.color = colorMapping[letter].text;
+          }
+          optionButton.setAttribute('data-answer', questionObj.correctAnswer);
+          optionButton.addEventListener('click', () => selectOption(optionButton, option, questionObj.correctAnswer));
+          optionsElement.appendChild(optionButton);
+        });
+        additionalInfoElement.style.display = 'none';
+        nextButton.disabled = true;
+      }
+
+      // Handle option selection
+      function selectOption(optionElement, selectedOption, correctAnswer) {
+        console.log("Option Selected:", selectedOption);
+        console.log("Correct Answer:", correctAnswer);
+        // Disable all option buttons
+        document.querySelectorAll('.option').forEach(button => {
+          button.disabled = true;
+        });
+        // Check correctness and add class
+        if (selectedOption === correctAnswer) {
+          optionElement.classList.add('selected');
+          score += Object.values(currentQuestions)[currentQuestionIndex].points;
+          scoreElement.textContent = score;
+        } else {
+          optionElement.classList.add('incorrect');
+          document.querySelectorAll('.option').forEach(button => {
+            if (button.textContent.endsWith(correctAnswer)) {
+              button.classList.add('selected');
+            }
+          });
+        }
+        // Grey out all options that are not marked as selected/incorrect
+        document.querySelectorAll('.option').forEach(button => {
+          if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
+            button.classList.add('greyed');
+          }
+        });
+        const additionalInfo = Object.values(currentQuestions)[currentQuestionIndex].additionalInfo;
+        if (additionalInfo && additionalInfo.trim() !== '') {
+          additionalInfoElement.textContent = additionalInfo;
+          additionalInfoElement.style.display = 'block';
+        }
+        nextButton.disabled = false;
+      }
+
+      // Next question handler
+      nextButton.addEventListener('click', () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
+          questionElement.textContent = 'Game Over! Your final score is: ' + score;
+          optionsElement.innerHTML = '';
+          additionalInfoElement.style.display = 'none';
+          nextButton.disabled = true;
+        } else {
+          displayQuestion();
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', fetchQuestions);
+    </script>
+</body>
+
+</html>
