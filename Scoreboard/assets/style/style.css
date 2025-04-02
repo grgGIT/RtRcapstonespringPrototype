@@ -48,4 +48,68 @@ body{
     width: 963px;
     height: 100%;
     flex-shrink: 0;
+    z-index: 10;
+    position: relative;
+    left: 100px;
+}
+
+#leaderboard-title{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+#floorDiv{
+    background-color: #699215;
+    border-radius: 25px;
+    width: 100%;
+    height: 427px;
+    position:absolute;
+    min-height: 1px;
+    bottom: 10px;
+    z-index: 1;
+}
+
+#background{
+    position: absolute;
+    bottom: 0;
+}
+
+#playerScore{
+    background: #ABB768;
+    border-radius: 25px;
+    width: 650px;
+    height: 500px;
+    left: 1150px;
+    bottom: 600px;
+    position: relative;
+    z-index: 10;
+}
+
+#playerPositionImg{
+    width: 80%;
+    top: 100px;
+}
+#playerPosition{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#your-player-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 8rem;
+}
+
+#your-player-score{
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: absolute;
+    left: 15rem;
 }

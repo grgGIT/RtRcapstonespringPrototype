@@ -8,9 +8,8 @@
 </head>
 <body>
     <!-- png 1-4 of the players -->
-
     <div id="scoreboard_bg">
-        <h1>Leader Board</h1>
+        <h1 id="leaderboard-title">Leader Board</h1>
         <div class="scores">
             <div class="positionDiv">
                 <img  src="assets/img/highlightedScorePosition.png">
@@ -41,15 +40,19 @@
                 <p class="player-name">Player 4</p>
                 <p class="player-score">Score: 70</p>
             </div>
-            <div class="positionDiv">
-                <img  src="assets/img/unhighlightedScorePostion.png">
-                <h1 id ="first-place-img"> 5 </h1>
-                <p class="player-name">Player 4</p>
-                <p class="player-score">Score: 70</p>
-            </div>
+            
         </div>
     </div>
-    
+    <div id="playerScore">
+        <div id = "playerPosition">
+            <img id = "playerPositionImg" src = "assets/img/unhighlightedScorePostion.png">
+            <p id="your-player-name">Your Team</p>
+            <p id="your-player-score">Score 50</p>
+        </div>
+    </div>
+     <div id="floorDiv"></div>
+    <img id="background" src="assets/img/background.png" alt="background">
+
     
     <a href="index.html">Back to game</a>
     
