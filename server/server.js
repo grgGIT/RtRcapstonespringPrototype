@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 // send hosted assets
-const clientPath = path.join(__dirname, '..', 'hosted');
+const clientPath = path.join(__dirname, '..', 'hosted/pages');
 app.use(express.static(clientPath));
 app.use(express.json());
 
@@ -45,7 +45,7 @@ let clients = [];
 
 
 const serialPort = new SerialPort({
-  path: 'COM6',  // Replace with your actual serial port path
+  path: 'COM6',  
   baudRate: 115200,
 });
 
