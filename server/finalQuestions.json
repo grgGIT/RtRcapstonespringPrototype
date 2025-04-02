@@ -774,7 +774,9 @@
                     "image": "",
                     "additionalInfo": "GUTS was a popular game show that aired on Nickelodeon from 1992 to 1995. The show featured contestants competing in physical challenges to win prizes."
                 },
-                "q8": {},
+                "q8": {
+                   
+                },
                 "q9": {},
                 "q10": {}
             },
@@ -793,27 +795,274 @@
                     "image": "",
                     "additionalInfo": "Nick Arcade was a popular game show that aired from 1992 to 1993. The show used a 'blue screen' to create a virtual reality world for contestants to explore."
                 },
-                "q2": {},
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
+                "q2": {
+                    "question": "Which game show, co-created by Lebron James, includes a giant Plinko-style wall?",
+                    "options": [
+                        "The Wall",
+                        "Lebron James' The Wall",
+                        "The Climb",
+                        "The Ascent"
+                    ],
+                    "correctAnswer": "The Wall",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "The Wall is a game show that premiered on December 19, 2016, features a giant Plinko-style wall where contestants drop balls to win money."
+                },
+                "q3": {
+                    "question": "Which game show consists of two teams of four players guessing the answers to survey questions?",
+                    "options": [
+                        "Familial Feud",
+                        "American Idol",
+                        "The Weakest Link",
+                        "America Says"
+                    ],
+                    "correctAnswer": "America Says",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "America Says is an American game show that premiered on May 25, 2019."
+                },
+                "q4": {
+                    "question": "How many years did Alex Trebek host Jeopardy!?",
+                    "options": [
+                        "37 years",
+                        "49 years",
+                        "25 years",
+                        "31 years"
+                    ],
+                    "correctAnswer": "37 years",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Alex Trebek hosted Jeopardy! for 37 years, from 1984 until his passing in 2020."
+                },
+                "q5": {
+                    "question": "Guy Fieri hosted which game show that required contestants to complete challenges within a time limit?",
+                    "options": [
+                        "Minute to Win It",
+                        "Guy's Grocery Games",
+                        "30 seconds to Fame",
+                        "5 Second Rule"
+                    ],
+                    "correctAnswer": "Minute to Win It",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Minute to Win It is a game show that aired from 2010 to 2011, where contestants completed challenges using household items within a minute."
+                },
+                "q6": {
+                    "question": "Which TV studio is known for producing the game show, BrainSurge?",
+                    "options": [
+                        "Nickelodeon",
+                        "Disney Channel",
+                        "PBS",
+                        "ABC"
+                    ],
+                    "correctAnswer": "Nickelodeon",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "BrainSurge is a game show that aired on Nickelodeon from 2010 to 2011. The show featured contestants completing challenges to win prizes."
+                },
+                "q7": {
+                    "question": "Who hosted the game show, Deal or No Deal?",
+                    "options": [
+                        "Howie Mandel",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "Jeff Foxworthy"
+                    ],
+                    "correctAnswer": "Howie Mandel",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Howie Mandel hosted the game show Deal or No Deal, which aired from 2005 to 2019. The show featured contestants choosing briefcases to win cash prizes."
+                },
+                "q8": {
+                    "question": "What is the name of the woman who reveals the letters on Wheel of Fortune?",
+                    "options": [
+                        "Vanna White",
+                        "Vanessa Williams",
+                        "Maggie Smith",
+                        "Hannah White"
+                    ],
+                    "correctAnswer": "Vanna White",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Vanna White has been the letter-turner on Wheel of Fortune since 1982."
+                },
+                "q9": {
+                    "question": "Which game show takes place in a cab in New York City?",
+                    "options":[
+                        "Cash Cab",
+                        "Taxi Cab Contest",
+                        "Taxi Trivia",
+                        "Trivia Cab"
+                    ],
+                    "correctAnswer": "Cash Cab",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Cash Cab is a game show that takes place in a taxi cab in New York City, where unsuspecting passengers answer trivia questions to win cash prizes."
+                },
+                "q10": {
+                    "question": "Which game show required contestants to face their fears and complete challenges?",
+                    "options":[
+                        "Fear Factor",
+                        "Fear Fest",
+                        "Scaredy Cats",
+                        "Fearless"
+                    ],
+                    "correctAnswer": "Fear Factor",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Fear Factor is a game show that aired from 2001 to 2012, where contestants faced their fears and completed challenges to win cash prizes."
+                }
             },
             "hard": {
-                "q1": {},
-                "q2": {},
-                "q3": {},
-                "q4": {},
-                "q5": {},
-                "q6": {},
-                "q7": {},
-                "q8": {},
-                "q9": {},
-                "q10": {}
+                "q1": {
+                    "question": "Who is the host of the game show, Are You Smarter Than a 5th Grader?",
+                    "options": [
+                        "Jeff Foxworthy",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "Howie Mandel"
+                    ],
+                    "correctAnswer": "Jeff Foxworthy",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Jeff Foxworthy is a comedian and television host known for his role on Are You Smarter Than a 5th Grader?, which premiered in 2007."
+                },
+                "q2": {
+                    "question": "Which Family Feud host led the show two different times?",
+                    "options": [
+                        "Richard Dawson",
+                        "Steve Harvey",
+                        "Ray Combs",
+                        "Louie Anderson"
+                    ],
+                    "correctAnswer": "Richard Dawson",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Richard Dawson was the original host of Family Feud from 1976 to 1985 and returned for a second run from 1994 to 1995."
+                },
+                "q3": {
+                    "question": "Which game show paired contestants with their own 'classmate' to answer questions?",
+                    "options": [
+                        "Are You Smarter Than a 5th Grader?",
+                        "Are You Dumber Than a 4th Grader?",
+                        "The Weakest Link",
+                        "Test Against the Best"
+                    ],
+                    "correctAnswer": "Are You Smarter Than a 5th Grader?",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Are You Smarter Than a 5th Grader? features contestants answering questions from elementary school subjects, often with the help of a 'classmate' who is a fifth grader."
+                },
+                "q4": {
+                    "question": "Which game show hosted by Nicole Byer requires contestants to bake cakes and desserts?",
+                    "options": [
+                        "Nailed It!",
+                        "The Great British Bake Off",
+                        "Cupcake Wars",
+                        "Sugar Rush"
+                    ],
+                    "correctAnswer": "Nailed It!",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Nailed It! is a baking competition show that premiered on Netflix in 2018, hosted by Nicole Byer. The show features amateur bakers attempting to recreate elaborate cakes and desserts, often with humorous results."
+                },
+                "q5": {
+                    "question": "Who holds the record for the most wins on Jeopardy!?",
+                    "options": [
+                        "Ken Jennings",
+                        "James Holzhauer",
+                        "Alex Trebek",
+                        "Arthur Jennings"
+                    ],
+                    "correctAnswer": "Ken Jennings",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Ken Jennings holds the record for the most consecutive wins on Jeopardy!, with 74 wins in 2004."
+                },
+                "q6": {
+                    "question": "Which reality game show required contestants to clear a series of physically demanding obstacle courses?",
+                    "options":[
+                        "American Ninja Warrior",
+                        "Obstacle Conqueror",
+                        "Wipeout",
+                        "Ultimate Runner"
+                    ],
+                    "correctAnswer": "American Ninja Warrior",
+                    "points": 25,
+                    "aiHint": "Not the one with the giant red balls.",
+                    "image": "",
+                    "additionalInfo": "American Ninja Warrior is a reality competition show that features contestants worldwide attempting to complete challenging obstacle courses. The show premiered in 2009 and has become a popular franchise."
+                },
+                "q7": {
+                    "question": "Who hosted Fear Factor in the 2017 revival?",
+                    "options": [
+                        "Ludacris",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "The Rock"
+                    ],
+                    "correctAnswer": "Ludacris",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Ludacris hosted the 2017 revival of Fear Factor, which aired on MTV. The show featured contestants facing their fears and completing challenges to win cash prizes."
+                },
+                "q8": {
+                    "question": "Which musical game show , hosted by Jaime Foxx, required teams to guess the titles of songs played out loud?",
+                    "options": [
+                        "Name That Tune",
+                        "Beat Shazam",
+                        "Don't Forget the Lyrics!",
+                        "Song Association"
+                    ],
+                    "correctAnswer": "Shazam",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Beat Shazam is a musical game show that premiered in 2017, hosted by Jamie Foxx. The show features contestants guessing the titles of songs played out loud, competing against the music identification app Shazam."
+                },
+                "q9": {
+                    "quesiton": "Which game show, hosted by Ricky Gervais, had a panel of children answering questions backstage while the contestants answered on stage?",
+                    "options": [
+                        "Are You Smarter Than a 5th Grader?",
+                        "Child Support",
+                        "Kiddy Quiz",
+                        "Young Geniuses"
+                    ],
+                    "correctAnswer": "Child Support",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Child Support is a game show that aired from 2018 to 2019, featuring a panel of children answering questions backstage while the contestants answered on stage. The show was hosted by Ricky Gervais."
+                },
+                "q10": {
+                    "question": "Which game show requires contestants to avoid touching the ground while navigating a series of obstacles?",
+                    "options": [
+                        "Don't Fall",
+                        "American Ninja Warrior",
+                        "Ultimate Beastmaster",
+                        "The Floor is Lava"
+                    ],
+                    "correctAnswer": "The Floor is Lava",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "The Floor is Lava is a game show that premiered on Netflix in 2020, where contestants navigate a series of obstacles while avoiding touching the ground, which is filled with lava."
+                }
             }
         }
     }
