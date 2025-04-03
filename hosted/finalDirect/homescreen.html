@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Home Page</title>
+    <style>
+        @font-face{
+            font-family: 'Nutmeg';
+            src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            font-family: Nutmeg, sans-serif;
+        }
+        
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        /* Floating animation keyframes */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        #logo {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin: 50px auto 0;
+            /* max-width: 100%; */
+            width: 1500px;
+            animation: float 3.5s ease-in-out infinite; 
+            top: 20%;
+        }
+        
+        #TitleText {
+            color: #FDB813;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            margin-top: 30px;
+            top: 40%;
+            font-size: 40px;
+        }
+        
+        #S img {
+            width: 80px;
+            vertical-align: middle;
+        }
+    </style>
+    <script>
+        // WebSocket connection
+        const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
+
+        // Handle WebSocket message
+        ws.onmessage = (event) => {
+            const message = event.data;
+            console.log(`Button Pressed: "${message}"`);
+            handleButtonPress(message);
+        };
+
+        // Handle button press (Button F to navigate to playerJoin.html)
+        function handleButtonPress(message) {
+            // Expected format: "Button F pressed"
+            const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+            if (match && match[1]) {
+                const letter = match[1].toUpperCase();  // e.g., "F"
+                if (letter === 'E') {
+                    console.log('Button F pressed, navigating to playerJoin.html');
+                    window.location.href = 'playerJoin.html';  // Navigate to the playerJoin page
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- space background -->
+    <video autoplay muted loop id="background-video">
+        <source src="./internalAssets/stars_idle.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <!-- png for logo -->
+     <img id="logo" src="./internalAssets/Race_to_Riches.png" alt="Race_to_Riches Logo">
+    
+    <div id="TitleText">
+        <h1>Press <span id="S"> <img src="./internalAssets/S Button icon.png" alt=""></span> to play</h1>
+                                                                 
+    </div>
+</body>
+</html>

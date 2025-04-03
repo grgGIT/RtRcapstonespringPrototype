@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difficulty</title>
+    <style>
+        @font-face {
+            font-family: 'Nutmeg';
+            src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
+        }
+
+        body {
+            background-image: url("./internalAssets/spacebg.png");
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Nutmeg, sans-serif;
+        }
+
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        #difficultBorder {
+            width: 2000px;
+            height: 1200px;
+            background-color: #3F3667;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #SelDiff {
+            color: whitesmoke;
+            font-size: 200px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        #SelDiff2 {
+            color: whitesmoke;
+            font-size: 60px;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 1800px;
+        }
+
+        #interior {
+            width: 1100px;
+            /* Reduced width to fit better */
+            background-color: #dbc6ff8a;
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            /* Slightly reduced gap between buttons */
+            box-sizing: border-box;
+            /* Include padding in width calculation */
+        }
+
+        /* Button icon */
+        #A {
+            height: 200px;
+            width: 200px;
+        }
+
+        #B {
+            height: 200px;
+            width: 200px;
+        }
+
+        #C {
+            height: 200px;
+            width: 200px;
+        }
+
+        #pz {
+            background-image: url(./internalAssets/present.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-size: 50px;
+        }
+
+        #disco {
+            background-image: url(./internalAssets/disco.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-size: 50px;
+        }
+
+        #radio {
+            background-image: url(./internalAssets/radio.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-size: 50px;
+        }
+
+        .difficulty-button {
+            width: 900px;
+            /* Reduced width to fit within interior */
+            height: 150px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 3px solid transparent;
+            position: relative;
+        }
+
+        .difficulty-button:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            border-color: #FDB813;
+        }
+
+        /* Button text styling */
+        #pzTxt,
+        #dcTxt,
+        #rdTxt {
+            padding: 10px 60px 10px 10px;
+            /* Added right padding to make space for icon */
+            font-family: Nutmeg, sans-serif;
+            background-color: #3A2C5F;
+            color: whitesmoke;
+            font-size: 70px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            bottom: -5px;
+            position: relative;
+            /* For positioning the icon */
+        }
+
+        /* Button icon */
+        .button-icon {
+            width: 90px;
+            position: absolute;
+            right: -30%;
+            /* Position closer to the text */
+            top: 45%;
+            transform: translateY(-40%);
+        }
+
+        /* Button container - apply to all button containers */
+        .button-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <video autoplay muted loop id="background-video">
+        <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div id="difficultBorder">
+        <h1 id="SelDiff">Select Difficulty</h1>
+        <h3 id="SelDiff2">Each level has 21 questions from the gameshows of that era</h3>
+
+
+        <div id="interior">
+            <div class="button-container">
+                <div class="difficulty-button" id="pz">
+                    <button id="pzTxt">Present
+                        <img class="button-icon" src="./internalAssets/A_Button_icon.png" alt="A Button">
+                    </button>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div class="difficulty-button" id="disco">
+                    <button id="dcTxt">Disco Era
+                        <img class="button-icon" src="./internalAssets/B_Button_icon.png" alt="B Button">
+                    </button>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <div class="difficulty-button" id="radio">
+                    <button id="rdTxt">Radio Era
+                        <img class="button-icon" src="./internalAssets/C_Button_icon.png" alt="C Button">
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- end of 'interior' -->
+
+    </div>
+    <!-- end of 'difficultBorder' -->
+
+</body>
+
+<script>
+    // click event for the difficulty buttons
+    document.getElementById("pzTxt").onclick = function () {
+        window.location.href = "./quizPage_copy.html";
+    };
+</script>
+
+<script>
+    document.querySelectorAll('.era-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let selectedEra = e.target.dataset.era;
+
+            // Save selected era to sessionStorage
+            sessionStorage.setItem('selectedEra', selectedEra);
+            // Send selected era to server
+            fetch('/setSelectedEra', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ era: selectedEra }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Redirect to game page after successful update
+                    window.location.href = 'quizPage_copy.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Redirect even if there's an error
+                    window.location.href = 'quizPage_copy.html';
+                });
+        });
+    });
+
+    // WebSocket connection for Arduino input on eraChoice.html
+    const wsEra = new WebSocket('ws://localhost:3000');
+    wsEra.onopen = () => {
+        console.log('WebSocket connection for eraChoice opened.');
+    };
+
+    wsEra.onmessage = (event) => {
+        const message = event.data;
+        console.log(`Received WebSocket message on eraChoice.html: "${message}"`);
+
+        // Expected Arduino message format: "Button X pressed" where X is A, B, C, or D
+        const match = message.match(/Button\s+([A-D])\s+pressed/i);
+        if (match && match[1]) {
+            const letter = match[1].toUpperCase();
+            // Map the letter to the corresponding era button ID:
+            // Button A -> era-btn1, Button B -> era-btn2, Button C -> era-btn3, Button D -> era-btn4.
+            let buttonId;
+            switch (letter) {
+                case 'A':
+                    buttonId = 'era-btn1';
+                    break;
+                case 'B':
+                    buttonId = 'era-btn2';
+                    break;
+                case 'C':
+                    buttonId = 'era-btn4';
+                    break;
+                case 'D':
+                    buttonId = 'era-btn4';
+                    break;
+            }
+            if (buttonId) {
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    console.log(`Mapping "${message}" to button ID "${buttonId}".`);
+                    button.click();
+                } else {
+                    console.log(`Button with ID "${buttonId}" not found.`);
+                }
+            }
+        } else {
+            console.log('Message did not match expected era button pattern.');
+        }
+    };
+
+    wsEra.onerror = (error) => {
+        console.error('WebSocket error on eraChoice.html:', error);
+    };
+    // Close sidebar button
+    document.getElementById('close-sidebar').addEventListener('click', function () {
+        closeSidebar();
+    });
+
+    // Overlay click to close sidebar
+    document.getElementById('overlay').addEventListener('click', function () {
+        closeSidebar();
+    });
+
+    // Continue button
+    document.getElementById('continue-btn').addEventListener('click', function () {
+        const selectedEra = sessionStorage.getItem('currentEraSelection');
+        if (selectedEra) {
+            // Save to sessionStorage
+            sessionStorage.setItem('selectedEra', selectedEra);
+
+            // Also send to server
+            fetch('/setSelectedEra', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ era: selectedEra }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    // Redirect to game page after successful server update
+                    window.location.href = 'quizShow_copy.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // Still redirect even if there's an error
+                   // window.location.href = 'gamepage.html';
+                });
+        }
+    });
+
+    // Show sidebar with era information
+    function showSidebar(era) {
+        // Get era information
+        const info = eraInfo[era];
+        if (!info) return;
+
+        // Update sidebar title
+        document.getElementById('sidebar-title').textContent = info.title;
+
+        // Build HTML content for era information
+        let html = `
+            <p>${info.description}</p>
+            
+            <h3>Featured Shows</h3>
+            <ul>
+                ${info.shows.map(show => `<li>${show}</li>`).join('')}
+            </ul>
+            
+            <h3>Interesting Facts</h3>
+            <ul>
+                ${info.facts.map(fact => `<li>${fact}</li>`).join('')}
+            </ul>
+            
+            <h3>Subjects Covered</h3>
+            <ul>
+                ${info.subjects.map(subject => `<li>${subject}</li>`).join('')}
+            </ul>
+        `;
+
+        // Insert HTML into sidebar
+        document.getElementById('era-info').innerHTML = html;
+
+        // Show sidebar and overlay
+        document.getElementById('sidebar').classList.add('active');
+        document.getElementById('overlay').classList.add('active');
+    }
+
+    // Close sidebar
+    function closeSidebar() {
+        document.getElementById('sidebar').classList.remove('active');
+        document.getElementById('overlay').classList.remove('active');
+    };
+    // Generate stars for the background
+    function generateStars() {
+        const stars = document.getElementById('stars');
+        const count = 200;
+
+        for (let i = 0; i < count; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+
+            // Random size
+            const size = Math.random() * 3;
+
+            // Random animation delay
+            const delay = Math.random() * 5;
+
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.animationDelay = `${delay}s`;
+
+            stars.appendChild(star);
+        }
+    }
+
+    // Era information content
+    const eraInfo = {
+        radioEra: {
+            title: "Radio Era (1920s-1950s)",
+            description: "The golden age of radio broadcasting that shaped modern entertainment and music distribution.",
+            shows: [
+                "The Grand Ole Opry",
+                "Your Hit Parade",
+                "The National Barn Dance",
+                "Arthur Godfrey's Talent Scouts"
+            ],
+            facts: [
+                "Radio became the first mass electronic medium, reaching millions of homes simultaneously",
+                "Artists like Frank Sinatra, Bing Crosby, and Ella Fitzgerald rose to fame during this era",
+                "The first commercial radio station, KDKA, began broadcasting in 1920",
+                "Radio dramas like 'War of the Worlds' created nationwide sensations"
+            ],
+            subjects: [
+                "Big Band & Swing",
+                "Early Country & Western",
+                "Jazz & Blues pioneers",
+                "Early Rock & Roll foundations"
+            ]
+        },
+        seventiesEra: {
+            title: "The 60s Era",
+            description: "A revolutionary decade that transformed music, culture, and society with new sounds and messages.",
+            shows: [
+                "American Bandstand",
+                "The Ed Sullivan Show",
+                "Shindig!",
+                "Hullabaloo"
+            ],
+            facts: [
+                "The British Invasion led by The Beatles changed American music forever",
+                "Woodstock (1969) became the defining music festival of the generation",
+                "Motown Records created the 'Motown Sound' that crossed racial barriers",
+                "Psychedelic rock emerged alongside the counterculture movement"
+            ],
+            subjects: [
+                "Folk & Protest Music",
+                "British Invasion Bands",
+                "Motown & Soul",
+                "Psychedelic Rock"
+            ]
+        },
+        eightiesEra: {
+            title: "The 70s Era",
+            description: "The decade of musical experimentation, disco, and the rise of album-oriented rock.",
+            shows: [
+                "Soul Train",
+                "Don Kirshner's Rock Concert",
+                "The Midnight Special",
+                "Top of the Pops"
+            ],
+            facts: [
+                "Disco dominated the charts and nightlife, especially after 'Saturday Night Fever'",
+                "Progressive rock bands created complex, conceptual albums",
+                "Punk rock emerged as a reaction against mainstream music",
+                "The Singer-songwriter movement brought introspective lyrics to popular music"
+            ],
+            subjects: [
+                "Disco & Dance Music",
+                "Progressive & Art Rock",
+                "Early Punk & New Wave",
+                "Singer-Songwriters"
+            ]
+        },
+        modernEra: {
+            title: "Modern Era (80s-2010s)",
+            description: "From MTV to streaming services, this era saw rapid technological changes in how music is created and consumed.",
+            shows: [
+                "MTV Video Music Awards",
+                "American Idol",
+                "The Voice",
+                "Saturday Night Live musical performances"
+            ],
+            facts: [
+                "MTV launched in 1981, making music videos essential for artists' success",
+                "Hip-hop evolved from underground movement to global cultural force",
+                "Digital technology transformed production, distribution, and consumption of music",
+                "The internet and streaming services revolutionized how people discover music"
+            ],
+            subjects: [
+                "80s New Wave & Synthpop",
+                "90s Grunge & Alternative",
+                "Hip-Hop Evolution",
+                "2000s Pop & Electronic Music"
+            ]
+        }
+    };
+</script>
+
+</html>
