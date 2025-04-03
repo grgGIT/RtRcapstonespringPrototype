@@ -34,7 +34,6 @@ body{
 
 .player-name{
     font-size: 64px;
-    font-weight: bold;
     position: absolute;
     left: 10rem;
     color: #fff;
@@ -43,6 +42,24 @@ body{
 
 .player-score{
     font-size: 64px;
+    
+    position: absolute;
+    left: 35rem;
+    color: #fff;
+    padding-left: 5rem;
+}
+
+#first-place-player-name{
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    left: 10rem;
+    color: #fff;
+    padding-left: 8rem;
+}
+
+#first-place-player-score{
+    font-size: 80px;
     font-weight: bold;
     position: absolute;
     left: 35rem;
