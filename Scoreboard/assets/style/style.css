@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 3rem;
 }
 
 #position2{
@@ -27,6 +28,7 @@ body{
     position: absolute;
     left: 5rem;
     color: #fff;
+    padding-left: 5rem;
 }
 
 
@@ -36,6 +38,7 @@ body{
     position: absolute;
     left: 10rem;
     color: #fff;
+    padding-left: 5rem;
 }
 
 .player-score{
@@ -44,6 +47,21 @@ body{
     position: absolute;
     left: 35rem;
     color: #fff;
+    padding-left: 12rem;
+}
+
+#individual-playerPlace{
+    position: absolute;
+
+    color: #fff;
+    padding-left: 2rem;
+}
+
+#playerPlace{
+    position: absolute;
+  
+    color: #fff;
+    padding-left: 6rem;
 }
 
 #scoreboard_bg{
@@ -54,7 +72,9 @@ body{
     flex-shrink: 0;
     z-index: 10;
     position: relative;
-    left: 100px;
+    left: 20rem;
+    top: 10rem;
+    padding: 20px;
 }
 
 #leaderboard-title{
@@ -80,6 +100,7 @@ body{
 #background{
     position: absolute;
     bottom: 0;
+    height: 100%;
 }
 
 #playerScore{
@@ -87,8 +108,8 @@ body{
     border-radius: 25px;
     width: 650px;
     height: 400px;
-    left: 1150px;
-    bottom: 600px;
+    left: 100rem;
+    bottom: 550px;
     position: relative;
     z-index: 10;
     color: #fff;
@@ -122,11 +143,6 @@ body{
     left: 32rem;
 }
 
-#playerPlace{
-    position: absolute;
-    left: 6rem;
-    color: #fff;
-}
 
 #playerScoreTitle{
     font-size: 2rem;
