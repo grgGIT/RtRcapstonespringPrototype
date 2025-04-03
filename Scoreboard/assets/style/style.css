@@ -33,33 +33,33 @@ body{
 
 
 .player-name{
-    font-size: 1.5rem;
+    font-size: 64px;
     font-weight: bold;
     position: absolute;
     left: 10rem;
     color: #fff;
-    padding-left: 5rem;
+    padding-left: 8rem;
 }
 
 .player-score{
-    font-size: 1.5rem;
+    font-size: 64px;
     font-weight: bold;
     position: absolute;
     left: 35rem;
     color: #fff;
-    padding-left: 12rem;
+    padding-left: 5rem;
 }
 
 #individual-playerPlace{
     position: absolute;
-
+    font-size: 36px;
     color: #fff;
-    padding-left: 2rem;
+    padding-left: 4rem;
 }
 
 #playerPlace{
-    position: absolute;
-  
+    position: absolute; 
+    font-size: 64px;
     color: #fff;
     padding-left: 6rem;
 }
@@ -88,8 +88,7 @@ body{
 
 #floorDiv{
     background-color: #699215;
-    border-radius: 25px;
-    width: 100%;
+    width: 99%;
     height: 427px;
     position:absolute;
     min-height: 1px;
@@ -130,17 +129,17 @@ body{
 }
 
 #your-player-name{
-    font-size: 1.5rem;
+    font-size: 36px;
     font-weight: bold;
     position: absolute;
-    left: 10rem;
+    left: 15rem;
 }
 
 #your-player-score{
-    font-size: 1.5rem;
+    font-size: 36px;
     font-weight: bold;
     position: absolute;
-    left: 32rem;
+    left: 30rem;
 }
 
 
