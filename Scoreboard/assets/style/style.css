@@ -12,6 +12,7 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 3rem;
 }
 
 #position2{
@@ -27,23 +28,40 @@ body{
     position: absolute;
     left: 5rem;
     color: #fff;
+    padding-left: 5rem;
 }
 
 
 .player-name{
-    font-size: 1.5rem;
+    font-size: 64px;
     font-weight: bold;
     position: absolute;
     left: 10rem;
     color: #fff;
+    padding-left: 8rem;
 }
 
 .player-score{
-    font-size: 1.5rem;
+    font-size: 64px;
     font-weight: bold;
     position: absolute;
     left: 35rem;
     color: #fff;
+    padding-left: 5rem;
+}
+
+#individual-playerPlace{
+    position: absolute;
+    font-size: 36px;
+    color: #fff;
+    padding-left: 4rem;
+}
+
+#playerPlace{
+    position: absolute; 
+    font-size: 64px;
+    color: #fff;
+    padding-left: 6rem;
 }
 
 #scoreboard_bg{
@@ -54,7 +72,9 @@ body{
     flex-shrink: 0;
     z-index: 10;
     position: relative;
-    left: 100px;
+    left: 20rem;
+    top: 10rem;
+    padding: 20px;
 }
 
 #leaderboard-title{
@@ -68,8 +88,7 @@ body{
 
 #floorDiv{
     background-color: #699215;
-    border-radius: 25px;
-    width: 100%;
+    width: 99%;
     height: 427px;
     position:absolute;
     min-height: 1px;
@@ -80,6 +99,7 @@ body{
 #background{
     position: absolute;
     bottom: 0;
+    height: 100%;
 }
 
 #playerScore{
@@ -87,8 +107,8 @@ body{
     border-radius: 25px;
     width: 650px;
     height: 400px;
-    left: 1150px;
-    bottom: 600px;
+    left: 100rem;
+    bottom: 550px;
     position: relative;
     z-index: 10;
     color: #fff;
@@ -109,24 +129,19 @@ body{
 }
 
 #your-player-name{
-    font-size: 1.5rem;
+    font-size: 36px;
     font-weight: bold;
     position: absolute;
-    left: 10rem;
+    left: 15rem;
 }
 
 #your-player-score{
-    font-size: 1.5rem;
+    font-size: 36px;
     font-weight: bold;
     position: absolute;
-    left: 32rem;
+    left: 30rem;
 }
 
-#playerPlace{
-    position: absolute;
-    left: 6rem;
-    color: #fff;
-}
 
 #playerScoreTitle{
     font-size: 2rem;
