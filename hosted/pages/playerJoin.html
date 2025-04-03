@@ -5,50 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wristbands</title>
     <style>
-        body{
-            background-image: url(./internalAssets/spacebg.png);
+        @font-face{
+            font-family: 'Nutmeg';
+            src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
         }
-        #bigMssg{
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            font-family: Nutmeg, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+        
+        .wristband {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 1500px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #bigMssg {
             width: 978px;
-            height: 213px;
+            height: auto;
             font-size: 90px;
             background-color: #2C1F65;
             color: whitesmoke;
-
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
         }
-        #smallTxt{
-            width: 1500px;
-            height: 370px;
+        
+        #smallTxt {
+            width: 100%;
+            max-width: 1500px;
+            height: auto;
             font-size: 36px;
             background-color: #3F3667;
             color: whitesmoke;
+            margin: 20px 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
-        #limitMessage{
+        
+        #limitMessage {
             color: #D56F4B;
             font-weight: bolder;
+            margin: 10px 0;
         }
-        #continueMssg{
+        
+        #continueMssg {
             color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
         }
-        #SystemMessage{
+        
+        #continueMssg img {
+            margin: 0 10px;
+            vertical-align: middle;
+        }
+        
+        #SystemMessage {
             font-size: 54px;
             color: white;
+            text-align: center;
+            margin: 20px 0;
         }
-        #BigPlayerSection{
+        
+        #BigPlayerSection {
             display: flex;
+            justify-content: center;
             align-items: center;
             width: 100%;
             margin: 20px 0;
+            gap: 20px;
         }
-        /* #BigPlayerSection > div {
-            flex: 1;
-            text-align: center;
+        
+        #BigPlayerSection > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 0 10px;
-        } */
-         #bt{
-            font-size: 200px;
-         }
-
+            font-size: 24px;
+            color: white;
+        }
+        
+        #BigPlayerSection img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+        }
+        
+        #bt {
+            font-size: 50px;
+            padding: 15px 30px;
+            margin: 20px 0;
+            background-color: #D56F4B;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        #bt:hover {
+            background-color: #c45a36;
+            transform: scale(1.05);
+        }
+        
+        #bt:disabled {
+            background-color: #7a7a7a;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .button-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .button-container img {
+           
+            height: 120px;
+            width: auto;
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -57,6 +169,31 @@
             // Track which player is next to be activated
             let currentPlayer = 1;
             
+            // Function to reset the player states
+            function resetPlayers() {
+                currentPlayer = 1;
+                button.textContent = 'Click for RFID';
+                button.disabled = false;
+                
+                // Reset all player images to their default state
+                for (let i = 1; i <= 4; i++) {
+                    const playerImg = document.querySelector(`#Player${i} img`);
+                    playerImg.src = `./internalAssets/Player ${i} State Indicator.png`;
+                    // Force image reload by appending a timestamp
+                    playerImg.src = playerImg.src + '?t=' + new Date().getTime();
+                }
+                
+                // Reset system message
+                document.getElementById('SystemMessage').textContent = 'At least ONE player must scan their wristband!';
+                
+                // Disable the S button and Continue arrow
+                const sButton = document.querySelector('.button-container img:first-of-type');
+                const continueArrow = document.querySelector('.button-container img:nth-of-type(2)');
+                
+                sButton.src = './internalAssets/S_disabled Button icon.png';
+                continueArrow.src = './internalAssets/Continue_disabled arrow.png';
+            }
+            
             // Add click event listener to the button
             button.addEventListener('click', function() {
                 // Only proceed if we haven't activated all 4 players yet
@@ -64,16 +201,17 @@
                     // Get the current player's image element
                     const playerImg = document.querySelector(`#Player${currentPlayer} img`);
                     
-                    // Change the image source to the corresponding gif
-                    playerImg.src = `./internalAssets/Player-${currentPlayer}-activated-gif.gif`;
+                    // Change the image source to the corresponding gif with timestamp to prevent caching
+                    const timestamp = new Date().getTime();
+                    playerImg.src = `./internalAssets/Player-${currentPlayer}-activated-gif.gif?t=${timestamp}`;
                     
                     // Update system message after at least one player has joined
                     if (currentPlayer === 1) {
                         document.getElementById('SystemMessage').textContent = 'Player 1 has joined! Press S to continue or add more players.';
                         
                         // Enable the S button and Continue arrow (replace with enabled versions)
-                        const sButton = document.querySelector('.wristband img:first-of-type');
-                        const continueArrow = document.querySelector('.wristband img:nth-of-type(2)');
+                        const sButton = document.querySelector('.button-container img:first-of-type');
+                        const continueArrow = document.querySelector('.button-container img:nth-of-type(2)');
                         
                         sButton.src = './internalAssets/S Button icon.png';
                         continueArrow.src = './internalAssets/Continue arrow.png';
@@ -91,40 +229,72 @@
                     }
                 }
             });
+            
+            // Add event listener for page reload
+            window.addEventListener('beforeunload', function() {
+                // Reset player states when page is about to be reloaded
+                resetPlayers();
+            });
+            
+            // Reset on initial load
+            resetPlayers();
+            
+            // Add keyboard event listener for S key
+            document.addEventListener('keydown', function(event) {
+                // Check if at least one player has joined (currentPlayer > 1)
+                if (event.key.toLowerCase() === 's' && currentPlayer > 1) {
+                    // Navigate to the next page or perform continue action
+                    // For now, just alert
+                    alert('Continuing to next page with ' + (currentPlayer - 1) + ' players');
+                    // You would typically redirect here:
+                    // window.location.href = 'nextPage.html';
+                }
+            });
         });
     </script>
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+        <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
     <div class="wristband">
-        <!-- <h4 id="continueMssg">Press your <span><img src="./internalAssets/S Button icon.png" alt=""></span>button after ALL have scanned
-        <span></span></h4> -->
-        <img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection">
-        <img src="./internalAssets/Continue_disabled arrow.png" alt="Continue button is disabled until selection">
         
 
         <h1 id="bigMssg">Scan your RFID</h1>
 
-        <h2 id="smallTxt">Please scan your RIFD tag to join the game and begin.
-        <span><h2 id="limitMessage">Limit: 4 People</h2></span></h2>
+        <div id="smallTxt">
+            <p>Please scan your RFID tag to join the game and begin.</p>
+            <h2 id="limitMessage">Limit: 4 People</h2>
+        </div>
 
         <div id="BigPlayerSection">
             <div id="Player1">
-                <img src="./internalAssets/Player 1 State Indicator.png" alt="">
+                <span>Player 1</span>
+                <img src="./internalAssets/Player 1 State Indicator.png" alt="Player 1">
             </div>
-            <div id="Player2">Player 2
-                <img src="./internalAssets/Player 2 State Indicator.png" alt="">
+            <div id="Player2">
+                <span>Player 2</span>
+                <img src="./internalAssets/Player 2 State Indicator.png" alt="Player 2">
             </div>
-            <div id="Player3">Player 3
-                <img src="./internalAssets/Player 3 State Indicator.png" alt="">
+            <div id="Player3">
+                <span>Player 3</span>
+                <img src="./internalAssets/Player 3 State Indicator.png" alt="Player 3">
             </div>
-            <div id="Player4">Player 4
-                <img src="./internalAssets/Player 4 State Indicator.png" alt="">
+            <div id="Player4">
+                <span>Player 4</span>
+                <img src="./internalAssets/Player 4 State Indicator.png" alt="Player 4">
             </div>
         </div>
 
         <button id="bt">Click for RFID</button>
 
         <h1 id="SystemMessage">At least ONE player must scan their wristband!</h1>
+
+        <div class="button-container">
+            <img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection">
+            <img src="./internalAssets/Continue_disabled arrow.png" alt="Continue button is disabled until selection">
+        </div>
     </div>
 </body>
 </html>
