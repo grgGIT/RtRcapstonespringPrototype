@@ -120,9 +120,9 @@
 
     #timer {
       position: absolute;
-      left: 5%;
-      bottom: 23%;
-      width: 350px;
+      left: 87%;
+      bottom: 38%;
+      width: 250px;
       text-align: center;
     }
 
@@ -157,8 +157,9 @@
       font-family: Nutmeg, sans-serif;
       margin: 10px;
       padding: 15px 30px;
-      font-size: 60px;
+      font-size: 50px;
       border-radius: 10px;
+      align-content: center;
       border: none;
       /* background-color: #ECCCAD; */
       cursor: pointer;
@@ -192,30 +193,30 @@
     #A_Button {
       width: 90px;
       position: relative;
-      right: 65%;
-      bottom: 30%;
+      right: 77%;
+      bottom: 65%;
     }
 
     #B_Button {
       width: 90px;
       position: relative;
-      left: 40%;
-      bottom: 30%;
+      left: 30%;
+      bottom: 40%;
 
     }
 
     #C_Button {
       width: 90px;
       position: relative;
-      right: 65%;
-      bottom: 30%;
+      right: 85%;
+      bottom: 40%;
 
     }
 
     #D_Button {
       width: 90px;
       position: relative;
-      left: 40%;
+      left: 16%;
       bottom: 30%;
 
     }
@@ -223,8 +224,9 @@
     /* Correct answer style */
     .selected {
       background-color: #28a745;
+      opacity: 100%;
       /* Green */
-      color: white;
+      color: green;
       border: 2px solid #155724;
       box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
     }
@@ -232,8 +234,9 @@
     /* Incorrect answer style */
     .incorrect {
       background-color: #dc3545;
+      opacity: 60%;
       /* Red */
-      color: white;
+      color: black;
       border: 2px solid #721c24;
       box-shadow: 0 0 10px rgba(220, 53, 69, 0.7);
     }
@@ -306,7 +309,7 @@
     let currentQuestions = [];
     let currentQuestionIndex = 0;
     let score = 0;
-    let selectedEra = sessionStorage.getItem('selectedEra') || 'radioEra';
+    let selectedEra = sessionStorage.getItem('selectedEra') || 'discoEra';
     let difficulty = 'easy'; // Default to easy questions
 
     // DOM elements
@@ -376,7 +379,7 @@
         button.classList.add('quiz-button');
         const letter = String.fromCharCode(65 + index); // A, B, C, D...
         button.id = `option${letter}`;
-        button.textContent = `Option ${letter}: ${option}`;
+        button.textContent = ` ${option}`;
         button.setAttribute('data-answer', questionObj.correctAnswer);
 
         // Option button image
@@ -399,50 +402,50 @@
 
     // Handle option selection
 
-function selectOption(optionElement, selectedOption, correctAnswer) {
-    // Disable all option buttons
-    document.querySelectorAll('.quiz-button').forEach(button => {
+    function selectOption(optionElement, selectedOption, correctAnswer) {
+      // Disable all option buttons
+      document.querySelectorAll('.quiz-button').forEach(button => {
         button.disabled = true;
-    });
+      });
 
-    // Check correctness and update score
-    if (selectedOption === correctAnswer) {
+      // Check correctness and update score
+      if (selectedOption === correctAnswer) {
         optionElement.classList.add('selected'); // Correct answer
         score += Object.values(currentQuestions)[currentQuestionIndex].points;
-    } else {
+      } else {
         optionElement.classList.add('incorrect'); // Incorrect answer
         document.querySelectorAll('.quiz-button').forEach(button => {
-            if (button.textContent.includes(correctAnswer)) {
-                button.classList.add('selected'); // Mark the correct option
-            }
+          if (button.textContent.includes(correctAnswer)) {
+            button.classList.add('selected'); // Mark the correct option
+          }
         });
-    }
+      }
 
-    // Grey out all options that are not marked as selected/incorrect
-    document.querySelectorAll('.quiz-button').forEach(button => {
+      // Grey out all options that are not marked as selected/incorrect
+      document.querySelectorAll('.quiz-button').forEach(button => {
         if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
-            button.classList.add('greyed');
+          button.classList.add('greyed');
         }
-    });
+      });
 
-    // Show additional info (if any)
-    const additionalInfo = optionElement.getAttribute('data-answer') === correctAnswer ? "Correct answer!" : "Incorrect answer!";
-    hintBubbleElement.textContent = additionalInfo;
+      // Show additional info (if any)
+      const additionalInfo = optionElement.getAttribute('data-answer') === correctAnswer ? "Correct answer!" : "Incorrect answer!";
+      hintBubbleElement.textContent = additionalInfo;
 
-    // Update the money score
-    moneyElement.textContent = `$${score}`;
+      // Update the money score
+      moneyElement.textContent = `$${score}`;
 
-    // Move to the next question automatically after 2 seconds
-    setTimeout(() => {
+      // Move to the next question automatically after 2 seconds
+      setTimeout(() => {
         currentQuestionIndex++;
         if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
-            questionElement.textContent = `Game Over! Your final score is: $${score}`;
-            optionsElement.innerHTML = '';
+          questionElement.textContent = `Game Over! Your final score is: $${score}`;
+          optionsElement.innerHTML = '';
         } else {
-            displayQuestion();
+          displayQuestion();
         }
-    }, 2000); // Wait 2 seconds before moving to the next question
-}
+      }, 2000); // Wait 2 seconds before moving to the next question
+    }
 
 
     // Start fetching questions when the page is loaded

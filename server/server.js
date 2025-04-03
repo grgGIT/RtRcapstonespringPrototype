@@ -4,8 +4,8 @@ const path = require('path');
 const fs = require('fs');
 const http = require('http');
 const WebSocket = require('ws');
-const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
-const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
+//const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
+//const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
 
 // Express setup
 const app = express();
@@ -14,7 +14,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 // send hosted assets
-const clientPath = path.join(__dirname, '..', 'hosted/pages');
+const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
 app.use(express.json());
 
@@ -44,23 +44,23 @@ let clients = [];
 // Serial port setup
 
 
-const serialPort = new SerialPort({
-  path: 'COM6',  
-  baudRate: 115200,
-});
+// const serialPort = new SerialPort({
+//   path: 'COM6',
+//   baudRate: 115200,
+// });
 
-const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+// const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
 
 
-parser.on('data', (data) => {
-  console.log(`Received from ESP32: ${data}`);
-  // Broadcast the data to all WebSocket clients
-  clients.forEach(client => {
-    if (client.readyState === WebSocket.OPEN) {
-      client.send(data);
-    }
-  });
-});
+// parser.on('data', (data) => {
+//   console.log(`Received from ESP32: ${data}`);
+//   // Broadcast the data to all WebSocket clients
+//   clients.forEach(client => {
+//     if (client.readyState === WebSocket.OPEN) {
+//       client.send(data);
+//     }
+//   });
+// });
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
