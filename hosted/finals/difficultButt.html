@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Difficulty</title>
     <style>
-        @font-face{
+        @font-face {
             font-family: 'Nutmeg';
             src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
         }
-        body{
+
+        body {
             background-image: url("./internalAssets/spacebg.png");
             margin: 0;
             padding: 0;
@@ -17,8 +19,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Nutmeg,sans-serif;
+            font-family: Nutmeg, sans-serif;
         }
+
         #background-video {
             position: fixed;
             right: 0;
@@ -30,6 +33,7 @@
             z-index: -1;
             object-fit: cover;
         }
+
         #difficultBorder {
             width: 2000px;
             height: 1200px;
@@ -56,26 +60,33 @@
             text-align: center;
             max-width: 1800px;
         }
+
         #interior {
-            width: 1100px; /* Reduced width to fit better */
+            width: 1100px;
+            /* Reduced width to fit better */
             background-color: #dbc6ff8a;
             border-radius: 15px;
             padding: 30px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 40px; /* Slightly reduced gap between buttons */
-            box-sizing: border-box; /* Include padding in width calculation */
+            gap: 40px;
+            /* Slightly reduced gap between buttons */
+            box-sizing: border-box;
+            /* Include padding in width calculation */
         }
+
         /* Button icon */
         #A {
             height: 200px;
             width: 200px;
         }
+
         #B {
             height: 200px;
             width: 200px;
         }
+
         #C {
             height: 200px;
             width: 200px;
@@ -88,6 +99,7 @@
             color: white;
             font-size: 50px;
         }
+
         #disco {
             background-image: url(./internalAssets/disco.png);
             background-repeat: no-repeat;
@@ -95,6 +107,7 @@
             color: white;
             font-size: 50px;
         }
+
         #radio {
             background-image: url(./internalAssets/radio.png);
             background-repeat: no-repeat;
@@ -104,7 +117,8 @@
         }
 
         .difficulty-button {
-            width: 900px; /* Reduced width to fit within interior */
+            width: 900px;
+            /* Reduced width to fit within interior */
             height: 150px;
             border-radius: 10px;
             display: flex;
@@ -126,8 +140,11 @@
         }
 
         /* Button text styling */
-        #pzTxt, #dcTxt, #rdTxt {
-            padding: 10px 60px 10px 10px; /* Added right padding to make space for icon */
+        #pzTxt,
+        #dcTxt,
+        #rdTxt {
+            padding: 10px 60px 10px 10px;
+            /* Added right padding to make space for icon */
             font-family: Nutmeg, sans-serif;
             background-color: #3A2C5F;
             color: whitesmoke;
@@ -136,14 +153,16 @@
             cursor: pointer;
             border-radius: 5px;
             bottom: -5px;
-            position: relative; /* For positioning the icon */
+            position: relative;
+            /* For positioning the icon */
         }
 
         /* Button icon */
         .button-icon {
             width: 90px;
             position: absolute;
-            right: -30%; /* Position closer to the text */
+            right: -30%;
+            /* Position closer to the text */
             top: 45%;
             transform: translateY(-40%);
         }
@@ -157,6 +176,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <video autoplay muted loop id="background-video">
@@ -166,8 +186,8 @@
     <div id="difficultBorder">
         <h1 id="SelDiff">Select Difficulty</h1>
         <h3 id="SelDiff2">Each level has 21 questions from the gameshows of that era</h3>
-        
-        
+
+
         <div id="interior">
             <div class="button-container">
                 <div class="difficulty-button" id="pz">
@@ -193,10 +213,18 @@
                 </div>
             </div>
         </div>
-    <!-- end of 'interior' -->
-    
-</div>
-<!-- end of 'difficultBorder' -->
-    
+        <!-- end of 'interior' -->
+
+    </div>
+    <!-- end of 'difficultBorder' -->
+
 </body>
+
+<script>
+    // click event for the difficulty buttons
+    document.getElementById("pzTxt").onclick = function () {
+        window.location.href = "../pages/quizPage_copy.html";
+    };
+</script>
+
 </html>
