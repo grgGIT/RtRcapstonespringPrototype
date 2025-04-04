@@ -46,6 +46,9 @@
             z-index: 1;
             margin-top: 30px;
         }
+        #TitleText:hover{
+            color: aliceblue;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +65,12 @@
     </div>
 
     <script>
+        let txtFunc = document.getElementById('TitleText')
+        txtFunc.addEventListener('click', function() {
+            window.location.href = 'playerJoin.html';
+        })
+
+        
         // WebSocket connection
         const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
 

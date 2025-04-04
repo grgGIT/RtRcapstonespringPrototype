@@ -215,6 +215,10 @@
                         
                         sButton.src = './internalAssets/S Button icon.png';
                         continueArrow.src = './internalAssets/Continue arrow.png';
+                        sButton.addEventListener('click', function(){
+                            sButton.style.cursor = 'pointer';
+                            window.location.href = './difficult.html';
+                        })
                     } else {
                         document.getElementById('SystemMessage').textContent = `Player ${currentPlayer} has joined! Press S to continue or add more players.`;
                     }

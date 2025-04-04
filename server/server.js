@@ -4,8 +4,9 @@ const path = require('path');
 const fs = require('fs');
 const http = require('http');
 const WebSocket = require('ws');
-//const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
-//const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
+const os = require('os');
+const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
+const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
 
 // Express setup
 const app = express();
@@ -43,24 +44,65 @@ let clients = [];
 
 // Serial port setup
 
-
-// const serialPort = new SerialPort({
-//   path: 'COM6',
-//   baudRate: 115200,
-// });
-
-// const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
-
-
-// parser.on('data', (data) => {
-//   console.log(`Received from ESP32: ${data}`);
-//   // Broadcast the data to all WebSocket clients
-//   clients.forEach(client => {
-//     if (client.readyState === WebSocket.OPEN) {
-//       client.send(data);
-//     }
-//   });
-// });
+async function initializeSerialPort() {
+  try {
+    // List all available ports
+    const ports = await SerialPort.list();
+    console.log('Available ports:');
+    ports.forEach(port => console.log(port.path));
+    
+    let selectedPort = null;
+    
+    if (os.platform() === 'win32') {
+      // On Windows, look for COM6
+      selectedPort = ports.find(port => port.path === 'COM6');
+    } else {
+      // On Linux, look for common patterns for Arduino/ESP32 devices
+      selectedPort = ports.find(port => 
+        port.path.startsWith('/dev/ttyUSB') || 
+        port.path.startsWith('/dev/ttyACM') ||
+        port.path.startsWith('/dev/ttyS')
+      );
+    }
+    
+    if (!selectedPort) {
+      console.error('No suitable serial port found');
+      return;
+    }
+    
+    console.log(`Connecting to port: ${selectedPort.path}`);
+    
+    const serialPort = new SerialPort({
+      path: selectedPort.path,
+      baudRate: 115200,
+    });
+    
+    const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
+    
+    serialPort.on('open', () => {
+      console.log(`Serial port ${selectedPort.path} opened successfully`);
+    });
+    
+    serialPort.on('error', (err) => {
+      console.error('Serial port error:', err.message);
+    });
+    
+    parser.on('data', (data) => {
+      console.log(`Received from ESP32: ${data}`);
+      // Broadcast the data to all WebSocket clients
+      clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(data);
+        }
+      });
+    });
+    
+    return serialPort;
+  } catch (error) {
+    console.error('Error initializing serial port:', error);
+  }
+}
+initializeSerialPort();
 
 wss.on('connection', (ws) => {
   console.log('Client connected');
