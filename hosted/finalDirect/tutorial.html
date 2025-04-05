@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Game</title>
+  <title>Tutorial Level</title>
   <style>
     * {
       margin: 0;
@@ -161,11 +162,11 @@
       border-radius: 10px;
       align-content: center;
       border: none;
-      /* background-color: #ECCCAD; */
       cursor: pointer;
       transition: all 0.3s ease;
       width: 40%;
       color: whitesmoke;
+      position: relative;
     }
 
     #quiz-options button:hover {
@@ -192,60 +193,73 @@
 
     #A_Button {
       width: 90px;
-      position: relative;
-      right: 77%;
-      bottom: 65%;
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
     }
 
     #B_Button {
       width: 90px;
-      position: relative;
-      left: 30%;
-      bottom: 40%;
-
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
     }
 
     #C_Button {
       width: 90px;
-      position: relative;
-      right: 85%;
-      bottom: 40%;
-
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
     }
 
     #D_Button {
       width: 90px;
-      position: relative;
-      left: 16%;
-      bottom: 30%;
-
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
     }
 
-    /* Correct answer style */
+    /* Correct answer style - enhanced for better visibility */
     .selected {
-      background-color: #28a745;
-      opacity: 100%;
-      /* Green */
-      color: green;
-      border: 2px solid #155724;
-      box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
+      background-color: #28a745 !important;
+      color: white !important;
+      border: 3px solid #155724 !important;
+      box-shadow: 0 0 20px rgba(40, 167, 69, 0.9) !important;
+      animation: pulse 1.5s infinite !important;
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+      z-index: 20 !important;
+    }
+
+    /* Animation for the correct answer */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(40, 167, 69, 1);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
+      }
     }
 
     /* Incorrect answer style */
     .incorrect {
-      background-color: #dc3545;
-      opacity: 60%;
-      /* Red */
-      color: black;
-      border: 2px solid #721c24;
-      box-shadow: 0 0 10px rgba(220, 53, 69, 0.7);
+      background-color: #dc3545 !important;
+      opacity: 0.8 !important;
+      color: white !important;
+      border: 2px solid #721c24 !important;
+      box-shadow: 0 0 10px rgba(220, 53, 69, 0.7) !important;
     }
 
     /* Grey out non-selected and non-incorrect options */
     .greyed {
-      background-color: #dcdcdc;
-      /* Light grey */
-      color: #6c757d;
+      background-color: #6c757d !important;
+      opacity: 0.5 !important;
+      color: #e0e0e0 !important;
+      transform: scale(0.95) !important;
+      transition: all 0.3s ease !important;
     }
 
     /* Optional: Add a highlight effect when an option is clicked */
@@ -258,7 +272,7 @@
 
 <body>
   <div id="quiz-question">
-    <h1 id="questMess">Question goes here</h1>
+    <h1 id="questMess">What is the host's name?</h1>
     <img id="questBoard" src="./internalAssets/questBoard.png" alt="Question Board">
   </div>
 
@@ -273,7 +287,7 @@
   </div>
 
   <div id="Zilby">
-    <img src="./internalAssets/zilby-05 2.png" alt="Zilby">
+    <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
   </div>
 
   <div id="podium">
@@ -287,19 +301,19 @@
 
   <div id="quiz-options">
     <button id="optionA" class="quiz-button" data-answer="A">
-      Option 1
+      Erin
       <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
     </button>
     <button id="optionB" class="quiz-button" data-answer="B">
-      Option 2
+      Glimmy
       <img id="B_Button" src="./internalAssets/B_Button_icon.png" alt="B Button">
     </button>
     <button id="optionC" class="quiz-button" data-answer="C">
-      Option 3
+      Zilby
       <img id="C_Button" src="./internalAssets/C_Button_icon.png" alt="C Button">
     </button>
     <button id="optionD" class="quiz-button" data-answer="D">
-      Option 4
+      Bob
       <img id="D_Button" src="./internalAssets/D_Button_icon.png" alt="D Button">
     </button>
   </div>
@@ -311,6 +325,8 @@
     let score = 0;
     let selectedEra = sessionStorage.getItem('selectedEra') || 'discoEra';
     let difficulty = 'easy'; // Default to easy questions
+    let timerInterval = null;
+    let timeLeft = 30; // Default timer value in seconds
 
     // DOM elements
     const questionElement = document.getElementById('questMess');
@@ -318,14 +334,45 @@
     const moneyElement = document.getElementById('moneyTxt');
     const hintBubbleElement = document.getElementById('hintTxt');
     const timerElement = document.getElementById('timerTxt');
+    const optionButtons = document.querySelectorAll('.quiz-button');
+    const zilbyImg = document.getElementById('zilbee');
+
+    // Sample questions for testing (replace with your actual questions)
+    const sampleQuestions = {
+      "question1": {
+        "question": "What is the host's name?",
+        "options": ["Erin", "Glimmy", "Zilby", "Bob"],
+        "answer": "C",
+        "hint": "Look at the character on screen!",
+        "points": 100
+      }
+    };
 
     // WebSocket connection
-    const ws = new WebSocket('ws://localhost:3000');
-    ws.onmessage = (event) => {
-      const message = event.data;
-      console.log(`Button Pressed: "${message}"`);
-      handleButtonPress(message);
-    };
+    let ws;
+    try {
+      ws = new WebSocket('ws://localhost:3000');
+      
+      ws.onopen = () => {
+        console.log('WebSocket connection established');
+      };
+      
+      ws.onmessage = (event) => {
+        const message = event.data;
+        console.log(`Button Pressed: "${message}"`);
+        handleButtonPress(message);
+      };
+      
+      ws.onerror = (error) => {
+        console.error('WebSocket error:', error);
+      };
+      
+      ws.onclose = () => {
+        console.log('WebSocket connection closed');
+      };
+    } catch (error) {
+      console.error('Failed to create WebSocket connection:', error);
+    }
 
     // Function to handle button press from WebSocket
     function handleButtonPress(message) {
@@ -346,63 +393,20 @@
       }
     }
 
-    // Fetch questions from server
-    function fetchQuestions() {
-      fetch(`/getQuestions?era=${selectedEra}`)
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          return response.json();
-        })
-        .then(data => {
-          console.log(data);
-          currentQuestions = data[difficulty];
-          displayQuestion();
-        })
-        .catch(error => {
-          console.error('Error fetching questions:', error);
-          questionElement.textContent = 'Error loading questions. Please try again.';
-        });
-    }
-
-    // Display current question
-    function displayQuestion() {
-      const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
-      questionElement.textContent = questionObj.question || questionObj.questions;
-
-      // Populate the options
-      const options = questionObj.options;
-      optionsElement.innerHTML = ''; // Clear previous options
-      options.forEach((option, index) => {
-        const button = document.createElement('button');
-        button.classList.add('quiz-button');
-        const letter = String.fromCharCode(65 + index); // A, B, C, D...
-        button.id = `option${letter}`;
-        button.textContent = ` ${option}`;
-        button.setAttribute('data-answer', questionObj.correctAnswer);
-
-        // Option button image
-        const img = document.createElement('img');
-        img.src = `./internalAssets/${letter}_Button_icon.png`;
-        img.alt = `${letter} Button`;
-        img.id = `${letter}_Button`;
-
-        button.appendChild(img);
-
-        // Add click listener for selecting an answer
-        button.addEventListener('click', () => selectOption(button, option, questionObj.correctAnswer));
-        optionsElement.appendChild(button);
+    // Add event listeners to option buttons
+    optionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const selectedOption = this.getAttribute('data-answer');
+        const correctAnswer = Object.values(currentQuestions)[currentQuestionIndex].answer;
+        selectOption(this, selectedOption, correctAnswer);
       });
-
-      // Reset hint bubble and money
-      hintBubbleElement.textContent = questionObj.aiHint || 'No hint available';
-      moneyElement.textContent = `$${score}`;
-    }
+    });
 
     // Handle option selection
-
     function selectOption(optionElement, selectedOption, correctAnswer) {
+      // Clear any existing timer
+      clearInterval(timerInterval);
+      
       // Disable all option buttons
       document.querySelectorAll('.quiz-button').forEach(button => {
         button.disabled = true;
@@ -412,45 +416,155 @@
       if (selectedOption === correctAnswer) {
         optionElement.classList.add('selected'); // Correct answer
         score += Object.values(currentQuestions)[currentQuestionIndex].points;
+        hintBubbleElement.textContent = "Correct answer!";
+        zilbyImg.src ='./ZilbyReacts-Correct.gif'
       } else {
         optionElement.classList.add('incorrect'); // Incorrect answer
+        // Find and highlight the correct answer
         document.querySelectorAll('.quiz-button').forEach(button => {
-          if (button.textContent.includes(correctAnswer)) {
+          if (button.getAttribute('data-answer') === correctAnswer) {
             button.classList.add('selected'); // Mark the correct option
           }
         });
+        hintBubbleElement.textContent = "Incorrect answer!";
+        zilbyImg.src = './ZilbyReacts-Incorrect.gif';
       }
 
       // Grey out all options that are not marked as selected/incorrect
       document.querySelectorAll('.quiz-button').forEach(button => {
         if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
           button.classList.add('greyed');
+          
+          
         }
       });
-
-      // Show additional info (if any)
-      const additionalInfo = optionElement.getAttribute('data-answer') === correctAnswer ? "Correct answer!" : "Incorrect answer!";
-      hintBubbleElement.textContent = additionalInfo;
 
       // Update the money score
       moneyElement.textContent = `$${score}`;
 
-      // Move to the next question automatically after 2 seconds
+      // Move to the next question automatically after 3 seconds
       setTimeout(() => {
+        resetButtonStyles();
         currentQuestionIndex++;
         if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
-          questionElement.textContent = `Game Over! Your final score is: $${score}`;
-          optionsElement.innerHTML = '';
+          endGame();
         } else {
           displayQuestion();
         }
-      }, 2000); // Wait 2 seconds before moving to the next question
+      }, 3000); // Wait 3 seconds before moving to the next question
     }
 
+    // Reset button styles for the next question
+    function resetButtonStyles() {
+      document.querySelectorAll('.quiz-button').forEach(button => {
+        button.classList.remove('selected', 'incorrect', 'greyed');
+        button.disabled = false;
+        zilbyImg.src = './ZilbyIdle.gif';
+      });
+    }
+
+    // End the game
+    function endGame() {
+      questionElement.textContent = `Tutorial Over! Your final score is: $${score}`;
+      optionsElement.innerHTML = '';
+      hintBubbleElement.textContent = "Thanks for playing!";
+      clearInterval(timerInterval);
+    }
+
+    // Start the timer
+    function startTimer(seconds) {
+      timeLeft = seconds;
+      updateTimerDisplay();
+      
+      clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerDisplay();
+        
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          // Time's up - move to next question
+          hintBubbleElement.textContent = "Time's up!";
+          
+          // Show the correct answer
+          const correctAnswer = Object.values(currentQuestions)[currentQuestionIndex].answer;
+          document.querySelectorAll('.quiz-button').forEach(button => {
+            if (button.getAttribute('data-answer') === correctAnswer) {
+              button.classList.add('selected');
+            } else {
+              button.classList.add('greyed');
+            }
+            button.disabled = true;
+          });
+          
+          setTimeout(() => {
+            resetButtonStyles();
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
+              endGame();
+            } else {
+              displayQuestion();
+            }
+          }, 2000);
+        }
+      }, 1000);
+    }
+
+    // Update the timer display
+    function updateTimerDisplay() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    // Display the current question
+    function displayQuestion() {
+      const currentQuestion = Object.values(currentQuestions)[currentQuestionIndex];
+      questionElement.textContent = currentQuestion.question;
+      
+      // Update options
+      const options = currentQuestion.options;
+      document.getElementById('optionA').textContent = options[0];
+      document.getElementById('optionB').textContent = options[1];
+      document.getElementById('optionC').textContent = options[2];
+      document.getElementById('optionD').textContent = options[3];
+      
+      // Add back the button images that were removed when setting textContent
+      document.getElementById('optionA').innerHTML = options[0] + '<img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">';
+      document.getElementById('optionB').innerHTML = options[1] + '<img id="B_Button" src="./internalAssets/B_Button_icon.png" alt="B Button">';
+      document.getElementById('optionC').innerHTML = options[2] + '<img id="C_Button" src="./internalAssets/C_Button_icon.png" alt="C Button">';
+      document.getElementById('optionD').innerHTML = options[3] + '<img id="D_Button" src="./internalAssets/D_Button_icon.png" alt="D Button">';
+      
+      // Show hint
+      hintBubbleElement.textContent = currentQuestion.hint;
+      
+      // Start the timer
+      startTimer(30); // 30 seconds per question
+    }
+
+    // Fetch questions from API or use sample questions
+    function fetchQuestions() {
+      // For testing, use sample questions
+      currentQuestions = sampleQuestions;
+      displayQuestion();
+      
+      // In a real implementation, you would fetch questions from an API
+      // fetch(`/api/questions?era=${selectedEra}&difficulty=${difficulty}`)
+      //   .then(response => response.json())
+      //   .then(data => {
+      //     currentQuestions = data;
+      //     displayQuestion();
+      //   })
+      //   .catch(error => {
+      //     console.error('Error fetching questions:', error);
+      //     // Fallback to sample questions
+      //     currentQuestions = sampleQuestions;
+      //     displayQuestion();
+      //   });
+    }
 
     // Start fetching questions when the page is loaded
     document.addEventListener('DOMContentLoaded', fetchQuestions);
-
   </script>
 </body>
 
