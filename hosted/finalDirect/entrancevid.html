@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrance Video</title>
+    <!-- Add autoplay permission meta tag -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <style>
         * {
             margin: 0;
@@ -45,42 +47,136 @@
             from { opacity: 1; }
             to { opacity: 0; }
         }
+        
+        /* Hide audio element visually but keep it accessible */
+        #narrationAudio {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+        }
     </style>
 </head>
 
 <body>
     <div id="videoContainer">
-        <video id="entranceVideo" src="Comp 1_7.mp4" muted></video>
+        <!-- Add autoplay attribute to both video and audio -->
+        <video id="entranceVideo" src="Comp 1_7.mp4" muted playsinline autoplay></video>
+        <audio id="narrationAudio" src="elevenLabTrial.mp3" preload="auto" autoplay></audio>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Try to start playback as soon as possible
+        window.addEventListener('load', startEverything);
+        document.addEventListener('DOMContentLoaded', startEverything);
+        
+        // Variable to prevent multiple initializations
+        let hasStarted = false;
+        
+        function startEverything() {
+            if (hasStarted) return;
+            hasStarted = true;
+            
             const video = document.getElementById('entranceVideo');
+            const audio = document.getElementById('narrationAudio');
             const videoContainer = document.getElementById('videoContainer');
             
-            // Set playback rate to 0.6
-            video.playbackRate = 0.5;
+            // Force preload audio
+            audio.load();
             
-            // Ensure video plays automatically
-            video.autoplay = true;
-            video.muted = true; // Most browsers require muted for autoplay
+            // Set playback rates
+            video.playbackRate = 0.5; // Adjusted to better match the 50s audio
+            audio.playbackRate = 1.25; // Set audio to 1.25x as requested
             
-            // Handle end of video
-            video.addEventListener('ended', function() {
+            // Keep video muted to help with autoplay
+            video.muted = true;
+            
+            // Function to force start both media elements
+            function forceStart() {
+                // Try multiple methods to start the video
+                const videoPlay = video.play();
+                
+                if (videoPlay !== undefined) {
+                    videoPlay.then(() => {
+                        console.log("Video started successfully");
+                        
+                        // Start audio with a slight delay to ensure it works
+                        setTimeout(() => {
+                            const audioPlay = audio.play();
+                            
+                            if (audioPlay !== undefined) {
+                                audioPlay.catch(e => {
+                                    console.error("Audio autoplay failed, retrying:", e);
+                                    // Try again with a timeout
+                                    retryAudioPlayback();
+                                });
+                            }
+                        }, 100);
+                    }).catch(error => {
+                        console.error("Video autoplay failed, retrying:", error);
+                        // Try again with a timeout
+                        setTimeout(forceStart, 500);
+                    });
+                }
+            }
+            
+            // Function to retry audio playback multiple times
+            function retryAudioPlayback(attempts = 0) {
+                if (attempts > 5) return; // Give up after 5 attempts
+                
+                setTimeout(() => {
+                    audio.play().catch(e => {
+                        console.error(`Audio retry ${attempts} failed:`, e);
+                        retryAudioPlayback(attempts + 1);
+                    });
+                }, 500);
+            }
+            
+            // Check which ends first and handle accordingly
+            video.addEventListener('ended', handleEnding);
+            audio.addEventListener('ended', handleEnding);
+            
+            let endingStarted = false;
+            
+            function handleEnding() {
+                if (endingStarted) return; // Prevent multiple executions
+                endingStarted = true;
+                
                 // Add fade-out animation
                 videoContainer.classList.add('fade-out');
+                
+                // Fade out audio if it's still playing
+                if (!audio.ended) {
+                    const fadeInterval = setInterval(() => {
+                        if (audio.volume > 0.1) {
+                            audio.volume -= 0.1;
+                        } else {
+                            audio.pause();
+                            clearInterval(fadeInterval);
+                        }
+                    }, 100);
+                }
                 
                 // Redirect to tutorial page after fade-out animation completes
                 setTimeout(function() {
                     window.location.href = 'tutorial.html';
                 }, 1500); // 1.5 seconds, matching the animation duration
-            });
+            }
             
-            // Force play (some browsers might need this)
-            video.play().catch(error => {
-                console.error("Video playback failed:", error);
-            });
-        });
+            // Start immediately
+            forceStart();
+            
+            // Backup: try again after a short delay in case the first attempt fails
+            setTimeout(forceStart, 300);
+            setTimeout(forceStart, 1000);
+            
+            // Add a touch/click event to the entire document as a last resort
+            // This will be triggered by any touch on the screen if autoplay fails
+            document.addEventListener('touchstart', function startOnFirstTouch() {
+                forceStart();
+                document.removeEventListener('touchstart', startOnFirstTouch);
+            }, { once: true });
+        }
     </script>
 </body>
 
