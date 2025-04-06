@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,6 +54,19 @@
       width: 80%;
     }
 
+    #questionCounter {
+      position: absolute;
+      top: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 15px;
+      border-radius: 20px;
+      z-index: 3;
+    }
+
     #money {
       position: absolute;
       top: 5%;
@@ -76,8 +90,8 @@
 
     #hintBubble {
       position: absolute;
-      top: 30%;
-      left: 50%;
+      top: 38%;
+      left: 87%;
       transform: translateX(-50%);
       width: 300px;
       text-align: center;
@@ -139,6 +153,22 @@
       z-index: 2;
     }
 
+    /* Timer warning styles */
+    .timer-warning {
+      color: #ff9900 !important;
+    }
+
+    .timer-danger {
+      color: #ff0000 !important;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
     #quiz-options {
       position: absolute;
       bottom: 0;
@@ -159,19 +189,29 @@
       padding: 15px 30px;
       font-size: 50px;
       border-radius: 10px;
-      align-content: center;
       border: none;
-      /* background-color: #ECCCAD; */
       cursor: pointer;
       transition: all 0.3s ease;
       width: 40%;
       color: whitesmoke;
+      position: relative; /* Make position relative for absolute positioning of icons */
+      padding-right: 100px; /* Add padding to make room for the icon */
+      text-align: left; /* Align text to the left */
     }
 
     #quiz-options button:hover {
       background-color: #f0f0f0;
       color: black;
       transform: scale(1.05);
+    }
+
+    /* Button icon styling - fixed positioning */
+    #quiz-options button img {
+      width: 90px;
+      position: absolute;
+      right: 20px; /* Fixed distance from right edge */
+      top: 50%; /* Center vertically */
+      transform: translateY(-50%); /* Ensure perfect vertical centering */
     }
 
     #optionA {
@@ -188,37 +228,6 @@
 
     #optionD {
       background-color: #F1A327;
-    }
-
-    #A_Button {
-      width: 90px;
-      position: relative;
-      right: 77%;
-      bottom: 65%;
-    }
-
-    #B_Button {
-      width: 90px;
-      position: relative;
-      left: 30%;
-      bottom: 40%;
-
-    }
-
-    #C_Button {
-      width: 90px;
-      position: relative;
-      right: 85%;
-      bottom: 40%;
-
-    }
-
-    #D_Button {
-      width: 90px;
-      position: relative;
-      left: 16%;
-      bottom: 30%;
-
     }
 
     /* Correct answer style */
@@ -278,6 +287,8 @@
     <img id="questBoard" src="./internalAssets/questBoard.png" alt="Question Board">
   </div>
 
+  <div id="questionCounter">Question #/#</div>
+
   <div id="money">
     <img src="./internalAssets/starCash Spot.png" alt="Star Cash">
     <h2 id="moneyTxt">$0</h2>
@@ -289,7 +300,7 @@
   </div>
 
   <div id="Zilby">
-    <img src="./internalAssets/zilby-05 2.png" alt="Zilby">
+    <img src="./ZilbyIdle.gif" alt="Zilby">
   </div>
 
   <div id="podium">
@@ -302,31 +313,33 @@
   </div>
 
   <div id="quiz-options">
-    <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
     <button id="optionA" class="quiz-button" data-answer="A">
-      Option 1
+      Option A
+      <img src="./internalAssets/A_Button_icon.png" alt="A Button">
     </button>
     <button id="optionB" class="quiz-button" data-answer="B">
-      Option 2
-      <img id="B_Button" src="./internalAssets/B_Button_icon.png" alt="B Button">
+      Option B
+      <img src="./internalAssets/B_Button_icon.png" alt="B Button">
     </button>
     <button id="optionC" class="quiz-button" data-answer="C">
-      Option 3
-      <img id="C_Button" src="./internalAssets/C_Button_icon.png" alt="C Button">
+      Option C
+      <img src="./internalAssets/C_Button_icon.png" alt="C Button">
     </button>
     <button id="optionD" class="quiz-button" data-answer="D">
-      Option 4
-      <img id="D_Button" src="./internalAssets/D_Button_icon.png" alt="D Button">
+      Option D
+      <img src="./internalAssets/D_Button_icon.png" alt="D Button">
     </button>
   </div>
 
   <script>
     // Game state
-    let currentQuestions = [];
+    let allQuestions = []; // Will hold all questions from all difficulty levels
     let currentQuestionIndex = 0;
     let score = 0;
     let selectedEra = sessionStorage.getItem('selectedEra') || 'discoEra';
-    let difficulty = 'easy'; // Default to easy questions
+    let timerInterval; // For storing the timer interval
+    let timeRemaining = 180; // 3 minutes in seconds
+    let totalQuestions = 0; // Will be set after fetching questions
 
     // DOM elements
     const questionElement = document.getElementById('questMess');
@@ -334,6 +347,8 @@
     const moneyElement = document.getElementById('moneyTxt');
     const hintBubbleElement = document.getElementById('hintTxt');
     const timerElement = document.getElementById('timerTxt');
+    const zilbyImg = document.querySelector('#Zilby img');
+    const questionCounterElement = document.getElementById('questionCounter');
 
     // WebSocket connection
     const ws = new WebSocket('ws://localhost:3000');
@@ -362,7 +377,69 @@
       }
     }
 
-    // Fetch questions from server
+    // Format time as MM:SS
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+      return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+
+    // Start the timer
+    function startTimer() {
+      // Clear any existing timer
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      }
+      
+      // Reset time to 3 minutes
+      timeRemaining = 180;
+      timerElement.textContent = formatTime(timeRemaining);
+      timerElement.classList.remove('timer-warning', 'timer-danger');
+      
+      // Start the countdown
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        
+        // Update the timer display
+        timerElement.textContent = formatTime(timeRemaining);
+        
+        // Add warning colors when time is running low
+        if (timeRemaining <= 60 && timeRemaining > 30) {
+          timerElement.classList.add('timer-warning');
+        } else if (timeRemaining <= 30) {
+          timerElement.classList.remove('timer-warning');
+          timerElement.classList.add('timer-danger');
+        }
+        
+        // End the game when time runs out
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          endGame("Time's up!");
+        }
+      }, 1000);
+    }
+
+    // End the game
+    function endGame(message) {
+      // Clear the timer
+      if (timerInterval) {
+        clearInterval(timerInterval);
+      }
+      
+      // Display game over message
+      questionElement.textContent = `${message} Your final score is: $${score}`;
+      
+      // Clear options
+      optionsElement.innerHTML = '';
+      
+      // Update hint bubble
+      hintBubbleElement.textContent = "Game Over!";
+      
+      // Update question counter
+      questionCounterElement.textContent = `Game Over - ${currentQuestionIndex}/${totalQuestions} Questions Completed`;
+    }
+
+    // Fetch questions from server and combine all difficulty levels
     function fetchQuestions() {
       fetch(`/getQuestions?era=${selectedEra}`)
         .then(response => {
@@ -372,9 +449,39 @@
           return response.json();
         })
         .then(data => {
-          console.log(data);
-          currentQuestions = data[difficulty];
+          console.log("Fetched data:", data);
+          
+          // Combine all difficulty levels into one array
+          allQuestions = [];
+          
+          // Add easy questions
+          if (data.easy && Object.keys(data.easy).length > 0) {
+            allQuestions = allQuestions.concat(Object.values(data.easy));
+          }
+          
+          // Add medium questions
+          if (data.medium && Object.keys(data.medium).length > 0) {
+            allQuestions = allQuestions.concat(Object.values(data.medium));
+          }
+          
+          // Add hard questions
+          if (data.hard && Object.keys(data.hard).length > 0) {
+            allQuestions = allQuestions.concat(Object.values(data.hard));
+          }
+          
+          // Set total questions count
+          totalQuestions = allQuestions.length;
+          console.log(`Total questions: ${totalQuestions}`);
+          
+          // Check if we have questions
+          if (allQuestions.length === 0) {
+            questionElement.textContent = 'No questions available for this era.';
+            return;
+          }
+          
+          // Start the game
           displayQuestion();
+          startTimer();
         })
         .catch(error => {
           console.error('Error fetching questions:', error);
@@ -382,10 +489,29 @@
         });
     }
 
+    // Reset Zilby to idle state
+    function resetZilby() {
+      zilbyImg.src = './ZilbyIdle.gif';
+    }
+
     // Display current question
     function displayQuestion() {
-      const questionObj = Object.values(currentQuestions)[currentQuestionIndex];
+      if (currentQuestionIndex >= allQuestions.length) {
+        endGame("Congratulations! You've completed all questions!");
+        return;
+      }
+      
+      const questionObj = allQuestions[currentQuestionIndex];
       questionElement.textContent = questionObj.question || questionObj.questions;
+
+      // Reset Zilby to idle state for each new question
+      resetZilby();
+
+      // Reset hint bubble to show the hint for the current question
+      hintBubbleElement.textContent = questionObj.aiHint || 'No hint available';
+
+      // Update question counter
+      questionCounterElement.textContent = `Question ${currentQuestionIndex + 1}/${totalQuestions}`;
 
       // Populate the options
       const options = questionObj.options;
@@ -395,47 +521,63 @@
         button.classList.add('quiz-button');
         const letter = String.fromCharCode(65 + index); // A, B, C, D...
         button.id = `option${letter}`;
-        button.textContent = ` ${option}`;
-        button.setAttribute('data-answer', questionObj.correctAnswer);
+        button.textContent = option;
+        button.setAttribute('data-answer', letter);
 
         // Option button image
         const img = document.createElement('img');
         img.src = `./internalAssets/${letter}_Button_icon.png`;
         img.alt = `${letter} Button`;
-        img.id = `${letter}_Button`;
 
         button.appendChild(img);
 
         // Add click listener for selecting an answer
-        button.addEventListener('click', () => selectOption(button, option, questionObj.correctAnswer));
+        button.addEventListener('click', () => selectOption(button, letter, questionObj.correctAnswer));
         optionsElement.appendChild(button);
       });
 
-      // Reset hint bubble and money
-      hintBubbleElement.textContent = questionObj.aiHint || 'No hint available';
+      // Update money display
       moneyElement.textContent = `$${score}`;
     }
 
     // Handle option selection
-
-    function selectOption(optionElement, selectedOption, correctAnswer) {
-      // Disable all option buttons
+    function selectOption(optionElement, selectedAnswer, correctAnswer) {
+      // Disable all option buttons to prevent multiple selections
       document.querySelectorAll('.quiz-button').forEach(button => {
-        button.disabled = true;
-      });
+    button.disabled = true;
+  });
 
-      // Check correctness and update score
-      if (selectedOption === correctAnswer) {
-        optionElement.classList.add('selected'); // Correct answer
-        score += Object.values(currentQuestions)[currentQuestionIndex].points;
-      } else {
-        optionElement.classList.add('incorrect'); // Incorrect answer
-        document.querySelectorAll('.quiz-button').forEach(button => {
-          if (button.textContent.includes(correctAnswer)) {
-            button.classList.add('selected'); // Mark the correct option
-          }
-        });
+  // Get the actual text of the selected answer
+  const selectedText = optionElement.childNodes[0].textContent.trim(); // Get text before img tag
+  const correctText = allQuestions[currentQuestionIndex].correctAnswer;
+
+  // Check correctness and update score
+  const isCorrect = selectedText === correctText;
+  
+  if (isCorrect) {
+    // Correct answer
+    optionElement.classList.add('selected');
+    score += allQuestions[currentQuestionIndex].points || 100;
+    
+    // Update hint bubble and Zilby animation for correct answer
+    hintBubbleElement.textContent = "Great job! That's correct!";
+    zilbyImg.src = './ZilbyReacts-Correct.gif';
+  } else {
+    // Incorrect answer
+    optionElement.classList.add('incorrect');
+    
+    // Mark the correct option
+    document.querySelectorAll('.quiz-button').forEach(button => {
+      const buttonText = button.childNodes[0].textContent.trim();
+      if (buttonText === correctText) {
+        button.classList.add('selected');
       }
+    });
+    
+    // Update hint bubble and Zilby animation for incorrect answer
+    hintBubbleElement.textContent = "Oops! That's not right.";
+    zilbyImg.src = './ZilbyReacts-Incorrect.gif';
+  }
 
       // Grey out all options that are not marked as selected/incorrect
       document.querySelectorAll('.quiz-button').forEach(button => {
@@ -444,29 +586,32 @@
         }
       });
 
-      // Show additional info (if any)
-      const additionalInfo = optionElement.getAttribute('data-answer') === correctAnswer ? "Correct answer!" : "Incorrect answer!";
-      hintBubbleElement.textContent = additionalInfo;
-
       // Update the money score
       moneyElement.textContent = `$${score}`;
 
       // Move to the next question automatically after 2 seconds
       setTimeout(() => {
         currentQuestionIndex++;
-        if (currentQuestionIndex >= Object.keys(currentQuestions).length) {
-          questionElement.textContent = `Game Over! Your final score is: $${score}`;
-          optionsElement.innerHTML = '';
+        
+        // Reset button states and display next question
+        document.querySelectorAll('.quiz-button').forEach(button => {
+          button.disabled = false;
+          button.classList.remove('selected', 'incorrect', 'greyed');
+        });
+        
+        // Reset hint bubble and Zilby for the next question
+        resetZilby();
+        
+        if (currentQuestionIndex >= allQuestions.length) {
+          endGame("Congratulations! You've completed all questions!");
         } else {
           displayQuestion();
         }
       }, 2000); // Wait 2 seconds before moving to the next question
     }
 
-
     // Start fetching questions when the page is loaded
     document.addEventListener('DOMContentLoaded', fetchQuestions);
-
   </script>
 </body>
 

@@ -386,8 +386,30 @@
                     "image": "",
                     "additionalInfo": ""
                 },
-                "q9": {},
-                "q10": {}
+                "q9": {"question": "Who was the host for British version game show, Blockbusters in 80s?",
+                    "options": [
+                        "Bob Holness",
+                        "Steve Harvey",
+                        "Simon Mayo",
+                        "Michael Aspel"
+                    ],
+                    "correctAnswer": "Bob Holness",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""},
+                "q10": {"question": "Who was the host for British version game show, Blockbusters in 80s?",
+                    "options": [
+                        "Bob Holness",
+                        "Steve Harvey",
+                        "Simon Mayo",
+                        "Michael Aspel"
+                    ],
+                    "correctAnswer": "Bob Holness",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""}
             },
             "medium": {
                 "q1": {
