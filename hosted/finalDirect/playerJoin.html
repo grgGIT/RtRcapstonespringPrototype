@@ -165,15 +165,15 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Get the button element
-            const button = document.getElementById('bt');
+            const rfButt = document.getElementById('bt');
             // Track which player is next to be activated
             let currentPlayer = 1;
             
             // Function to reset the player states
             function resetPlayers() {
                 currentPlayer = 1;
-                button.textContent = 'Click for RFID';
-                button.disabled = false;
+                rfButt.textContent = 'Click for RFID';
+                rfButt.disabled = false;
                 
                 // Reset all player images to their default state
                 for (let i = 1; i <= 4; i++) {
@@ -195,7 +195,7 @@
             }
             
             // Add click event listener to the button
-            button.addEventListener('click', function() {
+            rfButt.addEventListener('click', function() {
                 // Only proceed if we haven't activated all 4 players yet
                 if (currentPlayer <= 4) {
                     // Get the current player's image element
@@ -228,8 +228,8 @@
                     
                     // If we've reached the maximum number of players, disable the button
                     if (currentPlayer > 4) {
-                        button.textContent = 'Maximum Players Reached';
-                        button.disabled = true;
+                        rfButt.textContent = 'Maximum Players Reached';
+                        rfButt.disabled = true;
                     }
                 }
             });
@@ -254,7 +254,39 @@
                     // window.location.href = 'nextPage.html';
                 }
             });
+
+            const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
+
+// Handle WebSocket message
+ws.onmessage = (event) => {
+    const message = event.data;
+    console.log(`Button Pressed: "${message}"`);
+    handleButtonPress(message);
+};
+
+// Handle button press (Button F to navigate to playerJoin.html)
+function handleButtonPress(message) {
+    // Expected format: "Button F pressed"
+    const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+    if (match && match[1]){
+                    const letter = match[1].toUpperCase();  // e.g., "E"
+                    if (letter === 'E') {
+                        console.log('Button E pressed, simulating RFID button click');
+                        // Check if the button is not disabled before clicking
+                        if (!rfButt.disabled) {
+                            rfButt.click();
+                        }
+                    } else if (letter === 'F' && currentPlayer > 1) {
+                        // If S button is pressed and at least one player has joined
+                        console.log('Button S pressed, navigating to difficulty selection');
+                        window.location.href = './entrancevid.html';
+                    }
+                }
+                
+}
         });
+         // WebSocket connection
+        
     </script>
 </head>
 <body>

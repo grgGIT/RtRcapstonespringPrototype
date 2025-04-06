@@ -48,9 +48,9 @@
             display: block;
             margin: 50px auto 0;
             /* max-width: 100%; */
-            width: 1500px;
+            width: 2500px;
             animation: float 3.5s ease-in-out infinite; 
-            top: 20%;
+            bottom: 20%;
         }
         
         #TitleText {
@@ -59,7 +59,7 @@
             position: relative;
             z-index: 1;
             margin-top: 30px;
-            top: 40%;
+            bottom: 30%;
             font-size: 40px;
         }
         
@@ -96,7 +96,7 @@
             const match = message.match(/Button\s+([A-Z])\s+pressed/i);
             if (match && match[1]) {
                 const letter = match[1].toUpperCase();  // e.g., "F"
-                if (letter === 'E') {
+                if (letter === 'F') {
                     console.log('Button F pressed, navigating to playerJoin.html');
                     window.location.href = 'playerJoin.html';  // Navigate to the playerJoin page
                 }
@@ -112,7 +112,7 @@
         Your browser does not support HTML5 video.
     </video>
     <!-- png for logo -->
-     <img id="logo" src="./internalAssets/Race_to_Riches.png" alt="Race_to_Riches Logo">
+     <img id="logo" src="./RaceToRiches-Wavy.gif" alt="Race_to_Riches Logo">
     
     <div id="TitleText">
         <h1>Press <span id="S"> <img src="./internalAssets/S Button icon.png" alt=""></span> to play</h1>
