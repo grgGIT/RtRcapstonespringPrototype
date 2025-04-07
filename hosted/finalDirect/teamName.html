@@ -4,18 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Naming</title>
+    <style>
+        #outer-border {
+            background-color: #3F3667;
+            border-radius: 4px;
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+        }
+        #teamNameInput {
+            width: 80%;
+            height: 75px;
+            padding: 10px;
+            margin-top: 30px;
+            margin-left: 80px;
+            border: none;
+            font-size: 16px;
+            background-color: #DBC6FF;
+            opacity: 24%;
+        }
+        
+        #teamNameInput:focus {
+            outline: none;
+            opacity: 100%;
+        }
+
+        #greenBtn, #redBtn, #orangeBtn, #blueBtn {
+            margin-top: 20px;
+            margin-left: 100px; 
+            width: 30%;
+            padding: 10px;
+        }
+        #big {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 36px;
+            margin-bottom: 10px;
+            font-family: 'arial';
+        }
+        #insturction {
+            text-align: center;
+            color: #FFFFFF;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-family: 'poppins', sans-serif; /* Fallback to sans-serif if poppins is not available */
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+        }
+
+    </style>
 </head>
 <body>
+    <img src = "internalAssets/spacebg.png" id="background" alt="background" style="position:fixed; width:100%; height:100%; z-index:-1;">
     <div id="outer-border">
         <h1 id="big">Select Team Name</h1>
-        <h4 id="body">This name is how you can identify your team's high score on our leaderboards!</h4>
+        <h4 id="insturction">if you score a high-score you’ll have the chance to have your team displayed on the leader boar.</h4>
         <div id="inner-border">
-            <div id="nameSection">no name</div>
+            
+            <input type="text" id="teamNameInput" placeholder="Enter your team name">>
             <div id="input-container">
-                <button id="n1">Name 1</button>
-                <button id="n2">Name 2</button>
-                <button id="n3">Name 3</button>
-                <button id="n4">Name 4</button>
+                <img src = "internalAssets/teamNameGreenBtn.png" id="greenBtn" alt="green button">
+                <img src = "internalAssets/teamNameRedBtn.png.png" id="redBtn" alt="red button">
+                <img src = "internalAssets/teamNameOrangeBtn.png.png" id="orangeBtn" alt="orange button">
+                <img src = "internalAssets/teamNameBlueBtn.png.png" id="blueBtn" alt="blue button">
             </div>
         </div>
     </div>
