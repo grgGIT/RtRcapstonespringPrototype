@@ -19,10 +19,10 @@
     }
 
     body {
-      background-color: #EEDCBB;
-      background-image: url(./internalAssets/Mask\ group.png);
+      background-color: #b975d6;
+      background-image: url(./Pattern\ placeholder.gif);
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: no-repeat; 
       height: 100vh;
       overflow: hidden;
       position: relative;
@@ -43,7 +43,7 @@
     }
 
     #questMess {
-      font-size: 40px;
+      font-size: 70px;
       position: absolute;
       top: 50%;
       left: 50%;
@@ -77,10 +77,10 @@
 
     #hintBubble {
       position: absolute;
-      top: 38%;
+      bottom: 68%;
       left: 87%;
       transform: translateX(-50%);
-      width: 300px;
+      width: 500px;
       text-align: center;
     }
 
@@ -99,16 +99,16 @@
 
     #Zilby {
       position: absolute;
-      right: 15%;
-      bottom: 36%;
-      width: 350px;
+      right: 10%;
+      bottom: 43%;
+      width: 550px;
     }
 
     #Zilby img {
       width: 100%;
     }
 
-    #podium {
+    /* #podium {
       position: absolute;
       right: 15%;
       bottom: 22%;
@@ -117,13 +117,13 @@
 
     #podium img {
       width: 100%;
-    }
+    } */
 
     #timer {
       position: absolute;
-      left: 87%;
-      bottom: 22%;
-      width: 250px;
+      left: 70%;
+      bottom: 32%;
+      width: 650px;
       text-align: center;
     }
 
@@ -133,7 +133,7 @@
 
     #timer h2 {
       position: absolute;
-      top: 50%;
+      top: 65%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 50px;
@@ -145,12 +145,13 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 600px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      background-color: rgba(42, 59, 8, 0.9);
+      background-image: url(./internalAssets/Mask\ group.png);
+      background-color: #34205d;
       z-index: 10;
     }
 
@@ -277,7 +278,7 @@
   </div>
 
   <div id="money">
-    <img src="./internalAssets/starCash Spot.png" alt="Star Cash">
+    <img src="./internalAssets/star cash.png" alt="Star Cash">
     <h2 id="moneyTxt">$0</h2>
   </div>
 
@@ -290,16 +291,16 @@
     <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
   </div>
 
-  <div id="podium">
+  <!-- <div id="podium">
     <img src="./internalAssets/podium.png" alt="Podium">
-  </div>
+  </div> -->
 
   <div id="timer">
-    <img src="./internalAssets/Countdown clock.png" alt="Timer">
+    <img src="./timePodium.png" alt="Timer">
     <h2 id="timerTxt">00:00</h2>
   </div>
 
-  <div id="quiz-options">
+  <div id="quiz-options" >
     <button id="optionA" class="quiz-button" data-answer="A">
       Erin
       <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
