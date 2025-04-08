@@ -607,304 +607,304 @@
         "presentEra": {
             "easy": {
                 "q1": {
-                    "question": "Which popular quiz game show includes powerups such as phone-a-friend, 50/50, and ask the audience?",
+                    "question": "Which game show currently features contestants answering trivia questions in various categories?",
+                    "options": [
+                        "Jeopardy!",
+                        "Wheel of Fortune",
+                        "Family Feud",
+                        "Deal or No Deal"
+                    ],
+                    "correctAnswer": "Jeopardy!",
+                    "points": 10,
+                    "aiHint": "Contestants answer in the form of a question.",
+                    "image": "",
+                    "additionalInfo": "Jeopardy! has been a staple of American television since 1964, testing contestants' general knowledge."
+                },
+                "q2": {
+                    "question": "Which game show, created by Mark Goodson, has contestants choosing from different categories to answer questions?",
+                    "options": [
+                        "Who Wants to Be a Millionaire?",
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Family Feud"
+                    ],
+                    "correctAnswer": "Who Wants to Be a Millionaire?",
+                    "points": 10,
+                    "aiHint": "Contestants aim to win by answering progressively harder questions for increasing amounts of money.",
+                    "image": "",
+                    "additionalInfo": "Who Wants to Be a Millionaire? first aired in 1999 and became an instant success."
+                },
+                "q3": {
+                    "question": "Which game show involves contestants picking a briefcase that contains a specific amount of money?",
+                    "options": [
+                        "Deal or No Deal",
+                        "The Price is Right",
+                        "Wheel of Fortune",
+                        "Family Feud"
+                    ],
+                    "correctAnswer": "Deal or No Deal",
+                    "points": 10,
+                    "aiHint": "Think about a show where a contestant chooses a case and then negotiates with a banker.",
+                    "image": "",
+                    "additionalInfo": "Deal or No Deal was hosted by Howie Mandel and became popular due to its high-stakes nature."
+                },
+                "q4": {
+                    "question": "Which game show currently airs with celebrity contestants answering questions for charity?",
+                    "options": [
+                        "Celebrity Family Feud",
+                        "The Chase",
+                        "Wheel of Fortune",
+                        "Jeopardy!"
+                    ],
+                    "correctAnswer": "Celebrity Family Feud",
+                    "points": 10,
+                    "aiHint": "This show brings in celebrities who play alongside regular contestants to support charity.",
+                    "image": "",
+                    "additionalInfo": "Celebrity Family Feud has been a spin-off of the classic *Family Feud*, with celebrities playing for charity."
+                },
+                "q5": {
+                    "question": "Which game show features contestants solving word puzzles and choosing letters to earn money?",
+                    "options": [
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Deal or No Deal",
+                        "Who Wants to Be a Millionaire?"
+                    ],
+                    "correctAnswer": "Wheel of Fortune",
+                    "points": 10,
+                    "aiHint": "This show involves spinning a giant wheel to determine how much money contestants can win for each correct letter.",
+                    "image": "",
+                    "additionalInfo": "Wheel of Fortune has been on the air since 1975 and remains one of the most popular game shows in America."
+                },
+                "q6": {
+                    "question": "Which reality-based game show had contestants competing in physical and mental challenges to win a cash prize?",
+                    "options": [
+                        "The Amazing Race",
+                        "Survivor",
+                        "The Challenge",
+                        "Big Brother"
+                    ],
+                    "correctAnswer": "The Amazing Race",
+                    "points": 10,
+                    "aiHint": "Think about a global competition where teams race to various countries to complete tasks.",
+                    "image": "",
+                    "additionalInfo": "The Amazing Race, which started in 2001, is known for its adventure, teamwork, and cultural immersion."
+                },
+                "q7": {
+                    "question": "Which game show features contestants answering trivia questions to win up to $1,000,000?",
                     "options": [
                         "Who Wants to Be a Millionaire?",
                         "Jeopardy!",
                         "Deal or No Deal",
-                        "The Price is Right"
+                        "The Chase"
                     ],
                     "correctAnswer": "Who Wants to Be a Millionaire?",
                     "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants answer multiple-choice questions, each worth a higher cash value.",
                     "image": "",
-                    "additionalInfo": "Who Wants to Be a Millionaire? was a popular quiz show that first aired in the UK in 1998."
-                },
-                "q2": {
-                    "question": "Which game show often featured a vocal group called the 'Rockapellas'?",
-                    "options": [
-                        "American Idol",
-                        "Where in the World is Carmen Sandiego?",
-                        "The Masked Singer",
-                        "Where in Time is Carmen Sandiego?"
-                    ],
-                    "correctAnswer": "Where in the World is Carmen Sandiego?",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "Where in the World is Carmen Sandiego? was a popular game show that aired from 1991 to 1995. The show featured a vocal group called the 'Rockapellas' who performed songs about geography."
-                },
-                "q3": {
-                    "question": "What year did the game show, Where in the World is Carmen Sandiego? first air?",
-                    "options": [
-                        "1991",
-                        "1992",
-                        "1994",
-                        "1998"
-                    ],
-                    "correctAnswer": "1991",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "On Septemer 30, 1991, the game show, Where in the World is Carmen Sandiego? first aired on PBS."
-                },
-                "q4": {
-                    "question": "Which American game show featured three contestants racing to the top of the 'Crag'?",
-                    "options": [
-                        "Double Dare",
-                        "Express Climbers",
-                        "Legends of the Hidden Temple",
-                        "Nickelodeon Guts"
-                    ],
-                    "correctAnswer": "Nickelodeon Guts",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "Nickelodeon Guts was a popular game show that aired from 1992 to 1995."
-                },
-                "q5": {
-                    "question": "Who hosted Family Feud from 1988 to 1994?",
-                    "options": [
-                        "Richard Dawson",
-                        "Steve Harvey",
-                        "Louie Anderson",
-                        "Ray Combs"
-                    ],
-                    "correctAnswer": "Ray Combs",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "Ray Combs was the host of Family Feud from 1988 to 1994. He was known for his energetic and humorous hosting style."
-                },
-                "q6": {
-                    "question": "What show did Regis Philbin host?",
-                    "options": [
-                        "Who Wants to Be a Millionaire?",
-                        "American Idol",
-                        "The Banker",
-                        "Telly Addicts"
-                    ],
-                    "correctAnswer": "Who Wants to Be a Millionaire?",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "Regis Philbin hosted the popular quiz show Who Wants to Be a Millionaire? from 1999 to 2002."
-                },
-                "q7": {
-                    "question": "Which channel did the game show GUTS air on?",
-                    "options": [
-                        "Nickelodeon",
-                        "Disney Channel",
-                        "Cartoon Network",
-                        "PBS"
-                    ],
-                    "correctAnswer": "Nickelodeon",
-                    "points": 10,
-                    "aiHint": "Reach out to the AI for a clue",
-                    "image": "",
-                    "additionalInfo": "GUTS was a popular game show that aired on Nickelodeon from 1992 to 1995. The show featured contestants competing in physical challenges to win prizes."
+                    "additionalInfo": "The show has been widely successful and is known for its dramatic music and suspenseful atmosphere."
                 }
             },
             "medium": {
                 "q1": {
-                    "question": "Which game show used a 'blue screen' to create a virtual reality world for contestants?",
+                    "question": "Which game show tests contestants' knowledge of trivia across a wide variety of subjects?",
                     "options": [
-                        "Legends of the Hidden Temple",
-                        "Nickelodeon Guts",
-                        "Virutal Adventures",
-                        "Nick Arcade"
+                        "Jeopardy!",
+                        "Who Wants to Be a Millionaire?",
+                        "Wheel of Fortune",
+                        "Deal or No Deal"
                     ],
-                    "correctAnswer": "Nick Arcade",
+                    "correctAnswer": "Jeopardy!",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants respond to answers with questions, which is a signature format of the show.",
                     "image": "",
-                    "additionalInfo": "Nick Arcade was a popular game show that aired from 1992 to 1993. The show used a 'blue screen' to create a virtual reality world for contestants to explore."
+                    "additionalInfo": "Jeopardy! has become a cultural icon, with Alex Trebek hosting for over 30 years."
                 },
                 "q2": {
-                    "question": "Which game show, co-created by Lebron James, includes a giant Plinko-style wall?",
+                    "question": "Which game show has featured celebrity versions, with stars playing for charity?",
                     "options": [
-                        "The Wall",
-                        "Lebron James' The Wall",
-                        "The Climb",
-                        "The Ascent"
+                        "The Price is Right",
+                        "Celebrity Family Feud",
+                        "Wheel of Fortune",
+                        "Big Brother"
                     ],
-                    "correctAnswer": "The Wall",
+                    "correctAnswer": "Celebrity Family Feud",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "This show often features celebrities answering survey-based questions against other stars.",
                     "image": "",
-                    "additionalInfo": "The Wall is a game show that premiered on December 19, 2016, features a giant Plinko-style wall where contestants drop balls to win money."
+                    "additionalInfo": "Celebrity Family Feud is a star-studded version of *Family Feud*, where celebrities play for charity."
                 },
                 "q3": {
-                    "question": "Which game show consists of two teams of four players guessing the answers to survey questions?",
+                    "question": "Which popular game show had its first season in 2001 and involves contestants competing to find hidden immunity idols?",
                     "options": [
-                        "Familial Feud",
-                        "American Idol",
-                        "The Weakest Link",
-                        "America Says"
+                        "The Challenge",
+                        "Survivor",
+                        "The Amazing Race",
+                        "Big Brother"
                     ],
-                    "correctAnswer": "America Says",
+                    "correctAnswer": "Survivor",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants live in remote locations and form alliances to win challenges and outlast the competition.",
                     "image": "",
-                    "additionalInfo": "America Says is an American game show that premiered on May 25, 2019."
+                    "additionalInfo": "Survivor is one of the longest-running reality TV shows, known for its survival and strategy elements."
                 },
                 "q4": {
-                    "question": "How many years did Alex Trebek host Jeopardy!?",
+                    "question": "Which current game show features contestants answering multiple-choice trivia questions for a grand prize?",
                     "options": [
-                        "37 years",
-                        "49 years",
-                        "25 years",
-                        "31 years"
+                        "Who Wants to Be a Millionaire?",
+                        "Jeopardy!",
+                        "Deal or No Deal",
+                        "The Chase"
                     ],
-                    "correctAnswer": "37 years",
+                    "correctAnswer": "The Chase",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants compete against a professional quizzer, known as the 'Chaser.'",
                     "image": "",
-                    "additionalInfo": "Alex Trebek hosted Jeopardy! for 37 years, from 1984 until his passing in 2020."
+                    "additionalInfo": "The Chase is a high-stakes trivia competition where contestants attempt to outrun a Chaser to win a prize."
                 },
                 "q5": {
-                    "question": "Guy Fieri hosted which game show that required contestants to complete challenges within a time limit?",
+                    "question": "Which game show involves contestants guessing the price of everyday items to win money?",
                     "options": [
-                        "Minute to Win It",
-                        "Guy's Grocery Games",
-                        "30 seconds to Fame",
-                        "5 Second Rule"
+                        "Price is Right",
+                        "Deal or No Deal",
+                        "Wheel of Fortune",
+                        "Jeopardy!"
                     ],
-                    "correctAnswer": "Minute to Win It",
+                    "correctAnswer": "Price is Right",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants bid on products, with the closest estimate winning the prize.",
                     "image": "",
-                    "additionalInfo": "Minute to Win It is a game show that aired from 2010 to 2011, where contestants completed challenges using household items within a minute."
+                    "additionalInfo": "*The Price is Right* has been a beloved game show for decades, known for its colorful set and iconic hosts."
                 },
                 "q6": {
-                    "question": "Which TV studio is known for producing the game show, BrainSurge?",
+                    "question": "Which game show had contestants solving word puzzles to win cash and prizes?",
                     "options": [
-                        "Nickelodeon",
-                        "Disney Channel",
-                        "PBS",
-                        "ABC"
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Family Feud",
+                        "Who Wants to Be a Millionaire?"
                     ],
-                    "correctAnswer": "Nickelodeon",
+                    "correctAnswer": "Wheel of Fortune",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants spin a large wheel and try to guess the letters in the puzzle to win money.",
                     "image": "",
-                    "additionalInfo": "BrainSurge is a game show that aired on Nickelodeon from 2010 to 2011. The show featured contestants completing challenges to win prizes."
+                    "additionalInfo": "Wheel of Fortune has been running since 1975 and remains one of the most popular game shows."
                 },
                 "q7": {
-                    "question": "Who hosted the game show, Deal or No Deal?",
+                    "question": "Which game show, hosted by Howie Mandel, features contestants choosing from sealed briefcases?",
                     "options": [
-                        "Howie Mandel",
-                        "Steve Harvey",
-                        "Ryan Seacrest",
-                        "Jeff Foxworthy"
+                        "Deal or No Deal",
+                        "The Chase",
+                        "Big Brother",
+                        "Jeopardy!"
                     ],
-                    "correctAnswer": "Howie Mandel",
+                    "correctAnswer": "Deal or No Deal",
                     "points": 15,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "This show relies on contestants' risk-taking and negotiation with the banker.",
                     "image": "",
-                    "additionalInfo": "Howie Mandel hosted the game show Deal or No Deal, which aired from 2005 to 2019. The show featured contestants choosing briefcases to win cash prizes."
+                    "additionalInfo": "Deal or No Deal became a sensation due to its suspenseful format and dramatic moments."
                 }
             },
             "hard": {
                 "q1": {
-                    "question": "Who is the host of the game show, Are You Smarter Than a 5th Grader?",
+                    "question": "Which game show, popular in the UK, involved contestants solving puzzles in a timed escape room?",
                     "options": [
-                        "Jeff Foxworthy",
-                        "Steve Harvey",
-                        "Ryan Seacrest",
-                        "Howie Mandel"
+                        "The Crystal Maze",
+                        "Big Brother",
+                        "The Chase",
+                        "Deal or No Deal"
                     ],
-                    "correctAnswer": "Jeff Foxworthy",
+                    "correctAnswer": "The Crystal Maze",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "It involved physical and mental challenges in themed rooms.",
                     "image": "",
-                    "additionalInfo": "Jeff Foxworthy is a comedian and television host known for his role on Are You Smarter Than a 5th Grader?, which premiered in 2007."
+                    "additionalInfo": "The Crystal Maze was a major hit in the UK in the 1990s and was revived in the 2010s."
                 },
                 "q2": {
-                    "question": "Which Family Feud host led the show two different times?",
+                    "question": "Which game show, starting in the 2000s, had contestants answering questions in a high-stakes quiz competition?",
                     "options": [
-                        "Richard Dawson",
-                        "Steve Harvey",
-                        "Ray Combs",
-                        "Louie Anderson"
+                        "The Chase",
+                        "Who Wants to Be a Millionaire?",
+                        "Jeopardy!",
+                        "Deal or No Deal"
                     ],
-                    "correctAnswer": "Richard Dawson",
+                    "correctAnswer": "The Chase",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants answer questions to outrun a professional quizzer, known as 'The Chaser.'",
                     "image": "",
-                    "additionalInfo": "Richard Dawson was the original host of Family Feud from 1976 to 1985 and returned for a second run from 1994 to 1995."
+                    "additionalInfo": "The Chase is known for its intense pace and the professional quizzers that challenge contestants."
                 },
                 "q3": {
-                    "question": "Which game show paired contestants with their own 'classmate' to answer questions?",
+                    "question": "Which game show featured contestants solving word puzzles in a board game-style format?",
                     "options": [
-                        "Are You Smarter Than a 5th Grader?",
-                        "Are You Dumber Than a 4th Grader?",
-                        "The Weakest Link",
-                        "Test Against the Best"
+                        "Blockbusters",
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Deal or No Deal"
                     ],
-                    "correctAnswer": "Are You Smarter Than a 5th Grader?",
+                    "correctAnswer": "Blockbusters",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants form a path across a honeycomb grid by guessing the answers to questions.",
                     "image": "",
-                    "additionalInfo": "Are You Smarter Than a 5th Grader? features contestants answering questions from elementary school subjects, often with the help of a 'classmate' who is a fifth grader."
+                    "additionalInfo": "Blockbusters was a popular 1980s game show known for its unique format and intellectual challenges."
                 },
                 "q4": {
-                    "question": "Which game show hosted by Nicole Byer requires contestants to bake cakes and desserts?",
+                    "question": "Which game show features global contestants racing around the world to complete challenges?",
                     "options": [
-                        "Nailed It!",
-                        "The Great British Bake Off",
-                        "Cupcake Wars",
-                        "Sugar Rush"
+                        "The Amazing Race",
+                        "The Challenge",
+                        "Big Brother",
+                        "Survivor"
                     ],
-                    "correctAnswer": "Nailed It!",
+                    "correctAnswer": "The Amazing Race",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Teams race through different countries to complete tasks in a race for a grand prize.",
                     "image": "",
-                    "additionalInfo": "Nailed It! is a baking competition show that premiered on Netflix in 2018, hosted by Nicole Byer. The show features amateur bakers attempting to recreate elaborate cakes and desserts, often with humorous results."
+                    "additionalInfo": "The Amazing Race combines adventure, teamwork, and cultural immersion, making it a fan favorite."
                 },
                 "q5": {
-                    "question": "Who holds the record for the most wins on Jeopardy!?",
+                    "question": "Which game show featured contestants guessing well-known phrases based on animated clues?",
                     "options": [
-                        "Ken Jennings",
-                        "James Holzhauer",
-                        "Alex Trebek",
-                        "Arthur Jennings"
+                        "Catchphrase",
+                        "Jeopardy!",
+                        "The Crystal Maze",
+                        "Big Brother"
                     ],
-                    "correctAnswer": "Ken Jennings",
+                    "correctAnswer": "Catchphrase",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Think of a show where contestants solve animated puzzles to figure out common sayings.",
                     "image": "",
-                    "additionalInfo": "Ken Jennings holds the record for the most consecutive wins on Jeopardy!, with 74 wins in 2004."
+                    "additionalInfo": "Catchphrase was a popular show in the UK in the 80s and 90s, featuring animated clues and famous phrases."
                 },
                 "q6": {
-                    "question": "Which reality game show required contestants to clear a series of physically demanding obstacle courses?",
+                    "question": "Which game show was famous for its final round, where contestants attempt to guess letters to form words?",
                     "options": [
-                        "American Ninja Warrior",
-                        "Obstacle Conqueror",
-                        "Wipeout",
-                        "Ultimate Runner"
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Who Wants to Be a Millionaire?",
+                        "Family Feud"
                     ],
-                    "correctAnswer": "American Ninja Warrior",
+                    "correctAnswer": "Wheel of Fortune",
                     "points": 25,
-                    "aiHint": "Not the one with the giant red balls.",
+                    "aiHint": "Contestants spin the wheel and try to complete a puzzle with guessed letters.",
                     "image": "",
-                    "additionalInfo": "American Ninja Warrior is a reality competition show that features contestants worldwide attempting to complete challenging obstacle courses. The show premiered in 2009 and has become a popular franchise."
+                    "additionalInfo": "Wheel of Fortune remains one of the longest-running and most iconic game shows in history."
                 },
                 "q7": {
-                    "question": "Who hosted Fear Factor in the 2017 revival?",
+                    "question": "Which high-stakes game show involved contestants guessing how much various items cost to win big prizes?",
                     "options": [
-                        "Ludacris",
-                        "Steve Harvey",
-                        "Ryan Seacrest",
-                        "The Rock"
+                        "The Price is Right",
+                        "Wheel of Fortune",
+                        "Deal or No Deal",
+                        "Jeopardy!"
                     ],
-                    "correctAnswer": "Ludacris",
+                    "correctAnswer": "The Price is Right",
                     "points": 25,
-                    "aiHint": "Reach out to the AI for a clue",
+                    "aiHint": "Contestants attempt to guess the price of retail items in order to win them.",
                     "image": "",
-                    "additionalInfo": "Ludacris hosted the 2017 revival of Fear Factor, which aired on MTV. The show featured contestants facing their fears and completing challenges to win cash prizes."
+                    "additionalInfo": "*The Price is Right* has been a staple of American television for decades, combining fun and competition."
                 }
             }
         }
-    }
+    } 
 }
