@@ -8,6 +8,9 @@ const os = require('os');
 const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
 const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
 
+// PI scanner states
+const scannerStates = {};
+
 // Express setup
 const app = express();
 const port = process.env.PORT || 3000;
@@ -50,43 +53,43 @@ async function initializeSerialPort() {
     const ports = await SerialPort.list();
     console.log('Available ports:');
     ports.forEach(port => console.log(port.path));
-    
+
     let selectedPort = null;
-    
+
     if (os.platform() === 'win32') {
       // On Windows, look for COM6
       selectedPort = ports.find(port => port.path === 'COM6');
     } else {
       // On Linux, look for common patterns for Arduino/ESP32 devices
-      selectedPort = ports.find(port => 
-        port.path.startsWith('/dev/ttyUSB') || 
+      selectedPort = ports.find(port =>
+        port.path.startsWith('/dev/ttyUSB') ||
         port.path.startsWith('/dev/ttyACM') ||
         port.path.startsWith('/dev/ttyS')
       );
     }
-    
+
     if (!selectedPort) {
       console.error('No suitable serial port found');
       return;
     }
-    
+
     console.log(`Connecting to port: ${selectedPort.path}`);
-    
+
     const serialPort = new SerialPort({
       path: selectedPort.path,
       baudRate: 115200,
     });
-    
+
     const parser = serialPort.pipe(new ReadlineParser({ delimiter: '\n' }));
-    
+
     serialPort.on('open', () => {
       console.log(`Serial port ${selectedPort.path} opened successfully`);
     });
-    
+
     serialPort.on('error', (err) => {
       console.error('Serial port error:', err.message);
     });
-    
+
     parser.on('data', (data) => {
       console.log(`Received from ESP32: ${data}`);
       // Broadcast the data to all WebSocket clients
@@ -96,7 +99,7 @@ async function initializeSerialPort() {
         }
       });
     });
-    
+
     return serialPort;
   } catch (error) {
     console.error('Error initializing serial port:', error);
@@ -165,6 +168,37 @@ app.post('/RFIDscanner', (req, res) => {
 
   console.log(`RFID Scanned: ${id}, Team: 1:${teamArray}`);
   res.status(200).json({ message: 'RFID scanned successfully' });
+});
+
+
+// Endpoint(s) to communicate with the Raspberry Pi  // 
+
+// get the current state from the scanner
+app.get("/pi/:id/state", (req, res) => {
+  const id = req.params.id;
+  console.log(`Getting state for scanner ${id}`);
+
+  if (!id) {
+    return res.status(400).json({ error: 'No scanner ID provided' });
+  }
+
+  // Simulate getting the state from the scanner
+  res.json({ id: id, state: 'idle' }); // sending idle state for now
+});
+
+// Endpoint to update the state of the scanner
+app.post("/pi/:id/state", (req, res) => {
+  const id = req.params.id;
+  const state = req.body.state;
+
+  console.log(`Updating state for scanner ${id} to ${state}`);
+
+  if (!id || !state) {
+    return res.status(400).json({ error: 'No scanner ID or state provided' });
+  }
+
+  // Simulate updating the state of the scanner
+  res.json({ id: id, state: state });
 });
 
 
