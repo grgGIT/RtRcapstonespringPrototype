@@ -12,12 +12,23 @@
                     ],
                     "correctAnswer": "Professor Quiz",
                     "points": 10,
-                    "aiHint": "Think “academia meets trivia”!",
+                    "aiHint": "Think “academic person meets another word for trivia”!",
                     "image": "",
                     "additionalInfo": "Professor Quiz was the first successful radio quiz show, airing in 1936 and offering cash prizes."
                 },
                 "q2": {
-
+                    "question": "Which radio game show featured contestants answering questions while a clock ticked loudly in the background?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "Twenty Questions",
+                        "Take It or Leave It",
+                        "Information Please"
+                    ],
+                    "correctAnswer": "Take It or Leave It",
+                    "points": 10,
+                    "aiHint": "The title hints at a choice — do you risk it or play it safe?",
+                    "image": "",
+                    "additionalInfo": "Take It or Leave It began in 1940 and was known for building suspense with its ticking clock. It eventually evolved into the TV show 'The $64 Question.'"
                 },
                 "q3": {
                     "question": "Which radio show punished wrong answers with funny stunts?",
@@ -148,6 +159,18 @@
                     "additionalInfo": "Contestants would guess the identities of mystery guests by asking questions."
                 },
                 "q5": {
+                    "question": "Which pioneering radio quiz show allowed listeners at home to submit questions and even stump the panel?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "Information Please",
+                        "It Pays to Be Ignorant",
+                        "You Bet Your Life"
+                    ],
+                    "correctAnswer": "Information Please",
+                    "points": 20,
+                    "aiHint": "The title suggests the show is politely asking for facts — and sometimes the audience had better ones!",
+                    "image": "",
+                    "additionalInfo": "Information Please aired from 1938 to 1951 and featured expert panelists answering listener-submitted questions. If the panel couldn't answer, the listener won a prize."
                 },
                 "q6": {
                     "question": "Strike It Rich gave contestants money based on what?",
@@ -453,10 +476,32 @@
                     "additionalInfo": "Blockbusters was especially popular with students and involved a honeycomb-shaped grid of letters."
                 },
                 "q6": {
-           
+                    "question": "Which 1970s game show, hosted by Wink Martindale, challenged contestants to memorize answers before facing trivia questions?",
+                    "options": [
+                        "Tic-Tac-Dough",
+                        "Concentration",
+                        "Gambit",
+                        "Las Vegas Gambit"
+                    ],
+                    "correctAnswer": "Gambit",
+                    "points": 20,
+                    "aiHint": "Think of blackjack… but with trivia instead of chips.",
+                    "image": "",
+                    "additionalInfo": "Gambit, which aired in the 1970s and was hosted by Wink Martindale, blended trivia with blackjack-style card play. Contestants answered questions to gain control of cards and aimed to reach 21."
                 },
                 "q7": {
-                    
+                    "question": "Which CBS game show had celebrity panelists trying to match the fill-in-the-blank answers of contestants in humorous ways?",
+                    "options": [
+                        "To Tell the Truth",
+                        "Match Game",
+                        "What's My Line?",
+                        "Name That Tune"
+                    ],
+                    "correctAnswer": "Match Game",
+                    "points": 20,
+                    "aiHint": "If you're on the same wavelength as celebrities, you'll fill in the blanks just fine!",
+                    "image": "",
+                    "additionalInfo": "Match Game became a hit in the 1970s with its wild humor and innuendo-filled questions. It featured celebrity panelists like Brett Somers and Charles Nelson Reilly trying to match answers with contestants."
                 }
             },
             "hard": {
@@ -503,18 +548,18 @@
                     "additionalInfo": "The Crystal Maze aired in the UK from 1990 to 1995 and featured contestants completing tasks in various themed zones."
                 },
                 "q4": {
-                    "question": "Which 1980s game show used a 'Gold Run' final challenge where contestants navigated a honeycomb board?",
+                    "question": "Which 1970s U.K. game show was hosted by Bob Monkhouse and featured a rotating conveyor belt of prizes in its final round?",
                     "options": [
-                        "Blockbusters",
-                        "Family Fortunes",
-                        "Play Your Cards Right",
-                        "The Price is Right"
+                        "Sale of the Century",
+                        "Blankety Blank",
+                        "The Generation Game",
+                        "Bullseye"
                     ],
-                    "correctAnswer": "Blockbusters",
-                    "points": 25,
-                    "aiHint": "The final round was named after a precious metal.",
+                    "correctAnswer": "The Generation Game",
+                    "points": 30,
+                    "aiHint": "Think family fun across the decades, and don’t forget the conveyor belt full of goodies!",
                     "image": "",
-                    "additionalInfo": "Blockbusters had a famous 'Gold Run' challenge where contestants had to pick letters to form words."
+                    "additionalInfo": "The Generation Game was a hit British game show that encouraged multiple generations of families to compete. Its most iconic moment was the final round, where contestants memorized prizes rolling by on a conveyor belt."
                 },
                 "q5": {
                     "question": "Which 80s game show had a famous segment where players solved anagrams and word puzzles?",
@@ -545,25 +590,36 @@
                     "additionalInfo": "The Krypton Factor featured contestants completing tasks that tested intelligence, strength, and agility."
                 },
                 "q7": {
-                    "question": "Which 80s game show had contestants competing on a virtual reality set?",
+                    "question": "Which Japanese game show, debuting in 1979, became infamous for bizarre physical challenges and later inspired 'MXC' in the U.S.?",
                     "options": [
-                        "Knightmare",
-                        "The Crystal Maze",
-                        "Going for Gold",
-                        "Play Your Cards Right"
+                        "Takeshi's Castle",
+                        "Endurance",
+                        "Ninja Warrior",
+                        "Human Tetris"
                     ],
-                    "correctAnswer": "Knightmare",
-                    "points": 25,
-                    "aiHint": "Contestants were guided through challenges by a 'virtual reality' style environment.",
+                    "correctAnswer": "Takeshi's Castle",
+                    "points": 30,
+                    "aiHint": "Imagine a *noble* title paired with total chaos — this show was led by a count!",
                     "image": "",
-                    "additionalInfo": "Knightmare was one of the first shows to use early virtual reality techniques to create a maze-like environment."
+                    "additionalInfo": "Takeshi's Castle was a massively popular Japanese game show starting in 1979. Its outlandish obstacles and over-the-top format inspired international spin-offs and parodies, including 'Most Extreme Elimination Challenge' (MXC)."
                 }
             }
         },
         "presentEra": {
             "easy": {
                 "q1": {
-                
+                    "question": "Which game show is this exhibit based off of?",
+                    "options": [
+                        "Brainsurge",
+                        "Cash Cab",
+                        "Buzzfeed Quiz",
+                        "Countdown"
+                    ],
+                    "correctAnswer": "Cash Cab",
+                    "points": 20,
+                    "aiHint": "I mean... You might need to take a taxi home if you dont get this one right.",
+                    "image": "",
+                    "additionalInfo": "The Singing Bee originally premiered in 2007 and was revived with Jane Lynch hosting in 2009. Contestants try to sing the correct lyrics after the music stops."
                 },
                 "q2": {
                     "question": "Which game show, created by Mark Goodson, has contestants choosing from different categories to answer questions?",
@@ -608,6 +664,18 @@
                     "additionalInfo": "Celebrity Family Feud has been a spin-off of the classic *Family Feud*, with celebrities playing for charity."
                 },
                 "q5": {
+                    "question": "Which game show hosted by Jane Lynch challenges contestants to complete lyrics from popular songs across multiple decades?",
+                    "options": [
+                        "Beat Shazam",
+                        "The Singing Bee",
+                        "Don't Forget the Lyrics!",
+                        "Name That Tune"
+                    ],
+                    "correctAnswer": "The Singing Bee",
+                    "points": 20,
+                    "aiHint": "You might not know every word, but if you hum along, you’re close… just try not to miss the *buzz*!",
+                    "image": "",
+                    "additionalInfo": "The Singing Bee originally premiered in 2007 and was revived with Jane Lynch hosting in 2009. Contestants try to sing the correct lyrics after the music stops."
                 },
                 "q6": {
                     "question": "Which reality-based game show had contestants competing in physical and mental challenges to win a cash prize?",
@@ -710,10 +778,32 @@
                     "additionalInfo": "*The Price is Right* has been a beloved game show for decades, known for its colorful set and iconic hosts."
                 },
                 "q6": {
-                   
+                    "question": "Which fast-paced game show, hosted by Dwayne 'The Rock' Johnson, features physically intense challenges inspired by mythology?",
+                    "options": [
+                        "Titan Games",
+                        "Ultimate Beastmaster",
+                        "American Ninja Warrior",
+                        "Floor is Lava"
+                    ],
+                    "correctAnswer": "Titan Games",
+                    "points": 20,
+                    "aiHint": "If you’re thinking Greek gods and gym gains, this one flexes both.",
+                    "image": "",
+                    "additionalInfo": "The Titan Games aired on NBC starting in 2019. Created and hosted by Dwayne Johnson, it pits everyday athletes against each other in competitions themed after legendary feats of strength."
                 },
                 "q7": {
-
+                    "question": "Which British-originated game show, revived in the U.S. in 2020, is known for its rapid-fire questions and the catchphrase 'You are the weakest link — goodbye'?",
+                    "options": [
+                        "The Weakest Link",
+                        "Mastermind",
+                        "Chase the Cash",
+                        "Who Dares Wins"
+                    ],
+                    "correctAnswer": "The Weakest Link",
+                    "points": 25,
+                    "aiHint": "You really don't need a hint for this!",
+                    "image": "",
+                    "additionalInfo": "The Weakest Link originally aired in the U.K. and was later revived in the U.S. in 2020, hosted by Jane Lynch. Contestants must answer trivia quickly and vote off the 'weakest' player each round."
                 }
             },
             "hard": {
@@ -746,10 +836,32 @@
                     "additionalInfo": "The Chase is known for its intense pace and the professional quizzers that challenge contestants."
                 },
                 "q3": {
-      
+                    "question": "Which pseudo-game show features contestants competing in surreal, childhood-themed challenges in a house designed to play tricks on their perception?",
+                    "options": [
+                        "The Floor Is Lava",
+                        "The Circle",
+                        "Squid Game: The Challenge",
+                        "The House of Games"
+                    ],
+                    "correctAnswer": "Squid Game: The Challenge",
+                    "points": 30,
+                    "aiHint": "This show turns fiction into reality — minus the fatal consequences, but the stakes (and stress) are still high.",
+                    "image": "",
+                    "additionalInfo": "Squid Game: The Challenge is a reality competition based on the hit Korean drama *Squid Game*. Contestants face games inspired by the original show, competing for a $4.56 million prize."
                 },
                 "q4": {
-        
+                    "question": "Which mind-bending game show, hosted by Rob Lowe, tests contestants’ ability to think and react while literally strapped to a moving, spinning rig?",
+                    "options": [
+                        "Mental Samurai",
+                        "The Cube",
+                        "Brain Rush",
+                        "Trick or Truth"
+                    ],
+                    "correctAnswer": "Mental Samurai",
+                    "points": 30,
+                    "aiHint": "Your brain gets tested, but so does your ability to *stay upright* — it’s trivia meets theme park ride.",
+                    "image": "",
+                    "additionalInfo": "Mental Samurai debuted in 2019 and was hosted by Rob Lowe. Contestants are quizzed while seated in a capsule that moves rapidly across a high-tech arena, challenging both knowledge and focus."
                 },
                 "q5": {
                     "question": "Which animated puzzle-solving show tasked contestants with deciphering popular idioms?",
@@ -766,7 +878,18 @@
                     "additionalInfo": "Catchphrase was a popular show in the UK in the 80s and 90s, featuring animated clues and famous phrases."
                 },
                 "q6": {
-                  
+                    "question": "Which rebooted game show challenges contestants to match strange items to their creators, often involving cakes disguised as real objects?",
+                    "options": [
+                        "Is It Cake?",
+                        "Nailed It!",
+                        "Snack vs. Chef",
+                        "Eye Candy"
+                    ],
+                    "correctAnswer": "Is It Cake?",
+                    "points": 30,
+                    "aiHint": "Looks deceive — don’t let your sweet tooth trick you into choosing a handbag over a dessert.",
+                    "image": "",
+                    "additionalInfo": "Is It Cake? launched on Netflix in 2022 and features bakers crafting hyper-realistic cakes to fool judges into thinking they're everyday objects. The show is inspired by viral social media trends."
                 },
                 "q7": {
                     "question": "Which game show’s iconic 'Showcase Showdown' tests players’ ability to accurately value products and packages?",
