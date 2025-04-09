@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,19 +61,30 @@
             text-align: center;
         }
         
-        #smallTxt {
+       
+        #txtnIDSection {
             width: 100%;
-            max-width: 1500px;
+            width: 2800px;
             height: auto;
-            font-size: 36px;
-            background-color: #3F3667;
+            font-size: 60px;
+            background-color: #3F3667 opacity: .6;
             color: whitesmoke;
             margin: 20px 0;
-            padding: 20px;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            /* Create upside-down trapezoid shape using clip-path */
+            position: relative;
+        }
+        #smallTxt {
+            width: 100%;
+            width: 2800px;
+            height: auto;
+            font-size: 60px;
+            color: white;
+            opacity: .9;
         }
         
         #limitMessage {
@@ -154,12 +166,29 @@
             justify-content: center;
             gap: 10px;
             margin: 20px 0;
+            background-color: #2C1F65;
         }
         
         .button-container img {
            
             height: 120px;
             width: auto;
+        }
+        #continue-text{
+            color: gray;
+            font-size: 80px;
+            padding: 20px;
+            align-self: center;
+            transition: color 0.3s ease;
+        }
+        
+        #continue-text.active {
+            color: #fdb813; /* Yellow color when active */
+        }
+        
+        /* Added pointer cursor for clickable S button */
+        .s-button-active {
+            cursor: pointer;
         }
     </style>
     <script>
@@ -168,6 +197,8 @@
             const rfButt = document.getElementById('bt');
             // Track which player is next to be activated
             let currentPlayer = 1;
+            const continueText = document.getElementById('continue-text');
+            let sButton;
             
             // Function to reset the player states
             function resetPlayers() {
@@ -184,14 +215,16 @@
                 }
                 
                 // Reset system message
-                document.getElementById('SystemMessage').textContent = 'At least ONE player must scan their wristband!';
+                // document.getElementById('SystemMessage').textContent = 'At least ONE player must scan their wristband!';
+                
+                // Reset continue text to gray
+                continueText.classList.remove('active');
                 
                 // Disable the S button and Continue arrow
-                const sButton = document.querySelector('.button-container img:first-of-type');
-                const continueArrow = document.querySelector('.button-container img:nth-of-type(2)');
+                sButton = document.querySelector('.button-container img:first-of-type');
                 
                 sButton.src = './internalAssets/S_disabled Button icon.png';
-                continueArrow.src = './internalAssets/Continue_disabled arrow.png';
+                sButton.classList.remove('s-button-active');
             }
             
             // Add click event listener to the button
@@ -207,20 +240,17 @@
                     
                     // Update system message after at least one player has joined
                     if (currentPlayer === 1) {
-                        document.getElementById('SystemMessage').textContent = 'Player 1 has joined! Press S to continue or add more players.';
-                        
                         // Enable the S button and Continue arrow (replace with enabled versions)
-                        const sButton = document.querySelector('.button-container img:first-of-type');
-                        const continueArrow = document.querySelector('.button-container img:nth-of-type(2)');
-                        
+                        sButton = document.querySelector('.button-container img:first-of-type');
                         sButton.src = './internalAssets/S Button icon.png';
-                        continueArrow.src = './internalAssets/Continue arrow.png';
+                        sButton.classList.add('s-button-active');
+                        
+                        // Change continue text to yellow (active state)
+                        continueText.classList.add('active');
+                        
                         sButton.addEventListener('click', function(){
-                            sButton.style.cursor = 'pointer';
                             window.location.href = './difficult.html';
-                        })
-                    } else {
-                        document.getElementById('SystemMessage').textContent = `Player ${currentPlayer} has joined! Press S to continue or add more players.`;
+                        });
                     }
                     
                     // Move to the next player
@@ -248,45 +278,39 @@
                 // Check if at least one player has joined (currentPlayer > 1)
                 if (event.key.toLowerCase() === 's' && currentPlayer > 1) {
                     // Navigate to the next page or perform continue action
-                    // For now, just alert
-                    alert('Continuing to next page with ' + (currentPlayer - 1) + ' players');
-                    // You would typically redirect here:
-                    // window.location.href = 'nextPage.html';
+                    window.location.href = './difficult.html';
                 }
             });
 
             const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
 
-// Handle WebSocket message
-ws.onmessage = (event) => {
-    const message = event.data;
-    console.log(`Button Pressed: "${message}"`);
-    handleButtonPress(message);
-};
+            // Handle WebSocket message
+            ws.onmessage = (event) => {
+                const message = event.data;
+                console.log(`Button Pressed: "${message}"`);
+                handleButtonPress(message);
+            };
 
-// Handle button press (Button F to navigate to playerJoin.html)
-function handleButtonPress(message) {
-    // Expected format: "Button F pressed"
-    const match = message.match(/Button\s+([A-Z])\s+pressed/i);
-    if (match && match[1]){
+            // Handle button press (Button F to navigate to playerJoin.html)
+            function handleButtonPress(message) {
+                // Expected format: "Button F pressed"
+                const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+                if (match && match[1]){
                     const letter = match[1].toUpperCase();  // e.g., "E"
-                    if (letter === 'E') {
-                        console.log('Button E pressed, simulating RFID button click');
+                    if (letter === 'F') {
+                        console.log('Button RFID pressed, simulating RFID button click');
                         // Check if the button is not disabled before clicking
                         if (!rfButt.disabled) {
                             rfButt.click();
                         }
-                    } else if (letter === 'F' && currentPlayer > 1) {
+                    } else if (letter === 'E' && currentPlayer > 1) {
                         // If S button is pressed and at least one player has joined
                         console.log('Button S pressed, navigating to difficulty selection');
                         window.location.href = './entrancevid.html';
                     }
                 }
-                
-}
+            }
         });
-         // WebSocket connection
-        
     </script>
 </head>
 <body>
@@ -295,41 +319,30 @@ function handleButtonPress(message) {
         Your browser does not support HTML5 video.
     </video>
     <div class="wristband">
-        
-
         <h1 id="bigMssg">Scan your RFID</h1>
 
-        <div id="smallTxt">
-            <p>Please scan your RFID tag to join the game and begin.</p>
-            <h2 id="limitMessage">Limit: 4 People</h2>
+        <div id="txtnIDSection">
+            <p id="smallTxt">Please scan your RFID tag to join the game and begin.<span id="limitMessage"> Limit: 4 People</span></p>
+            
+            <div id="BigPlayerSection">
+                <div id="Player1">
+                    <img src="./internalAssets/Player 1 State Indicator.png" alt="Player 1">
+                </div>
+                <div id="Player2">
+                    <img src="./internalAssets/Player 2 State Indicator.png" alt="Player 2">
+                </div>
+                <div id="Player3">
+                    <img src="./internalAssets/Player 3 State Indicator.png" alt="Player 3">
+                </div>
+                <div id="Player4">
+                    <img src="./internalAssets/Player 4 State Indicator.png" alt="Player 4">
+                </div>
+            </div>
+            <button id="bt">Click for RFID</button>
         </div>
-
-        <div id="BigPlayerSection">
-            <div id="Player1">
-                <span>Player 1</span>
-                <img src="./internalAssets/Player 1 State Indicator.png" alt="Player 1">
-            </div>
-            <div id="Player2">
-                <span>Player 2</span>
-                <img src="./internalAssets/Player 2 State Indicator.png" alt="Player 2">
-            </div>
-            <div id="Player3">
-                <span>Player 3</span>
-                <img src="./internalAssets/Player 3 State Indicator.png" alt="Player 3">
-            </div>
-            <div id="Player4">
-                <span>Player 4</span>
-                <img src="./internalAssets/Player 4 State Indicator.png" alt="Player 4">
-            </div>
-        </div>
-
-        <button id="bt">Click for RFID</button>
-
-        <h1 id="SystemMessage">At least ONE player must scan their wristband!</h1>
 
         <div class="button-container">
-            <img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection">
-            <img src="./internalAssets/Continue_disabled arrow.png" alt="Continue button is disabled until selection">
+            <h2 id="continue-text">Press <span><img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection"> to continue</span></h2>
         </div>
     </div>
 </body>

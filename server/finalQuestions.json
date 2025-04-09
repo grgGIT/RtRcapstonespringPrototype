@@ -196,6 +196,7 @@
                 "q2": {
                     "question": "Which radio show, first airing in 1964, is considered one of the longest-running quiz shows in the United States?",
                     "options": [
+                        "Twenty-One",
                         "The $64,000 Question",
                         "Jeopardy!",
                         "Ask Me Another",
@@ -215,7 +216,7 @@
                         "Match Game",
                         "Pick a Box"
                     ],
-                    "correctAnswer": "The $64,000 Question",
+                    "correctAnswer": "Twenty-One",
                     "points": 25,
                     "aiHint": "This show’s grand prize was literally the title.",
                     "image": "",
