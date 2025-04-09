@@ -3,11 +3,7 @@
         "radioEra": {
             "easy": {
                 "q1": {
-<<<<<<< HEAD
-                    "question": "What is the name of the first successful radio game show?",
-=======
                     "question": "What was the first successful radio quiz show in the U.S.?",
->>>>>>> origin/main
                     "options": [
                         "Truth or Consequences",
                         "Professor Quiz",
@@ -16,11 +12,7 @@
                     ],
                     "correctAnswer": "Professor Quiz",
                     "points": 10,
-<<<<<<< HEAD
-                    "aiHint": "This pioneering show began in 1936 and was hosted by a man with an academic-sounding title.",
-=======
                     "aiHint": "Think “academia meets trivia”!",
->>>>>>> origin/main
                     "image": "",
                     "additionalInfo": "Professor Quiz was the first successful radio quiz show, airing in 1936 and offering cash prizes."
                 },
@@ -34,11 +26,7 @@
                     ],
                     "correctAnswer": "Professor Quiz",
                     "points": 10,
-<<<<<<< HEAD
-                    "aiHint": "This happened after the Great Depression but before World War II began.",
-=======
                     "aiHint": "A brainy-sounding show with a scholarly host!",
->>>>>>> origin/main
                     "image": "",
                     "additionalInfo": "Aired on May 9, 1936, Professor Quiz featured trivia and cash prizes."
                 },
@@ -52,21 +40,12 @@
                     ],
                     "correctAnswer": "Truth or Consequences",
                     "points": 10,
-<<<<<<< HEAD
-                    "aiHint": "The name of this show implies a penalty for wrong answers - you either tell the 'truth' or face the 'consequences'.",
-                    "image": "",
-                    "additionalInfo": "Truth or Consequences was famous for its silly stunts and became one of the most popular quiz shows on radio before transitioning to television."
-                },
-                "q4": {
-                    "question": "Which musical quiz show gave contestants the chance to submit their own questions to band members?",
-=======
                     "aiHint": "You either got it right… or paid the price!",
                     "image": "",
                     "additionalInfo": "The show would challenge contestants with stunts if they missed an answer."
                 },
                 "q4": {
                     "question": "Which music-themed show let listeners submit questions to stump the band?",
->>>>>>> origin/main
                     "options": [
                         "Beat the Band",
                         "Name That Tune",
@@ -75,53 +54,6 @@
                     ],
                     "correctAnswer": "Beat the Band",
                     "points": 10,
-<<<<<<< HEAD
-                    "aiHint": "The name suggests a competition against musicians.",
-                    "image": "",
-                    "additionalInfo": "Beat the Band premiered in 1940 and featured a novel format where listeners could send in questions to challenge the musical knowledge of the show's band members."
-                },
-                "q5": {
-                    "question": "What radio quiz show included a 'kollege' segment that featured contestants submitting and answering questions?",
-                    "options": [
-                        "The Quiz Show",
-                        "The $64,000 Question",
-                        "Professor Quiz",
-                        "Kay Kyser's Kollege of Musical Knowledge"
-                    ],
-                    "correctAnswer": "Kay Kyser's Kollege of Musical Knowledge",
-                    "points": 10,
-                    "aiHint": "Notice the unusual spelling with a 'K' - a clue to the host's name.",
-                    "image": "",
-                    "additionalInfo": "Kay Kyser's Kollege of Musical Knowledge was a popular musical quiz show that ran from 1938 to 1949, combining big band music with quiz elements."
-                },
-                "q6": {
-                    "question": "Which radio game show interviewed women about their lives with the chance of winning a big prize?",
-                    "options": [
-                        "The Quiz Show",
-                        "How About You?",
-                        "Queen for a Day",
-                        "Truth or Consequences"
-                    ],
-                    "correctAnswer": "Queen for a Day",
-                    "points": 10,
-                    "aiHint": "The title suggests a female contestant receiving royal treatment.",
-                    "image": "",
-                    "additionalInfo": "In 1945, Host Jack Bailey would interview women about their lives and (usually) the contestant with the most tragic story would win a big prize."
-                },
-                "q7": {
-                    "question": "What 1940 radio quiz show often featured a panel of children chosen for their high IQs?",
-                    "options": [
-                        "Dr. I.Q.",
-                        "Kids Quiz",
-                        "Professor Quiz",
-                        "Quiz Kids"
-                    ],
-                    "correctAnswer": "Quiz Kids",
-                    "points": 10,
-                    "aiHint": "The name directly describes the young participants of this show.",
-                    "image": "",
-                    "additionalInfo": "Quiz Kids was a popular radio quiz show that aired from 1940 to 1953. The show featured a panel of children who would answer questions and compete for prizes."
-=======
                     "aiHint": "Think about challenging musicians with trivia!",
                     "image": "",
                     "additionalInfo": "Listeners would send in trivia questions to challenge the band's knowledge."
@@ -167,55 +99,25 @@
                     "aiHint": "Think of a medical title and IQ tests.",
                     "image": "",
                     "additionalInfo": "Dr. I.Q. gave out silver dollars as rewards to contestants."
->>>>>>> origin/main
                 }
             },
             "medium": {
                 "q1": {
                     "question": "Who was the longtime host of You Bet Your Life?",
                     "options": [
-<<<<<<< HEAD
-                        "Ralph Edwards",
-                        "Angus Young",
-                        "Jeff Carrington",
-                        "Bob Barker"
-=======
                         "Groucho Marx",
                         "Milton Berle",
                         "George Burns",
                         "Bob Hope"
->>>>>>> origin/main
                     ],
                     "correctAnswer": "Groucho Marx",
                     "points": 15,
-<<<<<<< HEAD
-                    "aiHint": "This host later created and produced many successful game shows including 'This Is Your Life'.",
-=======
                     "aiHint": "Famous for his mustache and quick wit.",
->>>>>>> origin/main
                     "image": "",
                     "additionalInfo": "Groucho Marx was known for his humor and wit as the host of the show."
                 },
                 "q2": {
-<<<<<<< HEAD
-                    "question": "What radio game show required contestants to guess a mystery subject using only yes-or-no questions?",
-                    "options": [
-                        "The $64,000 Question",
-                        "Who's Line is it Anyway?",
-                        "To Tell the Truth",
-                        "Twenty Questions"
-                    ],
-                    "correctAnswer": "Twenty Questions",
-                    "points": 15,
-                    "aiHint": "The show's name indicates exactly how many inquiries were permitted.",
-                    "image": "",
-                    "additionalInfo": "Twenty Questions was a popular radio quiz show that aired from 1946 to 1954. Contestants would ask yes-or-no questions to guess the identity of a mystery subject."
-                },
-                "q3": {
-                    "question": "Which radio quiz show featuring child prodigies was hosted by Joe Kelly?",
-=======
                     "question": "Which show was known for the catchphrase 'I have a lady in the balcony, doctor!'?",
->>>>>>> origin/main
                     "options": [
                         "Dr. I.Q.",
                         "Quiz Kids",
@@ -224,14 +126,6 @@
                     ],
                     "correctAnswer": "Dr. I.Q.",
                     "points": 15,
-<<<<<<< HEAD
-                    "aiHint": "The name directly describes the young participants on this show.",
-                    "image": "",
-                    "additionalInfo": "Quiz Kids was hosted by Joe Kelly from 1940 to 1953, featuring children with exceptional intelligence answering difficult questions on a variety of subjects."
-                },
-                "q4": {
-                    "question": "Which radio game show was often referred to as 'The quiz show with a heart'?",
-=======
                     "aiHint": "It involves a doctor who’s not really a doctor.",
                     "image": "",
                     "additionalInfo": "Dr. I.Q. featured audience interaction, and the host often referenced a lady in the balcony."
@@ -252,7 +146,6 @@
                 },
                 "q4": {
                     "question": "What show featured contestants identifying people based on clues about their identity?",
->>>>>>> origin/main
                     "options": [
                         "What’s My Line?",
                         "To Tell the Truth",
@@ -261,21 +154,12 @@
                     ],
                     "correctAnswer": "What’s My Name?",
                     "points": 15,
-<<<<<<< HEAD
-                    "aiHint": "This show helped people in need win money, with its name suggesting sudden good fortune.",
-                    "image": "",
-                    "additionalInfo": "Strike it Rich was known for helping people in difficult financial situations by giving them the opportunity to win money through answering questions."
-                },
-                "q5": {
-                    "question": "Which radio quiz show was hosted by comedian Groucho Marx?",
-=======
                     "aiHint": "It’s all about figuring out a person’s identity.",
                     "image": "",
                     "additionalInfo": "Contestants would guess the identities of mystery guests by asking questions."
                 },
                 "q5": {
                     "question": "Which show was originally a segment on The Kate Smith Hour?",
->>>>>>> origin/main
                     "options": [
                         "Quiz Kids",
                         "What’s My Name?",
@@ -284,25 +168,6 @@
                     ],
                     "correctAnswer": "What’s My Name?",
                     "points": 15,
-<<<<<<< HEAD
-                    "aiHint": "The title sounds like something a comedian might say to someone taking a risk.",
-                    "image": "",
-                    "additionalInfo": "You Bet Your Life was famous for Groucho Marx's witty interactions with contestants, and included the secret word gimmick that awarded extra prize money."
-                },
-                "q6": {
-                    "question": "What was unique about the quiz show 'Dr. I.Q.'?",
-                    "options": [
-                        "It was broadcast live from theaters",
-                        "It only used child contestants",
-                        "It had no host",
-                        "It featured musical numbers after every question"
-                    ],
-                    "correctAnswer": "It was broadcast live from theaters",
-                    "points": 15,
-                    "aiHint": "Think about where the audience was physically located during the broadcast.",
-                    "image": "",
-                    "additionalInfo": "Dr. I.Q. was notable for traveling across the U.S. and broadcasting live from different theaters, engaging local audiences on the spot."
-=======
                     "aiHint": "Rihanna has a song named after this show.",
                     "image": "",
                     "additionalInfo": "What’s My Name? was a segment on The Kate Smith Hour before it became its own show."
@@ -334,14 +199,10 @@
                     "aiHint": "The louder the claps, the bigger the prize.",
                     "image": "",
                     "additionalInfo": "Audience members' applause would determine the winner of Queen for a Day."
->>>>>>> origin/main
                 }
             },
             "hard": {
                 "q1": {
-<<<<<<< HEAD
-                    "question": "Which 1950s quiz show was at the center of the infamous television quiz show scandals?",
-=======
                     "question": "Which British radio game show, first aired in 1938, is considered one of the first quiz shows in the UK?",
                     "options": [
                         "The Spelling Bee",
@@ -357,14 +218,9 @@
                 },
                 "q2": {
                     "question": "Which radio show, first airing in 1964, is considered one of the longest-running quiz shows in the United States?",
->>>>>>> origin/main
                     "options": [
                         "Twenty-One",
                         "The $64,000 Question",
-<<<<<<< HEAD
-                        "Dotto",
-                        "The Big Surprise"
-=======
                         "Jeopardy!",
                         "Ask Me Another",
                         "Who Knows?"
@@ -382,99 +238,9 @@
                         "Truth or Consequences",
                         "Match Game",
                         "Pick a Box"
->>>>>>> origin/main
                     ],
                     "correctAnswer": "Twenty-One",
                     "points": 25,
-<<<<<<< HEAD
-                    "aiHint": "This show's rigging scandal involving Charles Van Doren was depicted in the 1994 film 'Quiz Show'.",
-                    "image": "",
-                    "additionalInfo": "Twenty-One became notorious when contestant Charles Van Doren admitted to Congress that he had been given answers in advance, triggering widespread reforms in the quiz show industry."
-                },
-                "q2": {
-                    "question": "Which radio host coined the catchphrase 'I have a lady in the balcony, Doctor' on a popular quiz show?",
-                    "options": [
-                        "Lew Valentine",
-                        "Ralph Edwards",
-                        "Groucho Marx",
-                        "Kay Kyser"
-                    ],
-                    "correctAnswer": "Lew Valentine",
-                    "points": 25,
-                    "aiHint": "He was the announcer on the show Dr. I.Q., using this phrase to introduce contestants.",
-                    "image": "",
-                    "additionalInfo": "Lew Valentine was the announcer on Dr. I.Q., and his catchphrase became one of the most recognizable in radio history as he directed questions to audience members."
-                },
-                "q3": {
-                    "question": "What was the original money amount in the title of the show that later became 'The $64,000 Question'?",
-                    "options": [
-                        "$64",
-                        "$6,400",
-                        "$640",
-                        "$6.40"
-                    ],
-                    "correctAnswer": "$64",
-                    "points": 25,
-                    "aiHint": "It was a much smaller amount before television inflated the stakes - think two digits.",
-                    "image": "",
-                    "additionalInfo": "The radio show was originally called 'Take It or Leave It' with a top prize of $64, which gave rise to the popular expression 'the $64 question' before television increased the stakes."
-                },
-                "q4": {
-                    "question": "What groundbreaking format did 'Information Please' introduce to radio quiz shows?",
-                    "options": [
-                        "Experts answering audience questions",
-                        "Musical identification challenges",
-                        "Isolation booths",
-                        "Cash prizes for contestants"
-                    ],
-                    "correctAnswer": "Experts answering audience questions",
-                    "points": 25,
-                    "aiHint": "This show reversed the traditional quiz format in an innovative way.",
-                    "image": "",
-                    "additionalInfo": "Information Please flipped the traditional quiz format by having a panel of experts answer questions submitted by listeners rather than testing contestants."
-                },
-                "q5": {
-                    "question": "What was the secret to success for contestants on the show 'You Bet Your Life'?",
-                    "options": [
-                        "Saying the secret word",
-                        "Answering all questions correctly",
-                        "Beating the celebrity panel",
-                        "Completing physical challenges"
-                    ],
-                    "correctAnswer": "Saying the secret word",
-                    "points": 25,
-                    "aiHint": "Host Groucho Marx would reward contestants who unknowingly mentioned a specific term during conversation.",
-                    "image": "",
-                    "additionalInfo": "On You Bet Your Life, a secret word was selected before each show, and contestants who happened to say it during their conversation with Groucho Marx would win an additional cash prize."
-                },
-                "q6": {
-                    "question": "What was the first radio quiz show to offer a prize of over $1,000?",
-                    "options": [
-                        "Break the Bank",
-                        "The $64,000 Question",
-                        "Stop the Music",
-                        "Truth or Consequences"
-                    ],
-                    "correctAnswer": "Break the Bank",
-                    "points": 25,
-                    "aiHint": "The name suggests accessing a large reserve of money.",
-                    "image": "",
-                    "additionalInfo": "Break the Bank broke new ground in quiz show prizes in the 1940s, offering large cash sums at a time when most prizes were modest."
-                },
-                "q7": {
-                    "question": "What controversial quiz show format did 'Queen for a Day' pioneer?",
-                    "options": [
-                        "Rewarding contestants with the saddest stories",
-                        "Having celebrities compete against ordinary people",
-                        "Making contestants perform embarrassing stunts",
-                        "Eliminating contestants by audience vote"
-                    ],
-                    "correctAnswer": "Rewarding contestants with the saddest stories",
-                    "points": 25,
-                    "aiHint": "This show has been criticized as 'poverty porn' for its exploitation of personal hardship.",
-                    "image": "",
-                    "additionalInfo": "Queen for a Day had women compete by sharing their tales of hardship, with an audience applause meter determining whose sad story deserved the most sympathy and prizes."
-=======
                     "aiHint": "This show’s grand prize was literally the title.",
                     "image": "",
                     "additionalInfo": "The $64,000 Question was famous for its large prize and for the scandals surrounding it."
@@ -534,7 +300,6 @@
                     "aiHint": "This show featured a famous comedian as the host.",
                     "image": "",
                     "additionalInfo": "You Bet Your Life featured Groucho Marx as the host and allowed audience interaction during broadcasts."
->>>>>>> origin/main
                 }
             }
         },
@@ -636,11 +401,7 @@
                     "points": 10,
                     "aiHint": "Contestants spin a wheel to determine how much money they can earn for each correct letter.",
                     "image": "",
-<<<<<<< HEAD
-                    "additionalInfo": ""
-=======
                     "additionalInfo": "Wheel of Fortune remains one of the most iconic game shows in US television history."
->>>>>>> origin/main
                 }
             },
             "medium": {
@@ -691,16 +452,6 @@
                     "options": [
                         "Blockbusters",
                         "Jeopardy!",
-<<<<<<< HEAD
-                        "Sale of the Century",
-                        "Wheel of Fortune"
-                    ],
-                    "correctAnswer": "Family Fortunes",
-                    "points": 15,
-                    "aiHint": "It involved guessing the most popular survey answers.",
-                    "image": "",
-                    "additionalInfo": "Family Fortunes was the UK version of Family Feud and started in 1980."
-=======
                         "Wheel of Fortune",
                         "The Chase"
                     ],
@@ -751,7 +502,6 @@
                     "aiHint": "Contestants answer in the form of a question.",
                     "image": "",
                     "additionalInfo": "Jeopardy! has been a mainstay of American television since 1964, known for its intellectual challenge."
->>>>>>> origin/main
                 }
             },
             "hard": {
@@ -786,18 +536,6 @@
                 "q3": {
                     "question": "Which 80s game show featured futuristic virtual reality puzzles and interactive team play?",
                     "options": [
-<<<<<<< HEAD
-                        "Blockbusters",
-                        "Catchphrase",
-                        "Jeopardy!",
-                        "Wheel of Fortune"
-                    ],
-                    "correctAnswer": "Blockbusters",
-                    "points": 25,
-                    "aiHint": "It had a famous theme tune and was very popular with students.",
-                    "image": "",
-                    "additionalInfo": "Blockbusters aired in the UK in 1983 and was known for its fun format and quick pace."
-=======
                         "Knightmare",
                         "The Crystal Maze",
                         "Going for Gold",
@@ -864,7 +602,6 @@
                     "aiHint": "Contestants were guided through challenges by a 'virtual reality' style environment.",
                     "image": "",
                     "additionalInfo": "Knightmare was one of the first shows to use early virtual reality techniques to create a maze-like environment."
->>>>>>> origin/main
                 }
             }
         },
@@ -964,99 +701,9 @@
                     ],
                     "correctAnswer": "Who Wants to Be a Millionaire?",
                     "points": 10,
-<<<<<<< HEAD
-                    "aiHint": "Hint: lotsssa money",
-                    "image": "",
-                    "additionalInfo": "Who Wants to Be a Millionaire? was a popular quiz show that first aired in the UK in 1998."
-                },
-                "q2": {
-                    "question": "Which game show often featured a vocal group called the 'Rockapellas'?",
-                    "options": [
-                        "American Idol",
-                        "Where in the World is Carmen Sandiego?",
-                        "The Masked Singer",
-                        "Where in Time is Carmen Sandiego?"
-                    ],
-                    "correctAnswer": "Where in the World is Carmen Sandiego?",
-                    "points": 10,
-                    "aiHint": "Hint: California Town as a last name????",
-                    "image": "",
-                    "additionalInfo": "Where in the World is Carmen Sandiego? was a popular game show that aired from 1991 to 1995. The show featured a vocal group called the 'Rockapellas' who performed songs about geography."
-                },
-                "q3": {
-                    "question": "What year did the game show, Where in the World is Carmen Sandiego? first air?",
-                    "options": [
-                        "1991",
-                        "1889",
-                        "1974",
-                        "1823"
-                    ],
-                    "correctAnswer": "1991",
-                    "points": 10,
-                    "aiHint": "Hint: hmmm",
-                    "image": "",
-                    "additionalInfo": "On Septemer 30, 1991, the game show, Where in the World is Carmen Sandiego? first aired on PBS."
-                },
-                "q4": {
-                    "question": "Which American game show featured three contestants racing to the top of the 'Crag'?",
-                    "options": [
-                        "Double Dare",
-                        "Express Climbers",
-                        "Legends of the Hidden Temple",
-                        "Nickelodeon Guts"
-                    ],
-                    "correctAnswer": "Nickelodeon Guts",
-                    "points": 10,
-                    "aiHint": "Hint: gotta have guts for this one!",
-                    "image": "",
-                    "additionalInfo": "Nickelodeon Guts was a popular game show that aired from 1992 to 1995."
-                },
-                "q5": {
-                    "question": "Who hosted Family Feud from 1988 to 1994?",
-                    "options": [
-                        "Richard Dawson",
-                        "Steve Harvey",
-                        "Louie Anderson",
-                        "Ray Combs"
-                    ],
-                    "correctAnswer": "Ray Combs",
-                    "points": 10,
-                    "aiHint": "Hint: I wonder if he combed his hair a lot?",
-                    "image": "",
-                    "additionalInfo": "Ray Combs was the host of Family Feud from 1988 to 1994. He was known for his energetic and humorous hosting style."
-                },
-                "q6": {
-                    "question": "What show did Regis Philbin host?",
-                    "options": [
-                        "Who Wants to Be a Millionaire?",
-                        "American Idol",
-                        "The Banker",
-                        "Telly Addicts"
-                    ],
-                    "correctAnswer": "Who Wants to Be a Millionaire?",
-                    "points": 10,
-                    "aiHint": "Hint: ooo ooo I do I do",
-                    "image": "",
-                    "additionalInfo": "Regis Philbin hosted the popular quiz show Who Wants to Be a Millionaire? from 1999 to 2002."
-                },
-                "q7": {
-                    "question": "Which channel did the game show GUTS air on?",
-                    "options": [
-                        "Nickelodeon",
-                        "Disney Channel",
-                        "Cartoon Network",
-                        "PBS"
-                    ],
-                    "correctAnswer": "Nickelodeon",
-                    "points": 10,
-                    "aiHint": "Hint: ",
-                    "image": "",
-                    "additionalInfo": "GUTS was a popular game show that aired on Nickelodeon from 1992 to 1995. The show featured contestants competing in physical challenges to win prizes."
-=======
                     "aiHint": "Contestants answer multiple-choice questions, each worth a higher cash value.",
                     "image": "",
                     "additionalInfo": "The show has been widely successful and is known for its dramatic music and suspenseful atmosphere."
->>>>>>> origin/main
                 }
             },
             "medium": {
@@ -1156,11 +803,7 @@
                     "points": 15,
                     "aiHint": "This show relies on contestants' risk-taking and negotiation with the banker.",
                     "image": "",
-<<<<<<< HEAD
-                    "additionalInfo": "Howie Mandel hosted the game show Deal or No Deal, which aired from 2005 to 2019. The show featured contestants choosing briefcases to win cash prizes."
-=======
                     "additionalInfo": "Deal or No Deal became a sensation due to its suspenseful format and dramatic moments."
->>>>>>> origin/main
                 }
             },
             "hard": {
@@ -1260,11 +903,7 @@
                     "points": 25,
                     "aiHint": "Contestants attempt to guess the price of retail items in order to win them.",
                     "image": "",
-<<<<<<< HEAD
-                    "additionalInfo": "Ludacris hosted the 2017 revival of Fear Factor, which aired on MTV. The show featured contestants facing their fears and completing challenges to win cash prizes."
-=======
                     "additionalInfo": "*The Price is Right* has been a staple of American television for decades, combining fun and competition."
->>>>>>> origin/main
                 }
             }
         }
