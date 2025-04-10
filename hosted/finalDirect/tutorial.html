@@ -17,6 +17,10 @@
       font-family: 'Nutmeg';
       src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
     }
+    @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
 
     body {
       background-color: #b975d6;
@@ -26,7 +30,7 @@
       height: 100vh;
       overflow: hidden;
       position: relative;
-      font-family: Nutmeg, sans-serif;
+      font-family: Bangers, sans-serif;
     }
 
     #quiz-question {
@@ -49,7 +53,7 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      color: black;
+      color: whitesmoke;
       text-align: center;
       width: 80%;
     }
@@ -150,8 +154,8 @@
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      background-image: url(./internalAssets/Mask\ group.png);
-      background-color: #34205d;
+      
+      background-color: #192550;
       z-index: 10;
     }
 
@@ -274,13 +278,13 @@
 <body>
   <div id="quiz-question">
     <h1 id="questMess">What is our host's name?</h1>
-    <img id="questBoard" src="./internalAssets/questBoard.png" alt="Question Board">
+    <img id="questBoard" src="./bigSign.png" alt="Question Board">
   </div>
 
-  <div id="money">
+  <!-- <div id="money">
     <img src="./internalAssets/star cash.png" alt="Star Cash">
     <h2 id="moneyTxt">$0</h2>
-  </div>
+  </div> -->
 
   <div id="hintBubble">
     <img src="./internalAssets/hintBubble.png" alt="Hint Bubble">
@@ -291,9 +295,9 @@
     <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
   </div>
 
-  <!-- <div id="podium">
+  <div id="podium">
     <img src="./internalAssets/podium.png" alt="Podium">
-  </div> -->
+  </div>
 
   <div id="timer">
     <img src="./timePodium.png" alt="Timer">
