@@ -48,13 +48,16 @@
         }
         
         #bigMssg {
-            width: 978px;
+            width: 1000px;
             height: auto;
-            font-size: 90px;
-            background-color: #2C1F65;
+            font-size: 85px;
+            background-image: url(./internalAssets/scanMssg.png);
+            background-size: 100% 100%; /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
             color: whitesmoke;
             margin: 20px 0;
-            padding: 20px;
+            padding: 60px 20px; /* Adjust padding to center text vertically */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -67,7 +70,7 @@
             width: 2800px;
             height: auto;
             font-size: 60px;
-            background-color: #3F3667 opacity: .6;
+            background-color: rgba(63, 54, 103, 0.5); /* The 0.7 represents 70% opacity */
             color: whitesmoke;
             margin: 20px 0;
             padding: 40px 20px;
@@ -80,7 +83,7 @@
         }
         #smallTxt {
             width: 100%;
-            width: 2800px;
+            max-width: 2800px;
             height: auto;
             font-size: 60px;
             color: white;
@@ -132,13 +135,14 @@
         }
         
         #BigPlayerSection img {
+            rotate: 5deg;
             max-width: 100%;
             height: auto;
             margin-top: 10px;
         }
         
         #bt {
-            font-size: 50px;
+            font-size: 2px;
             padding: 15px 30px;
             margin: 20px 0;
             background-color: #D56F4B;
@@ -164,26 +168,45 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            width: 800px;
+            max-width: 1200px;
             margin: 20px 0;
-            background-color: #2C1F65;
+            background-image: url(./internalAssets/Rectangle\ 34647316.png);
+            background-size: 100% 100%; /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
         }
         
         .button-container img {
-           
-            height: 120px;
+            height: 80px; /* Adjusted size */
             width: auto;
+            vertical-align: middle;
+            margin: 0 10px;
         }
-        #continue-text{
+        
+        #continue-text {
             color: gray;
-            font-size: 80px;
-            padding: 20px;
-            align-self: center;
+            
+            font-size: 60px; /* Slightly reduced for better fit */
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: color 0.3s ease;
         }
         
         #continue-text.active {
             color: #fdb813; /* Yellow color when active */
+        }
+        
+        #continue-text span {
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.04em;
+            margin-left: 10px;
+            margin-right: 10px;
         }
         
         /* Added pointer cursor for clickable S button */
@@ -249,7 +272,7 @@
                         continueText.classList.add('active');
                         
                         sButton.addEventListener('click', function(){
-                            window.location.href = './difficult.html';
+                            window.location.href = './entrancevid.html';
                         });
                     }
                     
@@ -274,13 +297,13 @@
             resetPlayers();
             
             // Add keyboard event listener for S key
-            document.addEventListener('keydown', function(event) {
-                // Check if at least one player has joined (currentPlayer > 1)
-                if (event.key.toLowerCase() === 's' && currentPlayer > 1) {
-                    // Navigate to the next page or perform continue action
-                    window.location.href = './difficult.html';
-                }
-            });
+            // document.addEventListener('keydown', function(event) {
+            //     // Check if at least one player has joined (currentPlayer > 1)
+            //     if (event.key.toLowerCase() === 's' && currentPlayer > 1) {
+            //         // Navigate to the next page or perform continue action
+            //         window.location.href = './entrancevid.html';
+            //     }
+            // });
 
             const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
 
@@ -319,7 +342,9 @@
         Your browser does not support HTML5 video.
     </video>
     <div class="wristband">
-        <h1 id="bigMssg">Scan your RFID</h1>
+        <div id="border">
+            <h1 id="bigMssg">Scan your RFID</h1>
+        </div>
 
         <div id="txtnIDSection">
             <p id="smallTxt">Please scan your RFID tag to join the game and begin.<span id="limitMessage"> Limit: 4 People</span></p>
@@ -338,11 +363,11 @@
                     <img src="./internalAssets/Player 4 State Indicator.png" alt="Player 4">
                 </div>
             </div>
-            <button id="bt">Click for RFID</button>
+            <button id="bt" >Click for RFID</button>
         </div>
 
         <div class="button-container">
-            <h2 id="continue-text">Press <span><img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection"> to continue</span></h2>
+            <h2 id="continue-text">Press <span><img src="./internalAssets/S_disabled Button icon.png" alt="S button is disabled until selection"></span> to continue</h2>
         </div>
     </div>
 </body>
