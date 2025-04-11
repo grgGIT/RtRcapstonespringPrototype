@@ -23,7 +23,7 @@
         }
 
     body {
-      background-color: #b975d6;
+      background-color: #714882;
       background-image: url(./Pattern\ placeholder.gif);
       background-size: cover;
       background-repeat: no-repeat; 
@@ -60,8 +60,8 @@
 
     #money {
       position: absolute;
-      top: 5%;
-      right: 5%;
+      bottom: 54%;
+      right: 20%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -75,13 +75,13 @@
     #moneyTxt {
       position: absolute;
       font-size: 70px;
-      color: white;
+      color: black;
       z-index: 2;
     }
 
     #hintBubble {
       position: absolute;
-      bottom: 68%;
+      bottom: 78%;
       left: 87%;
       transform: translateX(-50%);
       width: 500px;
@@ -97,14 +97,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 18px;
+      font-size: 36px;
       z-index: 2;
     }
 
     #Zilby {
       position: absolute;
       right: 10%;
-      bottom: 43%;
+      bottom: 48%;
       width: 550px;
     }
 
@@ -112,23 +112,25 @@
       width: 100%;
     }
 
-    /* #podium {
+    #podium {
       position: absolute;
-      right: 15%;
-      bottom: 22%;
-      width: 350px;
+      left: 73%;
+      bottom: 34%;
+      width: 450px;
+      text-align: center;
     }
 
     #podium img {
       width: 100%;
-    } */
+    }
 
     #timer {
       position: absolute;
-      left: 70%;
-      bottom: 32%;
-      width: 650px;
+      left: 10%;
+      bottom: 35%;
+      width: 240px;
       text-align: center;
+      z-index: 5;
     }
 
     #timer img {
@@ -137,7 +139,7 @@
 
     #timer h2 {
       position: absolute;
-      top: 65%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       font-size: 50px;
@@ -277,14 +279,19 @@
 
 <body>
   <div id="quiz-question">
+    <div id="timer">
+      <img src="./timeyWatch.png" alt="Timer">
+      <h2 id="timerTxt">00:00</h2>
+    </div>
     <h1 id="questMess">What is our host's name?</h1>
-    <img id="questBoard" src="./bigSign.png" alt="Question Board">
+    <video autoplay loop>
+      <source src="./QuestionSign-Idle.webm" type="video/webm">
+  </video>
   </div>
 
-  <!-- <div id="money">
-    <img src="./internalAssets/star cash.png" alt="Star Cash">
+  <div id="money">
     <h2 id="moneyTxt">$0</h2>
-  </div> -->
+  </div>
 
   <div id="hintBubble">
     <img src="./internalAssets/hintBubble.png" alt="Hint Bubble">
@@ -296,13 +303,10 @@
   </div>
 
   <div id="podium">
-    <img src="./internalAssets/podium.png" alt="Podium">
+    <img src="./podiumCoin.png" alt="Podium">
   </div>
 
-  <div id="timer">
-    <img src="./timePodium.png" alt="Timer">
-    <h2 id="timerTxt">00:00</h2>
-  </div>
+  
 
   <div id="quiz-options" >
     <button id="optionA" class="quiz-button" data-answer="A">
@@ -473,7 +477,7 @@
       
       // Create styled end message with centered text and proper icon sizing
       optionsElement.innerHTML = `
-        <div style="text-align: center; width: 100%; font-size: 90px; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
+        <div style="text-align: center; width: 100%; font-size: 90px; color: #fdb813; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
           Press <span style="display: inline-block; vertical-align: middle; margin: 0 10px;">
             <img src="./internalAssets/S Button icon.png" style="width: 70px; vertical-align: middle;">
           </span> to continue to era selection
