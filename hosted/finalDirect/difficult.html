@@ -10,6 +10,10 @@
             font-family: 'Nutmeg';
             src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
         }
+        @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
 
         body {
             background-image: url("./internalAssets/spacebg.png");
@@ -19,7 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: Nutmeg, sans-serif;
+            font-family: Bangers, sans-serif;
         }
 
         #background-video {
@@ -35,144 +39,130 @@
         }
 
         #difficultBorder {
-            width: 2000px;
-            height: 1200px;
-            background-color: #3F3667;
-            border-radius: 20px;
-            padding: 30px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+            width: 1500px;
+            height: auto;
+            font-size: 85px;
+            background-image: url(./internalAssets/scanMssg.png);
+            background-size: 100% 100%; /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #fdb813;
+            margin: 20px 0;
+            padding: 60px 20px; /* Adjust padding to center text vertically */
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            text-align: center;
         }
 
         #SelDiff {
-            color: whitesmoke;
-            font-size: 200px;
-            margin: 10px 0;
+            color: fdb813;
+            font-size: 130px;
+            margin-bottom: 10px 0;
             text-align: center;
         }
 
         #SelDiff2 {
             color: whitesmoke;
-            font-size: 60px;
+            font-size: 50px;
             margin-bottom: 20px;
             text-align: center;
             max-width: 1800px;
         }
 
         #interior {
-            width: 1100px;
-            /* Reduced width to fit better */
-            background-color: #dbc6ff8a;
-            border-radius: 15px;
-            padding: 30px;
+            width: 100%;
+            max-width: 2800px;
+            height: auto;
+            font-size: 60px;
+            background-color: rgba(63, 54, 103, 0.5); /* The 0.7 represents 70% opacity */
+            color: whitesmoke;
+            margin: 20px 0;
+            padding: 40px 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            gap: 40px;
-            /* Slightly reduced gap between buttons */
-            box-sizing: border-box;
-            /* Include padding in width calculation */
-        }
-
-        /* Button icon */
-        #A {
-            height: 200px;
-            width: 200px;
-        }
-
-        #B {
-            height: 200px;
-            width: 200px;
-        }
-
-        #C {
-            height: 200px;
-            width: 200px;
-        }
-
-        #pz {
-            background-image: url(./internalAssets/present.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            font-size: 50px;
-        }
-
-        #disco {
-            background-image: url(./internalAssets/disco.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            font-size: 50px;
-        }
-
-        #radio {
-            background-image: url(./internalAssets/radio.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
-            font-size: 50px;
-        }
-
-        .difficulty-button {
-            width: 900px;
-            /* Reduced width to fit within interior */
-            height: 150px;
-            border-radius: 10px;
-            display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 20px;
-            color: white;
-            font-size: 30px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 3px solid transparent;
             position: relative;
         }
 
-        .difficulty-button:hover {
+        /* Container for all buttons in a row */
+        .buttons-row-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end; /* Align items at the bottom to handle different heights */
+            gap: 30px; /* Space between buttons */
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        /* Container for each individual button and its label */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 15px;
+        }
+
+        /* Button label text */
+        .button-label {
+            font-family: Nutmeg, sans-serif;
+            color: whitesmoke;
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .era-image-button {
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+            border: 3px solid transparent;
+            border-radius: 10px;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+
+        .era-image-button:hover {
             transform: scale(1.03);
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
             border-color: #FDB813;
         }
 
-        /* Button text styling */
-        #pzTxt,
-        #dcTxt,
-        #rdTxt {
-            padding: 10px 60px 10px 10px;
-            /* Added right padding to make space for icon */
-            font-family: Nutmeg, sans-serif;
-            background-color: #3A2C5F;
-            color: whitesmoke;
-            font-size: 70px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            bottom: -5px;
-            position: relative;
-            /* For positioning the icon */
+        #present-button {
+            background-image: url(./optAbox.png);
+            width: 400px;
+            height: 400px;
         }
 
-        /* Button icon */
-        .button-icon {
-            width: 90px;
-            position: absolute;
-            right: -30%;
-            /* Position closer to the text */
-            top: 45%;
-            transform: translateY(-40%);
+        #disco-button {
+            background-image: url(./optBbox.png);
+            width: 400px;
+            height: 400px;
         }
 
-        /* Button container - apply to all button containers */
-        .button-container {
-            width: 100%;
+        #radio-button {
+            background-image: url(./optCbox.png);
+            width: 400px;
+            height: 400px;
+        }
+
+        .encapsulate {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            margin: 10px 0;
+            width: 100%;
+            max-width: 1500px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        #theme {
+            color: #fdb813;
         }
     </style>
 </head>
@@ -183,52 +173,47 @@
         <source src="./internalAssets/stars idle.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-    <div id="difficultBorder">
-        <h1 id="SelDiff">Select Difficulty</h1>
-        <h3 id="SelDiff2">Each level has 21 questions from the gameshows of that era</h3>
 
-
+    <div class="encapsulate">
+        <div id="difficultBorder">
+            <h1 id="SelDiff">Select Difficulty</h1>
+        </div>
+        
         <div id="interior">
-            <div class="button-container">
-                <div class="difficulty-button" id="pz">
-                    <button class="butt" data-era="presentEra" id="pzTxt">Present
-                        <img class="button-icon" src="./internalAssets/A_Button_icon.png" alt="A Button">
-                    </button>
+            <h3 id="SelDiff2">Select a <span id="theme">theme</span> using the buttons on the podium.</h3>
+            
+            <div class="buttons-row-container">
+                <div class="button-container">
+                    <!-- <div class="button-label">Present</div> -->
+                    <div class="era-image-button" id="present-button" data-era="presentEra"></div>
                 </div>
-            </div>
 
-            <div class="button-container">
-                <div class="difficulty-button" id="disco">
-                    <button class="butt" data-era="discoEra" id="dcTxt">Disco Era
-                        <img class="button-icon" src="./internalAssets/B_Button_icon.png" alt="B Button">
-                    </button>
+                <div class="button-container">
+                    <!-- <div class="button-label">Disco Era</div> -->
+                    <div class="era-image-button" id="disco-button" data-era="discoEra"></div>
                 </div>
-            </div>
 
-            <div class="button-container">
-                <div class="difficulty-button" id="radio">
-                    <button class="butt" data-era="radioEra" id="rdTxt">Radio Era
-                        <img class="button-icon" src="./internalAssets/C_Button_icon.png" alt="C Button">
-                    </button>
+                <div class="button-container">
+                    <!-- <div class="button-label">Radio Era</div> -->
+                    <div class="era-image-button" id="radio-button" data-era="radioEra"></div>
                 </div>
             </div>
         </div>
         <!-- end of 'interior' -->
-
     </div>
-    <!-- end of 'difficultBorder' -->
+    <!-- end of 'encapsulate' -->
 
 </body>
 
 <script>
-    // click event for the difficulty buttons
-
-    document.querySelectorAll('.butt').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            let selectedEra = e.target.dataset.era;
+    // Click event for the era image buttons
+    document.querySelectorAll('.era-image-button').forEach(btn => {
+        btn.addEventListener('click', function() {
+            let selectedEra = this.dataset.era;
 
             // Save selected era to sessionStorage
             sessionStorage.setItem('selectedEra', selectedEra);
+            
             // Send selected era to server
             fetch('/setSelectedEra', {
                 method: 'POST',
@@ -249,7 +234,7 @@
         });
     });
 
-    // WebSocket connection for Arduino input on eraChoice.html
+    // WebSocket connection for Arduino input
     const wsEra = new WebSocket('ws://localhost:3000');
     wsEra.onopen = () => {
         console.log('WebSocket connection for eraChoice opened.');
@@ -263,18 +248,17 @@
         const match = message.match(/Button\s+([A-D])\s+pressed/i);
         if (match && match[1]) {
             const letter = match[1].toUpperCase();
-            // Map the letter to the corresponding era button ID:
-            // Button A -> present, Button B -> disco, Button C -> radio
+            // Map the letter to the corresponding era button ID
             let buttonId;
             switch (letter) {
                 case 'A':
-                    buttonId = 'pzTxt';
+                    buttonId = 'present-button';
                     break;
                 case 'B':
-                    buttonId = 'dcTxt';
+                    buttonId = 'disco-button';
                     break;
                 case 'C':
-                    buttonId = 'rdTxt';
+                    buttonId = 'radio-button';
                     break;
             }
             if (buttonId) {
@@ -294,182 +278,6 @@
     wsEra.onerror = (error) => {
         console.error('WebSocket error on difficult.html:', error);
     };
-
-
-    // // Close sidebar button
-    // document.getElementById('close-sidebar').addEventListener('click', function () {
-    //     closeSidebar();
-    // });
-
-    // // Overlay click to close sidebar
-    // document.getElementById('overlay').addEventListener('click', function () {
-    //     closeSidebar();
-    // });
-
-    // // Continue button
-    // document.getElementById('continue-btn').addEventListener('click', function () {
-    //     const selectedEra = sessionStorage.getItem('currentEraSelection');
-    //     if (selectedEra) {
-    //         // Save to sessionStorage
-    //         sessionStorage.setItem('selectedEra', selectedEra);
-
-    //         // Also send to server
-    //         fetch('/setSelectedEra', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({ era: selectedEra }),
-    //         })
-    //             .then(response => response.json())
-    //             .then(data => {
-    //                 console.log('Success:', data);
-    //                 // Redirect to game page after successful server update
-    //                 window.location.href = 'quizGame.html';
-    //             })
-    //             .catch((error) => {
-    //                 console.error('Error:', error);
-    //                 // Still redirect even if there's an error
-    //                // window.location.href = 'gamepage.html';
-    //             });
-    //     }
-    // });
-
-    // // Show sidebar with era information
-    // function showSidebar(era) {
-    //     // Get era information
-    //     const info = eraInfo[era];
-    //     if (!info) return;
-
-    //     // Update sidebar title
-    //     document.getElementById('sidebar-title').textContent = info.title;
-
-    //     // Build HTML content for era information
-    //     let html = `
-    //         <p>${info.description}</p>
-            
-    //         <h3>Featured Shows</h3>
-    //         <ul>
-    //             ${info.shows.map(show => `<li>${show}</li>`).join('')}
-    //         </ul>
-            
-    //         <h3>Interesting Facts</h3>
-    //         <ul>
-    //             ${info.facts.map(fact => `<li>${fact}</li>`).join('')}
-    //         </ul>
-            
-    //         <h3>Subjects Covered</h3>
-    //         <ul>
-    //             ${info.subjects.map(subject => `<li>${subject}</li>`).join('')}
-    //         </ul>
-    //     `;
-
-    //     // Insert HTML into sidebar
-    //     document.getElementById('era-info').innerHTML = html;
-
-    //     // Show sidebar and overlay
-    //     document.getElementById('sidebar').classList.add('active');
-    //     document.getElementById('overlay').classList.add('active');
-    // }
-
-    // // Close sidebar
-    // function closeSidebar() {
-    //     document.getElementById('sidebar').classList.remove('active');
-    //     document.getElementById('overlay').classList.remove('active');
-    // };
-    
-
-    // // Era information content
-    // const eraInfo = {
-    //     radioEra: {
-    //         title: "Radio Era (1920s-1950s)",
-    //         description: "The golden age of radio broadcasting that shaped modern entertainment and music distribution.",
-    //         shows: [
-    //             "The Grand Ole Opry",
-    //             "Your Hit Parade",
-    //             "The National Barn Dance",
-    //             "Arthur Godfrey's Talent Scouts"
-    //         ],
-    //         facts: [
-    //             "Radio became the first mass electronic medium, reaching millions of homes simultaneously",
-    //             "Artists like Frank Sinatra, Bing Crosby, and Ella Fitzgerald rose to fame during this era",
-    //             "The first commercial radio station, KDKA, began broadcasting in 1920",
-    //             "Radio dramas like 'War of the Worlds' created nationwide sensations"
-    //         ],
-    //         subjects: [
-    //             "Big Band & Swing",
-    //             "Early Country & Western",
-    //             "Jazz & Blues pioneers",
-    //             "Early Rock & Roll foundations"
-    //         ]
-    //     },
-    //     seventiesEra: {
-    //         title: "The 60s Era",
-    //         description: "A revolutionary decade that transformed music, culture, and society with new sounds and messages.",
-    //         shows: [
-    //             "American Bandstand",
-    //             "The Ed Sullivan Show",
-    //             "Shindig!",
-    //             "Hullabaloo"
-    //         ],
-    //         facts: [
-    //             "The British Invasion led by The Beatles changed American music forever",
-    //             "Woodstock (1969) became the defining music festival of the generation",
-    //             "Motown Records created the 'Motown Sound' that crossed racial barriers",
-    //             "Psychedelic rock emerged alongside the counterculture movement"
-    //         ],
-    //         subjects: [
-    //             "Folk & Protest Music",
-    //             "British Invasion Bands",
-    //             "Motown & Soul",
-    //             "Psychedelic Rock"
-    //         ]
-    //     },
-    //     eightiesEra: {
-    //         title: "The 70s Era",
-    //         description: "The decade of musical experimentation, disco, and the rise of album-oriented rock.",
-    //         shows: [
-    //             "Soul Train",
-    //             "Don Kirshner's Rock Concert",
-    //             "The Midnight Special",
-    //             "Top of the Pops"
-    //         ],
-    //         facts: [
-    //             "Disco dominated the charts and nightlife, especially after 'Saturday Night Fever'",
-    //             "Progressive rock bands created complex, conceptual albums",
-    //             "Punk rock emerged as a reaction against mainstream music",
-    //             "The Singer-songwriter movement brought introspective lyrics to popular music"
-    //         ],
-    //         subjects: [
-    //             "Disco & Dance Music",
-    //             "Progressive & Art Rock",
-    //             "Early Punk & New Wave",
-    //             "Singer-Songwriters"
-    //         ]
-    //     },
-    //     modernEra: {
-    //         title: "Modern Era (80s-2010s)",
-    //         description: "From MTV to streaming services, this era saw rapid technological changes in how music is created and consumed.",
-    //         shows: [
-    //             "MTV Video Music Awards",
-    //             "American Idol",
-    //             "The Voice",
-    //             "Saturday Night Live musical performances"
-    //         ],
-    //         facts: [
-    //             "MTV launched in 1981, making music videos essential for artists' success",
-    //             "Hip-hop evolved from underground movement to global cultural force",
-    //             "Digital technology transformed production, distribution, and consumption of music",
-    //             "The internet and streaming services revolutionized how people discover music"
-    //         ],
-    //         subjects: [
-    //             "80s New Wave & Synthpop",
-    //             "90s Grunge & Alternative",
-    //             "Hip-Hop Evolution",
-    //             "2000s Pop & Electronic Music"
-    //         ]
-    //     }
-    // };
 </script>
 
 </html>
