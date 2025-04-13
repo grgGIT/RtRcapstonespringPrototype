@@ -338,7 +338,7 @@
     let score = 0;
     let selectedEra = sessionStorage.getItem('selectedEra') || 'discoEra';
     let timerInterval; // For storing the timer interval
-    let timeRemaining = 180; // 3 minutes in seconds
+    let timeRemaining = 215; // 3 minutes in seconds
     let totalQuestions = 0; // Will be set after fetching questions
 
     // DOM elements
@@ -392,7 +392,7 @@
       }
       
       // Reset time to 3 minutes
-      timeRemaining = 180;
+      timeRemaining = 215;
       timerElement.textContent = formatTime(timeRemaining);
       timerElement.classList.remove('timer-warning', 'timer-danger');
       

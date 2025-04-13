@@ -9,6 +9,10 @@
             font-family: 'Nutmeg';
             src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
         }
+        @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
         body {
             margin: 0;
             padding: 0;
@@ -16,7 +20,7 @@
             position: relative;
             height: 100vh;
             width: 100vw;
-            font-family: Nutmeg, sans-serif;
+            font-family: Bangers, sans-serif;
         }
         
         #background-video {
@@ -50,7 +54,8 @@
             /* max-width: 100%; */
             width: 2500px;
             animation: float 3.5s ease-in-out infinite; 
-            bottom: 20%;
+            bottom: 5%;
+            right: 1%;
         }
         
         #TitleText {
@@ -59,8 +64,9 @@
             position: relative;
             z-index: 1;
             margin-top: 30px;
-            bottom: 30%;
+            bottom: 20%;
             font-size: 40px;
+            right: 1%;
         }
         
         #S img {

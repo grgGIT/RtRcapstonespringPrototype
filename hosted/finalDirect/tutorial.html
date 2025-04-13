@@ -17,16 +17,20 @@
       font-family: 'Nutmeg';
       src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
     }
+    @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
 
     body {
-      background-color: #EEDCBB;
-      background-image: url(./internalAssets/Mask\ group.png);
+      background-color: #714882;
+      background-image: url(./Pattern\ placeholder.gif);
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: no-repeat; 
       height: 100vh;
       overflow: hidden;
       position: relative;
-      font-family: Nutmeg, sans-serif;
+      font-family: Bangers, sans-serif;
     }
 
     #quiz-question {
@@ -43,21 +47,21 @@
     }
 
     #questMess {
-      font-size: 40px;
+      font-size: 70px;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      color: black;
+      color: whitesmoke;
       text-align: center;
       width: 80%;
     }
 
     #money {
       position: absolute;
-      top: 5%;
-      right: 5%;
+      bottom: 54%;
+      right: 20%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -71,16 +75,16 @@
     #moneyTxt {
       position: absolute;
       font-size: 70px;
-      color: white;
+      color: black;
       z-index: 2;
     }
 
     #hintBubble {
       position: absolute;
-      top: 38%;
+      bottom: 78%;
       left: 87%;
       transform: translateX(-50%);
-      width: 300px;
+      width: 500px;
       text-align: center;
     }
 
@@ -93,15 +97,15 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 18px;
+      font-size: 36px;
       z-index: 2;
     }
 
     #Zilby {
       position: absolute;
-      right: 15%;
-      bottom: 36%;
-      width: 350px;
+      right: 10%;
+      bottom: 48%;
+      width: 550px;
     }
 
     #Zilby img {
@@ -110,9 +114,10 @@
 
     #podium {
       position: absolute;
-      right: 15%;
-      bottom: 22%;
-      width: 350px;
+      left: 73%;
+      bottom: 34%;
+      width: 450px;
+      text-align: center;
     }
 
     #podium img {
@@ -121,10 +126,11 @@
 
     #timer {
       position: absolute;
-      left: 87%;
-      bottom: 22%;
-      width: 250px;
+      left: 10%;
+      bottom: 35%;
+      width: 240px;
       text-align: center;
+      z-index: 5;
     }
 
     #timer img {
@@ -145,12 +151,13 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 600px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      background-color: rgba(42, 59, 8, 0.9);
+      
+      background-color: #192550;
       z-index: 10;
     }
 
@@ -272,12 +279,17 @@
 
 <body>
   <div id="quiz-question">
+    <div id="timer">
+      <img src="./timeyWatch.png" alt="Timer">
+      <h2 id="timerTxt">00:00</h2>
+    </div>
     <h1 id="questMess">What is our host's name?</h1>
-    <img id="questBoard" src="./internalAssets/questBoard.png" alt="Question Board">
+    <video autoplay loop>
+      <source src="./QuestionSign-Idle.webm" type="video/webm">
+  </video>
   </div>
 
   <div id="money">
-    <img src="./internalAssets/starCash Spot.png" alt="Star Cash">
     <h2 id="moneyTxt">$0</h2>
   </div>
 
@@ -291,15 +303,12 @@
   </div>
 
   <div id="podium">
-    <img src="./internalAssets/podium.png" alt="Podium">
+    <img src="./podiumCoin.png" alt="Podium">
   </div>
 
-  <div id="timer">
-    <img src="./internalAssets/Countdown clock.png" alt="Timer">
-    <h2 id="timerTxt">00:00</h2>
-  </div>
+  
 
-  <div id="quiz-options">
+  <div id="quiz-options" >
     <button id="optionA" class="quiz-button" data-answer="A">
       Erin
       <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
@@ -468,7 +477,7 @@
       
       // Create styled end message with centered text and proper icon sizing
       optionsElement.innerHTML = `
-        <div style="text-align: center; width: 100%; font-size: 90px; color: white; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
+        <div style="text-align: center; width: 100%; font-size: 90px; color: #fdb813; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
           Press <span style="display: inline-block; vertical-align: middle; margin: 0 10px;">
             <img src="./internalAssets/S Button icon.png" style="width: 70px; vertical-align: middle;">
           </span> to continue to era selection

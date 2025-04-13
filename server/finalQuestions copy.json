@@ -1,0 +1,1284 @@
+{
+    "era": {
+        "radioEra": {
+            "easy": {
+                "q1": {
+                    "question": "What is the name of the first successful radio game show?",
+                    "options": [
+                        "Professor Quiz",
+                        "The Quiz Show",
+                        "The Game Show",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "Professor Quiz",
+                    "points": 10,
+                    "aiHint": "This pioneering show began in 1936 and was hosted by a man with an academic-sounding title.",
+                    "image": "",
+                    "additionalInfo": "Professor Quiz was the first successful radio quiz show that offered cash prizes to contestants."
+                },
+                "q2": {
+                    "question": "When did the first radio quiz show appear on air?",
+                    "options": [
+                        "1920",
+                        "1936",
+                        "1940",
+                        "1924"
+                    ],
+                    "correctAnswer": "1936",
+                    "points": 10,
+                    "aiHint": "This happened after the Great Depression but before World War II began.",
+                    "image": "",
+                    "additionalInfo": "Airing on May 9, 1936, Professor Quiz was the first successful radio quiz show that offered cash prizes to contestants. It was hosted by Dr. Craig Earl."
+                },
+                "q3": {
+                    "question": "What radio quiz show asked contestants to perform stunts if they answered a question incorrectly?",
+                    "options": [
+                        "Truth or Consequences",
+                        "Jeopardy",
+                        "The Quiz Show",
+                        "The $64,000 Question"
+                    ],
+                    "correctAnswer": "Truth or Consequences",
+                    "points": 10,
+                    "aiHint": "The name of this show implies a penalty for wrong answers - you either tell the 'truth' or face the 'consequences'.",
+                    "image": "",
+                    "additionalInfo": "Truth or Consequences was famous for its silly stunts and became one of the most popular quiz shows on radio before transitioning to television."
+                },
+                "q4": {
+                    "question": "Which musical quiz show gave contestants the chance to submit their own questions to band members?",
+                    "options": [
+                        "Beat the Band",
+                        "Name that Tune",
+                        "The Quiz Show",
+                        "Guess the Song"
+                    ],
+                    "correctAnswer": "Beat the Band",
+                    "points": 10,
+                    "aiHint": "The name suggests a competition against musicians.",
+                    "image": "",
+                    "additionalInfo": "Beat the Band premiered in 1940 and featured a novel format where listeners could send in questions to challenge the musical knowledge of the show's band members."
+                },
+                "q5": {
+                    "question": "What radio quiz show included a 'kollege' segment that featured contestants submitting and answering questions?",
+                    "options": [
+                        "The Quiz Show",
+                        "The $64,000 Question",
+                        "Professor Quiz",
+                        "Kay Kyser's Kollege of Musical Knowledge"
+                    ],
+                    "correctAnswer": "Kay Kyser's Kollege of Musical Knowledge",
+                    "points": 10,
+                    "aiHint": "Notice the unusual spelling with a 'K' - a clue to the host's name.",
+                    "image": "",
+                    "additionalInfo": "Kay Kyser's Kollege of Musical Knowledge was a popular musical quiz show that ran from 1938 to 1949, combining big band music with quiz elements."
+                },
+                "q6": {
+                    "question": "Which radio game show interviewed women about their lives with the chance of winning a big prize?",
+                    "options": [
+                        "The Quiz Show",
+                        "How About You?",
+                        "Queen for a Day",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "Queen for a Day",
+                    "points": 10,
+                    "aiHint": "The title suggests a female contestant receiving royal treatment.",
+                    "image": "",
+                    "additionalInfo": "In 1945, Host Jack Bailey would interview women about their lives and (usually) the contestant with the most tragic story would win a big prize."
+                },
+                "q7": {
+                    "question": "What 1940 radio quiz show often featured a panel of children chosen for their high IQs?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "Kids Quiz",
+                        "Professor Quiz",
+                        "Quiz Kids"
+                    ],
+                    "correctAnswer": "Quiz Kids",
+                    "points": 10,
+                    "aiHint": "The name directly describes the young participants of this show.",
+                    "image": "",
+                    "additionalInfo": "Quiz Kids was a popular radio quiz show that aired from 1940 to 1953. The show featured a panel of children who would answer questions and compete for prizes."
+                },
+                "q8": {
+                    "question": "Which radio quiz show, hosted by Jim McWilliams, featured contestants answering questions to win prizes?",
+                    "options": [
+                        "The Quiz Show",
+                        "Jim's Quiz",
+                        "Professor Quiz",
+                        "Uncle Jim's Question Bee"
+                    ],
+                    "correctAnswer": "Uncle Jim's Question Bee",
+                    "points": 10,
+                    "aiHint": "The host's first name appears in the title, along with a familial term suggesting friendliness.",
+                    "image": "",
+                    "additionalInfo": "Uncle Jim's Question Bee was a popular early radio quiz show where contestants would answer questions in a format similar to a spelling bee competition."
+                },
+                "q9": {
+                    "question": "Which radio game show featured a panel of celebrities who would try to guess the speaker of a quote?",
+                    "options": [
+                        "Quote, Unquote",
+                        "The Quiz Show",
+                        "Celebrity Quotes",
+                        "Who Said That?"
+                    ],
+                    "correctAnswer": "Who Said That?",
+                    "points": 10,
+                    "aiHint": "The title is phrased as the exact question contestants were trying to answer.",
+                    "image": "",
+                    "additionalInfo": "Who Said That? featured notable quotes from the news, with celebrity panelists attempting to identify who made the statement."
+                },
+                "q10": {
+                    "question": "Which radio quiz show required contestants to identify a mystery person from 10 clues?",
+                    "options": [
+                        "What's My Name?",
+                        "Who Am I?",
+                        "What's My Line?",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "What's My Name?",
+                    "points": 10,
+                    "aiHint": "The title is the question contestants were essentially trying to answer about the mystery person.",
+                    "image": "",
+                    "additionalInfo": "What's My Name? challenged contestants to identify a famous person based on sequential clues, starting with the most difficult hints."
+                }
+            },
+            "medium": {
+                "q1": {
+                    "question": "Who hosted the radio quiz show, Truth or Consequences?",
+                    "options": [
+                        "Ralph Edwards",
+                        "Angus Young",
+                        "Jeff Carrington",
+                        "Bob Barker"
+                    ],
+                    "correctAnswer": "Ralph Edwards",
+                    "points": 15,
+                    "aiHint": "This host later created and produced many successful game shows including 'This Is Your Life'.",
+                    "image": "",
+                    "additionalInfo": "Ralph Edwards was the original host of the radio quiz show, Truth or Consequences. The show was later adapted for television in 1950 and would run for 38 years."
+                },
+                "q2": {
+                    "question": "What radio game show required contestants to guess a mystery subject using only yes-or-no questions?",
+                    "options": [
+                        "The $64,000 Question",
+                        "Who's Line is it Anyway?",
+                        "To Tell the Truth",
+                        "Twenty Questions"
+                    ],
+                    "correctAnswer": "Twenty Questions",
+                    "points": 15,
+                    "aiHint": "The show's name indicates exactly how many inquiries were permitted.",
+                    "image": "",
+                    "additionalInfo": "Twenty Questions was a popular radio quiz show that aired from 1946 to 1954. Contestants would ask yes-or-no questions to guess the identity of a mystery subject."
+                },
+                "q3": {
+                    "question": "Which radio quiz show featuring child prodigies was hosted by Joe Kelly?",
+                    "options": [
+                        "Dr. I.Q.",
+                        "The $64,000 Question",
+                        "Quiz Kids",
+                        "The Quiz Bee"
+                    ],
+                    "correctAnswer": "Quiz Kids",
+                    "points": 15,
+                    "aiHint": "The name directly describes the young participants on this show.",
+                    "image": "",
+                    "additionalInfo": "Quiz Kids was hosted by Joe Kelly from 1940 to 1953, featuring children with exceptional intelligence answering difficult questions on a variety of subjects."
+                },
+                "q4": {
+                    "question": "Which radio game show was often referred to as 'The quiz show with a heart'?",
+                    "options": [
+                        "The Quiz Show",
+                        "Rags to Riches",
+                        "Strike it Rich",
+                        "What's My Name?"
+                    ],
+                    "correctAnswer": "Strike it Rich",
+                    "points": 15,
+                    "aiHint": "This show helped people in need win money, with its name suggesting sudden good fortune.",
+                    "image": "",
+                    "additionalInfo": "Strike it Rich was known for helping people in difficult financial situations by giving them the opportunity to win money through answering questions."
+                },
+                "q5": {
+                    "question": "Which radio quiz show was hosted by comedian Groucho Marx?",
+                    "options": [
+                        "You Bet Your Life",
+                        "The $64,000 Question",
+                        "The Quiz Show",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "You Bet Your Life",
+                    "points": 15,
+                    "aiHint": "The title sounds like something a comedian might say to someone taking a risk.",
+                    "image": "",
+                    "additionalInfo": "You Bet Your Life was famous for Groucho Marx's witty interactions with contestants, and included the secret word gimmick that awarded extra prize money."
+                },
+                "q6": {
+                    "question": "What was unique about the quiz show 'Dr. I.Q.'?",
+                    "options": [
+                        "It was broadcast live from theaters",
+                        "It only used child contestants",
+                        "It had no host",
+                        "It featured musical numbers after every question"
+                    ],
+                    "correctAnswer": "It was broadcast live from theaters",
+                    "points": 15,
+                    "aiHint": "Think about where the audience was physically located during the broadcast.",
+                    "image": "",
+                    "additionalInfo": "Dr. I.Q. was notable for traveling across the U.S. and broadcasting live from different theaters, engaging local audiences on the spot."
+                },
+                "q7": {
+                    "question": "What made 'Stop the Music' revolutionary in radio quiz show history?",
+                    "options": [
+                        "Contestants were called at home during broadcast",
+                        "All questions were about music",
+                        "It aired 24 hours a day",
+                        "It had no prizes"
+                    ],
+                    "correctAnswer": "Contestants were called at home during broadcast",
+                    "points": 15,
+                    "aiHint": "This show surprised people who weren't expecting to be on the radio that day.",
+                    "image": "",
+                    "additionalInfo": "Stop the Music pioneered the concept of calling random listeners at home during the broadcast, interrupting regular programming to put them on air for a chance to win prizes."
+                },
+                "q8": {
+                    "question": "Which show became a television hit after starting on radio, and was hosted by Hal March?",
+                    "options": [
+                        "The $64,000 Question",
+                        "Double Jeopardy",
+                        "What's My Line?",
+                        "To Tell the Truth"
+                    ],
+                    "correctAnswer": "The $64,000 Question",
+                    "points": 15,
+                    "aiHint": "The title references a specific large cash prize amount.",
+                    "image": "",
+                    "additionalInfo": "The $64,000 Question transitioned from radio to TV and became one of the most-watched shows of the 1950s, known for its isolation booth and specialized subject categories."
+                },
+                "q9": {
+                    "question": "Which radio quiz show featured expert panels answering listener-submitted questions?",
+                    "options": [
+                        "Information Please",
+                        "Ask the Experts",
+                        "Twenty Questions",
+                        "The Quiz Bowl"
+                    ],
+                    "correctAnswer": "Information Please",
+                    "points": 15,
+                    "aiHint": "The title sounds like a polite request for knowledge.",
+                    "image": "",
+                    "additionalInfo": "Information Please featured a panel of intellectuals and experts answering difficult questions submitted by listeners, who received prizes if they stumped the panel."
+                },
+                "q10": {
+                    "question": "What quiz show did Bob Barker host on radio before moving to television's The Price is Right?",
+                    "options": [
+                        "Truth or Consequences",
+                        "The Match Game",
+                        "Jeopardy!",
+                        "Beat the Clock"
+                    ],
+                    "correctAnswer": "Truth or Consequences",
+                    "points": 15,
+                    "aiHint": "The show's name presents a choice between honesty and facing a penalty.",
+                    "image": "",
+                    "additionalInfo": "Before his long tenure on The Price is Right, Bob Barker hosted Truth or Consequences starting in 1956 after taking over from Ralph Edwards."
+                }
+            },
+            "hard": {
+                "q1": {
+                    "question": "Which 1950s quiz show was at the center of the infamous television quiz show scandals?",
+                    "options": [
+                        "Twenty-One",
+                        "The $64,000 Question",
+                        "Dotto",
+                        "The Big Surprise"
+                    ],
+                    "correctAnswer": "Twenty-One",
+                    "points": 25,
+                    "aiHint": "This show's rigging scandal involving Charles Van Doren was depicted in the 1994 film 'Quiz Show'.",
+                    "image": "",
+                    "additionalInfo": "Twenty-One became notorious when contestant Charles Van Doren admitted to Congress that he had been given answers in advance, triggering widespread reforms in the quiz show industry."
+                },
+                "q2": {
+                    "question": "Which radio host coined the catchphrase 'I have a lady in the balcony, Doctor' on a popular quiz show?",
+                    "options": [
+                        "Lew Valentine",
+                        "Ralph Edwards",
+                        "Groucho Marx",
+                        "Kay Kyser"
+                    ],
+                    "correctAnswer": "Lew Valentine",
+                    "points": 25,
+                    "aiHint": "He was the announcer on the show Dr. I.Q., using this phrase to introduce contestants.",
+                    "image": "",
+                    "additionalInfo": "Lew Valentine was the announcer on Dr. I.Q., and his catchphrase became one of the most recognizable in radio history as he directed questions to audience members."
+                },
+                "q3": {
+                    "question": "What was the original money amount in the title of the show that later became 'The $64,000 Question'?",
+                    "options": [
+                        "$64",
+                        "$6,400",
+                        "$640",
+                        "$6.40"
+                    ],
+                    "correctAnswer": "$64",
+                    "points": 25,
+                    "aiHint": "It was a much smaller amount before television inflated the stakes - think two digits.",
+                    "image": "",
+                    "additionalInfo": "The radio show was originally called 'Take It or Leave It' with a top prize of $64, which gave rise to the popular expression 'the $64 question' before television increased the stakes."
+                },
+                "q4": {
+                    "question": "What groundbreaking format did 'Information Please' introduce to radio quiz shows?",
+                    "options": [
+                        "Experts answering audience questions",
+                        "Musical identification challenges",
+                        "Isolation booths",
+                        "Cash prizes for contestants"
+                    ],
+                    "correctAnswer": "Experts answering audience questions",
+                    "points": 25,
+                    "aiHint": "This show reversed the traditional quiz format in an innovative way.",
+                    "image": "",
+                    "additionalInfo": "Information Please flipped the traditional quiz format by having a panel of experts answer questions submitted by listeners rather than testing contestants."
+                },
+                "q5": {
+                    "question": "What was the secret to success for contestants on the show 'You Bet Your Life'?",
+                    "options": [
+                        "Saying the secret word",
+                        "Answering all questions correctly",
+                        "Beating the celebrity panel",
+                        "Completing physical challenges"
+                    ],
+                    "correctAnswer": "Saying the secret word",
+                    "points": 25,
+                    "aiHint": "Host Groucho Marx would reward contestants who unknowingly mentioned a specific term during conversation.",
+                    "image": "",
+                    "additionalInfo": "On You Bet Your Life, a secret word was selected before each show, and contestants who happened to say it during their conversation with Groucho Marx would win an additional cash prize."
+                },
+                "q6": {
+                    "question": "What was the first radio quiz show to offer a prize of over $1,000?",
+                    "options": [
+                        "Break the Bank",
+                        "The $64,000 Question",
+                        "Stop the Music",
+                        "Truth or Consequences"
+                    ],
+                    "correctAnswer": "Break the Bank",
+                    "points": 25,
+                    "aiHint": "The name suggests accessing a large reserve of money.",
+                    "image": "",
+                    "additionalInfo": "Break the Bank broke new ground in quiz show prizes in the 1940s, offering large cash sums at a time when most prizes were modest."
+                },
+                "q7": {
+                    "question": "What controversial quiz show format did 'Queen for a Day' pioneer?",
+                    "options": [
+                        "Rewarding contestants with the saddest stories",
+                        "Having celebrities compete against ordinary people",
+                        "Making contestants perform embarrassing stunts",
+                        "Eliminating contestants by audience vote"
+                    ],
+                    "correctAnswer": "Rewarding contestants with the saddest stories",
+                    "points": 25,
+                    "aiHint": "This show has been criticized as 'poverty porn' for its exploitation of personal hardship.",
+                    "image": "",
+                    "additionalInfo": "Queen for a Day had women compete by sharing their tales of hardship, with an audience applause meter determining whose sad story deserved the most sympathy and prizes."
+                },
+                "q8": {
+                    "question": "Which radio quiz show host was known as 'The Old Professor'?",
+                    "options": [
+                        "Dr. Craig Earl",
+                        "Kay Kyser",
+                        "John Reed King",
+                        "Ralph Edwards"
+                    ],
+                    "correctAnswer": "Dr. Craig Earl",
+                    "points": 25,
+                    "aiHint": "He hosted the very first successful radio quiz show.",
+                    "image": "",
+                    "additionalInfo": "Dr. Craig Earl was the host of Professor Quiz, the first successful radio quiz show, and was known to listeners as 'The Old Professor' despite having no actual academic credentials."
+                },
+                "q9": {
+                    "question": "What innovative scoring system did the show 'Twenty Questions' use?",
+                    "options": [
+                        "Mental telepathy score",
+                        "Expert panel rating",
+                        "Timer-based scoring",
+                        "Audience applause meter"
+                    ],
+                    "correctAnswer": "Mental telepathy score",
+                    "points": 25,
+                    "aiHint": "The show had an unusual scoring method that claimed to measure psychic ability.",
+                    "image": "",
+                    "additionalInfo": "Twenty Questions featured a unique 'mental telepathy' score that supposedly measured how well contestants could psychically guess the answer with minimal clues."
+                },
+                "q10": {
+                    "question": "Which early radio show is credited with coining the term 'quiz show'?",
+                    "options": [
+                        "Professor Quiz",
+                        "Ask-It Basket",
+                        "Dr. I.Q.",
+                        "Information Please"
+                    ],
+                    "correctAnswer": "Professor Quiz",
+                    "points": 25,
+                    "aiHint": "This was also the first successful radio game show with cash prizes.",
+                    "image": "",
+                    "additionalInfo": "Professor Quiz, which debuted in 1936, is credited with both pioneering the quiz show format and establishing the term 'quiz show' in broadcasting terminology."
+                }
+            }
+        },
+        "discoEra": {
+            "easy": {
+                "q1": {
+                    "question": "What year did the game show, Countdown, first air?",
+                    "options": [
+                        "1987",
+                        "1982",
+                        "1989",
+                        "1985"
+                    ],
+                    "correctAnswer": "1982",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q2": {
+                    "question": "Who was the first host for game show, Countdown?",
+                    "options": [
+                        "Des O'Connor",
+                        "Les Dennis",
+                        "Richard Whiteley",
+                        "Daniel Radcliffe"
+                    ],
+                    "correctAnswer": "Richard Whiteley",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q3": {
+                    "question": "Who is the first host for British game show, Wheel of Fortune?",
+                    "options": [
+                        "Opah Winfrey",
+                        "Tom Kennedy",
+                        "Steve Harvey",
+                        "Nicky Campbell"
+                    ],
+                    "correctAnswer": "Nicky Campbell",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q4": {
+                    "question": "What year did British game show, 'Jeopardy!' first air?",
+                    "options": [
+                        "1983",
+                        "1987",
+                        "1984",
+                        "1985"
+                    ],
+                    "correctAnswer": "1983",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q5": {
+                    "question": "What channel did British game show, Jeopardy! aired in 80s?",
+                    "options": [
+                        "ITV",
+                        "Sky One",
+                        "Channel 4",
+                        "NBC"
+                    ],
+                    "correctAnswer": "Channel 4",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q6": {
+                    "question": "Who was the host for British game show, Jeopardy! in 80s?",
+                    "options": [
+                        "Chris Donat",
+                        "Derek Hobson",
+                        "David Beckham",
+                        "Tom Holland"
+                    ],
+                    "correctAnswer": "Derek Hobson",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q7": {
+                    "question": "What channel did American version game show, Blockbusters aired in 80s?",
+                    "options": [
+                        "TNT",
+                        "FOX",
+                        "ABC",
+                        "NBC"
+                    ],
+                    "correctAnswer": "NBC",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q8": {
+                    "question": "Who was the host for British version game show, Blockbusters in 80s?",
+                    "options": [
+                        "Bob Holness",
+                        "Steve Harvey",
+                        "Simon Mayo",
+                        "Michael Aspel"
+                    ],
+                    "correctAnswer": "Bob Holness",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""
+                },
+                "q9": {"question": "Who was the host for British version game show, Blockbusters in 80s?",
+                    "options": [
+                        "Bob Holness",
+                        "Steve Harvey",
+                        "Simon Mayo",
+                        "Michael Aspel"
+                    ],
+                    "correctAnswer": "Bob Holness",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""},
+                "q10": {"question": "Who was the host for British version game show, Blockbusters in 80s?",
+                    "options": [
+                        "Bob Holness",
+                        "Steve Harvey",
+                        "Simon Mayo",
+                        "Michael Aspel"
+                    ],
+                    "correctAnswer": "Bob Holness",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": ""}
+            },
+            "medium": {
+                "q1": {
+                    "question": "What was the first game show to air on Channel 4?",
+                    "options": [
+                        "Countdown",
+                        "The Crystal Maze",
+                        "The Price is Right",
+                        "The Chase"
+                    ],
+                    "correctAnswer": "Countdown",
+                    "points": 15,
+                    "aiHint": "Think about a show that involves words and numbers.",
+                    "image": "",
+                    "additionalInfo": "Countdown first aired in 1982 and remains one of the longest-running game shows."
+                },
+                "q2": {
+                    "question": "Which game show featured contestants guessing the prices of retail items?",
+                    "options": [
+                        "The Price is Right",
+                        "Sale of the Century",
+                        "Supermarket Sweep",
+                        "Play Your Cards Right"
+                    ],
+                    "correctAnswer": "The Price is Right",
+                    "points": 15,
+                    "aiHint": "It involves bidding on products.",
+                    "image": "",
+                    "additionalInfo": "The Price is Right originally debuted in the UK in 1984."
+                },
+                "q3": {
+                    "question": "Which UK game show was hosted by Bob Monkhouse and involved contestants answering general knowledge questions?",
+                    "options": [
+                        "Blockbusters",
+                        "Family Fortunes",
+                        "Bob's Full House",
+                        "The Krypton Factor"
+                    ],
+                    "correctAnswer": "Bob's Full House",
+                    "points": 15,
+                    "aiHint": "The host's name is in the title.",
+                    "image": "",
+                    "additionalInfo": "Bob's Full House ran from 1984 to 1990 and was based on bingo."
+                },
+                "q4": {
+                    "question": "What game show featured a giant board where players selected letters to form words?",
+                    "options": [
+                        "Blockbusters",
+                        "Countdown",
+                        "Catchphrase",
+                        "Going for Gold"
+                    ],
+                    "correctAnswer": "Blockbusters",
+                    "points": 15,
+                    "aiHint": "It had the famous phrase 'Can I have a P, please, Bob?'",
+                    "image": "",
+                    "additionalInfo": "Blockbusters was a student-focused quiz show that aired from 1983."
+                },
+                "q5": {
+                    "question": "Which 80s game show had contestants attempting physical challenges based on intelligence and agility?",
+                    "options": [
+                        "The Krypton Factor",
+                        "The Crystal Maze",
+                        "Interceptor",
+                        "Knightmare"
+                    ],
+                    "correctAnswer": "The Krypton Factor",
+                    "points": 15,
+                    "aiHint": "It tested both mind and body.",
+                    "image": "",
+                    "additionalInfo": "The Krypton Factor ran from 1977 to 1995, featuring mental and physical tests."
+                },
+                "q6": {
+                    "question": "Which game show had contestants trying to complete a famous phrase or slogan?",
+                    "options": [
+                        "Catchphrase",
+                        "Family Fortunes",
+                        "Going for Gold",
+                        "Wheel of Fortune"
+                    ],
+                    "correctAnswer": "Catchphrase",
+                    "points": 15,
+                    "aiHint": "It featured animations representing well-known expressions.",
+                    "image": "",
+                    "additionalInfo": "Catchphrase premiered in 1986 and was hosted by Roy Walker."
+                },
+                "q7": {
+                    "question": "Which game show was known for its 'survey says' responses?",
+                    "options": [
+                        "Family Fortunes",
+                        "Jeopardy!",
+                        "Sale of the Century",
+                        "Wheel of Fortune"
+                    ],
+                    "correctAnswer": "Family Fortunes",
+                    "points": 15,
+                    "aiHint": "It involved guessing the most popular survey answers.",
+                    "image": "",
+                    "additionalInfo": "Family Fortunes was the UK version of Family Feud and started in 1980."
+                },
+                "q8": {
+                    "question": "Which game show featured a futuristic virtual reality-style adventure?",
+                    "options": [
+                        "Knightmare",
+                        "The Adventure Game",
+                        "The Crystal Maze",
+                        "The Krypton Factor"
+                    ],
+                    "correctAnswer": "Knightmare",
+                    "points": 15,
+                    "aiHint": "Players wore a special helmet and had to rely on their teammates.",
+                    "image": "",
+                    "additionalInfo": "Knightmare debuted in 1987 and was one of the first TV shows to use virtual reality-style graphics."
+                },
+                "q9": {
+                    "question": "What show featured contestants trying to match celebrities\u2019 answers?",
+                    "options": [
+                        "Blankety Blank",
+                        "Play Your Cards Right",
+                        "Wheel of Fortune",
+                        "Blockbusters"
+                    ],
+                    "correctAnswer": "Blankety Blank",
+                    "points": 15,
+                    "aiHint": "It had a comedic twist with celebrities filling in the blanks.",
+                    "image": "",
+                    "additionalInfo": "Blankety Blank was hosted by Terry Wogan and later Les Dawson."
+                },
+                "q10": {
+                    "question": "Which game show was hosted by Bruce Forsyth and involved playing higher or lower with cards?",
+                    "options": [
+                        "Play Your Cards Right",
+                        "Sale of the Century",
+                        "The Price is Right",
+                        "The Krypton Factor"
+                    ],
+                    "correctAnswer": "Play Your Cards Right",
+                    "points": 15,
+                    "aiHint": "Contestants had to guess if the next card was higher or lower.",
+                    "image": "",
+                    "additionalInfo": "Play Your Cards Right aired from 1980 and was based on the US show Card Sharks."
+                }
+            },
+            "hard": {
+                "q1": {
+                    "question": "Which game show involved word puzzles and a spinning wheel?",
+                    "options": [
+                        "Spin the Wheel",
+                        "Wheel of Fortune",
+                        "Jeopardy!",
+                        "Spin to Win"
+                    ],
+                    "correctAnswer": "Wheel of Fortune",
+                    "points": 25,
+                    "aiHint": "It featured a big spinning wheel and contestants guessing letters.",
+                    "image": "",
+                    "additionalInfo": "Wheel of Fortune first aired in the US in 1975 and became globally popular in the 80s."
+                },
+                "q2": {
+                    "question": "Which UK game show, hosted by Henry Kelly, was an international quiz competition?",
+                    "options": [
+                        "Going for Gold",
+                        "The Krypton Factor",
+                        "Blockbusters",
+                        "Mastermind"
+                    ],
+                    "correctAnswer": "Going for Gold",
+                    "points": 25,
+                    "aiHint": "It had contestants from across Europe.",
+                    "image": "",
+                    "additionalInfo": "Going for Gold aired from 1987 to 1996 and featured contestants from various European nations."
+                },
+                "q3": {
+                    "question": "Which game show featured a futuristic virtual reality-style adventure?",
+                    "options": [
+                        "Knightmare",
+                        "The Adventure Game",
+                        "The Crystal Maze",
+                        "The Krypton Factor"
+                    ],
+                    "correctAnswer": "Knightmare",
+                    "points": 25,
+                    "aiHint": "Players wore a special helmet and had to rely on their teammates.",
+                    "image": "",
+                    "additionalInfo": "Knightmare debuted in 1987 and was one of the first TV shows to use virtual reality-style graphics."
+                },
+                "q4": {
+                    "question": "Which 80s game show had contestants attempting physical challenges based on intelligence and agility?",
+                    "options": [
+                        "The Krypton Factor",
+                        "The Crystal Maze",
+                        "Interceptor",
+                        "Knightmare"
+                    ],
+                    "correctAnswer": "The Krypton Factor",
+                    "points": 25,
+                    "aiHint": "It tested both mind and body.",
+                    "image": "",
+                    "additionalInfo": "The Krypton Factor ran from 1977 to 1995, featuring mental and physical tests."
+                },
+                "q5": {
+                    "question": "Which game show featured contestants trying to complete a famous phrase or slogan?",
+                    "options": [
+                        "Catchphrase",
+                        "Family Fortunes",
+                        "Going for Gold",
+                        "Wheel of Fortune"
+                    ],
+                    "correctAnswer": "Catchphrase",
+                    "points": 25,
+                    "aiHint": "It featured animations representing well-known expressions.",
+                    "image": "",
+                    "additionalInfo": "Catchphrase premiered in 1986 and was hosted by Roy Walker."
+                },
+                "q6": {
+                    "question": "Which 80s game show had a famous 'Gold Run' final round?",
+                    "options": [
+                        "Blockbusters",
+                        "Going for Gold",
+                        "The Crystal Maze",
+                        "Play Your Cards Right"
+                    ],
+                    "correctAnswer": "Blockbusters",
+                    "points": 25,
+                    "aiHint": "It was a favorite among students and involved a honeycomb board.",
+                    "image": "",
+                    "additionalInfo": "Blockbusters\u2019 'Gold Run' was the climactic challenge where contestants navigated the board to win prizes."
+                },
+                "q7": {
+                    "question": "Which 80s game show featured a giant board where players selected letters to form words?",
+                    "options": [
+                        "Blockbusters",
+                        "Catchphrase",
+                        "Jeopardy!",
+                        "Wheel of Fortune"
+                    ],
+                    "correctAnswer": "Blockbusters",
+                    "points": 25,
+                    "aiHint": "It had a famous theme tune and was very popular with students.",
+                    "image": "",
+                    "additionalInfo": "Blockbusters aired in the UK in 1983 and was known for its fun format and quick pace."
+                },
+                "q8": {
+                    "question": "Which 80s game show had contestants answering questions to win shopping time in a supermarket?",
+                    "options": [
+                        "Supermarket Sweep",
+                        "The Price is Right",
+                        "Sale of the Century",
+                        "Tipping Point"
+                    ],
+                    "correctAnswer": "Supermarket Sweep",
+                    "points": 25,
+                    "aiHint": "It featured a large, colorful supermarket set.",
+                    "image": "",
+                    "additionalInfo": "Supermarket Sweep first aired in the UK in 1989, hosted by Dale Winton."
+                },
+                "q9": {
+                    "question": "Which 80s game show featured teams answering questions to earn crystal rewards for a final challenge?",
+                    "options": [
+                        "The Crystal Maze",
+                        "The Adventure Game",
+                        "Knightmare",
+                        "The Krypton Factor"
+                    ],
+                    "correctAnswer": "The Crystal Maze",
+                    "points": 25,
+                    "aiHint": "The show had four themed zones: Aztec, Medieval, Industrial, and Futuristic.",
+                    "image": "",
+                    "additionalInfo": "The Crystal Maze debuted in 1990, but its style made it a favorite throughout the 80s."
+                },
+                "q10": {
+                    "question": "Which game show had contestants attempting to match the most popular answers given in surveys?",
+                    "options": [
+                        "Family Fortunes",
+                        "Sale of the Century",
+                        "Telly Addicts",
+                        "The Chase"
+                    ],
+                    "correctAnswer": "Family Fortunes",
+                    "points": 25,
+                    "aiHint": "It was the UK version of Family Feud.",
+                    "image": "",
+                    "additionalInfo": "Family Fortunes, hosted by Les Dawson, aired in the 1980s and was a staple of British game shows."
+                }
+            }
+        },
+        "presentEra": {
+            "easy": {
+                "q1": {
+                    "question": "Which popular quiz game show includes powerups such as phone-a-friend, 50/50, and ask the audience?",
+                    "options": [
+                        "Who Wants to Be a Millionaire?",
+                        "Jeopardy!",
+                        "Deal or No Deal",
+                        "The Price is Right"
+                    ],
+                    "correctAnswer": "Who Wants to Be a Millionaire?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Who Wants to Be a Millionaire? was a popular quiz show that first aired in the UK in 1998."
+                },
+                "q2": {
+                    "question": "Which game show often featured a vocal group called the 'Rockapellas'?",
+                    "options": [
+                        "American Idol",
+                        "Where in the World is Carmen Sandiego?",
+                        "The Masked Singer",
+                        "Where in Time is Carmen Sandiego?"
+                    ],
+                    "correctAnswer": "Where in the World is Carmen Sandiego?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Where in the World is Carmen Sandiego? was a popular game show that aired from 1991 to 1995. The show featured a vocal group called the 'Rockapellas' who performed songs about geography."
+                },
+                "q3": {
+                    "question": "What year did the game show, Where in the World is Carmen Sandiego? first air?",
+                    "options": [
+                        "1991",
+                        "1992",
+                        "1994",
+                        "1998"
+                    ],
+                    "correctAnswer": "1991",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "On Septemer 30, 1991, the game show, Where in the World is Carmen Sandiego? first aired on PBS."
+                },
+                "q4": {
+                    "question": "Which American game show featured three contestants racing to the top of the 'Crag'?",
+                    "options": [
+                        "Double Dare",
+                        "Express Climbers",
+                        "Legends of the Hidden Temple",
+                        "Nickelodeon Guts"
+                    ],
+                    "correctAnswer": "Nickelodeon Guts",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Nickelodeon Guts was a popular game show that aired from 1992 to 1995."
+                },
+                "q5": {
+                    "question": "Who hosted Family Feud from 1988 to 1994?",
+                    "options": [
+                        "Richard Dawson",
+                        "Steve Harvey",
+                        "Louie Anderson",
+                        "Ray Combs"
+                    ],
+                    "correctAnswer": "Ray Combs",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Ray Combs was the host of Family Feud from 1988 to 1994. He was known for his energetic and humorous hosting style."
+                },
+                "q6": {
+                    "question": "What show did Regis Philbin host?",
+                    "options": [
+                        "Who Wants to Be a Millionaire?",
+                        "American Idol",
+                        "The Banker",
+                        "Telly Addicts"
+                    ],
+                    "correctAnswer": "Who Wants to Be a Millionaire?",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Regis Philbin hosted the popular quiz show Who Wants to Be a Millionaire? from 1999 to 2002."
+                },
+                "q7": {
+                    "question": "Which channel did the game show GUTS air on?",
+                    "options": [
+                        "Nickelodeon",
+                        "Disney Channel",
+                        "Cartoon Network",
+                        "PBS"
+                    ],
+                    "correctAnswer": "Nickelodeon",
+                    "points": 10,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "GUTS was a popular game show that aired on Nickelodeon from 1992 to 1995. The show featured contestants competing in physical challenges to win prizes."
+                },
+                "q8": {
+    "question": "Which game show involves guessing the price of various items to win prizes?",
+    "options": [
+        "The Price is Right",
+        "Wheel of Fortune",
+        "Family Feud",
+        "Deal or No Deal"
+    ],
+    "correctAnswer": "The Price is Right",
+    "points": 10,
+    "aiHint": "Reach out to the AI for a clue",
+    "image": "",
+    "additionalInfo": "The Price is Right is one of the longest-running game shows, where contestants guess the prices of merchandise to win cash and prizes."
+},
+"q9": {
+    "question": "Which game show featured contestants solving word puzzles to win cash and prizes?",
+    "options": [
+        "Wheel of Fortune",
+        "Password",
+        "Hollywood Squares",
+        "Jeopardy!"
+    ],
+    "correctAnswer": "Wheel of Fortune",
+    "points": 10,
+    "aiHint": "Reach out to the AI for a clue",
+    "image": "",
+    "additionalInfo": "Wheel of Fortune debuted in 1975 and features a spinning wheel and word puzzles similar to hangman."
+},
+"q10": {
+    "question": "Which long-running quiz show is known for its unique answer-and-question format?",
+    "options": [
+        "Jeopardy!",
+        "Who Wants to Be a Millionaire?",
+        "Wheel of Fortune",
+        "The Weakest Link"
+    ],
+    "correctAnswer": "Jeopardy!",
+    "points": 10,
+    "aiHint": "Reach out to the AI for a clue",
+    "image": "",
+    "additionalInfo": "Jeopardy! has been a popular quiz show since 1964 and is known for presenting clues in the form of answers, which contestants must respond to with a question."
+}
+            },
+            "medium": {
+                "q1": {
+                    "question": "Which game show used a 'blue screen' to create a virtual reality world for contestants?",
+                    "options": [
+                        "Legends of the Hidden Temple",
+                        "Nickelodeon Guts",
+                        "Virutal Adventures",
+                        "Nick Arcade"
+                    ],
+                    "correctAnswer": "Nick Arcade",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Nick Arcade was a popular game show that aired from 1992 to 1993. The show used a 'blue screen' to create a virtual reality world for contestants to explore."
+                },
+                "q2": {
+                    "question": "Which game show, co-created by Lebron James, includes a giant Plinko-style wall?",
+                    "options": [
+                        "The Wall",
+                        "Lebron James' The Wall",
+                        "The Climb",
+                        "The Ascent"
+                    ],
+                    "correctAnswer": "The Wall",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "The Wall is a game show that premiered on December 19, 2016, features a giant Plinko-style wall where contestants drop balls to win money."
+                },
+                "q3": {
+                    "question": "Which game show consists of two teams of four players guessing the answers to survey questions?",
+                    "options": [
+                        "Familial Feud",
+                        "American Idol",
+                        "The Weakest Link",
+                        "America Says"
+                    ],
+                    "correctAnswer": "America Says",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "America Says is an American game show that premiered on May 25, 2019."
+                },
+                "q4": {
+                    "question": "How many years did Alex Trebek host Jeopardy!?",
+                    "options": [
+                        "37 years",
+                        "49 years",
+                        "25 years",
+                        "31 years"
+                    ],
+                    "correctAnswer": "37 years",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Alex Trebek hosted Jeopardy! for 37 years, from 1984 until his passing in 2020."
+                },
+                "q5": {
+                    "question": "Guy Fieri hosted which game show that required contestants to complete challenges within a time limit?",
+                    "options": [
+                        "Minute to Win It",
+                        "Guy's Grocery Games",
+                        "30 seconds to Fame",
+                        "5 Second Rule"
+                    ],
+                    "correctAnswer": "Minute to Win It",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Minute to Win It is a game show that aired from 2010 to 2011, where contestants completed challenges using household items within a minute."
+                },
+                "q6": {
+                    "question": "Which TV studio is known for producing the game show, BrainSurge?",
+                    "options": [
+                        "Nickelodeon",
+                        "Disney Channel",
+                        "PBS",
+                        "ABC"
+                    ],
+                    "correctAnswer": "Nickelodeon",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "BrainSurge is a game show that aired on Nickelodeon from 2010 to 2011. The show featured contestants completing challenges to win prizes."
+                },
+                "q7": {
+                    "question": "Who hosted the game show, Deal or No Deal?",
+                    "options": [
+                        "Howie Mandel",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "Jeff Foxworthy"
+                    ],
+                    "correctAnswer": "Howie Mandel",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Howie Mandel hosted the game show Deal or No Deal, which aired from 2005 to 2019. The show featured contestants choosing briefcases to win cash prizes."
+                },
+                "q8": {
+                    "question": "What is the name of the woman who reveals the letters on Wheel of Fortune?",
+                    "options": [
+                        "Vanna White",
+                        "Vanessa Williams",
+                        "Maggie Smith",
+                        "Hannah White"
+                    ],
+                    "correctAnswer": "Vanna White",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Vanna White has been the letter-turner on Wheel of Fortune since 1982."
+                },
+                "q9": {
+                    "question": "Which game show takes place in a cab in New York City?",
+                    "options":[
+                        "Cash Cab",
+                        "Taxi Cab Contest",
+                        "Taxi Trivia",
+                        "Trivia Cab"
+                    ],
+                    "correctAnswer": "Cash Cab",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Cash Cab is a game show that takes place in a taxi cab in New York City, where unsuspecting passengers answer trivia questions to win cash prizes."
+                },
+                "q10": {
+                    "question": "Which game show required contestants to face their fears and complete challenges?",
+                    "options":[
+                        "Fear Factor",
+                        "Fear Fest",
+                        "Scaredy Cats",
+                        "Fearless"
+                    ],
+                    "correctAnswer": "Fear Factor",
+                    "points": 15,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Fear Factor is a game show that aired from 2001 to 2012, where contestants faced their fears and completed challenges to win cash prizes."
+                }
+            },
+            "hard": {
+                "q1": {
+                    "question": "Who is the host of the game show, Are You Smarter Than a 5th Grader?",
+                    "options": [
+                        "Jeff Foxworthy",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "Howie Mandel"
+                    ],
+                    "correctAnswer": "Jeff Foxworthy",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Jeff Foxworthy is a comedian and television host known for his role on Are You Smarter Than a 5th Grader?, which premiered in 2007."
+                },
+                "q2": {
+                    "question": "Which Family Feud host led the show two different times?",
+                    "options": [
+                        "Richard Dawson",
+                        "Steve Harvey",
+                        "Ray Combs",
+                        "Louie Anderson"
+                    ],
+                    "correctAnswer": "Richard Dawson",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Richard Dawson was the original host of Family Feud from 1976 to 1985 and returned for a second run from 1994 to 1995."
+                },
+                "q3": {
+                    "question": "Which game show paired contestants with their own 'classmate' to answer questions?",
+                    "options": [
+                        "Are You Smarter Than a 5th Grader?",
+                        "Are You Dumber Than a 4th Grader?",
+                        "The Weakest Link",
+                        "Test Against the Best"
+                    ],
+                    "correctAnswer": "Are You Smarter Than a 5th Grader?",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Are You Smarter Than a 5th Grader? features contestants answering questions from elementary school subjects, often with the help of a 'classmate' who is a fifth grader."
+                },
+                "q4": {
+                    "question": "Which game show hosted by Nicole Byer requires contestants to bake cakes and desserts?",
+                    "options": [
+                        "Nailed It!",
+                        "The Great British Bake Off",
+                        "Cupcake Wars",
+                        "Sugar Rush"
+                    ],
+                    "correctAnswer": "Nailed It!",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Nailed It! is a baking competition show that premiered on Netflix in 2018, hosted by Nicole Byer. The show features amateur bakers attempting to recreate elaborate cakes and desserts, often with humorous results."
+                },
+                "q5": {
+                    "question": "Who holds the record for the most wins on Jeopardy!?",
+                    "options": [
+                        "Ken Jennings",
+                        "James Holzhauer",
+                        "Alex Trebek",
+                        "Arthur Jennings"
+                    ],
+                    "correctAnswer": "Ken Jennings",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Ken Jennings holds the record for the most consecutive wins on Jeopardy!, with 74 wins in 2004."
+                },
+                "q6": {
+                    "question": "Which reality game show required contestants to clear a series of physically demanding obstacle courses?",
+                    "options":[
+                        "American Ninja Warrior",
+                        "Obstacle Conqueror",
+                        "Wipeout",
+                        "Ultimate Runner"
+                    ],
+                    "correctAnswer": "American Ninja Warrior",
+                    "points": 25,
+                    "aiHint": "Not the one with the giant red balls.",
+                    "image": "",
+                    "additionalInfo": "American Ninja Warrior is a reality competition show that features contestants worldwide attempting to complete challenging obstacle courses. The show premiered in 2009 and has become a popular franchise."
+                },
+                "q7": {
+                    "question": "Who hosted Fear Factor in the 2017 revival?",
+                    "options": [
+                        "Ludacris",
+                        "Steve Harvey",
+                        "Ryan Seacrest",
+                        "The Rock"
+                    ],
+                    "correctAnswer": "Ludacris",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Ludacris hosted the 2017 revival of Fear Factor, which aired on MTV. The show featured contestants facing their fears and completing challenges to win cash prizes."
+                },
+                "q8": {
+                    "question": "Which musical game show , hosted by Jaime Foxx, required teams to guess the titles of songs played out loud?",
+                    "options": [
+                        "Name That Tune",
+                        "Beat Shazam",
+                        "Don't Forget the Lyrics!",
+                        "Song Association"
+                    ],
+                    "correctAnswer": "Shazam",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Beat Shazam is a musical game show that premiered in 2017, hosted by Jamie Foxx. The show features contestants guessing the titles of songs played out loud, competing against the music identification app Shazam."
+                },
+                "q9": {
+                    "quesiton": "Which game show, hosted by Ricky Gervais, had a panel of children answering questions backstage while the contestants answered on stage?",
+                    "options": [
+                        "Are You Smarter Than a 5th Grader?",
+                        "Child Support",
+                        "Kiddy Quiz",
+                        "Young Geniuses"
+                    ],
+                    "correctAnswer": "Child Support",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "Child Support is a game show that aired from 2018 to 2019, featuring a panel of children answering questions backstage while the contestants answered on stage. The show was hosted by Ricky Gervais."
+                },
+                "q10": {
+                    "question": "Which game show requires contestants to avoid touching the ground while navigating a series of obstacles?",
+                    "options": [
+                        "Don't Fall",
+                        "American Ninja Warrior",
+                        "Ultimate Beastmaster",
+                        "The Floor is Lava"
+                    ],
+                    "correctAnswer": "The Floor is Lava",
+                    "points": 25,
+                    "aiHint": "Reach out to the AI for a clue",
+                    "image": "",
+                    "additionalInfo": "The Floor is Lava is a game show that premiered on Netflix in 2020, where contestants navigate a series of obstacles while avoiding touching the ground, which is filled with lava."
+                }
+            }
+        }
+    }
+}
