@@ -4,56 +4,320 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scorepage</title>
-    <link rel="stylesheet" href="./leaderBoardassets/style/style.css">
+    <style>body{
+        background-image: url(./Pattern\ placeholder.gif);
+        background-color: #714882;
+        font-family: Arial, sans-serif;
+    }
+    .scores{
+    
+    }
+    .positionDiv{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 3rem;
+    }
+    
+    #position2{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #first-place-img{
+        position: absolute;
+        left: 5rem;
+        color: #fff;
+        padding-left: 5rem;
+    }
+    
+    
+    .player-name{
+        font-size: 64px;
+        position: absolute;
+        left: 10rem;
+        color: #fff;
+        padding-left: 8rem;
+    }
+    
+    .player-score{
+        font-size: 64px;
+        
+        position: absolute;
+        left: 35rem;
+        color: #fff;
+        padding-left: 5rem;
+    }
+    
+    #first-place-player-name{
+        font-size: 80px;
+        font-weight: bold;
+        position: absolute;
+        left: 12%;
+        bottom: 51%;
+        color: gold;
+        padding-left: 8rem;
+        max-width: 35rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
+    
+    #first-place-player-score{
+        font-size: 80px;
+        font-weight: bold;
+        position: absolute;
+        left: 34%;
+        bottom: 54%;
+        color: gold;
+        padding-left: 5rem;
+    }
+    #second-place-player-name{
+        font-size: 60px;
+        font-weight: bold;
+        position: absolute;
+        left: 15%;
+        bottom: 34%;
+        color: silver;
+        padding-left: 8rem;
+        max-width: 35rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
+    
+    #second-place-player-score{
+        font-size: 80px;
+        font-weight: bold;
+        position: absolute;
+        left: 33%;
+        bottom: 33%;
+        color: silver;
+        padding-left: 5rem;
+    }
+    #third-place-player-name{
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        left: 16%;
+        bottom: 18.5%;
+        color: rgb(165, 85, 42);
+        padding-left: 8rem;
+        max-width: 27rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
+    
+    #third-place-player-score{
+        font-size: 70px;
+        font-weight: bold;
+        position: absolute;
+        left: 31%;
+        bottom: 18%;
+        color: rgb(165, 85, 42);
+        padding-left: 5rem;
+    }
+    
+    #individual-playerPlace{
+        position: absolute;
+        left: 80px;
+        font-size: 30px;
+        color: #fff;
+        padding-left: 4rem;
+    }
+    
+    #playerPlace{
+        position: absolute; 
+        font-size: 64px;
+        color: #fff;
+        padding-left: 6rem;
+    }
+    
+    /* #scoreboard_bg{
+        background: #020202;
+        border-radius: 25px;
+        width: 963px;
+        height: 100%;
+        flex-shrink: 0;
+        z-index: 10;
+        position: relative;
+        left: 20rem;
+        top: 10rem;
+        padding: 20px;
+    } */
+    
+    #leaderboard-title{
+        font-size: 160px;
+        font-weight: bold;
+        position: absolute;
+        top: 9%;
+        left: 11%;
+        margin: 10px;
+        color: white;
+        z-index: 13;
+        
+    }
+    
+    #floorDiv{
+        background-color: #615785;
+        /* width: 100%; */
+        width: 100%;
+        height: 700px;
+        position: absolute;
+        bottom: 0%;  /* This moves it up to the middle of the page */
+        left: 0;
+        z-index: -10;
+    }
+    
+    #background{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+    }
+    
+    #playerScore{
+        background-color: rgba(12, 0, 66, 0.8);
+        border-radius: 25px;
+        width: 950px;
+        height: 400px;
+        left: 60%;
+        top: 20%;
+        position: absolute;
+        z-index: 10;
+        color: #fff;
+    }
+    
+    #playerPositionImg{
+        position: absolute;
+        right: 1%;
+        width: 900px;
+        height: 200px;
+        
+    }
+    #playerPosition{
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 10%;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #your-player-name{
+        font-size: 36px;
+        font-weight: bold;
+        position: absolute;
+        left: 15%;
+        padding-left: 8rem;
+        max-width: 27rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: left;
+    }
+    
+    #your-player-score{
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        left: 76%;
+    }
+    #chars{
+        position: absolute;
+        width: 900px;
+        bottom: 15%;
+        left: 60%;
+    }
+    #lead{
+        position: absolute;
+        width: 1500px;
+        bottom: 15%;
+        right: 48%;
+    }
+    #boardPic{
+        position: absolute;
+        width: 1500px;
+        top: 5%;
+        left: 5%;
+
+    }
+    
+    #playerScoreTitle{
+        font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        margin: 10px;
+        padding-top: 20px;
+        padding-bottom: 0px;
+        border-bottom: 2px solid #615785; /* Adding a line under the title for better visibility */
+        color: #fff; /* Ensures the title stands out against the background */
+    }
+
+    </style>
+    <!-- <link rel="stylesheet" href="./leaderBoardassets/style/style.css"> -->
 </head>
 <body>
+    <h1 id="leaderboard-title">Leaderboard</h1>
+    <img id="boardPic" src="./leaderBoardassets/bigTxt.png" alt="">
     <!-- png 1-4 of the players -->
     <div id="scoreboard_bg">
-        <h1 id="leaderboard-title">Leader Board</h1>
+        
         <div class="scores">
             <div class="positionDiv">
-                <img  src="./leaderBoardassets/img/highlightedScorePosition.png">
+                <img id="lead" src="leaderboard.png" alt="">
+
+                <!-- <img  src="./leaderBoardassets/place1.png"> -->
                 <!-- image of the gold ribbon -->
-                <img id ="first-place-img" src="./leaderBoardassets/img/first place.png" alt="player1">
+                <!-- <img id ="first-place-img" src="./leaderBoardassets/img/first place.png" alt="player1"> -->
                 <!-- name of team -->
-                <p id="first-place-player-name">Player 1</p>
+                <p id="first-place-player-name">Majestic Mountaineers</p>
                 <!-- score with $ -->
                 <p id="first-place-player-score">$ 100</p>
             </div>
             <div class="positionDiv">
-                <img  src="./leaderBoardassets/img/highlightedScorePosition.png">
+                <!-- <img  src="./leaderBoardassets/place2.png"> -->
                 <!-- image of the silver ribbon -->
-                <img id ="first-place-img" src="./leaderBoardassets/img/second place.png" alt="player1">
-                <p class="player-name">Player 2</p>
-                <p class="player-score">$ 90</p>
+                <!-- <img id ="first-place-img" src="./leaderBoardassets/img/second place.png" alt="player1"> -->
+                <p id="second-place-player-name">Cosmic Cosmonauts</p>
+                <p id="second-place-player-score">$ 90</p>
             </div>
             <div class="positionDiv">
-                <img  src="./leaderBoardassets/img/unhighlightedScorePostion.png">
+                <!-- <img  src="./leaderBoardassets/place3.png"> -->
                 <!-- image of the bronze ribbon -->
-                <img id ="first-place-img" src="./leaderBoardassets/img/third place.png" alt="player1">
-                <p class="player-name">Player 3</p>
-                <p class="player-score">$ 80</p>
+                <!-- <img id ="first-place-img" src="./leaderBoardassets/img/third place.png" alt="player1"> -->
+                <p id="third-place-player-name">Slimy Adventurers</p>
+                <p id="third-place-player-score">$ 80</p>
             </div>
-            <div class="positionDiv">
+            <!-- <div class="positionDiv">
                 <img  src="./leaderBoardassets/img/unhighlightedScorePostion.png">
                 <h1 id ="playerPlace"> 4 </h1>
                 <p class="player-name">Player 4</p>
                 <p class="player-score">$ 70</p>
-            </div>
+            </div> -->
             
         </div>
     </div>
     <div id="playerScore">
         <h1 id="playerScoreTitle">Your Score</h1>
         <div id = "playerPosition">
-            <img id = "playerPositionImg" src = "./leaderBoardassets/img/unhighlightedScorePostion.png">
+            <img id = "playerPositionImg" src = "./leaderBoardassets/bigTxt.png">
             <h1 id = "individual-playerPlace">X</h1>
-            <p id="your-player-name">Your Team</p>
+            <p id="your-player-name">Kickin Rocketeers</p>
             <p id="your-player-score">$ 50</p>
         </div>
     </div>
-     <div id="floorDiv"></div>
-    <img id="background" src="./leaderBoardassets/img/background.png" alt="background">
+     <div id="floorDiv">
+        <img id="chars" src="./character group.png" alt="">
+     </div>
+    
     
 </body>
 </html>
