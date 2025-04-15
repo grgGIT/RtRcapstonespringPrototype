@@ -28,7 +28,7 @@
                     "points": 10,
                     "aiHint": "The title hints at a choice — do you risk it or play it safe?",
                     "image": "",
-                    "additionalInfo": "Take It or Leave It began in 1940 and was known for building suspense with its ticking clock. It eventually evolved into the TV show 'The $64 Question.'"
+                    "additionalInfo": "Take It or Leave It began in 1940 and was known for building suspense with its ticking clock. It eventually evolved into the TV show 'The $64,000  Question.'"
                 },
                 "q3": {
                     "question": "Which radio show punished wrong answers with funny stunts?",
@@ -154,7 +154,7 @@
                     ],
                     "correctAnswer": "What’s My Name?",
                     "points": 15,
-                    "aiHint": "It’s all about figuring out a person’s identity.",
+                    "aiHint": "Rihanna has a song named after this game show .",
                     "image": "",
                     "additionalInfo": "Contestants would guess the identities of mystery guests by asking questions."
                 },
@@ -163,7 +163,7 @@
                     "options": [
                         "Dr. I.Q.",
                         "You Bet Your Life",
-                        "It Pays to Be Ignorant",
+                        "It Pays to Be Ignorant", 
                         "Information Please"
                     ],
                     "correctAnswer": "Information Please",
