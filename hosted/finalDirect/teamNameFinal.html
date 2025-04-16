@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,8 @@
             z-index: -1;
             object-fit: cover;
         }
-        #rollContainer{
+
+        #rollContainer {
             background-color: #3F3667;
             width: 1700px;
             height: 900px;
@@ -25,7 +27,8 @@
             bottom: 25%;
             z-index: 20;
         }
-        #firstWrd{
+
+        #firstWrd {
             display: flex;
             font-size: 60px;
             justify-content: center;
@@ -39,7 +42,8 @@
             background-color: #2E274D;
             color: whitesmoke;
         }
-        #SecndWrd{
+
+        #SecndWrd {
             display: flex;
             font-size: 60px;
             justify-content: center;
@@ -53,18 +57,21 @@
             background-color: #2E274D;
             color: whitesmoke;
         }
-        #SelDiff{
+
+        #SelDiff {
             position: absolute;
             width: 1200px;
             height: 200px;
             font-size: 85px;
             background-image: url(./internalAssets/scanMssg.png);
-            background-size: 100% 100%; /* Make background image fit the container */
+            background-size: 100% 100%;
+            /* Make background image fit the container */
             background-position: center;
             background-repeat: no-repeat;
             color: white;
             margin: 20px 0;
-            padding: 60px 20px; /* Adjust padding to center text vertically */
+            padding: 60px 20px;
+            /* Adjust padding to center text vertically */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -72,43 +79,108 @@
             left: 30%;
 
         }
-        #floorDiv{
-        background-color: #615785;
-        /* width: 100%; */
-        width: 100%;
-        height: 700px;
-        position: absolute;
-        bottom: 0%;  /* This moves it up to the middle of the page */
-        left: 0;
-        z-index: 10;
-    }
-    #ABquestion{
-        position: absolute;
-        left: 10%;
-        bottom: 15%;
-        color: whitesmoke;
-    }
-    #CDquestion{
-        position: absolute;
-        left: 60%;
-        bottom: 15%;
-        color: whitesmoke;
-    }
 
+        #floorDiv {
+            background-color: #615785;
+            /* width: 100%; */
+            width: 100%;
+            height: 700px;
+            position: absolute;
+            bottom: 0%;
+            /* This moves it up to the middle of the page */
+            left: 0;
+            z-index: 10;
+        }
+
+        #ABquestion {
+            position: absolute;
+            left: 10%;
+            bottom: 15%;
+            color: whitesmoke;
+        }
+
+        #CDquestion {
+            position: absolute;
+            left: 60%;
+            bottom: 15%;
+            color: whitesmoke;
+        }
     </style>
 </head>
+
 <body>
     <video autoplay muted loop id="background-video">
         <source src="./PresentEraPattern.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-            <h1 id="SelDiff">Name Your Team</h1>
-            <div id="rollContainer">
-                <div id="firstWrd">goofy</div>
-                <div id="SecndWrd">glimmer</div>
-                <div id="ABquestion"><img src="./abQ.png" alt=""></div>
-                <div id="CDquestion"><img src="./cdQ.png" alt=""></div>
-            </div>
-    <div id="floorDiv"></div>
+    <h1 id="SelDiff">Name Your Team</h1>
+    <div id="rollContainer">
+        <div id="firstWrd">goofy</div>
+        <div id="SecndWrd">glimmer</div>
+        <div id="ABquestion"><img src="./abQ.png" alt=""></div>
+        <div id="CDquestion"><img src="./cdQ.png" alt=""></div>
+    </div>
+    <div id="floorDiv">
+        <!-- Physical Buttons for A, B, C, D -->
+        <div id="option-A" class="buttonDiv"></div>
+        <div id="option-B" class="buttonDiv"></div>
+        <div id="option-C" class="buttonDiv"></div>
+        <div id="option-D" class="buttonDiv"></div>
+    </div>
+    <script>
+        let firstNames = [];
+        let secondNames = [];
+
+        // Load the team name parts from the JSON
+        fetch('teamNamesAPI.json')
+            .then(response => response.json())
+            .then(data => {
+                firstNames = data.teamNames.firstName;
+                secondNames = data.teamNames.secondName;
+            });
+
+        // Utility functions
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function updateFirstWord() {
+            if (firstNames.length > 0) {
+                document.getElementById('firstWrd').textContent = getRandomItem(firstNames);
+            }
+        }
+
+        function updateSecondWord() {
+            if (secondNames.length > 0) {
+                document.getElementById('SecndWrd').textContent = getRandomItem(secondNames);
+            }
+        }
+
+        // Attach click functions
+        document.getElementById('option-A').onclick = updateFirstWord;
+        document.getElementById('option-B').onclick = updateFirstWord;
+        document.getElementById('option-C').onclick = updateSecondWord;
+        document.getElementById('option-D').onclick = updateSecondWord;
+
+        // WebSocket setup for Arduino buttons
+        const ws = new WebSocket('ws://localhost:3000');
+        ws.onmessage = (event) => {
+            const message = event.data;
+            handleButtonPress(message);
+        };
+
+        function handleButtonPress(message) {
+            const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+            if (match && match[1]) {
+                const letter = match[1].toUpperCase();
+                const buttonId = `option-${letter}`;
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.click();
+                }
+            }
+        }
+    </script>
 </body>
+
 </html>
