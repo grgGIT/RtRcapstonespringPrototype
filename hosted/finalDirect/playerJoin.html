@@ -218,8 +218,10 @@
             cursor: pointer;
         }
     </style>
+    <audio id="poppy" src="./audio/RFIDpopWIP1.mp3"></audio>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const pop = document.getElementById('poppy');
             // Get the button element
             const rfButt = document.getElementById('bt');
             // Track which player is next to be activated
@@ -260,6 +262,7 @@
                 if (currentPlayer <= 4) {
                     // Get the current player's image element
                     const playerImg = document.querySelector(`#Player${currentPlayer} img`);
+                    pop.play();
                     
                     // Change the image source to the corresponding gif with timestamp to prevent caching
                     const timestamp = new Date().getTime();
@@ -267,6 +270,7 @@
                     
                     // Update system message after at least one player has joined
                     if (currentPlayer === 1) {
+                        
                         // Enable the S button and Continue arrow (replace with enabled versions)
                         sButton = document.querySelector('.button-container img:first-of-type');
                         sButton.src = './internalAssets/S Button icon.png';
@@ -339,6 +343,7 @@
             }
         });
     </script>
+    
 </head>
 <body>
     <video autoplay muted loop id="background-video">

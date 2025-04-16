@@ -61,7 +61,7 @@
 <body>
     <div id="videoContainer">
         <!-- Add autoplay attribute to both video and audio -->
-        <video id="entranceVideo" src="Comp 1_7.mp4" muted playsinline autoplay></video>
+        <video id="entranceVideo" src="Comp 1_7.mp4" playsinline autoplay></video>
         <audio id="narrationAudio" src="elevenLabTrial.mp3" preload="auto" autoplay></audio>
     </div>
 
@@ -69,6 +69,9 @@
         // Try to start playback as soon as possible
         window.addEventListener('load', startEverything);
         document.addEventListener('DOMContentLoaded', startEverything);
+        const video = document.getElementById('entranceVideo');
+        const audio = document.getElementById('narrationAudio');
+        video.muted = false
         
         // Variable to prevent multiple initializations
         let hasStarted = false;
@@ -85,11 +88,11 @@
             audio.load();
             
             // Set playback rates
-            video.playbackRate = 0.5; // Adjusted to better match the 50s audio
+            video.playbackRate = 0.8; // Adjusted to better match the 50s audio
             audio.playbackRate = 1.25; // Set audio to 1.25x as requested
             
             // Keep video muted to help with autoplay
-            video.muted = true;
+            video.muted = false;
             
             // Function to force start both media elements
             function forceStart() {

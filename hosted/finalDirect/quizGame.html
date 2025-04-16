@@ -17,16 +17,24 @@
       font-family: 'Nutmeg';
       src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
     }
+    @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'DigitalT';
+            src: url('./internalAssets/digitalt/Digitalt.ttf');
+        }
 
     body {
-      background-color: #EEDCBB;
-      background-image: url(./internalAssets/Mask\ group.png);
+      background-color: #714882;
+      background-image: url(./Pattern\ placeholder.gif);
       background-size: cover;
-      background-repeat: no-repeat;
+      background-repeat: no-repeat; 
       height: 100vh;
       overflow: hidden;
       position: relative;
-      font-family: Nutmeg, sans-serif;
+      font-family: Bangers, sans-serif;
     }
 
     #quiz-question {
@@ -43,34 +51,26 @@
     }
 
     #questMess {
-      font-size: 40px;
+      font-size: 70px;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2;
-      color: black;
+      color: whitesmoke;
       text-align: center;
       width: 80%;
-    }
-
-    #questionCounter {
-      position: absolute;
-      top: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 24px;
-      color: #333;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 5px 15px;
-      border-radius: 20px;
-      z-index: 3;
+      padding-left: 8rem;
+        max-width: 75rem;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        text-align: center;
     }
 
     #money {
       position: absolute;
-      top: 5%;
-      right: 5%;
+      bottom: 54%;
+      right: 20%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -84,37 +84,50 @@
     #moneyTxt {
       position: absolute;
       font-size: 70px;
-      color: white;
+      color: black;
       z-index: 2;
     }
 
+  
     #hintBubble {
       position: absolute;
-      top: 38%;
+      bottom: 76%;
       left: 87%;
       transform: translateX(-50%);
-      width: 300px;
+      width: 900px;
+      height: 400px;
       text-align: center;
+      position: relative; /* Add this to make absolute positioning of child elements relative to this container */
     }
 
     #hintBubble img {
       width: 100%;
+      height: 100%;
+      object-fit: contain; /* Ensures the image maintains its aspect ratio */
     }
 
     #hintTxt {
       position: absolute;
-      top: 50%;
+      top: 45%; /* Adjusted from 50% to move text up slightly */
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 18px;
+      font-size: 2.5vw; /* Reduced from 3vw for better fit */
       z-index: 2;
+      padding: 1rem;
+      max-width: 70%; /* Reduced from 80% to ensure text stays within bubble */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: center;
+      line-height: 1.3; /* Slightly reduced for better fit */
+      color: #000;
     }
+
 
     #Zilby {
       position: absolute;
-      right: 15%;
-      bottom: 36%;
-      width: 350px;
+      right: 10%;
+      bottom: 48%;
+      width: 550px;
     }
 
     #Zilby img {
@@ -123,9 +136,10 @@
 
     #podium {
       position: absolute;
-      right: 15%;
-      bottom: 22%;
-      width: 350px;
+      left: 73%;
+      bottom: 34%;
+      width: 450px;
+      text-align: center;
     }
 
     #podium img {
@@ -134,10 +148,11 @@
 
     #timer {
       position: absolute;
-      left: 87%;
-      bottom: 23%;
-      width: 280px;
+      left: -3%;
+      top: -20%;
+      width: 240px;
       text-align: center;
+      z-index: 5;
     }
 
     #timer img {
@@ -153,68 +168,75 @@
       z-index: 2;
     }
 
-    /* Timer warning styles */
-    .timer-warning {
-      color: #ff9900 !important;
-    }
-
-    .timer-danger {
-      color: #ff0000 !important;
-      animation: blink 1s infinite;
-    }
-
-    @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    }
-
     #quiz-options {
       position: absolute;
-      bottom: 0;
+      bottom: 0%;
       left: 0;
       width: 100%;
-      height: 400px;
+      height: 700px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       padding: 20px;
-      background-color: rgba(42, 59, 8, 0.9);
+      background-color: #192550;
       z-index: 10;
     }
 
-    #quiz-options button {
+    /* #quiz-options button {
       font-family: Nutmeg, sans-serif;
       margin: 10px;
       padding: 15px 30px;
       font-size: 50px;
       border-radius: 10px;
+      align-content: center;
       border: none;
       cursor: pointer;
       transition: all 0.3s ease;
       width: 40%;
       color: whitesmoke;
-      position: relative; /* Make position relative for absolute positioning of icons */
-      padding-right: 100px; /* Add padding to make room for the icon */
-      text-align: left; /* Align text to the left */
+      position: relative;
+    } */
+
+    /* #quiz-options button:hover {
+      background-color: #f0f0f0;
+      color: black;
+      transform: scale(1.05);
+    } */ 
+
+    #quiz-options button {
+      font-family: Nutmeg, sans-serif;
+      margin: 20px;
+      padding: 15px 30px;
+      font-size: 50px;
+      border-radius: 25px; /* More rounded corners */
+      align-content: center;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 40%;
+      color: whitesmoke;
+      position: relative;
+      /* Bubbly effect with box shadow and border */
+      box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3), 0 15px 20px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      /* 3D effect with transform */
+      transform-style: preserve-3d;
+      transform: perspective(500px) rotateX(5deg);
     }
 
     #quiz-options button:hover {
       background-color: #f0f0f0;
       color: black;
-      transform: scale(1.05);
+      transform: perspective(500px) rotateX(5deg) scale(1.05);
+      box-shadow: 0 12px 0 rgba(0, 0, 0, 0.2), 0 18px 25px rgba(0, 0, 0, 0.4);
     }
 
-    /* Button icon styling - fixed positioning */
-    #quiz-options button img {
-      width: 90px;
-      position: absolute;
-      right: 20px; /* Fixed distance from right edge */
-      top: 50%; /* Center vertically */
-      transform: translateY(-50%); /* Ensure perfect vertical centering */
+    #quiz-options button:active {
+      transform: perspective(500px) rotateX(5deg) scale(0.98) translateY(5px);
+      box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3), 0 8px 12px rgba(0, 0, 0, 0.3);
     }
 
-    #optionA {
+    /* #optionA {
       background-color: #DC3A3A;
     }
 
@@ -230,15 +252,73 @@
       background-color: #F1A327;
     }
 
-    /* Correct answer style */
+    #A_Button {
+      width: 90px;
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    }
+
+    #B_Button {
+      width: 90px;
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    }
+
+    #C_Button {
+      width: 90px;
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    }
+
+    #D_Button {
+      width: 90px;
+      position: absolute;
+      right: 10%;
+      bottom: 10%;
+    } */
+
+    #optionA {
+      background-color: #DC3A3A;
+      background-image: linear-gradient(to bottom, #FF5252, #DC3A3A);
+    }
+
+    #optionB {
+      background-color: #26549D;
+      background-image: linear-gradient(to bottom, #3A7BD5, #26549D);
+    }
+
+    #optionC {
+      background-color: #699215;
+      background-image: linear-gradient(to bottom, #8BC34A, #699215);
+    }
+
+    #optionD {
+      background-color: #F1A327;
+      background-image: linear-gradient(to bottom, #FFD54F, #F1A327);
+    }
+
+    #A_Button, #B_Button, #C_Button, #D_Button {
+      width: 90px;
+      position: absolute;
+      right: 10%;
+      bottom: 0%;
+      filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+      text-align: center;
+    }
+
+    /* Correct answer style - enhanced for better visibility */
     .selected {
       background-color: #28a745 !important;
+      background-image: linear-gradient(to bottom, #34ce57, #28a745) !important;
       color: white !important;
       border: 3px solid #155724 !important;
       box-shadow: 0 0 20px rgba(40, 167, 69, 0.9) !important;
       animation: pulse 1.5s infinite !important;
       opacity: 1 !important;
-      transform: scale(1.05) !important;
+      transform: perspective(500px) rotateX(5deg) scale(1.05) !important;
       z-index: 20 !important;
     }
 
@@ -257,42 +337,315 @@
 
     /* Incorrect answer style */
     .incorrect {
-      background-color: #dc3545 !important;
+      background-color: #564849 !important;
+      background-image: linear-gradient(to bottom, #381b18, #dc3545) !important;
       opacity: 0.8 !important;
       color: white !important;
-      border: 2px solid #721c24 !important;
+      border: 2px solid #4b272a !important;
       box-shadow: 0 0 10px rgba(220, 53, 69, 0.7) !important;
     }
 
     /* Grey out non-selected and non-incorrect options */
     .greyed {
       background-color: #6c757d !important;
+      background-image: linear-gradient(to bottom, #868e96, #6c757d) !important;
       opacity: 0.5 !important;
       color: #e0e0e0 !important;
-      transform: scale(0.95) !important;
+      transform: perspective(500px) rotateX(5deg) scale(0.95) !important;
       transition: all 0.3s ease !important;
     }
 
     /* Optional: Add a highlight effect when an option is clicked */
     .quiz-button:active {
-      transform: scale(0.98);
+      transform: perspective(500px) rotateX(5deg) scale(0.98) translateY(5px);
       transition: transform 0.1s ease;
     }
+
+    /* Correct answer style - enhanced for better visibility */
+    /* .selected {
+      background-color: #28a745 !important;
+      color: white !important;
+      border: 3px solid #155724 !important;
+      box-shadow: 0 0 20px rgba(40, 167, 69, 0.9) !important;
+      animation: pulse 1.5s infinite !important;
+      opacity: 1 !important;
+      transform: scale(1.05) !important;
+      z-index: 20 !important;
+    } */
+
+    /* Animation for the correct answer */
+    /* @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(40, 167, 69, 1);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
+      }
+    } */
+
+    /* Incorrect answer style */
+    /* .incorrect {
+      background-color: #dc3545 !important;
+      opacity: 0.8 !important;
+      color: white !important;
+      border: 2px solid #721c24 !important;
+      box-shadow: 0 0 10px rgba(220, 53, 69, 0.7) !important;
+    } */
+
+    /* Grey out non-selected and non-incorrect options */
+    /* .greyed {
+      background-color: #6c757d !important;
+      opacity: 0.5 !important;
+      color: #e0e0e0 !important;
+      transform: scale(0.95) !important;
+      transition: all 0.3s ease !important;
+    } */
+
+    /* Optional: Add a highlight effect when an option is clicked */
+    /* .quiz-button:active {
+      transform: scale(0.98);
+      transition: transform 0.1s ease;
+    } */
+    #questionCounter {
+      position: absolute;
+      top: 38%;
+      left: 15%;
+      transform: translateX(-50%);
+      font-size: 59px;
+      color: #333;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 5px 15px;
+      border-radius: 20px;
+      z-index: 3;
+    }
+    #backgroundVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure it stays behind other elements */
+  }
+  /* Power-ups styling */
+  /* #powerUps {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    #starSpot img {
+      width: 1500px;
+      height: 1500px;
+    }
+
+    #powerButton {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #powerButton:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    #pwerSpot {
+      width: 120px;
+      height: 120px;
+    }
+
+    #powerUpToolTip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      white-space: nowrap;
+      display: none;
+    }
+
+    #powerUpCountdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 48px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      z-index: 16;
+    } */
+
+    #powerUps {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+    }
+
+    #starSpot {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 15;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    #starSpot.active {
+      opacity: 1;
+      animation: rotate 3s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: translate(-50%, -50%) rotate(0deg); }
+      to { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    #powerButton {
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #powerButton:hover {
+      transform: scale(1.1);
+    }
+
+    #powerButton:active {
+      transform: scale(0.95);
+    }
+
+    #pwerSpot {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+    }
+
+    #powerUpToolTip {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 18px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    #powerButton:hover #powerUpToolTip {
+      opacity: 1;
+    }
+
+    #powerUpCountdown {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      z-index: 16;
+      font-family: 'DigitalT', sans-serif;
+    }
+
+    /* Power-up animation */
+    @keyframes powerUpPulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .power-up-active {
+      animation: powerUpPulse 1s infinite;
+    }
+
+    /* Timer warning styles */
+    .timer-warning {
+      color: #ffc107 !important;
+      animation: blink 1s infinite;
+    }
+
+    .timer-danger {
+      color: #dc3545 !important;
+      animation: blink 0.5s infinite;
+    }
+
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
   </style>
+
+<audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
+<audio id="wr" src="./audio/WrongAnswerWIP1.mp3"></audio>
+<audio id="mding" src="./audio/MoneyDingWIP1.mp3"></audio>
+<audio id="failT" src="./audio/FailureTuneWIP1.mp3"></audio>
+<audio id="winn" src="./audio/WiningTuneWIP1.mp3"></audio>
+<audio id="timeU" src="./audio/TimesUpAlarmWIP1.mp3"></audio>
+<audio id="pwerCash2" src="./audio/DoubleCashWIP1.mp3"></audio>
+<audio id="bonT" src="./audio/BonusTimeWIP1.mp3"></audio>
+<audio id="skipQ" src="./audio/SkipQuestionWIP1.mp3"></audio>
 </head>
 
 <body>
+  <video id="backgroundVideo" autoplay muted loop>
+    <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <div id="quiz-question">
+    <div id="timer">
+      <img src="./timeyWatch.png" alt="Timer">
+      <h2 id="timerTxt">00:00</h2>
+    </div>
     <h1 id="questMess">Question goes here</h1>
-    <img id="questBoard" src="./internalAssets/questBoard.png" alt="Question Board">
+    <video id="questBoard" autoplay loop>
+      <source src="./QuestionSign-Idle.webm" type="video/webm">
+  </video>
   </div>
 
-  <div id="questionCounter">Question #/#</div>
-
+  <div id="questionCounter"> #/#</div>
   <div id="money">
-    <img src="./internalAssets/starCash Spot.png" alt="Star Cash">
     <h2 id="moneyTxt">$0</h2>
   </div>
+
 
   <div id="hintBubble">
     <img src="./internalAssets/hintBubble.png" alt="Hint Bubble">
@@ -300,34 +653,39 @@
   </div>
 
   <div id="Zilby">
-    <img src="./ZilbyIdle.gif" alt="Zilby">
+    <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
   </div>
 
   <div id="podium">
-    <img src="./internalAssets/podium.png" alt="Podium">
+    <img src="./podiumCoin.png" alt="Podium">
   </div>
 
-  <div id="timer">
-    <img src="./internalAssets/Countdown clock.png" alt="Timer">
-    <h2 id="timerTxt">00:00</h2>
-  </div>
-
-  <div id="quiz-options">
+  <div id="quiz-options" >
     <button id="optionA" class="quiz-button" data-answer="A">
       Option A
-      <img src="./internalAssets/A_Button_icon.png" alt="A Button">
+      <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
     </button>
     <button id="optionB" class="quiz-button" data-answer="B">
       Option B
-      <img src="./internalAssets/B_Button_icon.png" alt="B Button">
+      <img id="B_Button" src="./internalAssets/B_Button_icon.png" alt="B Button">
     </button>
+    
+    <div id="powerUps">
+      <img id="starSpot" src="star.png" alt="">
+      <div id="powerButton">
+        <img id="pwerSpot" src="./Bonus Time (inactive).png" alt="powerUp here">
+        <div id="powerUpCountdown">25</div>
+      </div>
+      <h5 id="powerUpToolTip">This is your random power-up</h5>
+    </div>
+
     <button id="optionC" class="quiz-button" data-answer="C">
       Option C
-      <img src="./internalAssets/C_Button_icon.png" alt="C Button">
+      <img id="C_Button" src="./internalAssets/C_Button_icon.png" alt="C Button">
     </button>
     <button id="optionD" class="quiz-button" data-answer="D">
       Option D
-      <img src="./internalAssets/D_Button_icon.png" alt="D Button">
+      <img id="D_Button" src="./internalAssets/D_Button_icon.png" alt="D Button">
     </button>
   </div>
 
@@ -341,6 +699,20 @@
     let timeRemaining = 215; // 3 minutes in seconds
     let totalQuestions = 0; // Will be set after fetching questions
 
+    switch(selectedEra){
+      case 'presentEra':
+    backgroundVideo.querySelector('source').src = './PresentEraPattern.mp4';
+    break;
+  case 'discoEra':
+    backgroundVideo.querySelector('source').src = './Disco BG Pattern.mp4';
+    break;
+  case 'radioEra':
+    backgroundVideo.querySelector('source').src = './Radio era Pattern.mp4';
+    break;
+  default:
+    console.error('Invalid era selected');
+    }
+
     // DOM elements
     const questionElement = document.getElementById('questMess');
     const optionsElement = document.getElementById('quiz-options');
@@ -349,6 +721,15 @@
     const timerElement = document.getElementById('timerTxt');
     const zilbyImg = document.querySelector('#Zilby img');
     const questionCounterElement = document.getElementById('questionCounter');
+    const correctAudio = document.getElementById('crr');
+    const wrongAudio = document.getElementById('wr');
+    const moneySound = document.getElementById('mding');
+    const failSound = document.getElementById('failT');
+    const winningAudio = document.getElementById('winn');
+    const timeyUp = document.getElementById('timeU');
+    const cash2Pow = document.getElementById('pwerCash2');
+    const bonusTimePow = document.getElementById('bonT');
+    const skipQuestPow = document.getElementById('skipQ');
 
     // WebSocket connection
     const ws = new WebSocket('ws://localhost:3000');
@@ -414,6 +795,8 @@
         // End the game when time runs out
         if (timeRemaining <= 0) {
           clearInterval(timerInterval);
+          timeyUp.play();
+          failSound.play();
           endGame("Time's up!");
         }
       }, 1000);
@@ -558,9 +941,12 @@
     // Correct answer
     optionElement.classList.add('selected');
     score += allQuestions[currentQuestionIndex].points || 100;
+
     
     // Update hint bubble and Zilby animation for correct answer
     hintBubbleElement.textContent = "Great job! That's correct!";
+    correctAudio.play();
+    moneySound.play();
     zilbyImg.src = './ZilbyReacts-Correct.gif';
   } else {
     // Incorrect answer
@@ -576,6 +962,7 @@
     
     // Update hint bubble and Zilby animation for incorrect answer
     hintBubbleElement.textContent = "Oops! That's not right.";
+    wrongAudio.play();
     zilbyImg.src = './ZilbyReacts-Incorrect.gif';
   }
 
@@ -603,6 +990,7 @@
         resetZilby();
         
         if (currentQuestionIndex >= allQuestions.length) {
+          winningAudio.play();
           endGame("Congratulations! You've completed all questions!");
         } else {
           displayQuestion();

@@ -275,6 +275,12 @@
       transition: transform 0.1s ease;
     }
   </style>
+
+<audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
+<audio id="wr" src="./audio/WrongAnswerWIP1.mp3"></audio>
+<audio id="mding" src="./audio/MoneyDingWIP1.mp3"></audio>
+<audio id="failT" src="./audio/FailureTuneWIP1.mp3"></audio>
+<audio id="menuBoop" src="./audio/MenuButtonWIP1.mp3"></audio>
 </head>
 
 <body>
@@ -325,6 +331,7 @@
       Bob
       <img id="D_Button" src="./internalAssets/D_Button_icon.png" alt="D Button">
     </button>
+    
   </div>
 
   <script>
@@ -345,6 +352,11 @@
     const timerElement = document.getElementById('timerTxt');
     const optionButtons = document.querySelectorAll('.quiz-button');
     const zilbyImg = document.getElementById('zilbee');
+    const correctAudio = document.getElementById('crr');
+    const wrongAudio = document.getElementById('wr');
+    const moneySound = document.getElementById('mding');
+    const failSound = document.getElementById('failT');
+    const menuPop = document.getElementById('menuBoop');
 
     // Sample questions for testing (replace with your actual questions)
     const sampleQuestions = {
@@ -426,6 +438,8 @@
         optionElement.classList.add('selected'); // Correct answer
         score += Object.values(currentQuestions)[currentQuestionIndex].points;
         hintBubbleElement.textContent = "Correct answer!";
+        correctAudio.play().catch(error => console.error('Correct audio playback error:', error));
+        moneySound.play().catch(error => console.error('Money sound playback error:', error));
         zilbyImg.src ='./ZilbyReacts-Correct.gif'
       } else {
         optionElement.classList.add('incorrect'); // Incorrect answer
@@ -437,6 +451,8 @@
         });
         hintBubbleElement.textContent = "Yikes... Well this is awkward";
         zilbyImg.src = './ZilbyReacts-Incorrect.gif';
+        wrongAudio.play();
+        
       }
 
       // Grey out all options that are not marked as selected/incorrect
@@ -490,7 +506,8 @@
       
       // Add event listeners for S and F keys
       document.addEventListener('keydown', function(event) {
-        if (event.key.toLowerCase() === 'F') {
+        if (event.key.toLowerCase() === 'E') {
+          menuPop.play();
           window.location.href = 'difficult.html';
         }
       });
@@ -498,7 +515,7 @@
       // Update WebSocket handler to handle S and F button presses
       ws.onmessage = (event) => {
         const message = event.data;
-        if (message.includes('Button F pressed')) {
+        if (message.includes('Button E pressed')) {
           window.location.href = 'difficult.html';
         }
       };

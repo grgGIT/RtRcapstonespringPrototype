@@ -77,44 +77,13 @@
             color: rgb(152, 181, 207);
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const txtFunc = document.getElementById('TitleText')
-        txtFunc.addEventListener('click', function() {
-            window.location.href = './playerJoin.html';
-        })
-            
-        
-        
-        // WebSocket connection
-        const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
-
-        // Handle WebSocket message
-        ws.onmessage = (event) => {
-            const message = event.data;
-            console.log(`Button Pressed: "${message}"`);
-            handleButtonPress(message);
-        };
-
-        // Handle button press (Button F to navigate to playerJoin.html)
-        function handleButtonPress(message) {
-            // Expected format: "Button F pressed"
-            const match = message.match(/Button\s+([A-Z])\s+pressed/i);
-            if (match && match[1]) {
-                const letter = match[1].toUpperCase();  // e.g., "F"
-                if (letter === 'F') {
-                    console.log('Button F pressed, navigating to playerJoin.html');
-                    window.location.href = 'playerJoin.html';  // Navigate to the playerJoin page
-                }
-            }
-        }
-    })
-    </script>
+    
+    <audio id="menuBoop" src="./audio/MenuButtonWIP1.mp3"></audio>
 </head>
 <body>
     <!-- space background -->
     <video autoplay muted loop id="background-video">
-        <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+        <source src="./stars-long(1).mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
     <!-- png for logo -->
@@ -124,5 +93,42 @@
         <h1>Press <span id="S"> <img src="./internalAssets/S Button icon.png" alt=""></span> to play</h1>
                                                                  
     </div>
+    
 </body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const txtFunc = document.getElementById('TitleText')
+        const menuSound = document.getElementById('menuBoop');
+    txtFunc.addEventListener('click', function() {
+        menuSound.play();
+        window.location.href = './playerJoin.html';
+    })
+        
+    
+    
+    // WebSocket connection
+    const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
+
+    // Handle WebSocket message
+    ws.onmessage = (event) => {
+        const message = event.data;
+        console.log(`Button Pressed: "${message}"`);
+        handleButtonPress(message);
+    };
+
+    // Handle button press (Button F to navigate to playerJoin.html)
+    function handleButtonPress(message) {
+        // Expected format: "Button F pressed"
+        const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+        if (match && match[1]) {
+            const letter = match[1].toUpperCase();  // e.g., "F"
+            if (letter === 'E') {
+                menuSound.play();
+                console.log('Button E pressed, navigating to playerJoin.html');
+                window.location.href = 'playerJoin.html';  // Navigate to the playerJoin page
+            }
+        }
+    }
+})
+</script>
 </html>
