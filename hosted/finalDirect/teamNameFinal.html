@@ -130,6 +130,7 @@
     <script>
         let firstNames = [];
         let secondNames = [];
+        let usedCombinations = new Set();
 
         // Load the team name parts from the JSON
         fetch('teamNamesAPI.json')
@@ -137,30 +138,78 @@
             .then(data => {
                 firstNames = data.teamNames.firstName;
                 secondNames = data.teamNames.secondName;
+
+                // Initialize with a unique combo right away
+                const combo = generateUniqueCombo();
+                if (combo) {
+                    document.getElementById('firstWrd').textContent = combo.first;
+                    document.getElementById('SecndWrd').textContent = combo.second;
+                }
             });
 
-        // Utility functions
         function getRandomItem(arr) {
             return arr[Math.floor(Math.random() * arr.length)];
         }
 
-        function updateFirstWord() {
-            if (firstNames.length > 0) {
-                document.getElementById('firstWrd').textContent = getRandomItem(firstNames);
+        function getShuffledArray(arr) {
+            const shuffled = arr.slice();
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
             }
+            return shuffled;
         }
 
-        function updateSecondWord() {
-            if (secondNames.length > 0) {
-                document.getElementById('SecndWrd').textContent = getRandomItem(secondNames);
+        function generateUniqueCombo() {
+            const shuffledFirst = getShuffledArray(firstNames);
+            const shuffledSecond = getShuffledArray(secondNames);
+
+            for (let f of shuffledFirst) {
+                for (let s of shuffledSecond) {
+                    const combo = `${f} ${s}`;
+                    if (!usedCombinations.has(combo)) {
+                        usedCombinations.add(combo);
+                        return { first: f, second: s };
+                    }
+                }
             }
+            return null; // No more combos available
         }
 
-        // Attach click functions
-        document.getElementById('option-A').onclick = updateFirstWord;
-        document.getElementById('option-B').onclick = updateFirstWord;
-        document.getElementById('option-C').onclick = updateSecondWord;
-        document.getElementById('option-D').onclick = updateSecondWord;
+        function updateNameParts(isFirstChange) {
+            const currentFirst = document.getElementById('firstWrd').textContent;
+            const currentSecond = document.getElementById('SecndWrd').textContent;
+
+            let newFirst = currentFirst;
+            let newSecond = currentSecond;
+
+            let attempts = 0;
+            while (attempts < 100) {
+                if (isFirstChange) {
+                    newFirst = getRandomItem(firstNames);
+                } else {
+                    newSecond = getRandomItem(secondNames);
+                }
+
+                const newCombo = `${newFirst} ${newSecond}`;
+                if (!usedCombinations.has(newCombo)) {
+                    usedCombinations.add(newCombo);
+                    document.getElementById('firstWrd').textContent = newFirst;
+                    document.getElementById('SecndWrd').textContent = newSecond;
+                    return;
+                }
+
+                attempts++;
+            }
+
+            alert("All unique name combinations have been used!");
+        }
+
+        // Attach button listeners
+        document.getElementById('option-A').onclick = () => updateNameParts(true);
+        document.getElementById('option-B').onclick = () => updateNameParts(true);
+        document.getElementById('option-C').onclick = () => updateNameParts(false);
+        document.getElementById('option-D').onclick = () => updateNameParts(false);
 
         // WebSocket setup for Arduino buttons
         const ws = new WebSocket('ws://localhost:3000');
@@ -181,6 +230,7 @@
             }
         }
     </script>
+</body>
 </body>
 
 </html>
