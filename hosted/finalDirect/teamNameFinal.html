@@ -18,18 +18,58 @@
         }
         #rollContainer{
             background-color: #3F3667;
-            width: 1200px;
-            height: 620px;
+            width: 1700px;
+            height: 900px;
+            position: absolute;
+            left: 23%;
+            bottom: 25%;
+            z-index: 20;
         }
         #firstWrd{
+            display: flex;
+            font-size: 60px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            width: 700px;
+            height: 600px;
             background-color: #2E274D;
-            width: 500px;
+            color: whitesmoke;
         }
         #SecndWrd{
+            display: flex;
+            font-size: 60px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 53%;
+            top: 5%;
+            width: 700px;
+            height: 600px;
             background-color: #2E274D;
-            width: 500px;
+            color: whitesmoke;
         }
         #SelDiff{
+            position: absolute;
+            width: 1200px;
+            height: 200px;
+            font-size: 85px;
+            background-image: url(./internalAssets/scanMssg.png);
+            background-size: 100% 100%; /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            margin: 20px 0;
+            padding: 60px 20px; /* Adjust padding to center text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            left: 30%;
 
         }
         #floorDiv{
@@ -42,6 +82,18 @@
         left: 0;
         z-index: 10;
     }
+    #ABquestion{
+        position: absolute;
+        left: 10%;
+        bottom: 15%;
+        color: whitesmoke;
+    }
+    #CDquestion{
+        position: absolute;
+        left: 60%;
+        bottom: 15%;
+        color: whitesmoke;
+    }
 
     </style>
 </head>
@@ -50,17 +102,13 @@
         <source src="./PresentEraPattern.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
-
-    <div class="encapsulate">
-        <div id="difficultBorder">
             <h1 id="SelDiff">Name Your Team</h1>
             <div id="rollContainer">
                 <div id="firstWrd">goofy</div>
                 <div id="SecndWrd">glimmer</div>
-                <div id="ABquestion"></div>
-                <div id="CDquestion"></div>
+                <div id="ABquestion"><img src="./abQ.png" alt=""></div>
+                <div id="CDquestion"><img src="./cdQ.png" alt=""></div>
             </div>
-        </div>
     <div id="floorDiv"></div>
 </body>
 </html>
