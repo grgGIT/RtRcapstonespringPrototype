@@ -226,7 +226,7 @@
                     ],
                     "correctAnswer": "Jeopardy!",
                     "points": 25,
-                    "aiHint": "Alek Trebek was the host for the longest time. C'mon, you know this!",
+                    "aiHint": "Alex Trebek was the host for the longest time. C'mon, you know this!",
                     "image": "",
                     "additionalInfo": "Jeopardy! first aired as a radio show before its iconic television format."
                 },
@@ -254,7 +254,7 @@
                     ],
                     "correctAnswer": "What’s My Line?",
                     "points": 25,
-                    "aiHint": "Cut! Whats my Line. Sorry guys, I dont know what I'm saying",
+                    "aiHint": "Cut! 'What's My Line'? Sorry guys, I don't know what I'm saying",
                     "image": "",
                     "additionalInfo": "What’s My Line? was originally a radio show before becoming a television game show."
                 },
@@ -270,7 +270,7 @@
                     "points": 25,
                     "aiHint": "The theme is all about honoring someone's life story.",
                     "image": "",
-                    "additionalInfo": "This Is Your Life was a surprise format where guests would be surprised by details from their past."
+                    "additionalInfo": "This Is Your Life featured a surprise format where guests were presented with stories and people from their past."
                 },
                 "q6": {
                     "question": "Which of these is the only real Argentinian game show aired during this time period?",
@@ -282,7 +282,7 @@
                     ],
                     "correctAnswer": "El Gran Juego de la Oca",
                     "points": 25,
-                    "aiHint": "The meaning in English is 'The Big Goose Game'. It's also the longest  name here ",
+                    "aiHint": "The meaning in English is 'The Big Goose Game'. It's also the longest name here.",
                     "image": "",
                     "additionalInfo": "El Gran Juego de la Oca was a popular Argentinian game show based on the board game 'Game of the Goose'."
                 },
@@ -333,7 +333,7 @@
                     "additionalInfo": "Bob Barker hosted 'The Price is Right' for 35 years, making him an iconic TV personality."
                 },
                 "q3": {
-                    "question": "Which game show first aired in 1976 and featured contestants guessing the price of items?",
+                    "question": "Which game show aired in 1976 and featured contestants guessing the price of items?",
                     "options": [
                         "Family Feud",
                         "The Price is Right",
@@ -347,7 +347,7 @@
                     "additionalInfo": "The Price is Right has been a staple of American television since 1976."
                 },
                 "q4": {
-                    "question": "Which 1980s game show had contestants spinning a giant wheel to win cash and prizes?",
+                    "question": "Which 1980s game show had contestants stressed about potential pitfalls?",
                     "options": [
                         "Jeopardy!",
                         "Wheel of Fortune",
@@ -419,7 +419,7 @@
                     "additionalInfo": "Family Feud debuted in 1976 and became known for its survey-based format."
                 },
                 "q2": {
-                    "question": "Which 80s game show featured contestants competing in physical and mental challenges?",
+                    "question": "Which 1980s game show featured contestants competing in physical and mental challenges?",
                     "options": [
                         "The Crystal Maze",
                         "The Krypton Factor",
@@ -433,7 +433,7 @@
                     "additionalInfo": "The Krypton Factor aired from 1977 to 1995, combining intelligence and physical challenges."
                 },
                 "q3": {
-                    "question": "Which 80s game show involved contestants trying to figure out well-known phrases using animated clues?",
+                    "question": "Which 1980s game show involved contestants trying to figure out well-known phrases using animated clues?",
                     "options": [
                         "Catchphrase",
                         "Family Fortunes",
@@ -447,7 +447,7 @@
                     "additionalInfo": "Catchphrase first aired in 1986 and became a popular game show in the UK."
                 },
                 "q4": {
-                    "question": "Which 80s game show had contestants trying to win cash by answering trivia questions and solving puzzles?",
+                    "question": "Which 1980s game show had contestants trying to win cash by answering trivia questions and solving puzzles?",
                     "options": [
                         "Blockbusters",
                         "Jeopardy!",
@@ -461,7 +461,7 @@
                     "additionalInfo": "Blockbusters first aired in 1983 and became a hit with its unique board game-style format."
                 },
                 "q5": {
-                    "question": "Which game show featured a giant board where contestants formed words by choosing letters?",
+                    "question": "Which game show used a hexagonal board and was known for its 'Gold Run' final round?",
                     "options": [
                         "Wheel of Fortune",
                         "Jeopardy!",
@@ -505,7 +505,7 @@
             },
             "hard": { 
                 "q1": {
-                    "question": "Which 80s game show had contestants competing in a maze of obstacles and puzzles?",
+                    "question": "Which 1980s game show had contestants competing in a maze of obstacles and puzzles?",
                     "options": [
                         "The Crystal Maze",
                         "The Krypton Factor",
@@ -533,7 +533,7 @@
                     "additionalInfo": "Going for Gold was an international quiz competition that aired in the UK from 1987 to 1996."
                 },
                 "q3": {
-                    "question": "Which 80s game show featured futuristic virtual reality puzzles and interactive team play?",
+                    "question": "Which early-1990s game show (filmed in the 1980s) featured futuristic virtual reality puzzles and interactive team play?",
                     "options": [
                         "Knightmare",
                         "The Crystal Maze",
@@ -561,7 +561,7 @@
                     "additionalInfo": "The Generation Game was a hit British game show that encouraged multiple generations of families to compete. Its most iconic moment was the final round, where contestants memorized prizes rolling by on a conveyor belt."
                 },
                 "q5": {
-                    "question": "Which 80s game show had a famous segment where players solved anagrams and word puzzles?",
+                    "question": "Which 1980s game show had a famous segment where players solved anagrams and word puzzles?",
                     "options": [
                         "Wheel of Fortune",
                         "Jeopardy!",
@@ -616,7 +616,7 @@
                     ],
                     "correctAnswer": "Cash Cab",
                     "points": 10,
-                    "aiHint": "I mean... You might need to take a taxi home if you dont get this one right.",
+                    "aiHint": "I mean... You might need to take a taxi home if you don't get this one right.",
                     "image": "",
                     "additionalInfo": "The Singing Bee originally premiered in 2007 and was revived with Jane Lynch hosting in 2009. Contestants try to sing the correct lyrics after the music stops."
                 },
@@ -765,12 +765,12 @@
                 "q5": {
                     "question": "Which enduring show challenges players to rely on pricing instincts across quirky mini-games?",
                     "options": [
-                        "Price is Right",
+                        "The Price is Right",
                         "Deal or No Deal",
                         "Wheel of Fortune",
                         "Jeopardy!"
                     ],
-                    "correctAnswer": "Price is Right",
+                    "correctAnswer": "The Price is Right",
                     "points": 15,
                     "aiHint": "Contestants bid on products, with the closest estimate winning the prize.",
                     "image": "",
@@ -874,7 +874,7 @@
                     "points": 25,
                     "aiHint": "Think of a show where contestants solve animated puzzles to figure out common sayings.",
                     "image": "",
-                    "additionalInfo": "'Catchphrase' was a popular show in the UK in the 80s and 90s, featuring animated clues and famous phrases."
+                    "additionalInfo": "'Catchphrase' was a popular show in the UK in the 1980s and 90s, featuring animated clues and famous phrases."
                 },
                 "q6": {
                     "question": "Which rebooted game show challenges contestants to match strange items to their creators, often involving cakes disguised as real objects?",
@@ -886,7 +886,7 @@
                     ],
                     "correctAnswer": "Is It Cake?",
                     "points": 25,
-                    "aiHint": "Two of the answers are about cake. Which one is m ore literal?",
+                    "aiHint": "Two of the answers are about cake. Which one is more literal?",
                     "image": "",
                     "additionalInfo": "'Is It Cake?' launched on Netflix in 2022 and features bakers crafting hyper-realistic cakes to fool judges into thinking they're everyday objects. The show is inspired by viral social media trends."
                 },
