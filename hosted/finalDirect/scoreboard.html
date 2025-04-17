@@ -4,7 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scorepage</title>
-    <style>body{
+    <style>
+
+        @font-face {
+            font-family: 'Nutmeg';
+            src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
+        }
+        @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'Aldrich';
+            src: url('./internalAssets/Aldrich/Aldrich-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'DigitalT';
+            src: url('./internalAssets/digitalt/Digitalt.ttf');
+        }
+    
+    body{
         background-image: url(./Pattern\ placeholder.gif);
         background-color: #714882;
         font-family: Arial, sans-serif;
@@ -13,13 +32,14 @@
     
     }
     .positionDiv{
+        font-family: DigitalT, sans-serif;
         padding: 10px;
         margin: 10px;
         border-radius: 10px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 3rem;
+        padding-left: 2rem;
     }
     
     #position2{
@@ -51,7 +71,7 @@
         font-size: 64px;
         
         position: absolute;
-        left: 35rem;
+        left: 38rem;
         color: #fff;
         padding-left: 5rem;
     }
@@ -64,7 +84,7 @@
         bottom: 51%;
         color: gold;
         padding-left: 8rem;
-        max-width: 35rem;
+        max-width: 33rem;
         word-wrap: break-word;
         overflow-wrap: break-word;
         text-align: left;
@@ -80,11 +100,11 @@
         padding-left: 5rem;
     }
     #second-place-player-name{
-        font-size: 60px;
+        font-size: 55px;
         font-weight: bold;
         position: absolute;
-        left: 15%;
-        bottom: 34%;
+        left: 14%;
+        bottom: 35%;
         color: silver;
         padding-left: 8rem;
         max-width: 35rem;
@@ -103,11 +123,11 @@
         padding-left: 5rem;
     }
     #third-place-player-name{
-        font-size: 50px;
+        font-size: 45px;
         font-weight: bold;
         position: absolute;
         left: 16%;
-        bottom: 18.5%;
+        bottom: 20%;
         color: rgb(165, 85, 42);
         padding-left: 8rem;
         max-width: 27rem;
@@ -155,11 +175,12 @@
     } */
     
     #leaderboard-title{
+        font-family: Bangers, sans-serif;
         font-size: 160px;
         font-weight: bold;
         position: absolute;
         top: 9%;
-        left: 11%;
+        left: 15%;
         margin: 10px;
         color: white;
         z-index: 13;
@@ -203,6 +224,7 @@
         
     }
     #playerPosition{
+        font-family: DigitalT, sans-serif;
         padding-left: 60px;
         padding-right: 60px;
         padding-top: 10%;
@@ -251,6 +273,7 @@
     }
     
     #playerScoreTitle{
+        font-family: Bangers, sans-serif;
         font-size: 80px;
         font-weight: bold;
         text-align: center;

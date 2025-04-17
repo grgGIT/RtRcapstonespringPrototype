@@ -60,10 +60,13 @@
         }
 
         #SelDiff {
-            color: fdb813;
-            font-size: 130px;
+            color: white;
+            /* color: #fdb813; */
+            font-size: 120px;
             margin-bottom: 10px 0;
             text-align: center;
+            position: relative;
+            left: -7px;
         }
 
         #SelDiff2 {
@@ -181,17 +184,19 @@
 
     <div class="encapsulate">
         <div id="difficultBorder">
-            <h1 id="SelDiff">Select Difficulty</h1>
+            <h1 id="SelDiff">Select Question Era</h1>
         </div>
         
         <div id="interior">
             <h3 id="SelDiff2">Select a <span id="theme">theme</span> using the buttons on the podium.</h3>
             
             <div class="buttons-row-container">
+
                 <div class="button-container">
-                    <!-- <div class="button-label">Present</div> -->
-                    <div class="era-image-button" id="present-button" data-era="presentEra"></div>
+                    <!-- <div class="button-label">Radio Era</div> -->
+                    <div class="era-image-button" id="radio-button" data-era="radioEra"></div>
                 </div>
+                
 
                 <div class="button-container">
                     <!-- <div class="button-label">Disco Era</div> -->
@@ -199,8 +204,8 @@
                 </div>
 
                 <div class="button-container">
-                    <!-- <div class="button-label">Radio Era</div> -->
-                    <div class="era-image-button" id="radio-button" data-era="radioEra"></div>
+                    <!-- <div class="button-label">Present</div> -->
+                    <div class="era-image-button" id="present-button" data-era="presentEra"></div>
                 </div>
             </div>
         </div>
