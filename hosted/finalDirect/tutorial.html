@@ -362,38 +362,38 @@
 <body>
 
   <video id="backgroundVideo" autoplay muted loop>
-    <source src="./internalAssets/stars idle.mp4" type="video/mp4">
+    <source src="./internalAssets/stars-long(1).mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
   <div id="timer">
     
-    <img src="./newTimeTv.png" alt="Timer">
+    <img src="./internalAssets/newTimeTv.png" alt="Timer">
     <h2 id="timerTxt">00:00</h2>
   </div>
 
   <div id="quiz-question">
     <h1 id="questMess">What is our host's name?</h1>
     <video id="questBoard" autoplay loop>
-      <source src="./QuestionSign-Idle.webm" type="video/webm">
+      <source src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
   </video>
   </div>
 
   <div id="money">
     <h2 id="moneyTxt">$0</h2>
   </div>
-  <img id="star" src="./podiumCash.svg" alt="Money">
+  <img id="star" src="./internalAssets/podiumCash.svg" alt="Money">
 
   <div id="hintBubble">
     <h2 id="hintTxt">This is a hint</h2>
   </div>
 
   <div id="Zilby">
-    <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
+    <img id="zilbee" src="./internalAssets/ZilbyIdle.gif" alt="Zilby">
   </div>
 
   <div id="podium">
-    <img src="./newSickPodium.png" alt="Podium">
+    <img src="./internalAssets/newSickPodium.png" alt="Podium">
   </div>
 
   
@@ -524,7 +524,7 @@
         hintBubbleElement.textContent = "Correct answer!";
         correctAudio.play().catch(error => console.error('Correct audio playback error:', error));
         moneySound.play().catch(error => console.error('Money sound playback error:', error));
-        zilbyImg.src ='./ZilbyReacts-Correct.gif'
+        zilbyImg.src ='./internalAssets/ZilbyReacts-Correct.gif'
       } else {
         optionElement.classList.add('incorrect'); // Incorrect answer
         // Find and highlight the correct answer
@@ -534,7 +534,7 @@
           }
         });
         hintBubbleElement.textContent = "Yikes... Well this is awkward";
-        zilbyImg.src = './ZilbyReacts-Incorrect.gif';
+        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
         wrongAudio.play();
         
       }
@@ -568,7 +568,7 @@
       document.querySelectorAll('.quiz-button').forEach(button => {
         button.classList.remove('selected', 'incorrect', 'greyed');
         button.disabled = false;
-        zilbyImg.src = './ZilbyIdle.gif';
+        zilbyImg.src = './internalAssets/ZilbyIdle.gif';
       });
     }
 

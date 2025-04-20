@@ -782,14 +782,14 @@
 
   <div id="timer">
     
-    <img src="./newTimeTv.png" alt="Timer">
+    <img src="./internalAssets/newTimeTv.png" alt="Timer">
     <h2 id="timerTxt">00:00</h2>
   </div>
 
   <div id="quiz-question">
     <h1 id="questMess">Question goes here</h1>
     <video id="questBoard" autoplay loop>
-      <source src="./QuestionSign-Idle.webm" type="video/webm">
+      <source src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
   </video>
   </div>
 
@@ -797,7 +797,7 @@
   <div id="money">
     <h2 id="moneyTxt">$0</h2>
   </div>
-  <img id="star" src="./podiumCash.svg" alt="Money">
+  <img id="star" src="./internalAssets/podiumCash.svg" alt="Money">
 
 
   <div id="hintBubble">
@@ -806,11 +806,11 @@
   </div>
 
   <div id="Zilby">
-    <img id="zilbee" src="./ZilbyIdle.gif" alt="Zilby">
+    <img id="zilbee" src="./internalAssets/ZilbyIdle.gif" alt="Zilby">
   </div>
 
   <div id="podium">
-    <img src="./newSickPodium.png" alt="Podium">
+    <img src="./internalAssets/newSickPodium.png" alt="Podium">
   </div>
 
   <div id="quiz-options" >
@@ -881,13 +881,13 @@ const backgroundVideo = document.getElementById('backgroundVideo');
 // Set background video based on selected era
 switch(selectedEra) {
   case 'presentEra':
-    backgroundVideo.querySelector('source').src = './PresentEraPattern.mp4';
+    backgroundVideo.querySelector('source').src = './internalAssets/PresentEraPattern.mp4';
     break;
   case 'discoEra':
-    backgroundVideo.querySelector('source').src = './Disco BG Pattern.mp4';
+    backgroundVideo.querySelector('source').src = './internalAssets/Disco BG Pattern.mp4';
     break;
   case 'radioEra':
-    backgroundVideo.querySelector('source').src = './Radio era Pattern.mp4';
+    backgroundVideo.querySelector('source').src = './internalAssets/Radio era Pattern.mp4';
     backgroundVideo.playbackRate = 0.75;
     break;
   default:
@@ -1004,10 +1004,10 @@ function endGame(message) {
   // Play appropriate sound
   if (message.includes("Congratulations")) {
     winningAudio.play();
-    zilbyImg.src = './ZilbyReacts-Correct.gif';
+    zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
   } else {
     failSound.play();
-    zilbyImg.src = './ZilbyReacts-Incorrect.gif';
+    zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
   }
 }
 
@@ -1021,20 +1021,20 @@ function showDifficultySplash(difficulty, callback) {
   let logoSrc, splashText;
   switch(difficulty) {
     case 'easy':
-      logoSrc = './easylog.png';
+      logoSrc = './internalAssets/easylog.png';
       splashText = 'EASY MODE';
       optionsElement
       break;
     case 'medium':
-      logoSrc = './medlog.png';
+      logoSrc = './internalAssets/medlog.png';
       splashText = 'MEDIUM MODE';
       break;
     case 'hard':
-      logoSrc = './hardlog.png'; // Make sure you have this image
+      logoSrc = './internalAssets/hardlog.png'; // Make sure you have this image
       splashText = 'HARD MODE';
       break;
     default:
-      logoSrc = './easylog.png';
+      logoSrc = './internalAssets/easylog.png';
       splashText = 'QUIZ MODE';
   }
   
@@ -1179,7 +1179,7 @@ function fetchQuestions() {
 
 // Reset Zilby to idle state
 function resetZilby() {
-  zilbyImg.src = './ZilbyIdle.gif';
+  zilbyImg.src = './internalAssets/ZilbyIdle.gif';
 }
 
 // Display current question
@@ -1403,12 +1403,12 @@ function selectOption(optionElement, selectedAnswer, correctAnswer) {
     hintBubbleElement.textContent = "Great job! That's correct!";
     correctAudio.play();
     moneySound.play();
-    starNess.src = './stracash.gif';
+    starNess.src = './internalAssets/stracash.gif';
     setTimeout(() => {
-      starNess.src = './podiumCash.svg';
+      starNess.src = './internalAssets/podiumCash.svg';
     }, 2200);
     
-    zilbyImg.src = './ZilbyReacts-Correct.gif';
+    zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
     hintBubbleContainer.style.opacity = '1';
   } else {
     // Incorrect answer
@@ -1425,7 +1425,7 @@ function selectOption(optionElement, selectedAnswer, correctAnswer) {
     // Update hint bubble and Zilby animation for incorrect answer
     hintBubbleElement.textContent = "Oops! That's not right.";
     wrongAudio.play();
-    zilbyImg.src = './ZilbyReacts-Incorrect.gif';
+    zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
     hintBubbleContainer.style.opacity = '1';
   }
 
