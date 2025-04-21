@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Home Page</title>
     <style>
-        @font-face{
+        @font-face {
             font-family: 'Nutmeg';
             src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
         }
+
         @font-face {
             font-family: 'Bangers';
             src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
         }
+
         body {
             margin: 0;
             padding: 0;
@@ -22,7 +25,7 @@
             width: 100vw;
             font-family: Bangers, sans-serif;
         }
-        
+
         #background-video {
             position: fixed;
             right: 0;
@@ -34,18 +37,22 @@
             z-index: -1;
             object-fit: cover;
         }
+
         /* Floating animation keyframes */
         @keyframes float {
             0% {
                 transform: translateY(0px);
             }
+
             50% {
                 transform: translateY(-20px);
             }
+
             100% {
                 transform: translateY(0px);
             }
         }
+
         #logo {
             position: relative;
             z-index: 1;
@@ -53,11 +60,11 @@
             margin: 50px auto 0;
             /* max-width: 100%; */
             width: 2500px;
-            animation: float 3.5s ease-in-out infinite; 
+            animation: float 3.5s ease-in-out infinite;
             bottom: 5%;
             right: 1%;
         }
-        
+
         #TitleText {
             color: #FDB813;
             text-align: center;
@@ -68,67 +75,115 @@
             font-size: 40px;
             right: 1%;
         }
-        
+
         #S img {
             width: 80px;
             vertical-align: middle;
         }
-        #TitleText:hover{
+
+        #TitleText:hover {
             color: rgb(152, 181, 207);
         }
     </style>
-    
-    <audio id="menuBoop" src="./audio/MenuButtonWIP1.mp3"></audio>
+
 </head>
+
 <body>
+    <audio id="menuBoop" preload="auto">
+        <source src="./audio/MenuButtonWIP1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <!-- space background -->
     <video autoplay muted loop id="background-video">
         <source src="./internalAssets/stars-long(1).mp4" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
     <!-- png for logo -->
-     <img id="logo" src="./internalAssets/RaceToRiches-Wavy.gif" alt="Race_to_Riches Logo">
-    
+    <img id="logo" src="./internalAssets/RaceToRiches-Wavy.gif" alt="Race_to_Riches Logo">
+
     <div id="TitleText">
         <h1>Press <span id="S"> <img src="./internalAssets/S Button icon.png" alt=""></span> to play</h1>
-                                                                 
+
     </div>
-    
-</body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const txtFunc = document.getElementById('TitleText')
-        const menuSound = document.getElementById('menuBoop');
-    txtFunc.addEventListener('click', function() {
-        menuSound.play();
-        window.location.href = './playerJoin.html';
-    })
-        
-    
-    
-    // WebSocket connection
-    const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const txtFunc = document.getElementById('TitleText');
+            const menuSound = document.getElementById('menuBoop');
 
-    // Handle WebSocket message
-    ws.onmessage = (event) => {
-        const message = event.data;
-        console.log(`Button Pressed: "${message}"`);
-        handleButtonPress(message);
-    };
-
-    // Handle button press (Button F to navigate to playerJoin.html)
-    function handleButtonPress(message) {
-        // Expected format: "Button F pressed"
-        const match = message.match(/Button\s+([A-Z])\s+pressed/i);
-        if (match && match[1]) {
-            const letter = match[1].toUpperCase();  // e.g., "F"
-            if (letter === 'E') {
-                menuSound.play();
-                console.log('Button E pressed, navigating to playerJoin.html');
-                window.location.href = 'playerJoin.html';  // Navigate to the playerJoin page
+            // Play sound and wait briefly before navigating
+            function playSoundThenNavigate(url) {
+                menuSound.play().then(() => {
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300); // Adjust if your audio clip needs more time
+                }).catch((err) => {
+                    console.error("Audio play error:", err);
+                    window.location.href = url; // fallback if audio fails
+                });
             }
-        }
-    }
-})
-</script>
+
+            txtFunc.addEventListener('click', function () {
+                playSoundThenNavigate('./playerJoin.html');
+            });
+
+            // WebSocket connection
+            const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
+
+            // Handle WebSocket message
+            ws.onmessage = (event) => {
+                const message = event.data;
+                console.log(`Button Pressed: "${message}"`);
+                handleButtonPress(message);
+            };
+
+            // Handle button press (Button E to navigate to playerJoin.html)
+            function handleButtonPress(message) {
+                const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+                if (match && match[1]) {
+                    const letter = match[1].toUpperCase();
+                    if (letter === 'E') {
+                        console.log('Button E pressed, navigating to playerJoin.html');
+                        playSoundThenNavigate('playerJoin.html');
+                    }
+                }
+            }
+        });
+
+
+        // document.addEventListener('DOMContentLoaded', function () {
+        // const txtFunc = document.getElementById('TitleText')
+        // const menuSound = document.getElementById('menuBoop');
+        // txtFunc.addEventListener('click', function () {
+        // menuSound.play();
+        // window.location.href = './playerJoin.html';
+        // });
+
+
+        // // WebSocket connection
+        // const ws = new WebSocket('ws://localhost:3000'); // Assuming your server is running on localhost:3000
+
+        // // Handle WebSocket message
+        // ws.onmessage = (event) => {
+        // const message = event.data;
+        // console.log(`Button Pressed: "${message}"`);
+        // handleButtonPress(message);
+        // };
+
+        // // Handle button press (Button F to navigate to playerJoin.html)
+        // function handleButtonPress(message) {
+        // // Expected format: "Button F pressed"
+        // const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+        // if (match && match[1]) {
+        // const letter = match[1].toUpperCase(); // e.g., "F"
+        // if (letter === 'E') {
+        // menuSound.play();
+        // console.log('Button E pressed, navigating to playerJoin.html');
+        // window.location.href = 'playerJoin.html'; // Navigate to the playerJoin page
+        // }
+        // }
+        // }
+        // })
+    </script>
+</body>
+
 </html>
