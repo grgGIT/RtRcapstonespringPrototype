@@ -1,6 +1,6 @@
 const Team = require('./models/Team');
 const Player = require('./models/Player');
-const teamNames = require('../teamNames.json');
+const teamNames = require('../teamNamesAPI.json');
 
 let currentTeam = {
     name: '',
