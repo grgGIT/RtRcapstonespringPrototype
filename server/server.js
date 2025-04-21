@@ -3,8 +3,10 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const http = require('http');
+const mongoose = require('mongoose');
 const WebSocket = require('ws');
 const os = require('os');
+const { startPolling } = require('./src/rfid');
 const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
 const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
 
@@ -17,9 +19,15 @@ const port = process.env.PORT || 3000;
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+// MongoDB
+mongoose.connect('mongodb://127.0.0.1:27017/leaderboard')
+    .then(() => console.log('✅ MongoDB connected'))
+    .catch((err) => console.error('❌ MongoDB error:', err));
+
 // send hosted assets
 const clientPath = path.join(__dirname, '..', 'hosted');
 app.use(express.static(clientPath));
+app.use(cors());
 app.use(express.json());
 
 
