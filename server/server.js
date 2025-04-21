@@ -31,6 +31,9 @@ app.use(express.static(clientPath));
 app.use(cors());
 app.use(express.json());
 
+const teamRoutes = require('./src/team');
+app.use('/', teamRoutes);
+
 
 // New endpoint to receive button press POST requests from ESP32
 app.post('/button', (req, res) => {
