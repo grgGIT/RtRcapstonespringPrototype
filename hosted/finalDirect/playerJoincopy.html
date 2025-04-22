@@ -220,6 +220,9 @@
     </style>
     <audio id="poppy" src="./audio/RFIDpopWIP1.mp3"></audio>
     <script>
+// array for tracking player
+playerArray = [];
+
         document.addEventListener('DOMContentLoaded', function() {
             const pop = document.getElementById('poppy');
             // Get the button element
@@ -229,6 +232,9 @@
             const continueText = document.getElementById('continue-text');
             let sButton;
             
+            // Function to set the lights based on the preset
+            setLights('default');
+
             // Function to reset the player states
             function resetPlayers() {
                 currentPlayer = 1;
@@ -257,7 +263,7 @@
             }
             
             // Add click event listener to the button
-            rfButt.addEventListener('click', function() {
+            rfButt.addEventListener('click',  function() {
                 
                 // Only proceed if we haven't activated all 4 players yet
                 if (currentPlayer <= 4) {
@@ -266,6 +272,7 @@
                     pop.play();
 
                     // add player to team 
+                    // will be a fetch statement to the /add-player endpoint
                     
                     
                     // Change the image source to the corresponding gif with timestamp to prevent caching
@@ -298,6 +305,48 @@
                     }
                 }
             });
+
+            /////////////////////////////////
+            // event source for RFID scanning
+            const evtSource = new EventSource('http://nm-rfid-1.rit.edu:8001/sse');
+            evtSource.onmessage = async (event) => {
+                const data = event.data;
+                
+                
+                // TO DO: CHECK FOR DUPLICATE ID SCANS
+
+            
+
+                console.log("rfid data scanned: ", data);
+                    rfButt.click();
+                    setLights('success');
+
+                    setTimeout(() => {
+                        setLights('default');
+                    }, 1000);
+
+                    // add player to team
+                    await fetch('/add-player', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ userId: data })
+                    }).then(res => {
+                        if (res.ok) {
+                            console.log('Player added to team successfully');
+                            playerArray.push(data); // Add the player to the team array
+                            console.log('Current team:', playerArray);
+
+                    }
+                    else {
+                            console.error('Error adding player to team');
+                        }
+                    }).catch(err => {
+                        console.error('Network error:', err);
+                    });
+                }
+
             
             // Add event listener for page reload
             window.addEventListener('beforeunload', function() {
@@ -347,6 +396,59 @@
             }
         });
 
+        // Light events
+        const lightPresets = {
+            success: {
+                pattern: 'pulse',
+                duration: '1',
+                foreground: '#00ff00',
+                background: '#000000',
+                period: '1.5'
+            },
+            error: {
+                pattern: 'pulse',
+                duration: '1',
+                foreground: '#ff0000',
+                background: '#000000',
+                period: '1.5'
+            },
+            default: {
+                pattern: 'doublecomet',
+                duration: '1800', // 30 minutes, just so it doesn't turn off
+                foreground: '#ef4d25',
+                background: '#f6f967',
+                foreground2: '#32cd32',
+                background2: '#6532f1',
+                period: '1.5'
+            }
+        };
+
+
+        // set lights function
+        function setLights(presetName) {
+            const preset = lightPresets[presetName];
+            if (!preset) return console.warn(`⚠️ Unknown light preset: ${presetName}`);
+
+            const body = new URLSearchParams(preset);
+
+            fetch('http://nm-rfid-1.rit.edu:8001/lights', {
+                method: 'POST',
+                body
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log(`💡 Lights set to ${presetName}`);
+                    } else {
+                        console.warn(`⚠️ Lights response:`, data);
+                    }
+                })
+                .catch(err => {
+                    console.error(`❌ Error setting lights (${presetName}):`, err);
+                });
+        }
+
+        window.onload = setLights('default');
 
     </script>
     

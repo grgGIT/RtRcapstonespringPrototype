@@ -7,7 +7,6 @@ const mongoose = require('mongoose');
 const WebSocket = require('ws');
 const os = require('os');
 const cors = require('cors');
-const { startPolling } = require('./src/rfid');
 const { SerialPort } = require('serialport');  // Correctly import SerialPort using CommonJS
 const { ReadlineParser } = require('@serialport/parser-readline'); // Import parser correctly
 

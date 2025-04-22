@@ -767,9 +767,9 @@
 <audio id="failT" src="./audio/FailureTuneWIP1.mp3"></audio>
 <audio id="winn" src="./audio/WiningTuneWIP1.mp3"></audio>
 <audio id="timeU" src="./audio/TimesUpAlarmWIP1.mp3"></audio>
-<audio id="pwerCash2" src="./audio/DoubleCashWIP1.mp3"></audio>
-<audio id="bonT" src="./audio/BonusTimeWIP1.mp3"></audio>
-<audio id="skipQ" src="./audio/SkipQuestionWIP1.mp3"></audio>
+<audio id="ezMd" src="./audio/DifficultyLvl1.mp3"></audio>
+<audio id="medMd" src="./audio/DifficultyLvl2.mp3"></audio>
+<audio id="hrdMd" src="./audio/DifficultyLvl3.mp3"></audio>
 </head>
 
 <body>
@@ -872,9 +872,9 @@ const moneySound = document.getElementById('mding');
 const failSound = document.getElementById('failT');
 const winningAudio = document.getElementById('winn');
 const timeyUp = document.getElementById('timeU');
-const cash2Pow = document.getElementById('pwerCash2');
-const bonusTimePow = document.getElementById('bonT');
-const skipQuestPow = document.getElementById('skipQ');
+const ezMode = document.getElementById('ezMd');
+const mediumMode = document.getElementById('medMd');
+const hardMode = document.getElementById('hrdMd');
 const starNess = document.getElementById('star');
 const backgroundVideo = document.getElementById('backgroundVideo');
 
@@ -1022,16 +1022,19 @@ function showDifficultySplash(difficulty, callback) {
   switch(difficulty) {
     case 'easy':
       logoSrc = './internalAssets/easylog.png';
-      splashText = 'EASY MODE';
+      ezMode.play();
+      splashText = 'ALL QUESTIONS ARE WORTH 25 COINS';
       optionsElement
       break;
     case 'medium':
       logoSrc = './internalAssets/medlog.png';
-      splashText = 'MEDIUM MODE';
+      mediumMode.play();
+      splashText = 'ALL QUESTIONS ARE WORTH 50 COINS';
       break;
     case 'hard':
       logoSrc = './internalAssets/hardlog.png'; // Make sure you have this image
-      splashText = 'HARD MODE';
+      hardMode.play();
+      splashText = 'ALL QUESTIONS ARE WORTH 75 COINS';
       break;
     default:
       logoSrc = './internalAssets/easylog.png';
