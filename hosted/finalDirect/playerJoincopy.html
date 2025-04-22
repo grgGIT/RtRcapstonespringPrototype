@@ -218,19 +218,31 @@
             cursor: pointer;
         }
     </style>
-    <audio id="poppy" src="./audio/RFIDpopWIP1.mp3"></audio>
+    <!-- <audio id="poppy" src="./audio/RFIDpopWIP1.mp3"></audio> -->
     <script>
 // array for tracking player
 playerArray = [];
 
         document.addEventListener('DOMContentLoaded', function() {
             const pop = document.getElementById('poppy');
+            const menuSound = document.getElementById('menuBoop');
             // Get the button element
             const rfButt = document.getElementById('bt');
             // Track which player is next to be activated
             let currentPlayer = 1;
             const continueText = document.getElementById('continue-text');
             let sButton;
+
+            function playSoundThenNavigate(url) {
+                menuSound.play().then(() => {
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300); // Adjust if your audio clip needs more time
+                }).catch((err) => {
+                    console.error("Audio play error:", err);
+                    window.location.href = url; // fallback if audio fails
+                });
+            }
             
             // Function to set the lights based on the preset
             setLights('default');
@@ -309,14 +321,14 @@ playerArray = [];
                                     console.log('Team created successfully');
                                     console.log('team sent to server', playerArray);
                                     // Navigate to the next page
-                                    //window.location.href = './entrancevid.html';
+                                    window.location.href = './entrancevid.html';
                                 } else {
                                     console.error('Error creating team');
                                 }
                             }).catch(err => {
                                 console.error('Network error:', err);
                             });
-                           // window.location.href = './entrancevid.html';
+                            playSoundThenNavigate('./entrancevid.html');
                            
                         });
                     }
@@ -415,7 +427,7 @@ playerArray = [];
                     } else if (letter === 'E' && currentPlayer > 1) {
                         // If S button is pressed and at least one player has joined
                         console.log('Button S pressed, navigating to difficulty selection');
-                        window.location.href = './entrancevid.html';
+                        playSoundThenNavigate('./entrancevid.html');
                     }
                 }
             }
@@ -479,6 +491,14 @@ playerArray = [];
     
 </head>
 <body>
+    <audio id="poppy" preload="auto">
+        <source src="./audio/RFIDpopWIP1.mp3" type="audio/mpeg"></source>
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="menuBoop" preload="auto">
+        <source src="./audio/MenuButtonWIP1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <video autoplay muted loop id="background-video">
         <source src="./internalAssets/stars-long(1).mp4" type="video/mp4">
         Your browser does not support HTML5 video.

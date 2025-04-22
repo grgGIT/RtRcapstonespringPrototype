@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naming</title>
+    <style>
+        @font-face {
+            font-family: 'Nutmeg';
+            src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
+        }
+        @font-face {
+            font-family: 'Bangers';
+            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+        }
+        @font-face {
+            font-family: 'Aldrich';
+            src: url('./internalAssets/Aldrich/Aldrich-Regular.ttf');
+        }
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            object-fit: cover;
+        }
+
+        #rollContainer {
+            background-color: #3F3667;
+            width: 1700px;
+            height: 900px;
+            position: absolute;
+            left: 23%;
+            bottom: 25%;
+            z-index: 20;
+        }
+
+        #firstWrd {
+            font-family: Aldrich, sans-serif;
+            display: flex;
+            font-size: 85px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 5%;
+            top: 5%;
+            width: 700px;
+            height: 600px;
+            background-color: #2E274D;
+            color: whitesmoke;
+        }
+
+        #SecndWrd {
+            font-family: Aldrich, sans-serif;
+            display: flex;
+            font-size: 85px;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 53%;
+            top: 5%;
+            width: 700px;
+            height: 600px;
+            background-color: #2E274D;
+            color: whitesmoke;
+        }
+
+        #SelDiff {
+            font-family: Bangers, sans-serif;
+            position: absolute;
+            width: 1200px;
+            height: 200px;
+            font-size: 130px;
+            background-image: url(./internalAssets/scanMssg.png);
+            background-size: 100% 100%;
+            /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            margin: 20px 0;
+            padding: 60px 20px;
+            /* Adjust padding to center text vertically */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            left: 30%;
+
+        }
+
+        #floorDiv {
+            background-color: #615785;
+            /* width: 100%; */
+            width: 100%;
+            height: 700px;
+            position: absolute;
+            bottom: 0%;
+            /* This moves it up to the middle of the page */
+            left: 0;
+            z-index: 10;
+        }
+
+        #ABquestion {
+            position: absolute;
+            left: 7%;
+            bottom: 7%;
+            color: whitesmoke;
+        }
+
+        #CDquestion {
+            position: absolute;
+            left: 55%;
+            bottom: 7%;
+            color: whitesmoke;
+        }
+        #ABquestion img, #CDquestion img{
+            width: 620px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="./internalAssets/PresentEraPattern.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <h1 id="SelDiff">Name Your Team</h1>
+    <div id="rollContainer">
+        <div id="firstWrd">goofy</div>
+        <div id="SecndWrd">glimmer</div>
+
+        <div id="ABquestion"><img src="./internalAssets/abQ.png" alt=""></div>
+        <div id="CDquestion"><img src="./internalAssets/cdQ.png" alt=""></div>
+    </div>
+    <div id="floorDiv">
+        <!-- Physical Buttons for A, B, C, D -->
+        <div id="option-A" class="buttonDiv"></div>
+        <div id="option-B" class="buttonDiv"></div>
+        <div id="option-C" class="buttonDiv"></div>
+        <div id="option-D" class="buttonDiv"></div>
+
+        <button type="submit" id="submitButt">Submit</button>
+    </div>
+    <script>
+        document.getElementById('ABquestion').addEventListener('click', function() {
+            updateNameParts(true);
+        });
+    
+        document.getElementById('CDquestion').addEventListener('click', function() {
+            updateNameParts(false);
+        });
+
+        document.getElementById('submitButt').addEventListener('click', async function() {  
+          console.log("Team Submitted (not really)");
+
+          // take the team name and send it to the server
+          // POST to the endoint in team.js
+          
+        //  await fetch('/create-team', {
+        //       method: 'POST',
+        //       headers: {
+        //           'Content-Type': 'application/json'
+        //       },
+        //       body: JSON.stringify({
+        //           teamName: `${document.getElementById('firstWrd').textContent} ${document.getElementById('SecndWrd').textContent}`
+        //       })
+        //   })
+        // })
+        });
+S
+     </script>
+    <script>
+        let firstNames = [];
+        let secondNames = [];
+        let usedCombinations = new Set();
+
+        // team name API
+        // const { getRandomTeamName, getTeamNames } = require('../../server/src/teamLogic.js');
+
+        // // Load the team name parts from the JSON
+    // Simple fetch request using promises
+    fetch('/team-names', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Name data", data);
+        firstNames = data.firstNames;
+        secondNames = data.secondNames;
+        
+        // Initialize with a unique combo right away
+        const combo = generateUniqueCombo(data.firstNames, data.secondNames);
+        if (combo) {
+            document.getElementById('firstWrd').textContent = combo.first;
+            document.getElementById('SecndWrd').textContent = combo.second;
+        
+        }
+    })
+    .catch(error => {
+        console.error("Error loading team names:", error);
+    });
+
+    // Make sure generateUniqueCombo is defined
+    function generateUniqueCombo(firstNames, secondNames) {
+        if (firstNames.length === 0 || secondNames.length === 0) return null;
+        
+        const randomFirst = firstNames[Math.floor(Math.random() * firstNames.length)];
+        const randomSecond = secondNames[Math.floor(Math.random() * secondNames.length)];
+        
+        return {
+            first: randomFirst,
+            second: randomSecond
+        };
+    }
+        //  fetch('../../server/teamNamesAPI.json')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         firstNames = data.teamNames.firstName;
+        //         secondNames = data.teamNames.secondName;
+
+        //         // Initialize with a unique combo right away
+        //         const combo = generateUniqueCombo();
+        //         if (combo) {
+        //             document.getElementById('firstWrd').textContent = combo.first;
+        //             document.getElementById('SecndWrd').textContent = combo.second;
+        //         }
+        //     });
+
+        function getRandomItem(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        function getShuffledArray(arr) {
+            const shuffled = arr.slice();
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function generateUniqueCombo() {
+            const shuffledFirst = getShuffledArray(firstNames);
+            const shuffledSecond = getShuffledArray(secondNames);
+
+            for (let f of shuffledFirst) {
+                for (let s of shuffledSecond) {
+                    const combo = `${f} ${s}`;
+                    if (!usedCombinations.has(combo)) {
+                        usedCombinations.add(combo);
+                        return { first: f, second: s };
+                    }
+                }
+            }
+            return null; // No more combos available
+        }
+
+        function updateNameParts(isFirstChange) {
+            const currentFirst = document.getElementById('firstWrd').textContent;
+            const currentSecond = document.getElementById('SecndWrd').textContent;
+
+            let newFirst = currentFirst;
+            let newSecond = currentSecond;
+
+            let attempts = 0;
+            while (attempts < 100) {
+                if (isFirstChange) {
+                    newFirst = getRandomItem(firstNames);
+                } else {
+                    newSecond = getRandomItem(secondNames);
+                }
+
+                const newCombo = `${newFirst} ${newSecond}`;
+                if (!usedCombinations.has(newCombo)) {
+                    usedCombinations.add(newCombo);
+                    document.getElementById('firstWrd').textContent = newFirst;
+                    document.getElementById('SecndWrd').textContent = newSecond;
+                    return;
+                }
+
+                attempts++;
+            }
+
+            alert("All unique name combinations have been used!");
+        }
+
+        // Attach button listeners
+        document.getElementById('option-A').onclick = () => updateNameParts(true);
+        document.getElementById('option-B').onclick = () => updateNameParts(true);
+        document.getElementById('option-C').onclick = () => updateNameParts(false);
+        document.getElementById('option-D').onclick = () => updateNameParts(false);
+
+        // WebSocket setup for Arduino buttons
+        const ws = new WebSocket('ws://localhost:3000');
+        ws.onmessage = (event) => {
+            const message = event.data;
+            handleButtonPress(message);
+        };
+
+        function handleButtonPress(message) {
+            const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+            if (match && match[1]) {
+                const letter = match[1].toUpperCase();
+                const buttonId = `option-${letter}`;
+                const button = document.getElementById(buttonId);
+                if (button) {
+                    button.click();
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

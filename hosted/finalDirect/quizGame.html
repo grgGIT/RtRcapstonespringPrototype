@@ -836,7 +836,7 @@
   <div id="quiz-question">
     <h1 id="questMess">Question goes here</h1>
     <video id="questBoard" autoplay loop>
-      <source src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
+      <source id= "bb"src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
     </video>
   </div>
 
@@ -923,6 +923,7 @@
     const mediumMode = document.getElementById('medMd');
     const hardMode = document.getElementById('hrdMd');
     const starNess = document.getElementById('star');
+    const board = document.getElementById('bb');
     const backgroundVideo = document.getElementById('backgroundVideo');
 
     // Set background video based on selected era
@@ -1059,9 +1060,9 @@
       //End game screens added if score is less than 165
       setTimeout(() => {
         if (score >= minScore) {
-          window.location.href = './goodending.html';
+          window.location.href = './goodEnding.html';
         } else {
-          window.location.href = './badending.html';
+          window.location.href = './badEnding.html';
         }
       }, 3000); // 3 second delay to let player see the final message
     }
@@ -1462,6 +1463,7 @@
         hintBubbleElement.textContent = "Great job! That's correct!";
         correctAudio.play();
         moneySound.play();
+        board.src = './internalAssets/webm/QuestionSign-Correct.webm';
         starNess.src = './internalAssets/stracash.gif';
         setTimeout(() => {
           starNess.src = './internalAssets/podiumCash.svg';
