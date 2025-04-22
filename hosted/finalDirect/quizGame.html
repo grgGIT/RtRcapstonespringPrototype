@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,23 +16,26 @@
       font-family: 'Nutmeg';
       src: url('./internalAssets/Nutmeg/Nutmeg/Nutmeg-Black\ copy.otf');
     }
+
     @font-face {
-            font-family: 'Bangers';
-            src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
-        }
-        @font-face {
-            font-family: 'DigitalT';
-            src: url('./internalAssets/digitalt/Digitalt.ttf');
-        }
-        @font-face {
-            font-family: 'Aldrich';
-            src: url('./internalAssets/Aldrich/Aldrich-Regular.ttf');
-        }
+      font-family: 'Bangers';
+      src: url('./internalAssets/bangersDanfo/Bangers/Bangers-Regular.ttf');
+    }
+
+    @font-face {
+      font-family: 'DigitalT';
+      src: url('./internalAssets/digitalt/Digitalt.ttf');
+    }
+
+    @font-face {
+      font-family: 'Aldrich';
+      src: url('./internalAssets/Aldrich/Aldrich-Regular.ttf');
+    }
 
     body {
       background-color: #714882;
       background-size: cover;
-      background-repeat: no-repeat; 
+      background-repeat: no-repeat;
       height: 100vh;
       overflow: hidden;
       position: relative;
@@ -45,7 +47,7 @@
       top: 19%;
       left: 5%;
       width: 60%;
-      
+
     }
 
     #questBoard {
@@ -67,11 +69,11 @@
       text-align: center;
       width: 80%;
       padding-left: 8rem;
-        max-width: 90rem;
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        text-align: center;
-        
+      max-width: 90rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+      text-align: center;
+
     }
 
     #money {
@@ -82,15 +84,16 @@
       align-items: center;
       justify-content: center;
     }
-    #star{
+
+    #star {
       position: absolute;
       bottom: 36.3%;
       right: 15.8%;
       z-index: 9;
       width: 140px;
-  height: 140px;   
-   /* Set a fixed height to match width */
-  object-fit: contain;
+      height: 140px;
+      /* Set a fixed height to match width */
+      object-fit: contain;
     }
 
 
@@ -103,59 +106,67 @@
     }
 
     #hintBubble {
-    position: absolute;
-    top: 5%;
-    left: 82%; /* Center horizontally */
-    transform: translateX(-50%);
-    padding: 20px 40px; /* Reduced vertical padding, increased horizontal padding */
-    background-color: #fff;
-    border-radius: 20px; /* More oval shape */
-    border: 2px solid #ccc;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 40;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    max-width: 60%; /* Wider maximum width */
-    min-width: 400px; /* Ensure minimum width */
-    word-wrap: break-word;
-    display: flex;
-    flex-direction: row; /* Changed to row for horizontal layout */
-    align-items: center;
-    justify-content: center;
-  }
+      position: absolute;
+      top: 5%;
+      left: 82%;
+      /* Center horizontally */
+      transform: translateX(-50%);
+      padding: 20px 40px;
+      /* Reduced vertical padding, increased horizontal padding */
+      background-color: #fff;
+      border-radius: 20px;
+      /* More oval shape */
+      border: 2px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      z-index: 40;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      max-width: 60%;
+      /* Wider maximum width */
+      min-width: 400px;
+      /* Ensure minimum width */
+      word-wrap: break-word;
+      display: flex;
+      flex-direction: row;
+      /* Changed to row for horizontal layout */
+      align-items: center;
+      justify-content: center;
+    }
 
-  #hintBubble::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 0;
-    border-width: 20px;
-    border-style: solid;
-    border-color: #fff transparent transparent transparent;
-  }
+    #hintBubble::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-width: 20px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
 
-  #hintTxt {
-    font-family: Aldrich, sans-serif;
-    font-size: 28px; /* Slightly smaller font for better horizontal fit */
-    line-height: 1.3;
-    color: #000;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    transition: opacity 0.3s ease;
-    max-width: 100%; /* Use full width of the container */
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
+    #hintTxt {
+      font-family: Aldrich, sans-serif;
+      font-size: 28px;
+      /* Slightly smaller font for better horizontal fit */
+      line-height: 1.3;
+      color: #000;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      transition: opacity 0.3s ease;
+      max-width: 100%;
+      /* Use full width of the container */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
 
 
 
 
-  
+
     /* #hintBubble {
       top: 6%;
       left: 65%;
@@ -195,7 +206,7 @@
       display: block;
       margin: 0 auto;
     } */
-    
+
 
     #hintBubble.show {
       opacity: 1;
@@ -266,11 +277,12 @@
       margin: 50px;
       padding: 15px 30px;
       font-size: 58px;
-      border-radius: 25px; /* More rounded corners */
+      border-radius: 25px;
+      /* More rounded corners */
       align-content: center;
       border: none;
       cursor: pointer;
-      transition: all 0.3s ease;     
+      transition: all 0.3s ease;
       width: 20%;
       top: 10%;
       color: whitesmoke;
@@ -288,9 +300,12 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      height: 70%; /* Set a fixed height for consistency */
-      padding-top: 170px; /* Add more padding at the top for the text */
-      padding-bottom: 120px; /* Add more padding at the bottom for the image */
+      height: 70%;
+      /* Set a fixed height for consistency */
+      padding-top: 170px;
+      /* Add more padding at the top for the text */
+      padding-bottom: 120px;
+      /* Add more padding at the bottom for the image */
     }
 
     #quiz-options button:hover {
@@ -329,7 +344,7 @@
       /* width: 90px; */
       position: absolute;
       bottom: 75%;
-      left:-5%;
+      left: -5%;
       width: 21%;
       height: auto;
       filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
@@ -354,9 +369,11 @@
       0% {
         box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
       }
+
       50% {
         box-shadow: 0 0 20px rgba(40, 167, 69, 1);
       }
+
       100% {
         box-shadow: 0 0 10px rgba(40, 167, 69, 0.7);
       }
@@ -388,7 +405,7 @@
       transition: transform 0.1s ease;
     }
 
-    
+
     #questionCounter {
       position: absolute;
       top: 6%;
@@ -401,16 +418,19 @@
       border-radius: 20px;
       z-index: 40;
     }
+
     #backgroundVideo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1; /* Ensure it stays behind other elements */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      /* Ensure it stays behind other elements */
     }
-  /* }
+
+    /* }
 
     #powerUps {
       position: absolute;
@@ -507,9 +527,17 @@
 
     /* Power-up animation */
     @keyframes powerUpPulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+
+      100% {
+        transform: scale(1);
+      }
     }
 
     .power-up-active {
@@ -528,16 +556,32 @@
     }
 
     @keyframes blink {
-      0% { opacity: 1; }
-      50% { opacity: 0.5; }
-      100% { opacity: 1; }
-    } 
-      /* Floating score animation */
-      @keyframes floatUp {
-      0% { transform: translateY(0) translateX(-50%); opacity: 1; }
-      100% { transform: translateY(-100px) translateX(-50%); opacity: 0; }
+      0% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.5;
+      }
+
+      100% {
+        opacity: 1;
+      }
     }
-    
+
+    /* Floating score animation */
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) translateX(-50%);
+        opacity: 0;
+      }
+    }
+
     .floating-score {
       position: absolute;
       color: #2ecc71;
@@ -546,230 +590,233 @@
       animation: floatUp 1.5s ease-out forwards;
       pointer-events: none;
     }
-    #questImg{
+
+    #questImg {
       transform: scaleX(-1);
     }
+
     /* Splash Screen Styles */
-.difficulty-splash {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-}
+    .difficulty-splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.5s ease;
+    }
 
-/* Vignette effect */
-.difficulty-splash::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
-  z-index: -1;
-}
+    /* Vignette effect */
+    .difficulty-splash::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.8) 100%);
+      z-index: -1;
+    }
 
-/* Show animation */
-.difficulty-splash.show-splash {
-  opacity: 1;
-  pointer-events: all;
-}
+    /* Show animation */
+    .difficulty-splash.show-splash {
+      opacity: 1;
+      pointer-events: all;
+    }
 
-/* Logo styling */
-.splash-logo {
-  width: 900px;
-  transform: translateX(-100vw);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
+    /* Logo styling */
+    .splash-logo {
+      width: 900px;
+      transform: translateX(-100vw);
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
 
-/* Text styling */
-.splash-text {
-  font-size: 3rem;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.5);
-  margin-top: 20px;
-  opacity: 0;
-  transform: scale(0.5);
-  transition: all 0.5s ease 0.3s;
-}
+    /* Text styling */
+    .splash-text {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin-top: 20px;
+      opacity: 0;
+      transform: scale(0.5);
+      transition: all 0.5s ease 0.3s;
+    }
 
-/* Easy mode specific styling */
-.easy-splash {
-  background-color: rgba(76, 175, 80, 0.2);
-}
+    /* Easy mode specific styling */
+    .easy-splash {
+      background-color: rgba(76, 175, 80, 0.2);
+    }
 
-.easy-splash .splash-text {
-  color: #4CAF50;
-}
-
-
-/* medium mode specific styling */
-.medium-splash {
-  background-color: rgba(76, 175, 80, 0.2);
-}
-
-.medium-splash .splash-text {
-  color: #F59F00;
-}
+    .easy-splash .splash-text {
+      color: #4CAF50;
+    }
 
 
-/* hard mode specific styling */
-.hard-splash {
-  background-color: rgba(76, 175, 80, 0.2);
-}
+    /* medium mode specific styling */
+    .medium-splash {
+      background-color: rgba(76, 175, 80, 0.2);
+    }
 
-.hard-splash .splash-text {
-  color: #DC3A3A;
-}
+    .medium-splash .splash-text {
+      color: #F59F00;
+    }
 
-/* Animation for when splash is shown */
-.show-splash .splash-logo {
-  transform: translateX(0);
-}
 
-.show-splash .splash-text {
-  opacity: 1;
-  transform: scale(1);
-}
+    /* hard mode specific styling */
+    .hard-splash {
+      background-color: rgba(76, 175, 80, 0.2);
+    }
 
-/* Trail effect for logo */
-.splash-logo {
-  position: relative;
-}
+    .hard-splash .splash-text {
+      color: #DC3A3A;
+    }
 
-.splash-logo::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: inherit;
-  background-size: cover;
-  filter: blur(10px) brightness(1.5);
-  opacity: 0.7;
-  z-index: -1;
-  transform: translateX(-20px);
-  transition: transform 0.5s ease;
-}
+    /* Animation for when splash is shown */
+    .show-splash .splash-logo {
+      transform: translateX(0);
+    }
 
-.show-splash .splash-logo::after {
-  transform: translateX(0);
-}
-/* Metallic Progress Bar Styles */
-.metallic-progress-bar {
-  position: absolute;
-  top: 0%;
-  left: 30%;
-  height: 100px;
-  transform: translateX(-50%);
-  background: linear-gradient(135deg, #4a2c6d 0%, #8a5ad2 50%, #4a2c6d 100%);
-  border-radius: 30px;
-  padding: 30px 50px;
-  box-shadow: scoreboard
-    0 2px 10px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.3),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  z-index: 3;
-  border: 2px solid #2c1f65;
-  min-width: 400px;
-}
+    .show-splash .splash-text {
+      opacity: 1;
+      transform: scale(1);
+    }
 
-.progress-label {
-  font-family: 'Bangers', sans-serif;
-  padding: 40px;
-  color: #fff;
-  font-size: 55px;
-  margin-right: 15px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+    /* Trail effect for logo */
+    .splash-logo {
+      position: relative;
+    }
 
-.progress-lights {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
+    .splash-logo::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      background-size: cover;
+      filter: blur(10px) brightness(1.5);
+      opacity: 0.7;
+      z-index: -1;
+      transform: translateX(-20px);
+      transition: transform 0.5s ease;
+    }
 
-.progress-light {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #333 0%, #666 100%);
-  box-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.5),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.3);
-  position: relative;
-  transition: all 0.3s ease;
-}
+    .show-splash .splash-logo::after {
+      transform: translateX(0);
+    }
 
-.progress-light::after {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 30%;
-  height: 30%;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.3);
-  filter: blur(1px);
-}
+    /* Metallic Progress Bar Styles */
+    .metallic-progress-bar {
+      position: absolute;
+      top: 0%;
+      left: 30%;
+      height: 100px;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #4a2c6d 0%, #8a5ad2 50%, #4a2c6d 100%);
+      border-radius: 30px;
+      padding: 30px 50px;
+      box-shadow: scoreboard 0 2px 10px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.3),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+      z-index: 3;
+      border: 2px solid #2c1f65;
+      min-width: 400px;
+    }
 
-.progress-light.active {
-  background: linear-gradient(145deg, #ff7b00 0%, #ffb700 100%);
-  box-shadow: 
-    0 0 10px rgba(255, 183, 0, 0.7),
-    inset 0 1px 1px rgba(255, 255, 255, 0.5),
-    inset 0 -1px 1px rgba(0, 0, 0, 0.3);
-}
+    .progress-label {
+      font-family: 'Bangers', sans-serif;
+      padding: 40px;
+      color: #fff;
+      font-size: 55px;
+      margin-right: 15px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.progress-light.active::after {
-  background-color: rgba(255, 255, 255, 0.7);
-}
+    .progress-lights {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
 
-/* Light show animation for end game */
-.progress-light.light-show {
-  animation: pulse 0.5s infinite alternate;
-}
+    .progress-light {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #333 0%, #666 100%);
+      box-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+      position: relative;
+      transition: all 0.3s ease;
+    }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    box-shadow: 
-      0 0 10px rgba(255, 183, 0, 0.7),
-      inset 0 1px 1px rgba(255, 255, 255, 0.5),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.3);
-  }
-  100% {
-    transform: scale(1.2);
-    box-shadow: 
-      0 0 20px rgba(255, 183, 0, 0.9),
-      inset 0 1px 1px rgba(255, 255, 255, 0.5),
-      inset 0 -1px 1px rgba(0, 0, 0, 0.3);
-  }
-}
+    .progress-light::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      width: 30%;
+      height: 30%;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.3);
+      filter: blur(1px);
+    }
+
+    .progress-light.active {
+      background: linear-gradient(145deg, #ff7b00 0%, #ffb700 100%);
+      box-shadow:
+        0 0 10px rgba(255, 183, 0, 0.7),
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+    }
+
+    .progress-light.active::after {
+      background-color: rgba(255, 255, 255, 0.7);
+    }
+
+    /* Light show animation for end game */
+    .progress-light.light-show {
+      animation: pulse 0.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow:
+          0 0 10px rgba(255, 183, 0, 0.7),
+          inset 0 1px 1px rgba(255, 255, 255, 0.5),
+          inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+      }
+
+      100% {
+        transform: scale(1.2);
+        box-shadow:
+          0 0 20px rgba(255, 183, 0, 0.9),
+          inset 0 1px 1px rgba(255, 255, 255, 0.5),
+          inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
   </style>
 
-<audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
-<audio id="wr" src="./audio/WrongAnswerWIP1.mp3"></audio>
-<audio id="mding" src="./audio/MoneyDingWIP1.mp3"></audio>
-<audio id="failT" src="./audio/FailureTuneWIP1.mp3"></audio>
-<audio id="winn" src="./audio/WiningTuneWIP1.mp3"></audio>
-<audio id="timeU" src="./audio/TimesUpAlarmWIP1.mp3"></audio>
-<audio id="ezMd" src="./audio/DifficultyLvl1.mp3"></audio>
-<audio id="medMd" src="./audio/DifficultyLvl2.mp3"></audio>
-<audio id="hrdMd" src="./audio/DifficultyLvl3.mp3"></audio>
+  <audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
+  <audio id="wr" src="./audio/WrongAnswerWIP1.mp3"></audio>
+  <audio id="mding" src="./audio/MoneyDingWIP1.mp3"></audio>
+  <audio id="failT" src="./audio/FailureTuneWIP1.mp3"></audio>
+  <audio id="winn" src="./audio/WiningTuneWIP1.mp3"></audio>
+  <audio id="timeU" src="./audio/TimesUpAlarmWIP1.mp3"></audio>
+  <audio id="ezMd" src="./audio/DifficultyLvl1.mp3"></audio>
+  <audio id="medMd" src="./audio/DifficultyLvl2.mp3"></audio>
+  <audio id="hrdMd" src="./audio/DifficultyLvl3.mp3"></audio>
 </head>
 
 <body>
@@ -781,7 +828,7 @@
   <div id="questionCounter"></div>
 
   <div id="timer">
-    
+
     <img src="./internalAssets/newTimeTv.png" alt="Timer">
     <h2 id="timerTxt">00:00</h2>
   </div>
@@ -790,10 +837,10 @@
     <h1 id="questMess">Question goes here</h1>
     <video id="questBoard" autoplay loop>
       <source src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
-  </video>
+    </video>
   </div>
 
- 
+
   <div id="money">
     <h2 id="moneyTxt">$0</h2>
   </div>
@@ -813,7 +860,7 @@
     <img src="./internalAssets/newSickPodium.png" alt="Podium">
   </div>
 
-  <div id="quiz-options" >
+  <div id="quiz-options">
     <button id="optionA" class="quiz-button" data-answer="A">
       Option A
       <img id="A_Button" src="./internalAssets/A_Button_icon.png" alt="A Button">
@@ -822,7 +869,7 @@
       Option B
       <img id="B_Button" src="./internalAssets/B_Button_icon.png" alt="B Button">
     </button>
-    
+
     <!-- <div id="powerUps">
       <img id="starSpot" src="star.png" alt="">
       <div id="powerButton">
@@ -842,648 +889,657 @@
     </button>
   </div>
 
-  
-<script>
-  // Game state
-let allQuestions = []; // Will hold all questions from all difficulty levels
-let currentQuestionIndex = 0;
-let score = 0;
-let selectedEra = sessionStorage.getItem('selectedEra') || 'presentEra';
-let timerInterval; // For storing the timer interval
-let timeRemaining = 215; // 3 minutes and 35 seconds
-let timerRunning = false;
-let totalQuestions = 0; // Will be set after fetching questions
-let currentDifficulty = null; // Track current difficulty level
-let difficultyTransitions = {}; // To track where difficulty changes occur
-let initialSplashShown = false; // Flag to track if initial splash has been shown
 
-// DOM elements
-const questionElement = document.getElementById('questMess');
-const optionsElement = document.getElementById('quiz-options');
-const moneyElement = document.getElementById('moneyTxt');
-const hintBubbleElement = document.getElementById('hintTxt');
-const hintBubbleContainer = document.getElementById('hintBubble');
-const timerElement = document.getElementById('timerTxt');
-const zilbyImg = document.querySelector('#Zilby img');
-const questionCounterElement = document.getElementById('questionCounter');
-const correctAudio = document.getElementById('crr');
-const wrongAudio = document.getElementById('wr');
-const moneySound = document.getElementById('mding');
-const failSound = document.getElementById('failT');
-const winningAudio = document.getElementById('winn');
-const timeyUp = document.getElementById('timeU');
-const ezMode = document.getElementById('ezMd');
-const mediumMode = document.getElementById('medMd');
-const hardMode = document.getElementById('hrdMd');
-const starNess = document.getElementById('star');
-const backgroundVideo = document.getElementById('backgroundVideo');
+  <script>
+    // Game state
+    let allQuestions = []; // Will hold all questions from all difficulty levels
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let selectedEra = sessionStorage.getItem('selectedEra') || 'presentEra';
+    let timerInterval; // For storing the timer interval
+    let timeRemaining = 215; // 3 minutes and 35 seconds
+    let timerRunning = false;
+    let totalQuestions = 0; // Will be set after fetching questions
+    let currentDifficulty = null; // Track current difficulty level
+    let difficultyTransitions = {}; // To track where difficulty changes occur
+    let initialSplashShown = false; // Flag to track if initial splash has been shown
 
-// Set background video based on selected era
-switch(selectedEra) {
-  case 'presentEra':
-    backgroundVideo.querySelector('source').src = './internalAssets/PresentEraPattern.mp4';
-    break;
-  case 'discoEra':
-    backgroundVideo.querySelector('source').src = './internalAssets/Disco BG Pattern.mp4';
-    break;
-  case 'radioEra':
-    backgroundVideo.querySelector('source').src = './internalAssets/Radio era Pattern.mp4';
-    backgroundVideo.playbackRate = 0.75;
-    break;
-  default:
-    console.error('Invalid era selected');
-}
-backgroundVideo.load(); // Reload video with new source
+    // DOM elements
+    const questionElement = document.getElementById('questMess');
+    const optionsElement = document.getElementById('quiz-options');
+    const moneyElement = document.getElementById('moneyTxt');
+    const hintBubbleElement = document.getElementById('hintTxt');
+    const hintBubbleContainer = document.getElementById('hintBubble');
+    const timerElement = document.getElementById('timerTxt');
+    const zilbyImg = document.querySelector('#Zilby img');
+    const questionCounterElement = document.getElementById('questionCounter');
+    const correctAudio = document.getElementById('crr');
+    const wrongAudio = document.getElementById('wr');
+    const moneySound = document.getElementById('mding');
+    const failSound = document.getElementById('failT');
+    const winningAudio = document.getElementById('winn');
+    const timeyUp = document.getElementById('timeU');
+    const ezMode = document.getElementById('ezMd');
+    const mediumMode = document.getElementById('medMd');
+    const hardMode = document.getElementById('hrdMd');
+    const starNess = document.getElementById('star');
+    const backgroundVideo = document.getElementById('backgroundVideo');
 
-// WebSocket connection
-const ws = new WebSocket('ws://localhost:3000');
-ws.onmessage = (event) => {
-  const message = event.data;
-  console.log(`Button Pressed: "${message}"`);
-  handleButtonPress(message);
-};
-
-// Function to handle button press from WebSocket
-function handleButtonPress(message) {
-  // Expected format: "Button A pressed"
-  const match = message.match(/Button\s+([A-Z])\s+pressed/i);
-  if (match && match[1]) {
-    const letter = match[1].toUpperCase(); // e.g., "A"
-    const buttonId = `option${letter}`;    // e.g., "optionA"
-    console.log(`Mapping message "${message}" to button ID "${buttonId}"`);
-    const button = document.getElementById(buttonId);
-    if (button) {
-      button.click();
-    } else {
-      console.log(`Button with ID ${buttonId} not found.`);
+    // Set background video based on selected era
+    switch (selectedEra) {
+      case 'presentEra':
+        backgroundVideo.querySelector('source').src = './internalAssets/PresentEraPattern.mp4';
+        break;
+      case 'discoEra':
+        backgroundVideo.querySelector('source').src = './internalAssets/Disco BG Pattern.mp4';
+        break;
+      case 'radioEra':
+        backgroundVideo.querySelector('source').src = './internalAssets/Radio era Pattern.mp4';
+        backgroundVideo.playbackRate = 0.75;
+        break;
+      default:
+        console.error('Invalid era selected');
     }
-  } else {
-    console.log(`Message does not match expected format: "${message}"`);
-  }
-}
+    backgroundVideo.load(); // Reload video with new source
 
-// Format time as MM:SS
-function formatTime(seconds) {
-  const minutes = Math.floor(seconds / 60);
-  const remainingSeconds = seconds % 60;
-  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
-}
+    // WebSocket connection
+    const ws = new WebSocket('ws://localhost:3000');
+    ws.onmessage = (event) => {
+      const message = event.data;
+      console.log(`Button Pressed: "${message}"`);
+      handleButtonPress(message);
+    };
 
-// Start the timer
-function startTimer() {
-  if (!timerRunning) {
-    timerRunning = true;
-    timerInterval = setInterval(() => {
-      timeRemaining--;
-      updateTimerDisplay();
-      
-      // Add warning classes when time is running low
-      if (timeRemaining <= 30 && timeRemaining > 10) {
-        timerElement.classList.add('timer-warning');
-        timerElement.classList.remove('timer-danger');
-      } else if (timeRemaining <= 10) {
-        timerElement.classList.remove('timer-warning');
-        timerElement.classList.add('timer-danger');
+    // Function to handle button press from WebSocket
+    function handleButtonPress(message) {
+      // Expected format: "Button A pressed"
+      const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+      if (match && match[1]) {
+        const letter = match[1].toUpperCase(); // e.g., "A"
+        const buttonId = `option${letter}`;    // e.g., "optionA"
+        console.log(`Mapping message "${message}" to button ID "${buttonId}"`);
+        const button = document.getElementById(buttonId);
+        if (button) {
+          button.click();
+        } else {
+          console.log(`Button with ID ${buttonId} not found.`);
+        }
+      } else {
+        console.log(`Message does not match expected format: "${message}"`);
       }
-      
-      if (timeRemaining <= 0) {
+    }
+
+    // Format time as MM:SS
+    function formatTime(seconds) {
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+      return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
+    }
+
+    // Start the timer
+    function startTimer() {
+      if (!timerRunning) {
+        timerRunning = true;
+        timerInterval = setInterval(() => {
+          timeRemaining--;
+          updateTimerDisplay();
+
+          // Add warning classes when time is running low
+          if (timeRemaining <= 30 && timeRemaining > 10) {
+            timerElement.classList.add('timer-warning');
+            timerElement.classList.remove('timer-danger');
+          } else if (timeRemaining <= 10) {
+            timerElement.classList.remove('timer-warning');
+            timerElement.classList.add('timer-danger');
+          }
+
+          if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            timeyUp.play();
+            endGame("Time's up!");
+          }
+        }, 1000);
+      }
+    }
+
+    // Pause the timer
+    function pauseTimer() {
+      if (timerRunning) {
         clearInterval(timerInterval);
         timerRunning = false;
-        timeyUp.play();
-        endGame("Time's up!");
+        return true;
       }
-    }, 1000);
-  }
-}
+      return false;
+    }
 
-// Pause the timer
-function pauseTimer() {
-  if (timerRunning) {
-    clearInterval(timerInterval);
-    timerRunning = false;
-    return true;
-  }
-  return false;
-}
-
-// Resume the timer
-function resumeTimer() {
-  if (!timerRunning && timeRemaining > 0) {
-    startTimer();
-  }
-}
-
-// Update the timer display
-function updateTimerDisplay() {
-  if (timerElement) {
-    timerElement.textContent = formatTime(timeRemaining);
-  }
-}
-
-// End the game
-function endGame(message) {
-  // Clear the timer
-  if (timerInterval) {
-    clearInterval(timerInterval);
-    timerRunning = false;
-  }
-  
-  // Display game over message
-  questionElement.textContent = `${message} Your final score is: $${score}`;
-  
-  // Clear options
-  optionsElement.innerHTML = '';
-  
-  // Update hint bubble
-  hintBubbleElement.textContent = "Game Over!";
-  hintBubbleContainer.style.opacity = '1';
-  
-  // Update question counter
-  // questionCounterElement.textContent = `${currentQuestionIndex}/${totalQuestions} Questions Completed`;
-  
-  // Play appropriate sound
-  if (message.includes("Congratulations")) {
-    winningAudio.play();
-    zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
-  } else {
-    failSound.play();
-    zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
-  }
-}
-
-// Create and show a splash screen for a difficulty level
-function showDifficultySplash(difficulty, callback) {
-  // Create splash screen element
-  const splash = document.createElement('div');
-  splash.className = `difficulty-splash ${difficulty}-splash`;
-  
-  // Configure splash screen based on difficulty
-  let logoSrc, splashText;
-  switch(difficulty) {
-    case 'easy':
-      logoSrc = './internalAssets/easylog.png';
-      ezMode.play();
-      splashText = 'ALL QUESTIONS ARE WORTH 25 COINS';
-      optionsElement
-      break;
-    case 'medium':
-      logoSrc = './internalAssets/medlog.png';
-      mediumMode.play();
-      splashText = 'ALL QUESTIONS ARE WORTH 50 COINS';
-      break;
-    case 'hard':
-      logoSrc = './internalAssets/hardlog.png'; // Make sure you have this image
-      hardMode.play();
-      splashText = 'ALL QUESTIONS ARE WORTH 75 COINS';
-      break;
-    default:
-      logoSrc = './internalAssets/easylog.png';
-      splashText = 'QUIZ MODE';
-  }
-  
-  // Create the logo/image element
-  const logo = document.createElement('img');
-  logo.src = logoSrc;
-  logo.alt = `${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} Mode`;
-  logo.className = 'splash-logo';
-  
-  // Create text element
-  const text = document.createElement('h2');
-  text.textContent = splashText;
-  text.className = 'splash-text';
-  
-  // Append elements to splash
-  splash.appendChild(logo);
-  splash.appendChild(text);
-  
-  // Add to document
-  document.body.appendChild(splash);
-  
-  // Pause the timer
-  const timerWasRunning = pauseTimer();
-  
-  // Show splash and remove after animation
-  setTimeout(() => {
-    splash.classList.add('show-splash');
-    
-    setTimeout(() => {
-      splash.classList.remove('show-splash');
-      
-      setTimeout(() => {
-        document.body.removeChild(splash);
-        
-        // Resume timer if it was running
-        if (timerWasRunning) {
-          resumeTimer();
-        }
-        
-        // Execute callback if provided
-        if (callback && typeof callback === 'function') {
-          callback();
-        }
-      }, 500); // Wait for exit animation to complete
-      
-    }, 2000); // Display for 2 seconds
-  }, 10); // Small delay to ensure DOM is ready
-}
-
-// Fetch questions from server and organize them by difficulty
-function fetchQuestions() {
-  fetch(`/getQuestions?era=${selectedEra}`)
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+    // Resume the timer
+    function resumeTimer() {
+      if (!timerRunning && timeRemaining > 0) {
+        startTimer();
       }
-      return response.json();
-    })
-    .then(data => {
-      console.log("Fetched data:", data);
-      
-      // Reset questions array and difficulty transitions
-      allQuestions = [];
-      difficultyTransitions = {};
-      
-      // Process all questions and organize them by difficulty
-      let questionIndex = 0;
-      
-      // Add easy questions first
-      if (data.easy && Object.keys(data.easy).length > 0) {
-        const easyQuestions = Object.values(data.easy);
-        // Mark the first easy question for splash screen
-        difficultyTransitions[0] = 'easy';
-        
-        // Add questions to the array
-        easyQuestions.forEach(q => {
-          q.difficulty = 'easy'; // Ensure difficulty is set
-          allQuestions.push(q);
-        });
-        
-        questionIndex += easyQuestions.length;
+    }
+
+    // Update the timer display
+    function updateTimerDisplay() {
+      if (timerElement) {
+        timerElement.textContent = formatTime(timeRemaining);
       }
-      
-      // Add medium questions next
-      if (data.medium && Object.keys(data.medium).length > 0) {
-        const mediumQuestions = Object.values(data.medium);
-        // Mark the first medium question for splash screen
-        difficultyTransitions[questionIndex] = 'medium';
-        
-        // Add questions to the array
-        mediumQuestions.forEach(q => {
-          q.difficulty = 'medium'; // Ensure difficulty is set
-          allQuestions.push(q);
-        });
-        
-        questionIndex += mediumQuestions.length;
+    }
+
+    // End the game
+    function endGame(message) {
+      // Clear the timer
+      if (timerInterval) {
+        clearInterval(timerInterval);
+        timerRunning = false;
       }
-      
-      // Add hard questions last
-      if (data.hard && Object.keys(data.hard).length > 0) {
-        const hardQuestions = Object.values(data.hard);
-        // Mark the first hard question for splash screen
-        difficultyTransitions[questionIndex] = 'hard';
-        
-        // Add questions to the array
-        hardQuestions.forEach(q => {
-          q.difficulty = 'hard'; // Ensure difficulty is set
-          allQuestions.push(q);
-        });
-      }
-      
-      // Set total questions count
-      totalQuestions = allQuestions.length;
-      console.log(`Total questions: ${totalQuestions}`);
-      console.log("Difficulty transitions at indices:", difficultyTransitions);
-      
-      // Check if we have questions
-      if (totalQuestions === 0) {
-        questionElement.textContent = 'No questions available for this era.';
+      const minScore = 165;
+      // Display game over message
+      questionElement.textContent = `${message} Your final score is: $${score}`;
+
+      // Clear options
+      optionsElement.innerHTML = '';
+
+      // Update hint bubble
+      hintBubbleElement.textContent = "Game Over!";
+      hintBubbleContainer.style.opacity = '1';
+
+      // Update question counter
+      // questionCounterElement.textContent = `${currentQuestionIndex}/${totalQuestions} Questions Completed`;
+
+      // Play appropriate sound
+      if (message.includes("Congratulations")) {
+        winningAudio.play();
+        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
       } else {
-        // Start with the first difficulty splash screen
-        const firstDifficulty = difficultyTransitions[0];
-        if (firstDifficulty) {
-          showDifficultySplash(firstDifficulty, () => {
-            currentDifficulty = firstDifficulty;
-            initialSplashShown = true; // Mark that we've shown the initial splash
-            displayQuestion();
-            startTimer();
-          });
-        } else {
-          // Fallback if no difficulty is set
-          displayQuestion();
-          startTimer();
-        }
+        failSound.play();
+        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
       }
-    })
-    .catch(error => {
-      console.error('Error fetching questions:', error);
-      questionElement.textContent = 'Error loading questions. Please try again.';
-    });
-}
-
-// Reset Zilby to idle state
-function resetZilby() {
-  zilbyImg.src = './internalAssets/ZilbyIdle.gif';
-}
-
-// Display current question
-function displayQuestion() {
-  if (currentQuestionIndex >= allQuestions.length) {
-    endGame("Congratulations! You've completed all questions!");
-    return;
-  }
-  
-  // Check if we need to show a difficulty splash screen
-  // Only show if it's not the initial question (to avoid double splash for easy mode)
-  if (difficultyTransitions[currentQuestionIndex] && 
-      !(currentQuestionIndex === 0 && initialSplashShown)) {
-    const newDifficulty = difficultyTransitions[currentQuestionIndex];
-    pauseTimer();
-    showDifficultySplash(newDifficulty, () => {
-      currentDifficulty = newDifficulty;
-      resumeTimer();
-      // Continue with displaying the question
-      displayCurrentQuestion();
-    });
-  } else {
-    // No difficulty transition or it's the initial question and we already showed the splash
-    displayCurrentQuestion();
-  }
-}
-
-// Helper function to display the current question (extracted from displayQuestion)
-function displayCurrentQuestion() {
-  const questionObj = allQuestions[currentQuestionIndex];
-  questionElement.textContent = questionObj.question || questionObj.questions;
-
-  // Reset Zilby to idle state for each new question
-  resetZilby();
-
-  // Reset hint bubble to show the hint for the current question
-  hintBubbleElement.textContent = "Zilby: " + questionObj.aiHint || 'No hint available';
-
-  setTimeout(() => {
-    hintBubbleContainer.style.opacity = '1';
-    hintBubbleContainer.style.zIndex = '1';
-  }, 2800);
-
-  // Update question counter
-  updateProgressBar();
-
-  // Populate the options
-  const options = questionObj.options;
-  optionsElement.innerHTML = ''; // Clear previous options
-  options.forEach((option, index) => {
-    const button = document.createElement('button');
-    button.classList.add('quiz-button');
-    const letter = String.fromCharCode(65 + index); // A, B, C, D...
-    button.id = `option${letter}`;
-    button.textContent = option;
-    button.setAttribute('data-answer', letter);
-
-    // Option button image
-    const img = document.createElement('img');
-    img.src = `./internalAssets/${letter}_Button_icon.png`;
-    img.alt = `${letter} Button`;
-
-    button.appendChild(img);
-
-    // Add click listener for selecting an answer
-    button.addEventListener('click', () => selectOption(button, letter, questionObj.correctAnswer));
-    optionsElement.appendChild(button);
-  });
-
-  // Update money display
-  moneyElement.textContent = `$${score}`;
-}
-
-function updateProgressBar() {
-  const progressLightsContainer = document.querySelector('.progress-lights');
-  if (!progressLightsContainer) return;
-  
-  // Clear existing lights
-  progressLightsContainer.innerHTML = '';
-  
-  // Determine which difficulty we're in and how many questions per difficulty
-  const questionsPerDifficulty = 7; // Default to 7 questions per difficulty
-  
-  // Calculate which difficulty set we're in (0-based)
-  const currentDifficultySet = Math.floor(currentQuestionIndex / questionsPerDifficulty);
-  
-  // Calculate position within the current difficulty set (0-based)
-  const positionInSet = currentQuestionIndex % questionsPerDifficulty;
-  
-  // Create 7 lights for the current difficulty set
-  for (let i = 0; i < questionsPerDifficulty; i++) {
-    const light = document.createElement('div');
-    light.className = 'progress-light';
-    
-    // Light up completed questions
-    if (i <= positionInSet) {
-      light.classList.add('active');
-    }
-    
-    // Add the light to the container
-    progressLightsContainer.appendChild(light);
-  }
-}
-// Function to play a light show animation on the progress bar
-function playProgressLightShow() {
-  const progressLightsContainer = document.querySelector('.progress-lights');
-  if (!progressLightsContainer) return;
-  
-  // Clear existing lights
-  progressLightsContainer.innerHTML = '';
-  
-  // Create 7 lights for the light show
-  for (let i = 0; i < 7; i++) {
-    const light = document.createElement('div');
-    light.className = 'progress-light';
-    progressLightsContainer.appendChild(light);
-  }
-  
-  const lights = document.querySelectorAll('.progress-light');
-  let currentIndex = 0;
-  let direction = 1; // 1 for forward, -1 for backward
-  let cycles = 0;
-  const maxCycles = 3; // Number of back-and-forth cycles
-  
-  // Start the light show animation
-  const lightShowInterval = setInterval(() => {
-    // Turn off all lights
-    lights.forEach(light => light.classList.remove('active', 'light-show'));
-    
-    // Turn on current light with special effect
-    if (lights[currentIndex]) {
-      lights[currentIndex].classList.add('active', 'light-show');
-    }
-    
-    // Move to next light
-    currentIndex += direction;
-    
-    // Change direction if we reach the end or beginning
-    if (currentIndex >= lights.length - 1) {
-      direction = -1;
-      currentIndex = lights.length - 1;
-      cycles += 0.5;
-    } else if (currentIndex <= 0) {
-      direction = 1;
-      currentIndex = 0;
-      cycles += 0.5;
-    }
-    
-    // Stop after a few cycles
-    if (cycles >= maxCycles) {
-      clearInterval(lightShowInterval);
-      
-      // Final effect: light all lights
+      //End game screens added if score is less than 165
       setTimeout(() => {
-        lights.forEach(light => {
-          light.classList.add('active', 'light-show');
+        if (score >= minScore) {
+          window.location.href = './goodending.html';
+        } else {
+          window.location.href = './badending.html';
+        }
+      }, 3000); // 3 second delay to let player see the final message
+    }
+
+
+    // Create and show a splash screen for a difficulty level
+    function showDifficultySplash(difficulty, callback) {
+      // Create splash screen element
+      const splash = document.createElement('div');
+      splash.className = `difficulty-splash ${difficulty}-splash`;
+
+      // Configure splash screen based on difficulty
+      let logoSrc, splashText;
+      switch (difficulty) {
+        case 'easy':
+          logoSrc = './internalAssets/easylog.png';
+          ezMode.play();
+          splashText = 'ALL QUESTIONS ARE WORTH 25 COINS';
+          optionsElement
+          break;
+        case 'medium':
+          logoSrc = './internalAssets/medlog.png';
+          mediumMode.play();
+          splashText = 'ALL QUESTIONS ARE WORTH 50 COINS';
+          break;
+        case 'hard':
+          logoSrc = './internalAssets/hardlog.png'; // Make sure you have this image
+          hardMode.play();
+          splashText = 'ALL QUESTIONS ARE WORTH 75 COINS';
+          break;
+        default:
+          logoSrc = './internalAssets/easylog.png';
+          splashText = 'QUIZ MODE';
+      }
+
+      // Create the logo/image element
+      const logo = document.createElement('img');
+      logo.src = logoSrc;
+      logo.alt = `${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} Mode`;
+      logo.className = 'splash-logo';
+
+      // Create text element
+      const text = document.createElement('h2');
+      text.textContent = splashText;
+      text.className = 'splash-text';
+
+      // Append elements to splash
+      splash.appendChild(logo);
+      splash.appendChild(text);
+
+      // Add to document
+      document.body.appendChild(splash);
+
+      // Pause the timer
+      const timerWasRunning = pauseTimer();
+
+      // Show splash and remove after animation
+      setTimeout(() => {
+        splash.classList.add('show-splash');
+
+        setTimeout(() => {
+          splash.classList.remove('show-splash');
+
+          setTimeout(() => {
+            document.body.removeChild(splash);
+
+            // Resume timer if it was running
+            if (timerWasRunning) {
+              resumeTimer();
+            }
+
+            // Execute callback if provided
+            if (callback && typeof callback === 'function') {
+              callback();
+            }
+          }, 500); // Wait for exit animation to complete
+
+        }, 2000); // Display for 2 seconds
+      }, 10); // Small delay to ensure DOM is ready
+    }
+
+    // Fetch questions from server and organize them by difficulty
+    function fetchQuestions() {
+      fetch(`/getQuestions?era=${selectedEra}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log("Fetched data:", data);
+
+          // Reset questions array and difficulty transitions
+          allQuestions = [];
+          difficultyTransitions = {};
+
+          // Process all questions and organize them by difficulty
+          let questionIndex = 0;
+
+          // Add easy questions first
+          if (data.easy && Object.keys(data.easy).length > 0) {
+            const easyQuestions = Object.values(data.easy);
+            // Mark the first easy question for splash screen
+            difficultyTransitions[0] = 'easy';
+
+            // Add questions to the array
+            easyQuestions.forEach(q => {
+              q.difficulty = 'easy'; // Ensure difficulty is set
+              allQuestions.push(q);
+            });
+
+            questionIndex += easyQuestions.length;
+          }
+
+          // Add medium questions next
+          if (data.medium && Object.keys(data.medium).length > 0) {
+            const mediumQuestions = Object.values(data.medium);
+            // Mark the first medium question for splash screen
+            difficultyTransitions[questionIndex] = 'medium';
+
+            // Add questions to the array
+            mediumQuestions.forEach(q => {
+              q.difficulty = 'medium'; // Ensure difficulty is set
+              allQuestions.push(q);
+            });
+
+            questionIndex += mediumQuestions.length;
+          }
+
+          // Add hard questions last
+          if (data.hard && Object.keys(data.hard).length > 0) {
+            const hardQuestions = Object.values(data.hard);
+            // Mark the first hard question for splash screen
+            difficultyTransitions[questionIndex] = 'hard';
+
+            // Add questions to the array
+            hardQuestions.forEach(q => {
+              q.difficulty = 'hard'; // Ensure difficulty is set
+              allQuestions.push(q);
+            });
+          }
+
+          // Set total questions count
+          totalQuestions = allQuestions.length;
+          console.log(`Total questions: ${totalQuestions}`);
+          console.log("Difficulty transitions at indices:", difficultyTransitions);
+
+          // Check if we have questions
+          if (totalQuestions === 0) {
+            questionElement.textContent = 'No questions available for this era.';
+          } else {
+            // Start with the first difficulty splash screen
+            const firstDifficulty = difficultyTransitions[0];
+            if (firstDifficulty) {
+              showDifficultySplash(firstDifficulty, () => {
+                currentDifficulty = firstDifficulty;
+                initialSplashShown = true; // Mark that we've shown the initial splash
+                displayQuestion();
+                startTimer();
+              });
+            } else {
+              // Fallback if no difficulty is set
+              displayQuestion();
+              startTimer();
+            }
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching questions:', error);
+          questionElement.textContent = 'Error loading questions. Please try again.';
         });
-      }, 300);
     }
-  }, 150);
-}
 
-// Create floating score animation
-function createFloatingScore(points, sourceElement) {
-  // Create floating score element
-  const floatingScore = document.createElement('div');
-  floatingScore.textContent = '+$' + points;
-  floatingScore.style.position = 'absolute';
-  floatingScore.style.color = '#2ecc71'; // Green color
-  floatingScore.style.fontWeight = 'bold';
-  floatingScore.style.fontSize = '80px';
-  floatingScore.style.zIndex = '1000';
-  floatingScore.style.opacity = '1';
-  floatingScore.style.transition = 'top 1.1s ease-out, opacity 1.5s ease-out';
-  
-  // Position the floating score above the clicked option
-  const rect = sourceElement.getBoundingClientRect();
-  floatingScore.style.left = (rect.left + rect.width / 2) + 'px';
-  floatingScore.style.top = (rect.top + -80)+ 'px';
-  floatingScore.style.transform = 'translateX(-80%)'; // Center horizontally
-  
-  // Add to document
-  document.body.appendChild(floatingScore);
-  
-  // Start animation after a small delay to ensure the element is rendered
-  setTimeout(() => {
-    floatingScore.style.top = (rect.top - 100) + 'px'; // Float up 100px
-    floatingScore.style.opacity = '0';
-    
-    // Remove element after animation completes
-    setTimeout(() => {
-      document.body.removeChild(floatingScore);
-    }, 1500);
-  }, 10);
-}
+    // Reset Zilby to idle state
+    function resetZilby() {
+      zilbyImg.src = './internalAssets/ZilbyIdle.gif';
+    }
 
-// Handle option selection
-function selectOption(optionElement, selectedAnswer, correctAnswer) {
-  // Disable all option buttons to prevent multiple selections
-  document.querySelectorAll('.quiz-button').forEach(button => {
-    button.disabled = true;
-  });
-
-  // Get the actual text of the selected answer
-  const selectedText = optionElement.childNodes[0].textContent.trim(); // Get text before img tag
-  const correctText = allQuestions[currentQuestionIndex].correctAnswer;
-
-  // Check correctness and update score
-  const isCorrect = selectedText === correctText;
-  
-  if (isCorrect) {
-    // Correct answer
-    optionElement.classList.add('selected');
-    const pointsValue = allQuestions[currentQuestionIndex].points || 100;
-    score += pointsValue;
-    
-    // Create and animate floating score text
-    createFloatingScore(pointsValue, optionElement);
-    
-    // Update hint bubble and Zilby animation for correct answer
-    hintBubbleElement.textContent = "Great job! That's correct!";
-    correctAudio.play();
-    moneySound.play();
-    starNess.src = './internalAssets/stracash.gif';
-    setTimeout(() => {
-      starNess.src = './internalAssets/podiumCash.svg';
-    }, 2200);
-    
-    zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
-    hintBubbleContainer.style.opacity = '1';
-  } else {
-    // Incorrect answer
-    optionElement.classList.add('incorrect');
-    
-    // Mark the correct option
-    document.querySelectorAll('.quiz-button').forEach(button => {
-      const buttonText = button.childNodes[0].textContent.trim();
-      if (buttonText === correctText) {
-        button.classList.add('selected');
+    // Display current question
+    function displayQuestion() {
+      if (currentQuestionIndex >= allQuestions.length) {
+        endGame("Congratulations! You've completed all questions!");
+        return;
       }
-    });
-    
-    // Update hint bubble and Zilby animation for incorrect answer
-    hintBubbleElement.textContent = "Oops! That's not right.";
-    wrongAudio.play();
-    zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
-    hintBubbleContainer.style.opacity = '1';
-  }
 
-  // Grey out all options that are not marked as selected/incorrect
-  document.querySelectorAll('.quiz-button').forEach(button => {
-    if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
-      button.classList.add('greyed');
-    }
-  });
-
-  // Update the money score
-  moneyElement.textContent = `$${score}`;
-  
-  // Move to the next question automatically after 2 seconds
-  setTimeout(() => {
-    currentQuestionIndex++;
-    hintBubbleContainer.style.opacity = '0';
-    
-    // Reset button states and display next question
-    document.querySelectorAll('.quiz-button').forEach(button => {
-      button.disabled = false;
-      button.classList.remove('selected', 'incorrect', 'greyed');
-    });
-    
-    // Reset hint bubble and Zilby for the next question
-    resetZilby();
-    
-    if (currentQuestionIndex >= allQuestions.length) {
-      winningAudio.play();
-      endGame("Congratulations! You've completed all questions!");
-      if(score <= 165){
-
-
+      // Check if we need to show a difficulty splash screen
+      // Only show if it's not the initial question (to avoid double splash for easy mode)
+      if (difficultyTransitions[currentQuestionIndex] &&
+        !(currentQuestionIndex === 0 && initialSplashShown)) {
+        const newDifficulty = difficultyTransitions[currentQuestionIndex];
+        pauseTimer();
+        showDifficultySplash(newDifficulty, () => {
+          currentDifficulty = newDifficulty;
+          resumeTimer();
+          // Continue with displaying the question
+          displayCurrentQuestion();
+        });
+      } else {
+        // No difficulty transition or it's the initial question and we already showed the splash
+        displayCurrentQuestion();
       }
-      
-    } else {
-      displayQuestion();
     }
-  }, 2500); // Wait 2.5 seconds before moving to the next question
-}
 
-// Start fetching questions when the page is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  questionCounterElement.innerHTML = `
+    // Helper function to display the current question (extracted from displayQuestion)
+    function displayCurrentQuestion() {
+      const questionObj = allQuestions[currentQuestionIndex];
+      questionElement.textContent = questionObj.question || questionObj.questions;
+
+      // Reset Zilby to idle state for each new question
+      resetZilby();
+
+      // Reset hint bubble to show the hint for the current question
+      hintBubbleElement.textContent = "Zilby: " + questionObj.aiHint || 'No hint available';
+
+      setTimeout(() => {
+        hintBubbleContainer.style.opacity = '1';
+        hintBubbleContainer.style.zIndex = '1';
+      }, 2800);
+
+      // Update question counter
+      updateProgressBar();
+
+      // Populate the options
+      const options = questionObj.options;
+      optionsElement.innerHTML = ''; // Clear previous options
+      options.forEach((option, index) => {
+        const button = document.createElement('button');
+        button.classList.add('quiz-button');
+        const letter = String.fromCharCode(65 + index); // A, B, C, D...
+        button.id = `option${letter}`;
+        button.textContent = option;
+        button.setAttribute('data-answer', letter);
+
+        // Option button image
+        const img = document.createElement('img');
+        img.src = `./internalAssets/${letter}_Button_icon.png`;
+        img.alt = `${letter} Button`;
+
+        button.appendChild(img);
+
+        // Add click listener for selecting an answer
+        button.addEventListener('click', () => selectOption(button, letter, questionObj.correctAnswer));
+        optionsElement.appendChild(button);
+      });
+
+      // Update money display
+      moneyElement.textContent = `$${score}`;
+    }
+
+    function updateProgressBar() {
+      const progressLightsContainer = document.querySelector('.progress-lights');
+      if (!progressLightsContainer) return;
+
+      // Clear existing lights
+      progressLightsContainer.innerHTML = '';
+
+      // Determine which difficulty we're in and how many questions per difficulty
+      const questionsPerDifficulty = 7; // Default to 7 questions per difficulty
+
+      // Calculate which difficulty set we're in (0-based)
+      const currentDifficultySet = Math.floor(currentQuestionIndex / questionsPerDifficulty);
+
+      // Calculate position within the current difficulty set (0-based)
+      const positionInSet = currentQuestionIndex % questionsPerDifficulty;
+
+      // Create 7 lights for the current difficulty set
+      for (let i = 0; i < questionsPerDifficulty; i++) {
+        const light = document.createElement('div');
+        light.className = 'progress-light';
+
+        // Light up completed questions
+        if (i <= positionInSet) {
+          light.classList.add('active');
+        }
+
+        // Add the light to the container
+        progressLightsContainer.appendChild(light);
+      }
+    }
+    // Function to play a light show animation on the progress bar
+    function playProgressLightShow() {
+      const progressLightsContainer = document.querySelector('.progress-lights');
+      if (!progressLightsContainer) return;
+
+      // Clear existing lights
+      progressLightsContainer.innerHTML = '';
+
+      // Create 7 lights for the light show
+      for (let i = 0; i < 7; i++) {
+        const light = document.createElement('div');
+        light.className = 'progress-light';
+        progressLightsContainer.appendChild(light);
+      }
+
+      const lights = document.querySelectorAll('.progress-light');
+      let currentIndex = 0;
+      let direction = 1; // 1 for forward, -1 for backward
+      let cycles = 0;
+      const maxCycles = 3; // Number of back-and-forth cycles
+
+      // Start the light show animation
+      const lightShowInterval = setInterval(() => {
+        // Turn off all lights
+        lights.forEach(light => light.classList.remove('active', 'light-show'));
+
+        // Turn on current light with special effect
+        if (lights[currentIndex]) {
+          lights[currentIndex].classList.add('active', 'light-show');
+        }
+
+        // Move to next light
+        currentIndex += direction;
+
+        // Change direction if we reach the end or beginning
+        if (currentIndex >= lights.length - 1) {
+          direction = -1;
+          currentIndex = lights.length - 1;
+          cycles += 0.5;
+        } else if (currentIndex <= 0) {
+          direction = 1;
+          currentIndex = 0;
+          cycles += 0.5;
+        }
+
+        // Stop after a few cycles
+        if (cycles >= maxCycles) {
+          clearInterval(lightShowInterval);
+
+          // Final effect: light all lights
+          setTimeout(() => {
+            lights.forEach(light => {
+              light.classList.add('active', 'light-show');
+            });
+          }, 300);
+        }
+      }, 150);
+    }
+
+    // Create floating score animation
+    function createFloatingScore(points, sourceElement) {
+      // Create floating score element
+      const floatingScore = document.createElement('div');
+      floatingScore.textContent = '+$' + points;
+      floatingScore.style.position = 'absolute';
+      floatingScore.style.color = '#2ecc71'; // Green color
+      floatingScore.style.fontWeight = 'bold';
+      floatingScore.style.fontSize = '80px';
+      floatingScore.style.zIndex = '1000';
+      floatingScore.style.opacity = '1';
+      floatingScore.style.transition = 'top 1.1s ease-out, opacity 1.5s ease-out';
+
+      // Position the floating score above the clicked option
+      const rect = sourceElement.getBoundingClientRect();
+      floatingScore.style.left = (rect.left + rect.width / 2) + 'px';
+      floatingScore.style.top = (rect.top + -80) + 'px';
+      floatingScore.style.transform = 'translateX(-80%)'; // Center horizontally
+
+      // Add to document
+      document.body.appendChild(floatingScore);
+
+      // Start animation after a small delay to ensure the element is rendered
+      setTimeout(() => {
+        floatingScore.style.top = (rect.top - 100) + 'px'; // Float up 100px
+        floatingScore.style.opacity = '0';
+
+        // Remove element after animation completes
+        setTimeout(() => {
+          document.body.removeChild(floatingScore);
+        }, 1500);
+      }, 10);
+    }
+
+    // Handle option selection
+    function selectOption(optionElement, selectedAnswer, correctAnswer) {
+      // Disable all option buttons to prevent multiple selections
+      document.querySelectorAll('.quiz-button').forEach(button => {
+        button.disabled = true;
+      });
+
+      // Get the actual text of the selected answer
+      const selectedText = optionElement.childNodes[0].textContent.trim(); // Get text before img tag
+      const correctText = allQuestions[currentQuestionIndex].correctAnswer;
+
+      // Check correctness and update score
+      const isCorrect = selectedText === correctText;
+
+      if (isCorrect) {
+        // Correct answer
+        optionElement.classList.add('selected');
+        const pointsValue = allQuestions[currentQuestionIndex].points || 100;
+        score += pointsValue;
+
+        // Create and animate floating score text
+        createFloatingScore(pointsValue, optionElement);
+
+        // Update hint bubble and Zilby animation for correct answer
+        hintBubbleElement.textContent = "Great job! That's correct!";
+        correctAudio.play();
+        moneySound.play();
+        starNess.src = './internalAssets/stracash.gif';
+        setTimeout(() => {
+          starNess.src = './internalAssets/podiumCash.svg';
+        }, 2200);
+
+        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
+        hintBubbleContainer.style.opacity = '1';
+      } else {
+        // Incorrect answer
+        optionElement.classList.add('incorrect');
+
+        // Mark the correct option
+        document.querySelectorAll('.quiz-button').forEach(button => {
+          const buttonText = button.childNodes[0].textContent.trim();
+          if (buttonText === correctText) {
+            button.classList.add('selected');
+          }
+        });
+
+        // Update hint bubble and Zilby animation for incorrect answer
+        hintBubbleElement.textContent = "Oops! That's not right.";
+        wrongAudio.play();
+        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
+        hintBubbleContainer.style.opacity = '1';
+      }
+
+      // Grey out all options that are not marked as selected/incorrect
+      document.querySelectorAll('.quiz-button').forEach(button => {
+        if (!button.classList.contains('selected') && !button.classList.contains('incorrect')) {
+          button.classList.add('greyed');
+        }
+      });
+
+      // Update the money score
+      moneyElement.textContent = `$${score}`;
+
+      // Move to the next question automatically after 2 seconds
+      setTimeout(() => {
+        currentQuestionIndex++;
+        hintBubbleContainer.style.opacity = '0';
+
+        // Reset button states and display next question
+        document.querySelectorAll('.quiz-button').forEach(button => {
+          button.disabled = false;
+          button.classList.remove('selected', 'incorrect', 'greyed');
+        });
+
+        // Reset hint bubble and Zilby for the next question
+        resetZilby();
+
+        if (currentQuestionIndex >= allQuestions.length) {
+          winningAudio.play();
+          endGame("Congratulations! You've completed all questions!");
+          if (score <= 165) {
+
+
+          }
+
+        } else {
+          displayQuestion();
+        }
+      }, 2500); // Wait 2.5 seconds before moving to the next question
+    }
+
+    // Start fetching questions when the page is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      questionCounterElement.innerHTML = `
     <span class="progress-label">Progress:</span>
     <div class="progress-lights"></div>
   `;
-  questionCounterElement.classList.add('metallic-progress-bar');
-  // Initialize timer display
-  updateTimerDisplay();
-  
-  // Start fetching questions
-  fetchQuestions();
-});
-</script>
+      questionCounterElement.classList.add('metallic-progress-bar');
+      // Initialize timer display
+      updateTimerDisplay();
+
+      // Start fetching questions
+      fetchQuestions();
+    });
+  </script>
 </body>
 
 </html>
