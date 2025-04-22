@@ -290,8 +290,34 @@ playerArray = [];
                         // Change continue text to yellow (active state)
                         continueText.classList.add('active');
                         
-                        sButton.addEventListener('click', function(){
-                            window.location.href = './entrancevid.html';
+
+                        // send the current team to the server database
+                        sButton.addEventListener('click', async function(){
+                            console.log('S button clicked, navigating to entrancevid.html');
+
+                            await fetch ('/create-team', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    playerNames: playerArray.map(id => `User ${id}`),
+                                    teamName: "Glacial Celestials",
+                                })
+                            }).then(res => {
+                                if (res.ok) {
+                                    console.log('Team created successfully');
+                                    console.log('team sent to server', playerArray);
+                                    // Navigate to the next page
+                                    //window.location.href = './entrancevid.html';
+                                } else {
+                                    console.error('Error creating team');
+                                }
+                            }).catch(err => {
+                                console.error('Network error:', err);
+                            });
+                           // window.location.href = './entrancevid.html';
+                           
                         });
                     }
                     
@@ -315,7 +341,6 @@ playerArray = [];
                 
                 // TO DO: CHECK FOR DUPLICATE ID SCANS
 
-            
 
                 console.log("rfid data scanned: ", data);
                     rfButt.click();

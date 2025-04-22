@@ -152,7 +152,7 @@
         let usedCombinations = new Set();
 
         // Load the team name parts from the JSON
-        fetch('teamNamesAPI.json')
+        fetch('../teamNamesAPI.json')
             .then(response => response.json())
             .then(data => {
                 firstNames = data.teamNames.firstName;
