@@ -836,7 +836,7 @@
   <div id="quiz-question">
     <h1 id="questMess">Question goes here</h1>
     <video id="questBoard" autoplay loop>
-      <source id= "bb"src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
+      <source src="./internalAssets/QuestionSign-Idle.webm" type="video/webm">
     </video>
   </div>
 
@@ -923,7 +923,7 @@
     const mediumMode = document.getElementById('medMd');
     const hardMode = document.getElementById('hrdMd');
     const starNess = document.getElementById('star');
-    const board = document.getElementById('bb');
+    const board = document.getElementById('questBoard');
     const backgroundVideo = document.getElementById('backgroundVideo');
 
     // Set background video based on selected era
@@ -1239,6 +1239,7 @@
 
     // Reset Zilby to idle state
     function resetZilby() {
+      board.src = './internalAssets/QuestionSign-Idle.webm';
       zilbyImg.src = './internalAssets/ZilbyIdle.gif';
     }
 
@@ -1463,12 +1464,12 @@
         hintBubbleElement.textContent = "Great job! That's correct!";
         correctAudio.play();
         moneySound.play();
-        board.src = './internalAssets/webm/QuestionSign-Correct.webm';
+        
         starNess.src = './internalAssets/stracash.gif';
         setTimeout(() => {
           starNess.src = './internalAssets/podiumCash.svg';
         }, 2200);
-
+        board.src = './internalAssets/QuestionSign-Correct.webm';
         zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
         hintBubbleContainer.style.opacity = '1';
       } else {
@@ -1486,6 +1487,7 @@
         // Update hint bubble and Zilby animation for incorrect answer
         hintBubbleElement.textContent = "Oops! That's not right.";
         wrongAudio.play();
+        board.src = './internalAssets/QuestionSign-Incorrect.webm';
         zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
         hintBubbleContainer.style.opacity = '1';
       }
