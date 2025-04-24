@@ -63,7 +63,7 @@ router.get('/team-names', (req, res) => {
 // update team name
 router.post('/update-team-name/:id', async (req, res) => {
     const { id } = req.params;
-    const { newName } = req.body;
+    const { teamName: newName } = req.body;
 
     try {
         const updatedTeam = await Team.findByIdAndUpdate(

@@ -170,6 +170,9 @@
     </div>
 
     <script>
+        // log session storage
+        console.log("Session Storage: ", sessionStorage);
+
         document.getElementById('ABquestion').addEventListener('click', function() {
             updateNameParts(true);
         });
@@ -179,11 +182,7 @@
         });
 
         document.getElementById('submitButt').addEventListener('click', async function() {  
-    // get the current team from the sessionStorage
-    const currentTeam = sessionStorage.getItem('teamName');
-    console.log("Current Team: ", currentTeam);
 
-    document.getElementById('givenName').textContent = `Given Name: ${currentTeam}`;
 
     // take the team name, update it, and send it to the server
     // get the current team name from the divs
@@ -191,30 +190,27 @@
     console.log("New Team Name: ", newTeamName);
 
     try {
-        // You need to replace ':id' with the actual team ID
-        // If you don't have the ID, you might need to modify your endpoint to find by name
-        const teamId = sessionStorage.getItem('teamId'); // Assuming you store the team ID
+
+        const teamId = sessionStorage.getItem('teamId');
+
         
-        // Fixed fetch syntax - removed extra parenthesis and added proper try/catch
-        const response = await fetch(`/update-team-name/${teamId}`, {
+        // send the new team name to the server
+        const data = await fetch(`/update-team-name/${teamId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                teamName: newTeamName,
-            })
+            body: JSON.stringify({ teamName: newTeamName })
         });
-        
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        
-        const data = await response.json();
-        console.log("Team name updated successfully:", data);
+       console.log(data);
+        const result = await data.json();
+        console.log("Server response:", result);
         
         // Optional: Update the stored team name in session storage
         sessionStorage.setItem('teamName', newTeamName);
+
+        // send the new team name to the server
+        
         
         // Optional: Show success message to user
         alert('Team name updated successfully!');
@@ -224,10 +220,8 @@
         console.error("Error updating team name:", error);
         alert('Failed to update team name. Please try again.');
     }
+    
 });
-
-
-
      </script>
 
 

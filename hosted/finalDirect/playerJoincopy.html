@@ -220,289 +220,292 @@
     </style>
     <!-- <audio id="poppy" src="./audio/RFIDpopWIP1.mp3"></audio> -->
     <script>
-// array for tracking player
+// array for tracking players
 playerArray = [];
 
-        document.addEventListener('DOMContentLoaded', function() {
-            const pop = document.getElementById('poppy');
-            const menuSound = document.getElementById('menuBoop');
-            // Get the button element
-            const rfButt = document.getElementById('bt');
-            // Track which player is next to be activated
-            let currentPlayer = 1;
-            const continueText = document.getElementById('continue-text');
-            let sButton;
 
-            function playSoundThenNavigate(url) {
-                menuSound.play().then(() => {
-                    setTimeout(() => {
-                        window.location.href = url;
-                    }, 300); // Adjust if your audio clip needs more time
-                }).catch((err) => {
-                    console.error("Audio play error:", err);
-                    window.location.href = url; // fallback if audio fails
-                });
-            }
-            
-            // Function to set the lights based on the preset
-            setLights('default');
+    // Light events
+    const lightPresets = {
+        success: {
+            pattern: 'pulse',
+            duration: '1',
+            foreground: '#00ff00',
+            background: '#000000',
+            period: '1.5'
+        },
+        error: {
+            pattern: 'pulse',
+            duration: '1',
+            foreground: '#ff0000',
+            background: '#000000',
+            period: '1.5'
+        },
+        default: {
+            pattern: 'doublecomet',
+            duration: '1800', // 30 minutes, just so it doesn't turn off
+            foreground: '#ef4d25',
+            background: '#f6f967',
+            foreground2: '#32cd32',
+            background2: '#6532f1',
+            period: '1.5'
+        }
+    };
 
-            // Function to reset the player states
-            function resetPlayers() {
-                currentPlayer = 1;
-                rfButt.textContent = 'Click for RFID';
-                rfButt.disabled = false;
-                
-                // Reset all player images to their default state
-                for (let i = 1; i <= 4; i++) {
-                    const playerImg = document.querySelector(`#Player${i} img`);
-                    playerImg.src = `./internalAssets/Player ${i} State Indicator.png`;
-                    // Force image reload by appending a timestamp
-                    playerImg.src = playerImg.src + '?t=' + new Date().getTime();
-                }
-                
-                // Reset system message
-                // document.getElementById('SystemMessage').textContent = 'At least ONE player must scan their wristband!';
-                
-                // Reset continue text to gray
-                continueText.classList.remove('active');
-                
-                // Disable the S button and Continue arrow
+document.addEventListener('DOMContentLoaded', async function () {
+    const pop = document.getElementById('poppy');
+    const menuSound = document.getElementById('menuBoop');
+    // Get the button element
+    const rfButt = document.getElementById('bt');
+    // Track which player is next to be activated
+    let currentPlayer = 1;
+    const continueText = document.getElementById('continue-text');
+    let sButton;
+
+    function playSoundThenNavigate(url) {
+        menuSound.play().then(() => {
+            setTimeout(() => {
+                window.location.href = url;
+            }, 300); // Adjust if your audio clip needs more time
+        }).catch((err) => {
+            console.error("Audio play error:", err);
+            window.location.href = url; // fallback if audio fails
+        });
+    }
+
+    // Function to set the lights based on the preset
+    setLights('default');
+
+    // Function to reset the player states
+    function resetPlayers() {
+        currentPlayer = 1;
+        rfButt.textContent = 'Click for RFID';
+        rfButt.disabled = false;
+
+        // Reset all player images to their default state
+        for (let i = 1; i <= 4; i++) {
+            const playerImg = document.querySelector(`#Player${i} img`);
+            playerImg.src = `./internalAssets/Player ${i} State Indicator.png`;
+            // Force image reload by appending a timestamp
+            playerImg.src = playerImg.src + '?t=' + new Date().getTime();
+        }
+
+        // Reset continue text to gray
+        continueText.classList.remove('active');
+
+        // Disable the S button and Continue arrow
+        sButton = document.querySelector('.button-container img:first-of-type');
+        sButton.src = './internalAssets/S_disabled Button icon.png';
+        sButton.classList.remove('s-button-active');
+    }
+
+    // Add click event listener to the button
+    rfButt.addEventListener('click', function () {
+        // Only proceed if we haven't activated all 4 players yet
+        if (currentPlayer <= 4) {
+            // Get the current player's image element
+            const playerImg = document.querySelector(`#Player${currentPlayer} img`);
+            pop.play();
+
+            // Change the image source to the corresponding gif with timestamp to prevent caching
+            const timestamp = new Date().getTime();
+            playerImg.src = `./internalAssets/Player-${currentPlayer}-activated-gif.gif?t=${timestamp}`;
+
+            // Update system message after at least one player has joined
+            if (currentPlayer === 1) {
+                // Enable the S button and Continue arrow (replace with enabled versions)
                 sButton = document.querySelector('.button-container img:first-of-type');
-                
-                sButton.src = './internalAssets/S_disabled Button icon.png';
-                sButton.classList.remove('s-button-active');
-            }
-            
-            // Add click event listener to the button
-            rfButt.addEventListener('click',  function() {
-                
-                // Only proceed if we haven't activated all 4 players yet
-                if (currentPlayer <= 4) {
-                    // Get the current player's image element
-                    const playerImg = document.querySelector(`#Player${currentPlayer} img`);
-                    pop.play();
+                sButton.src = './internalAssets/S Button icon.png';
+                sButton.classList.add('s-button-active');
 
-                    // add player to team 
-                    // will be a fetch statement to the /add-player endpoint
-                    
-                    
-                    // Change the image source to the corresponding gif with timestamp to prevent caching
-                    const timestamp = new Date().getTime();
-                    playerImg.src = `./internalAssets/Player-${currentPlayer}-activated-gif.gif?t=${timestamp}`;
-                    
-                    // Update system message after at least one player has joined
-                    if (currentPlayer === 1) {
-                        
-                        // Enable the S button and Continue arrow (replace with enabled versions)
-                        sButton = document.querySelector('.button-container img:first-of-type');
-                        sButton.src = './internalAssets/S Button icon.png';
-                        sButton.classList.add('s-button-active');
-                        
-                        // Change continue text to yellow (active state)
-                        continueText.classList.add('active');
-                        
+                // Change continue text to yellow (active state)
+                continueText.classList.add('active');
 
-                        // send the current team to the server database
-                        sButton.addEventListener('click', async function(){
-                            console.log('S button clicked, navigating to entrancevid.html');
+                // Add event listener for S button click
+                sButton.addEventListener('click', async function () {
+                    console.log('S button clicked, navigating to entrancevid.html');
 
-                            await fetch ('/create-team', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json'
-                                },
-                                body: JSON.stringify({
-                                    playerNames: playerArray.map(id => `User ${id}`),
-                                })
-                            }).then(res => {
-                                if (res.ok) {
-                                    console.log('Team created successfully');
-
-                                    // get team ID and name from the response
-                                    res.json().then(data => {
-                                        console.log('Team ID:', data.team._id);
-                                        console.log('Team name: ', data.team.name);
-                                    
-
-                                    // set ID to session storage
-                                    const teamId = data.team._id;
-                                    const teamName = data.team.name;
-                                    sessionStorage.setItem('teamId', teamId);
-                                    sessionStorage.setItem('teamName',teamName);
-                                    console.log('Team ID and name stored in session storage:', sessionStorage);
-
-                                    });
-                                    // Navigate to the next page
-                                    window.location.href = './entrancevid.html';
-                                } else {
-                                    console.error('Error creating team');
-                                }
-                            }).catch(err => {
-                                console.error('Network error:', err);
-                            });
-                            // playSoundThenNavigate('./entrancevid.html');
-                           
-                        });
-                    }
-                    
-                    // Move to the next player
-                    currentPlayer++;
-                    
-                    // If we've reached the maximum number of players, disable the button
-                    if (currentPlayer > 4) {
-                        rfButt.textContent = 'Maximum Players Reached';
-                        rfButt.disabled = true;
-                    }
-                }
-            });
-
-            /////////////////////////////////
-            // event source for RFID scanning
-            /////////////////////////////////
-            const evtSource = new EventSource('http://nm-rfid-1.rit.edu:8001/sse');
-            evtSource.onmessage = async (event) => {
-                const data = event.data;
-                
-                
-                // TO DO: CHECK FOR DUPLICATE ID SCANS
-
-
-                console.log("rfid data scanned: ", data);
-                    rfButt.click();
-                    setLights('success');
-
-                    setTimeout(() => {
-                        setLights('default');
-                    }, 1000);
-
-                    // add player to team
-                    await fetch('/add-player', {
+                    await fetch('/create-team', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ userId: data })
+                        body: JSON.stringify({
+                            playerNames: playerArray.map(id => `User ${id}`),
+                        })
                     }).then(res => {
                         if (res.ok) {
-                            console.log('Player added to team successfully');
-                            playerArray.push(data); // Add the player to the team array
-                            console.log('Current team:', playerArray);
+                            console.log('Team created successfully');
 
-                    }
-                    else {
-                            console.error('Error adding player to team');
+                            // Get team ID and name from the response
+                            res.json().then(data => {
+                                console.log('Team ID:', data.team._id);
+                                console.log('Team name: ', data.team.name);
+
+                                // Set ID to session storage
+                                const teamId = data.team._id;
+                                const teamName = data.team.name;
+                                sessionStorage.setItem('teamId', teamId);
+                                sessionStorage.setItem('teamName', teamName);
+                                console.log('Team ID and name stored in session storage:', sessionStorage);
+                            });
+                        } else {
+                            console.error('Error creating team');
                         }
                     }).catch(err => {
                         console.error('Network error:', err);
                     });
-                }
-
-            
-            // Add event listener for page reload
-            window.addEventListener('beforeunload', function() {
-                // Reset player states when page is about to be reloaded
-                resetPlayers();
-            });
-            
-            // Reset on initial load
-            resetPlayers();
-            
-            // Add keyboard event listener for S key
-            // document.addEventListener('keydown', function(event) {
-            //     // Check if at least one player has joined (currentPlayer > 1)
-            //     if (event.key.toLowerCase() === 's' && currentPlayer > 1) {
-            //         // Navigate to the next page or perform continue action
-            //         window.location.href = './entrancevid.html';
-            //     }
-            // });
-
-            const ws = new WebSocket('ws://localhost:3000');  // Assuming your server is running on localhost:3000
-
-            // Handle WebSocket message
-            ws.onmessage = (event) => {
-                const message = event.data;
-                console.log(`Button Pressed: "${message}"`);
-                handleButtonPress(message);
-            };
-
-            // Handle button press (Button F to navigate to playerJoin.html)
-            function handleButtonPress(message) {
-                // Expected format: "Button F pressed"
-                const match = message.match(/Button\s+([A-Z])\s+pressed/i);
-                if (match && match[1]){
-                    const letter = match[1].toUpperCase();  // e.g., "E"
-                    if (letter === 'F') {
-                        console.log('Button RFID pressed, simulating RFID button click');
-                        // Check if the button is not disabled before clicking
-                        if (!rfButt.disabled) {
-                            rfButt.click();
-                        }
-                    } else if (letter === 'E' && currentPlayer > 1) {
-                        // If S button is pressed and at least one player has joined
-                        console.log('Button S pressed, navigating to difficulty selection');
-                        playSoundThenNavigate('./entrancevid.html');
-                    }
-                }
-            }
-        });
-
-        // Light events
-        const lightPresets = {
-            success: {
-                pattern: 'pulse',
-                duration: '1',
-                foreground: '#00ff00',
-                background: '#000000',
-                period: '1.5'
-            },
-            error: {
-                pattern: 'pulse',
-                duration: '1',
-                foreground: '#ff0000',
-                background: '#000000',
-                period: '1.5'
-            },
-            default: {
-                pattern: 'doublecomet',
-                duration: '1800', // 30 minutes, just so it doesn't turn off
-                foreground: '#ef4d25',
-                background: '#f6f967',
-                foreground2: '#32cd32',
-                background2: '#6532f1',
-                period: '1.5'
-            }
-        };
-
-
-        // set lights function
-        function setLights(presetName) {
-            const preset = lightPresets[presetName];
-            if (!preset) return console.warn(`⚠️ Unknown light preset: ${presetName}`);
-
-            const body = new URLSearchParams(preset);
-
-            fetch('http://nm-rfid-1.rit.edu:8001/lights', {
-                method: 'POST',
-                body
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        console.log(`💡 Lights set to ${presetName}`);
-                    } else {
-                        console.warn(`⚠️ Lights response:`, data);
-                    }
-                })
-                .catch(err => {
-                    console.error(`❌ Error setting lights (${presetName}):`, err);
                 });
+            }
+
+            // Move to the next player
+            currentPlayer++;
+
+            // If we've reached the maximum number of players, disable the button
+            if (currentPlayer > 4) {
+                rfButt.textContent = 'Maximum Players Reached';
+                rfButt.disabled = true;
+            }
         }
+    });
 
-        window.onload = setLights('default');
+    /////////////////////////////////
+    // Event source for RFID scanning
+    /////////////////////////////////
+    const evtSource = new EventSource('http://nm-rfid-1.rit.edu:8001/sse');
+    evtSource.onmessage = async (event) => {
+        const data = event.data;
 
-    </script>
-    
+        console.log("RFID data scanned: ", data);
+        rfButt.click();
+        setLights('success');
+
+        setTimeout(() => {
+            setLights('default');
+        }, 1000);
+
+        // Add player to team
+        await fetch('/add-player', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ userId: data })
+        }).then(res => {
+            if (res.ok) {
+                console.log('Player added to team successfully');
+                playerArray.push(data); // Add the player to the team array
+                console.log('Current team:', playerArray);
+            } else {
+                console.error('Error adding player to team');
+            }
+        }).catch(err => {
+            console.error('Network error:', err);
+        });
+    };
+
+    // Add event listener for page reload
+    window.addEventListener('beforeunload', function () {
+        // Reset player states when page is about to be reloaded
+        resetPlayers();
+    });
+
+    // Reset on initial load
+    resetPlayers();
+
+    // WebSocket connection
+    const ws = new WebSocket('ws://localhost:3000'); // Assuming your server is running on localhost:3000
+
+    // Handle WebSocket message
+    ws.onmessage = (event) => {
+        const message = event.data;
+        console.log(`Button Pressed: "${message}"`);
+        handleButtonPress(message);
+    };
+
+    // Handle button press (Button F to navigate to playerJoin.html)
+    async function handleButtonPress(message) {
+        // Expected format: "Button F pressed"
+        const match = message.match(/Button\s+([A-Z])\s+pressed/i);
+        if (match && match[1]) {
+            const letter = match[1].toUpperCase(); // e.g., "E"
+            if (letter === 'F') {
+                console.log('Button RFID pressed, simulating RFID button click');
+                // Check if the button is not disabled before clicking
+                if (!rfButt.disabled) {
+                    rfButt.click();
+                }
+            } else if (letter === 'E' && currentPlayer > 1) {
+                console.log('Button S pressed, navigating to difficulty selection');
+
+                await fetch('/create-team', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        playerNames: playerArray.map(id => `User ${id}`),
+                    })
+                }).then(res => {
+                    if (res.ok) {
+                        console.log('Team created successfully');
+
+                        // Get team ID and name from the response
+                        res.json().then(data => {
+                            console.log('Team ID:', data.team._id);
+                            console.log('Team name: ', data.team.name);
+
+                            // Set ID to session storage
+                            const teamId = data.team._id;
+                            const teamName = data.team.name;
+                            sessionStorage.setItem('teamId', teamId);
+                            sessionStorage.setItem('teamName', teamName);
+                            console.log('Team ID and name stored in session storage:', sessionStorage);
+                        });
+                    }
+                });
+
+                // Navigate to the next page
+                playSoundThenNavigate('./entrancevid.html');
+            }
+        }
+    }
+
+
+    // Set lights function
+    function setLights(presetName) {
+        const preset = lightPresets[presetName];
+        if (!preset) return console.warn(`⚠️ Unknown light preset: ${presetName}`);
+
+        const body = new URLSearchParams(preset);
+
+        fetch('http://nm-rfid-1.rit.edu:8001/lights', {
+            method: 'POST',
+            body
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    console.log(`💡 Lights set to ${presetName}`);
+                } else {
+                    console.warn(`⚠️ Lights response:`, data);
+                }
+            })
+            .catch(err => {
+                console.error(`❌ Error setting lights (${presetName}):`, err);
+            });
+    }
+
+    window.onload = () => {
+        // Set default lights on page load
+        setLights('default');
+
+        // Reset session storage
+        sessionStorage.removeItem('teamId');
+        sessionStorage.removeItem('teamName');
+        console.log('Session storage cleared');
+    };
+});
+    </script>  
 </head>
 <body>
     <audio id="poppy" preload="auto">

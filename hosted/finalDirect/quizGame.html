@@ -1575,14 +1575,18 @@
       displayQuestion();
 
       // set score to 1000
-      score = 1000;
+      score = 12;
       moneyElement.textContent = `$${score}`;
     });
 
     // Start fetching questions when the page is loaded
     document.addEventListener('DOMContentLoaded', () => {
 
-      console.log("Page loaded, starting game...");
+      // Get the team name from sessionStorage
+      const teamName = sessionStorage.getItem('teamName');
+      const teamId = sessionStorage.getItem('teamId');
+
+
       console.log("Current teamID: " + sessionStorage.getItem('teamId'), "Current name: " + sessionStorage.getItem('teamName'));
 
       questionCounterElement.innerHTML = `
