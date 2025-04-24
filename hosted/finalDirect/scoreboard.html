@@ -410,7 +410,8 @@
                 // Find the current player's team in the leaderboard
                 // This assumes you have a way to identify the current player's team
                 // You might need to adjust this logic based on your application
-                const currentTeamName = "Kickin Rocketeers"; // Replace with actual logic to get current team
+                const currentTeamName = sessionStorage.getItem("teamName"); // Default to "Kickin Rocketeers" if not set
+                console.log('Current team name:', currentTeamName); // Log the current team name
                 const currentTeam = teams.find(team => team.name === currentTeamName);
                 
                 if (currentTeam) {

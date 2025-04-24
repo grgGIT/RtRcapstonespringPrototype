@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 const Team = require('./models/Team');
 const Player = require('./models/Player');
 const { getRandomTeamName, addPlayerToCurrentTeam, getTeamNames } = require('./teamLogic');
@@ -85,20 +86,35 @@ router.patch('/update-team-name/:id', async (req, res) => {
 
 // ✅ Submit a final score for a team
 router.post('/submit-score/:teamId', async (req, res) => {
-    const { teamId } = req.params;
+  const { teamId } = req.params;
     const { score } = req.body;
+    console.log('Received score:', score);
+    console.log('Received teamId:', teamId);
+
+    // Validate teamId format
+    if (!mongoose.Types.ObjectId.isValid(teamId)) {
+        return res.status(400).json({ error: 'Invalid team ID format' });
+    }
 
     try {
+        // Convert score to number to avoid type casting issues
+        const numericScore = Number(score);
+        
+        // Check if score is a valid number
+        if (isNaN(numericScore)) {
+            return res.status(400).json({ error: 'Score must be a valid number' });
+        }
+
         const team = await Team.findById(teamId);
         if (!team) return res.status(404).json({ error: 'Team not found' });
 
-        team.score = score;
+        team.score = numericScore;
         await team.save();
 
         res.status(200).json({ message: 'Score updated', team });
     } catch (err) {
         console.error('❌ Error updating score:', err);
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).json({ error: 'Server error', details: err.message });
     }
 });
 
