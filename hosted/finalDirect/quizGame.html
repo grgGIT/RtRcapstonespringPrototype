@@ -889,8 +889,12 @@
     </button>
   </div>
 
+  // skip tp end button (TESTING PURPOSES)
+  <button id="skipToEnd" style="position: absolute; top: 10px; left: 10px;">Skip to End</button>
+
 
   <script>
+
     // Game state
     let allQuestions = []; // Will hold all questions from all difficulty levels
     let currentQuestionIndex = 0;
@@ -1058,13 +1062,50 @@
         zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
       }
       //End game screens added if score is less than 165
-      setTimeout(() => {
-        if (score >= minScore) {
-          window.location.href = './goodEnding.html';
-        } else {
-          window.location.href = './badEnding.html';
-        }
-      }, 3000); // 3 second delay to let player see the final message
+      
+      // final score
+      const finalScore = score;
+
+
+      setTimeout(async () => {
+  try {
+    // Get the team ID from sessionStorage
+    const teamId = sessionStorage.getItem('teamId');
+    
+    if (!teamId) {
+      console.error('Team ID not found in sessionStorage');
+      alert('Error: Team ID not found. Please return to the main page.');
+      return; // Exit early if no teamId
+    }
+    
+    // Submit score to server with the retrieved teamId
+    const response = await fetch(`/submit-score/${teamId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ score: finalScore })
+    });
+    
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    
+    const data = await response.json();
+    console.log('Score submitted successfully:', data);
+    
+    // Redirect based on score
+    if (score >= minScore) {
+      alert('Score submitted successfully');
+      window.location.href = './goodEnding.html';
+    } else {
+      window.location.href = './badEnding.html';
+    }
+  } catch (error) {
+    console.error('Error submitting score:', error);
+    alert('Error submitting score. Please try again.');
+  }
+}, 3000); // 3 second delay to let player see the final message
     }
 
 
@@ -1530,6 +1571,18 @@
       }, 2500); // Wait 2.5 seconds before moving to the next question
     }
 
+/////////////////////////////////////////////////
+    // skip button to end game (REMOVE LATER)
+    // ///////////////////////////////////////////
+    document.getElementById('skipToEnd').addEventListener('click', () => {
+      currentQuestionIndex = allQuestions.length - 1; // Set to last question
+      displayQuestion();
+
+      // set score to 1000
+      score = 1000;
+      moneyElement.textContent = `$${score}`;
+    });
+
     // Start fetching questions when the page is loaded
     document.addEventListener('DOMContentLoaded', () => {
       questionCounterElement.innerHTML = `
@@ -1542,6 +1595,7 @@
 
       // Start fetching questions
       fetchQuestions();
+      
     });
   </script>
 </body>

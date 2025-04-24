@@ -314,12 +314,25 @@ playerArray = [];
                                 },
                                 body: JSON.stringify({
                                     playerNames: playerArray.map(id => `User ${id}`),
-                                    teamName: "Glacial Celestials",
                                 })
                             }).then(res => {
                                 if (res.ok) {
                                     console.log('Team created successfully');
-                                    console.log('team sent to server', playerArray);
+
+                                    // get team ID and name from the response
+                                    res.json().then(data => {
+                                        console.log('Team ID:', data.team._id);
+                                        console.log('Team name: ', data.team.name);
+                                    
+
+                                    // set ID to session storage
+                                    const teamId = data.team._id;
+                                    const teamName = data.team.name;
+                                    sessionStorage.setItem('teamId', teamId);
+                                    sessionStorage.setItem('teamName',teamName);
+                                    console.log('Team ID and name stored in session storage:', sessionStorage);
+
+                                    });
                                     // Navigate to the next page
                                     window.location.href = './entrancevid.html';
                                 } else {
@@ -346,6 +359,7 @@ playerArray = [];
 
             /////////////////////////////////
             // event source for RFID scanning
+            /////////////////////////////////
             const evtSource = new EventSource('http://nm-rfid-1.rit.edu:8001/sse');
             evtSource.onmessage = async (event) => {
                 const data = event.data;

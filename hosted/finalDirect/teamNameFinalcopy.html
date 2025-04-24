@@ -36,7 +36,7 @@
             height: 900px;
             position: absolute;
             left: 23%;
-            bottom: 25%;
+            bottom: 15%;
             z-index: 20;
         }
 
@@ -92,6 +92,7 @@
             align-items: center;
             text-align: center;
             left: 30%;
+            top: 10%;
 
         }
 
@@ -124,6 +125,23 @@
             width: 620px;
         }
 
+        #submitButt {
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
+            transform: translateX(-50%);
+            background-color: #3F3667;
+            color: white;
+            font-size: 40px;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #submitButt:hover {
+            background-color: #2E274D;
+        }
+
     </style>
 </head>
 
@@ -133,6 +151,7 @@
         Your browser does not support HTML5 video.
     </video>
     <h1 id="SelDiff">Name Your Team</h1>
+    <h2 id="givenName">Given Name: </h2>
     <div id="rollContainer">
         <div id="firstWrd">goofy</div>
         <div id="SecndWrd">glimmer</div>
@@ -149,6 +168,7 @@
 
         <button type="submit" id="submitButt">Submit</button>
     </div>
+
     <script>
         document.getElementById('ABquestion').addEventListener('click', function() {
             updateNameParts(true);
@@ -159,24 +179,47 @@
         });
 
         document.getElementById('submitButt').addEventListener('click', async function() {  
-          console.log("Team Submitted (not really)");
+        // get the current team from the server
+        const currentTeam = await fetch('/current-team', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
 
-          // take the team name and send it to the server
-          // POST to the endoint in team.js
-          
-        //  await fetch('/create-team', {
-        //       method: 'POST',
-        //       headers: {
-        //           'Content-Type': 'application/json'
-        //       },
-        //       body: JSON.stringify({
-        //           teamName: `${document.getElementById('firstWrd').textContent} ${document.getElementById('SecndWrd').textContent}`
-        //       })
-        //   })
-        // })
+          // take the team name, update it, and send it to the server
+          // get the current team name from the divs
+          const newTeamName = `${document.getElementById('firstWrd').textContent} ${document.getElementById('SecndWrd').textContent}`;
+         
+
+          console.log("New Team Name: ", newTeamName);
+
+            /* // send the new team name to the server */
+          await fetch('/update-team-name:/id'), {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    teamName: newTeamName,
+                })
+          }
+          .then(response => {
+              if (!response.ok) {
+                  throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+              return response.json();
+          })
+          .then(data => {
+              console.log("Team name updated successfully:", data);
+          })
         });
-S
+
+
      </script>
+
+
+
     <script>
         let firstNames = [];
         let secondNames = [];
@@ -215,6 +258,8 @@ S
     .catch(error => {
         console.error("Error loading team names:", error);
     });
+
+
 
     // Make sure generateUniqueCombo is defined
     function generateUniqueCombo(firstNames, secondNames) {
@@ -324,6 +369,25 @@ S
                 }
             }
         }
+
+        // get the current team name from the server
+        window.onload = () => {
+            fetch('/current-team', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log("Current Team Name: ", data.teamName);
+                // Update the UI or perform any other actions with the current team name
+                document.getElementById('givenName').textContent = `Given Name: ${data.teamName}`;
+            })
+            .catch(error => {
+                console.error("Error fetching current team name:", error);
+            });
+        };
     </script>
 </body>
 

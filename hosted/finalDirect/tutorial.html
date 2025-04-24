@@ -350,6 +350,10 @@
     object-fit: cover;
     z-index: -1; /* Ensure it stays behind other elements */
     }
+
+  #sButt:hover {
+    cursor: pointer;
+  }
   </style>
 
 <audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
@@ -583,7 +587,7 @@
       
       // Create styled end message with centered text and proper icon sizing
       optionsElement.innerHTML = `
-        <div style="text-align: center; width: 100%; font-size: 90px; color: #fdb813; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
+        <div id="sButt" style="text-align: center; width: 100%; font-size: 90px; color: #fdb813; display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
           Press <span style="display: inline-block; vertical-align: middle; margin: 0 10px;">
             <img src="./internalAssets/S Button icon.png" style="width: 70px; vertical-align: middle;">
           </span> to continue to era selection
@@ -593,6 +597,12 @@
       
       hintBubbleElement.textContent = "Well alright! Let's move on!";
       clearInterval(timerInterval);
+
+      // s button to continue to era selection
+      document.getElementById('sButt').addEventListener('click', function() {
+        menuPop.play();
+        window.location.href = 'difficult.html';
+      });
       
       // Add event listeners for S and F keys
       document.addEventListener('keydown', function(event) {

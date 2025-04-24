@@ -61,16 +61,29 @@
 <body>
     <div id="videoContainer">
         <!-- Add autoplay attribute to both video and audio -->
-        <video id="entranceVideo" src="./internalAssets/Comp 1_7.mp4" playsinline autoplay></video>
-        <audio id="narrationAudio" src="./audio/elevenLabTrial.mp3" preload="auto" autoplay></audio>
+        <video id="entranceVideo" src="./internalAssets/zilbt_interior1_final.mp4" playsinline autoplay></video>
+        <!-- <audio id="narrationAudio" src="./audio/elevenLabTrial.mp3" preload="auto" autoplay></audio> -->
+    </div>
+
+<!-- skip button for testing -->
+    <div id="skipButton" style="position: absolute; top: 20px; right: 20px; z-index: 2; background-color: white; padding: 10px; cursor: pointer;">
+        Skip
     </div>
 
     <script>
+
+        // Skip button functionality for testing (REMOVE LATER OR HIDE)
+        document.getElementById('skipButton').addEventListener('click', function() {
+            // Redirect to tutorial page immediately
+            window.location.href = './difficult.html';
+        });
+
+
         // Try to start playback as soon as possible
         window.addEventListener('load', startEverything);
         document.addEventListener('DOMContentLoaded', startEverything);
         const video = document.getElementById('entranceVideo');
-        const audio = document.getElementById('narrationAudio');
+        // const audio = document.getElementById('narrationAudio');
         video.muted = false
         
         // Variable to prevent multiple initializations
@@ -81,15 +94,15 @@
             hasStarted = true;
             
             const video = document.getElementById('entranceVideo');
-            const audio = document.getElementById('narrationAudio');
+            // const audio = document.getElementById('narrationAudio');
             const videoContainer = document.getElementById('videoContainer');
             
             // Force preload audio
-            audio.load();
+            // audio.load();
             
             // Set playback rates
-            video.playbackRate = 0.8; // Adjusted to better match the 50s audio
-            audio.playbackRate = 1.25; // Set audio to 1.25x as requested
+            video.playbackRate = 1; // Adjusted to better match the 50s audio
+            // audio.playbackRate = 1.25; // Set audio to 1.25x as requested
             
             // Keep video muted to help with autoplay
             video.muted = false;
@@ -97,47 +110,47 @@
             // Function to force start both media elements
             function forceStart() {
                 // Try multiple methods to start the video
-                const videoPlay = video.play();
+                // const videoPlay = video.play();
                 
-                if (videoPlay !== undefined) {
-                    videoPlay.then(() => {
-                        console.log("Video started successfully");
+                // if (videoPlay !== undefined) {
+                //     videoPlay.then(() => {
+                //         console.log("Video started successfully");
                         
-                        // Start audio with a slight delay to ensure it works
-                        setTimeout(() => {
-                            const audioPlay = audio.play();
+                //         // Start audio with a slight delay to ensure it works
+                //         setTimeout(() => {
+                //             const audioPlay = audio.play();
                             
-                            if (audioPlay !== undefined) {
-                                audioPlay.catch(e => {
-                                    console.error("Audio autoplay failed, retrying:", e);
-                                    // Try again with a timeout
-                                    retryAudioPlayback();
-                                });
-                            }
-                        }, 100);
-                    }).catch(error => {
-                        console.error("Video autoplay failed, retrying:", error);
-                        // Try again with a timeout
-                        setTimeout(forceStart, 500);
-                    });
-                }
+                //             if (audioPlay !== undefined) {
+                //                 audioPlay.catch(e => {
+                //                     console.error("Audio autoplay failed, retrying:", e);
+                //                     // Try again with a timeout
+                //                     retryAudioPlayback();
+                //                 });
+                //             }
+                //         }, 100);
+                //     }).catch(error => {
+                //         console.error("Video autoplay failed, retrying:", error);
+                //         // Try again with a timeout
+                //         setTimeout(forceStart, 500);
+                //     });
+                // }
             }
             
             // Function to retry audio playback multiple times
-            function retryAudioPlayback(attempts = 0) {
-                if (attempts > 5) return; // Give up after 5 attempts
+            // function retryAudioPlayback(attempts = 0) {
+            //     if (attempts > 5) return; // Give up after 5 attempts
                 
-                setTimeout(() => {
-                    audio.play().catch(e => {
-                        console.error(`Audio retry ${attempts} failed:`, e);
-                        retryAudioPlayback(attempts + 1);
-                    });
-                }, 500);
-            }
+            //     setTimeout(() => {
+            //         audio.play().catch(e => {
+            //             console.error(`Audio retry ${attempts} failed:`, e);
+            //             retryAudioPlayback(attempts + 1);
+            //         });
+            //     }, 500);
+            // }
             
             // Check which ends first and handle accordingly
             video.addEventListener('ended', handleEnding);
-            audio.addEventListener('ended', handleEnding);
+            // audio.addEventListener('ended', handleEnding);
             
             let endingStarted = false;
             
@@ -149,20 +162,20 @@
                 videoContainer.classList.add('fade-out');
                 
                 // Fade out audio if it's still playing
-                if (!audio.ended) {
-                    const fadeInterval = setInterval(() => {
-                        if (audio.volume > 0.1) {
-                            audio.volume -= 0.1;
-                        } else {
-                            audio.pause();
-                            clearInterval(fadeInterval);
-                        }
-                    }, 100);
-                }
+                // if (!audio.ended) {
+                //     const fadeInterval = setInterval(() => {
+                //         if (audio.volume > 0.1) {
+                //             audio.volume -= 0.1;
+                //         } else {
+                //             audio.pause();
+                //             clearInterval(fadeInterval);
+                //         }
+                //     }, 100);
+                // }
                 
                 // Redirect to tutorial page after fade-out animation completes
                 setTimeout(function() {
-                    window.location.href = 'tutorial.html';
+                    window.location.href = './tutorial.html';
                 }, 1500); // 1.5 seconds, matching the animation duration
             }
             
