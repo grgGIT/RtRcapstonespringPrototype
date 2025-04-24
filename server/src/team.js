@@ -61,7 +61,7 @@ router.get('/team-names', (req, res) => {
 });
 
 // update team name
-router.patch('/update-team-name/:id', async (req, res) => {
+router.post('/update-team-name/:id', async (req, res) => {
     const { id } = req.params;
     const { newName } = req.body;
 

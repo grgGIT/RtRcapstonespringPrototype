@@ -179,41 +179,53 @@
         });
 
         document.getElementById('submitButt').addEventListener('click', async function() {  
-        // get the current team from the server
-        const currentTeam = await fetch('/current-team', {
-            method: 'GET',
+    // get the current team from the sessionStorage
+    const currentTeam = sessionStorage.getItem('teamName');
+    console.log("Current Team: ", currentTeam);
+
+    document.getElementById('givenName').textContent = `Given Name: ${currentTeam}`;
+
+    // take the team name, update it, and send it to the server
+    // get the current team name from the divs
+    const newTeamName = `${document.getElementById('firstWrd').textContent} ${document.getElementById('SecndWrd').textContent}`;
+    console.log("New Team Name: ", newTeamName);
+
+    try {
+        // You need to replace ':id' with the actual team ID
+        // If you don't have the ID, you might need to modify your endpoint to find by name
+        const teamId = sessionStorage.getItem('teamId'); // Assuming you store the team ID
+        
+        // Fixed fetch syntax - removed extra parenthesis and added proper try/catch
+        const response = await fetch(`/update-team-name/${teamId}`, {
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
-            }
-        })
-
-          // take the team name, update it, and send it to the server
-          // get the current team name from the divs
-          const newTeamName = `${document.getElementById('firstWrd').textContent} ${document.getElementById('SecndWrd').textContent}`;
-         
-
-          console.log("New Team Name: ", newTeamName);
-
-            /* // send the new team name to the server */
-          await fetch('/update-team-name:/id'), {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    teamName: newTeamName,
-                })
-          }
-          .then(response => {
-              if (!response.ok) {
-                  throw new Error(`HTTP error! Status: ${response.status}`);
-              }
-              return response.json();
-          })
-          .then(data => {
-              console.log("Team name updated successfully:", data);
-          })
+            },
+            body: JSON.stringify({
+                teamName: newTeamName,
+            })
         });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        console.log("Team name updated successfully:", data);
+        
+        // Optional: Update the stored team name in session storage
+        sessionStorage.setItem('teamName', newTeamName);
+        
+        // Optional: Show success message to user
+        alert('Team name updated successfully!');
+
+        window.location.href = './scoreboard.html'; // Redirect to the next page
+    } catch (error) {
+        console.error("Error updating team name:", error);
+        alert('Failed to update team name. Please try again.');
+    }
+});
+
 
 
      </script>
@@ -372,21 +384,8 @@
 
         // get the current team name from the server
         window.onload = () => {
-            fetch('/current-team', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log("Current Team Name: ", data.teamName);
-                // Update the UI or perform any other actions with the current team name
-                document.getElementById('givenName').textContent = `Given Name: ${data.teamName}`;
-            })
-            .catch(error => {
-                console.error("Error fetching current team name:", error);
-            });
+            const givenName = sessionStorage.getItem('teamName');
+            document.getElementById('givenName').textContent = `Given Name: ${givenName}`;
         };
     </script>
 </body>

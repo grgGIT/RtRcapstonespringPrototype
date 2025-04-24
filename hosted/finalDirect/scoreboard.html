@@ -360,13 +360,8 @@
     </div>
 
     <script>
-        // Function to check if fonts are loaded
-        document.fonts.ready.then(function() {
-            console.log("All fonts are loaded!");
-            // You could add a class to the body when fonts are loaded
-            document.body.classList.add('fonts-loaded');
-        });
 
+window.onload = function() {
         // Fetch the leaderboard data from the server
         fetch('/leaderboard/all')
             .then(response => {
@@ -410,7 +405,7 @@
                 // Find the current player's team in the leaderboard
                 // This assumes you have a way to identify the current player's team
                 // You might need to adjust this logic based on your application
-                const currentTeamName = sessionStorage.getItem("teamName"); // Default to "Kickin Rocketeers" if not set
+                const currentTeamName = sessionStorage.getItem("teamName");
                 console.log('Current team name:', currentTeamName); // Log the current team name
                 const currentTeam = teams.find(team => team.name === currentTeamName);
                 
@@ -426,6 +421,7 @@
                 // Display a fallback message if data can't be loaded
                 document.getElementById("leaderboard-title").textContent = "Leaderboard (Offline)";
             });
+    };
     </script>
 </body>
 </html>
