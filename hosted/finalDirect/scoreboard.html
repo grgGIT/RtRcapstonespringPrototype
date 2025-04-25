@@ -28,7 +28,6 @@
         }
     
         body {
-            background-image: url(./internalAssets/Pattern\ placeholder.gif);
             background-color: #714882;
             font-family: Arial, sans-serif;
             margin: 0;
@@ -265,13 +264,28 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        #timer{
+            font-family: 'Aldrich', sans-serif;
+            display: flex;
+            align-content: center;
+
+            position: absolute;
+            left: 70%;
+            bottom: 20%
+        }
+        #time-remaining{
+            font-family: 'Bangers', sans-serif;
+            font-size: 90px;
+            font-weight: 700;
+        }
+
         
     </style>
 </head>
 <body>
         <!-- TO DO: ADD TIMER TO RE ROUTE TO HOMESCREEN AFTER 15 SECONDS -->
         <div id="timer">
-            <p id="timer-text">Time Remaining: <span id="time-remaining">15</span> seconds</p>
+            <p id="timer-text">Time Remaining: <span id="time-remaining">15</span></p>
          </div>
 
     <h1 id="leaderboard-title">Leaderboard</h1>
@@ -328,7 +342,7 @@ window.onload = function() {
             // Redirect to the home screen after 15 seconds
             window.location.href = "./homescreen.html";
         }
-    }, 1000); // Update every second
+    }, 8000); // Update every second
 
         // Fetch the leaderboard data from the server
         fetch('/leaderboard/all')

@@ -806,6 +806,17 @@
           inset 0 -1px 1px rgba(0, 0, 0, 0.3);
       }
     }
+
+    #targDiv{
+      position: absolute;
+      left: 70%;
+      bottom: 65%;
+      z-index: 10;
+    }
+    #targDiv img{
+      position: absolute;
+      width: 350px;
+    }
   </style>
 
   <audio id="crr" src="./audio/CorrectAnswerWIP1.mp3"></audio>
@@ -817,6 +828,9 @@
   <audio id="ezMd" src="./audio/DifficultyLvl1.mp3"></audio>
   <audio id="medMd" src="./audio/DifficultyLvl2.mp3"></audio>
   <audio id="hrdMd" src="./audio/DifficultyLvl3.mp3"></audio>
+  <audio id="discoMz" src="./audio/DiscoSongFinalLoop.mp3"></audio>
+  <audio id="prezntMz" src="./audio/synthwaveSongFinalLoop.mp3"></audio>
+  <audio id="radMz" src="./audio/electroSwingSongFinalLoop.mp3"></audio>
 </head>
 
 <body>
@@ -847,13 +861,20 @@
   <img id="star" src="./internalAssets/podiumCash.svg" alt="Money">
 
 
+  <div id="targDiv">
+    <img id="targt" src="./internalAssets/trgScore.png" alt="Target Score">
+  </div>
+
   <div id="hintBubble">
     <!-- <img src="./chatBubbl.png" alt="Hint Bubble"> -->
     <h2 id="hintTxt">This is a hint</h2>
   </div>
 
   <div id="Zilby">
-    <img id="zilbee" src="./internalAssets/ZilbyIdle.gif" alt="Zilby">
+    <!-- <img id="zilbee" src="./internalAssets/ZilbyIdle.gif" alt="Zilby"> -->
+    <video id="zilbee" autoplay loop>
+      <source src="./internalAssets/zilbyIdle.webm" type="video/webm">
+    </video>
   </div>
 
   <div id="podium">
@@ -915,7 +936,7 @@
     const hintBubbleElement = document.getElementById('hintTxt');
     const hintBubbleContainer = document.getElementById('hintBubble');
     const timerElement = document.getElementById('timerTxt');
-    const zilbyImg = document.querySelector('#Zilby img');
+    const zilbyImg = document.querySelector('#zilbee');
     const questionCounterElement = document.getElementById('questionCounter');
     const correctAudio = document.getElementById('crr');
     const wrongAudio = document.getElementById('wr');
@@ -929,16 +950,28 @@
     const starNess = document.getElementById('star');
     const board = document.getElementById('questBoard');
     const backgroundVideo = document.getElementById('backgroundVideo');
+    const discoMuz = document.getElementById('discoMz');
+    const prezMuz = document.getElementById('prezntMz');
+    const radioMuz = document.getElementById('radMz');
 
     // Set background video based on selected era
     switch (selectedEra) {
       case 'presentEra':
+        prezMuz.play();
+        prezMuz.loop = true;
+        prezMuz.volume = .6;
         backgroundVideo.querySelector('source').src = './internalAssets/PresentEraPattern.mp4';
         break;
       case 'discoEra':
+      discoMuz.play();
+      discoMuz.loop = true;
+      prezMuz.volume = .6;
         backgroundVideo.querySelector('source').src = './internalAssets/Disco BG Pattern.mp4';
         break;
       case 'radioEra':
+      radioMuz.play();
+      radioMuz.loop = true;
+      radioMuz.volume = .6;
         backgroundVideo.querySelector('source').src = './internalAssets/Radio era Pattern.mp4';
         backgroundVideo.playbackRate = 0.75;
         break;
@@ -1056,10 +1089,12 @@
       // Play appropriate sound
       if (message.includes("Congratulations")) {
         winningAudio.play();
-        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
+        // zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
+        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.webm';
       } else {
         failSound.play();
-        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
+        // zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
+        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.webm';
       }
       //End game screens added if score is less than 165
       
@@ -1091,9 +1126,11 @@
     
     // Redirect based on score
     if (score >= minScore) {
-      alert('Score submitted successfully');
+      //alert('Score submitted successfully');
+      console.log('Score Submitted')
       window.location.href = './goodEnding.html';
     } else {
+      console.log('Score Submit ERROR')
       window.location.href = './badEnding.html';
     }
   } catch (error) {
@@ -1277,7 +1314,7 @@
     // Reset Zilby to idle state
     function resetZilby() {
       board.src = './internalAssets/QuestionSign-Idle.webm';
-      zilbyImg.src = './internalAssets/ZilbyIdle.gif';
+      zilbyImg.src = './internalAssets/zilbyIdle.webm';
     }
 
     // Display current question
@@ -1507,7 +1544,7 @@
           starNess.src = './internalAssets/podiumCash.svg';
         }, 2200);
         board.src = './internalAssets/QuestionSign-Correct.webm';
-        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.gif';
+        zilbyImg.src = './internalAssets/ZilbyReacts-Correct.webm';
         hintBubbleContainer.style.opacity = '1';
       } else {
         // Incorrect answer
@@ -1525,7 +1562,7 @@
         hintBubbleElement.textContent = "Oops! That's not right.";
         wrongAudio.play();
         board.src = './internalAssets/QuestionSign-Incorrect.webm';
-        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.gif';
+        zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.webm';
         hintBubbleContainer.style.opacity = '1';
       }
 
