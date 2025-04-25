@@ -220,8 +220,21 @@
     </style>
     
     <script>
+        const menuSound = document.getElementById('menuBoop');
+        const pop = document.getElementById('poppy');
+        // Play sound and wait briefly before navigating
+        function playSoundThenNavigate(url) {
+                menuSound.play().then(() => {
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300); // Adjust if your audio clip needs more time
+                }).catch((err) => {
+                    console.error("Audio play error:", err);
+                    window.location.href = url; // fallback if audio fails
+                });
+            }
         document.addEventListener('DOMContentLoaded', function() {
-            const pop = document.getElementById('poppy');
+            
             // Get the button element
             const rfButt = document.getElementById('bt');
             // Track which player is next to be activated
@@ -284,7 +297,7 @@
                         continueText.classList.add('active');
                         
                         sButton.addEventListener('click', function(){
-                            window.location.href = './entrancevid.html';
+                            playSoundThenNavigate('./entrancevid.html');
                         });
                     }
                     
@@ -341,7 +354,7 @@
                     } else if (letter === 'E' && currentPlayer > 1) {
                         // If S button is pressed and at least one player has joined
                         console.log('Button S pressed, navigating to difficulty selection');
-                        window.location.href = './entrancevid.html';
+                        playSoundThenNavigate('./entrancevid.html');
                     }
                 }
             }
@@ -352,7 +365,10 @@
     
 </head>
 <body>
-    
+    <audio id="menuBoop" preload="auto">
+        <source src="./audio/MenuButtonWIP1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <video autoplay muted loop id="background-video">
         <source src="./internalAssets/stars-long(1).mp4" type="video/mp4">
         Your browser does not support HTML5 video.

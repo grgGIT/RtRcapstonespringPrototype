@@ -176,6 +176,10 @@
 </head>
 
 <body>
+    <audio id="menuBoop" preload="auto">
+        <source src="./audio/MenuButtonWIP1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
     <video autoplay muted loop id="background-video">
         <source src="./internalAssets/stars-long(1).mp4" type="video/mp4">
@@ -216,8 +220,23 @@
 </body>
 
 <script>
+    const menuSound = document.getElementById('menuBoop');
+
+    // Play sound and wait briefly before navigating
+    function playSoundThenNavigate(url) {
+                menuSound.play().then(() => {
+                    setTimeout(() => {
+                        window.location.href = url;
+                    }, 300); // Adjust if your audio clip needs more time
+                }).catch((err) => {
+                    console.error("Audio play error:", err);
+                    window.location.href = url; // fallback if audio fails
+                });
+            }
+
     // Click event for the era image buttons
     document.querySelectorAll('.era-image-button').forEach(btn => {
+        
         btn.addEventListener('click', function() {
             let selectedEra = this.dataset.era;
 
@@ -233,13 +252,16 @@
                 .then(response => response.json())
                 .then(data => {
                     console.log('Success:', data);
+
                     // Redirect to game page after successful update
-                    window.location.href = 'quizGame.html';
+                    playSoundThenNavigate('./quizGame.html');
+                    // window.location.href = 'quizGame.html';
                 })
                 .catch((error) => {
                     console.error('Error:', error);
                     // Redirect even if there's an error
-                    window.location.href = 'quizGame.html';
+                    playSoundThenNavigate('./quizGame.html');
+                    // window.location.href = 'quizGame.html';
                 });
         });
     });

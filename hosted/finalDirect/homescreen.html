@@ -89,6 +89,10 @@
 </head>
 
 <body>
+    <audio id="bgMusak" preload="auto">
+        <source src="./audio/bosaNovaElevatormusicFinalLoop.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
     <audio id="menuBoop" preload="auto">
         <source src="./audio/MenuButtonWIP1.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
@@ -109,6 +113,9 @@
         document.addEventListener('DOMContentLoaded', function () {
             const txtFunc = document.getElementById('TitleText');
             const menuSound = document.getElementById('menuBoop');
+            const bgSound = document.getElementById('bgMusak');
+            bgSound.play();
+            bgSound.loop = true; // Loop the background music
 
             // Play sound and wait briefly before navigating
             function playSoundThenNavigate(url) {
