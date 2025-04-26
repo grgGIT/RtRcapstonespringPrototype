@@ -36,7 +36,7 @@
             height: 900px;
             position: absolute;
             left: 23%;
-            bottom: 15%;
+            bottom: 19%;
             z-index: 20;
         }
 
@@ -92,7 +92,7 @@
             align-items: center;
             text-align: center;
             left: 30%;
-            top: 10%;
+            top: 6%;
 
         }
 
@@ -126,21 +126,50 @@
         }
 
         #submitButt {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 650px;
+            max-width: 1200px;
+            margin: 20px 0;
+            background-image: url(./internalAssets/Rectangle\ 34647316.png);
+            background-size: 100% 100%; /* Make background image fit the container */
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 16px;
             position: absolute;
-            left: 50%;
-            bottom: 10%;
-            transform: translateX(-50%);
-            background-color: #3F3667;
-            color: white;
-            font-size: 40px;
-            padding: 20px 40px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+            left: 39%;
+            bottom: 11%;
+        }
+        #submitButt img{
+            height: 80px; /* Adjusted size */
+            width: auto;
+            vertical-align: middle;
+            margin: 0 10px;
         }
         #submitButt:hover {
             background-color: #2E274D;
         }
+        #continue-text {
+            font-family: 'Bangers', sans-serif;
+            color: #fdb813;
+            font-size: 60px; /* Slightly reduced for better fit */
+            padding: 10px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+        #continue-text span {
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.04em;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        
 
     </style>
 </head>
@@ -151,7 +180,7 @@
         Your browser does not support HTML5 video.
     </video>
     <h1 id="SelDiff">Name Your Team</h1>
-    <!-- <h2 id="givenName">Given Name: </h2> -->
+    <h2 hidden id="givenName">Given Name: </h2>
     <div id="rollContainer">
         <div id="firstWrd">goofy</div>
         <div id="SecndWrd">glimmer</div>
@@ -166,7 +195,10 @@
         <div id="option-C" class="buttonDiv"></div>
         <div id="option-D" class="buttonDiv"></div>
 
-        <button type="submit" id="submitButt">Submit</button>
+        <!-- <button type="submit" id="submitButt">Submit</button> -->
+        <div type="submit" class="button-container" id="submitButt">
+            <h2 id="continue-text">Press <span><img src="./internalAssets/S Button icon.png" alt="S button is disabled until selection"></span> to continue</h2>
+        </div>
     </div>
 
     <script>
@@ -372,6 +404,12 @@
                 const button = document.getElementById(buttonId);
                 if (button) {
                     button.click();
+                }
+                 // Handle button E (or S) for submit
+                 else if (letter === 'E' || letter === 'S') {
+                    // Trigger the submit button click
+                    document.getElementById('submitButt').click();
+                    console.log("Submit button triggered by Arduino button E/S");
                 }
             }
         }

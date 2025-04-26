@@ -63,7 +63,7 @@
             font-weight: bold;
             position: absolute;
             left: 12%;
-            bottom: 51%;
+            bottom: 49%;
             color: gold;
             padding-left: 8rem;
             max-width: 33rem;
@@ -74,11 +74,11 @@
         }
         
         #first-place-player-score {
-            font-size: 80px;
+            font-size: 84px;
             font-weight: bold;
             position: absolute;
-            left: 34%;
-            bottom: 54%;
+            left: 38%;
+            bottom: 49.3%;
             color: gold;
             padding-left: 5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -89,11 +89,11 @@
             font-size: 55px;
             font-weight: bold;
             position: absolute;
-            left: 14%;
-            bottom: 35%;
+            left: 15%;
+            bottom: 30%;
             color: silver;
             padding-left: 8rem;
-            max-width: 35rem;
+            max-width: 31rem;
             word-wrap: break-word;
             overflow-wrap: break-word;
             text-align: left;
@@ -104,8 +104,8 @@
             font-size: 78px;
             font-weight: bold;
             position: absolute;
-            left: 32.5%;
-            bottom: 33%;
+            left: 33%;
+            bottom: 28.5%;
             color: silver;
             padding-left: 5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -116,8 +116,8 @@
             font-size: 45px;
             font-weight: bold;
             position: absolute;
-            left: 16%;
-            bottom: 21%;
+            left: 17%;
+            bottom: 15%;
             color: rgb(165, 85, 42);
             padding-left: 8rem;
             max-width: 27rem;
@@ -131,8 +131,8 @@
             font-size: 60px;
             font-weight: bold;
             position: absolute;
-            left: 30%;
-            bottom: 19%;
+            left: 32%;
+            bottom: 13.5%;
             color: rgb(165, 85, 42);
             padding-left: 5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -141,11 +141,11 @@
         /* Leaderboard title */
         #leaderboard-title {
             font-family: 'Bangers', sans-serif;
-            font-size: 160px;
+            font-size: 140px;
             font-weight: bold;
             position: absolute;
             top: 9%;
-            left: 15%;
+            left: 18%;
             margin: 10px;
             color: white;
             z-index: 13;
@@ -169,7 +169,7 @@
             border-radius: 25px;
             width: 950px;
             height: 400px;
-            left: 60%;
+            left: 62%;
             top: 20%;
             position: absolute;
             z-index: 10;
@@ -210,14 +210,14 @@
             font-size: 50px;
             font-weight: bold;
             position: absolute;
-            left: 76%;
+            left: 67%;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         #individual-playerPlace {
             position: absolute;
             left: 80px;
-            font-size: 30px;
+            font-size: 70px;
             color: #fff;
             padding-left: 4rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
@@ -235,18 +235,21 @@
         
         #lead {
             position: absolute;
-            width: 1500px;
-            bottom: 15%;
-            right: 48%;
+            width: 1600px;
+            bottom: 9%;
+            right: 45%;
             /* max-width: 100%;
             height: auto; */
+            
+        }
+        #lead img{
         }
         
         #boardPic {
             position: absolute;
-            width: 1500px;
+            width: 1300px;
             top: 5%;
-            left: 5%;
+            left: 9%;
             /* max-width: 100%;
             height: auto; */
         }
@@ -342,7 +345,7 @@ window.onload = function() {
             // Redirect to the home screen after 15 seconds
             window.location.href = "./homescreen.html";
         }
-    }, 8000); // Update every second
+    }, 1500); // Update every second
 
         // Fetch the leaderboard data from the server
         fetch('/leaderboard/all')
@@ -395,7 +398,7 @@ window.onload = function() {
                     const currentTeamIndex = teams.findIndex(team => team.name === currentTeamName);
                     document.getElementById("your-player-name").innerHTML = currentTeam.name;
                     document.getElementById("your-player-score").innerHTML = `$ ${currentTeam.score}`;
-                    document.getElementById("individual-playerPlace").innerHTML = (currentTeamIndex + 1).toString();
+                    document.getElementById("individual-playerPlace").innerHTML = (currentTeamIndex + 1).toString()+".";
                 }
             })
             .catch(error => {

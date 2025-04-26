@@ -75,6 +75,36 @@
                     "aiHint": "Think of smart kids, not goats!",
                     "image": "",
                     "additionalInfo": "Quiz Kids featured a panel of highly intelligent children answering challenging questions."
+                },
+                "q6": {
+                    "question": "What show was known for contestants with emotional stories, usually women?",
+                    "options": [
+                        "Queen for a Day",
+                        "Strike It Rich",
+                        "How About You?",
+                        "Real Lives"
+                    ],
+                    "correctAnswer": "Queen for a Day",
+                    "points": 25
+                    ,
+                    "aiHint": "All women are queens.",
+                    "image": "",
+                    "additionalInfo": "Queen for a Day allowed contestants to share their stories, with the most emotional winning a prize."
+                },
+                "q7": {
+                    "question": "Which show featured a traveling host giving out silver dollars?",
+                    "options": [
+                        "Luck Listener",
+                        "Silver Jackpot",
+                        "Dr. I.Q.",
+                        "Road Quiz"
+                    ],
+                    "correctAnswer": "Dr. I.Q.",
+                    "points": 25
+                    ,
+                    "aiHint": "Think of a medical title and IQ tests.",
+                    "image": "",
+                    "additionalInfo": "Dr. I.Q. gave out silver dollars as rewards to contestants."
                 }
             },
             "medium": {
@@ -147,6 +177,34 @@
                     "aiHint": "The title suggests the show is politely asking for facts — and sometimes the audience had better ones!",
                     "image": "",
                     "additionalInfo": "Information Please aired from 1938 to 1951 and featured expert panelists answering listener-submitted questions. If the panel couldn't answer, the listener won a prize."
+                },
+                "q6": {
+                    "question": "Strike It Rich gave contestants money based on what?",
+                    "options": [
+                        "Their hardships",
+                        "Correct answers",
+                        "Singing ability",
+                        "Guessing numbers"
+                    ],
+                    "correctAnswer": "Their hardships",
+                    "points": 50,
+                    "aiHint": "Sympathy often won more than trivia.",
+                    "image": "",
+                    "additionalInfo": "Contestants would share their hardships, and the most emotional stories won the prize."
+                },
+                "q7": {
+                    "question": "What was the prize on Queen for a Day typically based on?",
+                    "options": [
+                        "Audience applause",
+                        "Trivia points",
+                        "Voting panels",
+                        "Call-in listeners"
+                    ],
+                    "correctAnswer": "Audience applause",
+                    "points": 50,
+                    "aiHint": "The louder the claps, the bigger the prize.",
+                    "image": "",
+                    "additionalInfo": "Audience members' applause would determine the winner of Queen for a Day."
                 }
             },
             "hard": {
@@ -179,6 +237,20 @@
                     "additionalInfo": "Jeopardy! first aired as a radio show before its iconic television format."
                 },
                 "q3": {
+                    "question": "Which popular radio game show aired from 1954 to 1960 in the U.S., and had a grand prize of up to $64,000?",
+                    "options": [
+                        "Pick a Box",
+                        "Truth or Consequences",
+                        "Match Game",
+                        "The $64,000 Question"
+                    ],
+                    "correctAnswer": "The $64,000 Question",
+                    "points": 75,
+                    "aiHint": "This show’s grand prize was literally the title.",
+                    "image": "",
+                    "additionalInfo": "The $64,000 Question was famous for its large prize and for the scandals surrounding it."
+                },
+                "q4": {
                     "question": "Which radio show, first airing in 1949, is best known for its ‘yes-no’ questioning format, where contestants had to guess the identity of a mystery guest?",
                     "options": [
                         "What’s My Line?",
@@ -192,7 +264,7 @@
                     "image": "",
                     "additionalInfo": "What’s My Line? was originally a radio show before becoming a television game show."
                 },
-                "q4": {
+                "q5": {
                     "question": "Which show aired in 1950 and had a catchy theme song, 'This is your life'?",
                     "options": [
                         "This Is Your Life",
@@ -206,7 +278,7 @@
                     "image": "",
                     "additionalInfo": "This Is Your Life featured a surprise format where guests were presented with stories and people from their past."
                 },
-                "q5": {
+                "q6": {
                     "question": "Which of these is the only real Argentinian game show aired during this time period?",
                     "options": [
                         "Juegos De Cambio",
@@ -219,6 +291,20 @@
                     "aiHint": "The meaning in English is 'The Big Goose Game'. It's also the longest name here.",
                     "image": "",
                     "additionalInfo": "El Gran Juego de la Oca was a popular Argentinian game show based on the board game 'Game of the Goose'."
+                },
+                "q7": {
+                    "question": "Which radio show, originating in 1946, was one of the first U.S. quiz shows that also allowed audience participation?",
+                    "options": [
+                        "The $64,000 Question",
+                        "You Bet Your Life",
+                        "Radio Quiz Show",
+                        "Take a Guess"
+                    ],
+                    "correctAnswer": "You Bet Your Life",
+                    "points": 75,
+                    "aiHint": "This show featured a famous comedian as the host. You can bet on that ",
+                    "image": "",
+                    "additionalInfo": "You Bet Your Life featured Groucho Marx as the host and allowed audience interaction during broadcasts."
                 }
             }
         },
@@ -270,6 +356,21 @@
                     "additionalInfo": "The Price is Right has been a staple of American television since 1976."
                 },
                 "q4": {
+                    "question": "Which 1980s game show had contestants stressed about potential pitfalls?",
+                    "options": [
+                        "Jeopardy!",
+                        "Wheel of Fortune",
+                        "Press Your Luck",
+                        "Deal or No Deal"
+                    ],
+                    "correctAnswer": "Press Your Luck",
+                    "points": 25
+                    ,
+                    "aiHint": "The show featured a catchy phrase 'Big Bucks, No Whammies!'",
+                    "image": "",
+                    "additionalInfo": "Press Your Luck aired in 1983 and became famous for the 'Whammies,' which could ruin a contestant's chances."
+                },
+                "q5": {
                     "question": "Who was the original host of 'Family Feud' in the 1970s?",
                     "options": [
                         "Steve Harvey",
@@ -284,7 +385,22 @@
                     "image": "",
                     "additionalInfo": "Richard Dawson was the original host of 'Family Feud' when it first aired in 1976."
                 },
-                "q5": {
+                "q6": {
+                    "question": "What game show was created by Merv Griffin?",
+                    "options": [
+                        "Jeopardy!",
+                        "Wheel of Fortune",
+                        "The Price is Right",
+                        "Who Wants to Be a Millionaire?"
+                    ],
+                    "correctAnswer": "Jeopardy!",
+                    "points": 25
+                    ,
+                    "aiHint": "HERE'S YOUR HOST OF ___",
+                    "image": "",
+                    "additionalInfo": "Jeopardy! was created by Merv Griffin and is one of the longest-running US game shows."
+                },
+                "q7": {
                     "question": "Which 1980s game show had contestants trying to complete a puzzle by filling in letters?",
                     "options": [
                         "Match Game",

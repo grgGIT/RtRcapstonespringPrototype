@@ -910,8 +910,8 @@
     </button>
   </div>
 
-  // skip tp end button (TESTING PURPOSES)
-  <button id="skipToEnd" style="position: absolute; top: 10px; left: 10px;">Skip to End</button>
+  <!-- skip tp end button (TESTING PURPOSES) -->
+  <button hidden id="skipToEnd" style="position: absolute; top: 10px; left: 10px;">Skip to End</button>
 
 
   <script>
@@ -959,7 +959,7 @@
       case 'presentEra':
         prezMuz.play();
         prezMuz.loop = true;
-        prezMuz.volume = .6;
+        prezMuz.volume = .8;
         backgroundVideo.querySelector('source').src = './internalAssets/PresentEraPattern.mp4';
         break;
       case 'discoEra':
@@ -1072,7 +1072,7 @@
         clearInterval(timerInterval);
         timerRunning = false;
       }
-      const minScore = 165;
+      const minScore = 600;
       // Display game over message
       questionElement.textContent = `${message} Your final score is: $${score}`;
 
