@@ -1,7 +1,17 @@
-  RACE TO RICHES
-  Concept:
-Inspired by the game show Cash Cab, the host Zilby, an intergalactic taxi driver, is travelling around his home planet Glimmeron when he accidentally goes off course and crashes on Earth. You discover his craft and find out that in order to get Zilby back to his home planet, youy must earn enough cosmic coins to fund his journey back home. Think you can do it?
-  How to run locally
+# 🚕 Race to Riches
+
+## Concept
+
+**Race to Riches** is a trivia-based game inspired by the TV show *Cash Cab*. You’ll meet **Zilby**, an intergalactic taxi driver from the planet **Glimmeron**, who accidentally crashes on Earth.  
+
+To help Zilby return home, you’ll need to earn **Cosmic Coins** by answering questions and completing challenges. The faster you earn, the sooner Zilby gets home. Think you can fund his journey?
+
+---
+
+## Installation
+
+To run this project locally, follow these steps:
+
 1. You will need Node.js, npm packages, and MongoDB installed
 2. Proceed to clone this repository
 3. All contents including the videos should be int he repository
