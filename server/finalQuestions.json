@@ -11,7 +11,7 @@
                         "Quiz Kids"
                     ],
                     "correctAnswer": "Professor Quiz",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Think “academic person meets another word for trivia”!",
                     "image": "",
@@ -26,7 +26,7 @@
                         "Information Please"
                     ],
                     "correctAnswer": "Take It or Leave It",
-                    "points": 25,
+                    "points": 50,
                     "aiHint": "The title hints at a choice — do you risk it or play it safe?",
                     "image": "",
                     "additionalInfo": "Take It or Leave It began in 1940 and was known for building suspense with its ticking clock. It eventually evolved into the TV show 'The $64,000  Question.'"
@@ -40,7 +40,7 @@
                         "What’s My Name?"
                     ],
                     "correctAnswer": "Truth or Consequences",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "You either got it right… or paid the price!",
                     "image": "",
@@ -55,7 +55,7 @@
                         "Guess the Melody"
                     ],
                     "correctAnswer": "Beat the Band",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Think about challenging musicians with trivia!",
                     "image": "",
@@ -70,7 +70,7 @@
                         "Dr. I.Q. Jr."
                     ],
                     "correctAnswer": "Quiz Kids",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Think of smart kids, not goats!",
                     "image": "",
@@ -87,7 +87,7 @@
                         "Groucho Marx"
                     ],
                     "correctAnswer": "Groucho Marx",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Famous for his mustache and quick wit.",
                     "image": "",
                     "additionalInfo": "Groucho Marx was known for his humor and wit as the host of the show."
@@ -101,7 +101,7 @@
                         "Twenty Questions"
                     ],
                     "correctAnswer": "Dr. I.Q.",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "It involves a doctor who’s not really a doctor.",
                     "image": "",
                     "additionalInfo": "Dr. I.Q. featured audience interaction, and the host often referenced a lady in the balcony."
@@ -115,7 +115,7 @@
                         "Open-ended stories"
                     ],
                     "correctAnswer": "Yes-or-no questions",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Classic guessing game with only two possible answers each time.",
                     "image": "",
                     "additionalInfo": "Contestants asked yes/no questions to figure out a mystery person, place, or thing."
@@ -129,7 +129,7 @@
                         "Guess Who?"
                     ],
                     "correctAnswer": "What’s My Name?",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Rihanna has a song named after this game show .",
                     "image": "",
                     "additionalInfo": "Contestants would guess the identities of mystery guests by asking questions."
@@ -143,7 +143,7 @@
                         "Information Please"
                     ],
                     "correctAnswer": "Information Please",
-                    "points": 50 ,
+                    "points": 100 ,
                     "aiHint": "The title suggests the show is politely asking for facts — and sometimes the audience had better ones!",
                     "image": "",
                     "additionalInfo": "Information Please aired from 1938 to 1951 and featured expert panelists answering listener-submitted questions. If the panel couldn't answer, the listener won a prize."
@@ -159,7 +159,7 @@
                         "Mind the Buzz"
                     ],
                     "correctAnswer": "The Spelling Bee",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Think letters and bees!",
                     "image": "",
                     "additionalInfo": "The Spelling Bee was one of the first quiz shows to air in the UK on radio."
@@ -173,7 +173,7 @@
                         "Ask Me Another"
                     ],
                     "correctAnswer": "Jeopardy!",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Alex Trebek was the host for the longest time. C'mon, you know this!",
                     "image": "",
                     "additionalInfo": "Jeopardy! first aired as a radio show before its iconic television format."
@@ -187,13 +187,13 @@
                         "Guess the Sound"
                     ],
                     "correctAnswer": "What’s My Line?",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Cut! 'What's My Line'? Sorry guys, I don't know what I'm saying",
                     "image": "",
                     "additionalInfo": "What’s My Line? was originally a radio show before becoming a television game show."
                 },
                 "q4": {
-                    "question": "Which show aired in 1950 and had a catchy theme song, 'This is your life'?",
+                    "question": "Which show aired in 19100 and had a catchy theme song, 'This is your life'?",
                     "options": [
                         "This Is Your Life",
                         "Surprise Quiz",
@@ -201,7 +201,7 @@
                         "Story Time"
                     ],
                     "correctAnswer": "This Is Your Life",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "The theme is all about honoring someone's life story.",
                     "image": "",
                     "additionalInfo": "This Is Your Life featured a surprise format where guests were presented with stories and people from their past."
@@ -215,7 +215,7 @@
                         "El Gran Juego de la Oca"
                     ],
                     "correctAnswer": "El Gran Juego de la Oca",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "The meaning in English is 'The Big Goose Game'. It's also the longest name here.",
                     "image": "",
                     "additionalInfo": "El Gran Juego de la Oca was a popular Argentinian game show based on the board game 'Game of the Goose'."
@@ -233,7 +233,7 @@
                         "1983"
                     ],
                     "correctAnswer": "1983",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Definitely 1980s. Probably early 80s.",
                     "image": "",
@@ -248,7 +248,7 @@
                         "Pat Sajak"
                     ],
                     "correctAnswer": "Bob Barker",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "BB gun. BB, BB, BB'",
                     "image": "",
@@ -263,7 +263,7 @@
                         "Hollywood Squares"
                     ],
                     "correctAnswer": "The Price is Right",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "It's still airing today and involves contestants bidding on retail products.",
                     "image": "",
@@ -278,7 +278,7 @@
                         "Gene Rayburn"
                     ],
                     "correctAnswer": "Richard Dawson",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Not related to Shane Dawson",
                     "image": "",
@@ -293,7 +293,7 @@
                         "Hollywood Squares"
                     ],
                     "correctAnswer": "Wheel of Fortune",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Contestants spin a wheel to determine how much money they can earn for each correct letter. Your grandmother watches this.",
                     "image": "",
@@ -310,7 +310,7 @@
                         "Wheel of Fortune"
                     ],
                     "correctAnswer": "Family Feud",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "It's a family show.",
                     "image": "",
                     "additionalInfo": "Family Feud debuted in 1976 and became known for its survey-based format."
@@ -324,7 +324,7 @@
                         "Jeopardy!"
                     ],
                     "correctAnswer": "The Krypton Factor",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Its not Argon or Neon, but rhymes with them.",
                     "image": "",
                     "additionalInfo": "The Krypton Factor aired from 1977 to 1995, combining intelligence and physical challenges."
@@ -338,13 +338,13 @@
                         "Wheel of Fortune"
                     ],
                     "correctAnswer": "Catchphrase",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Mine was Zanzibar Zilbster. I don't why people called me that either.",
                     "image": "",
                     "additionalInfo": "Catchphrase first aired in 1986 and became a popular game show in the UK."
                 },
                 "q4": {
-                    "question": "Which 1980s game show had contestants trying to win cash by answering trivia questions and solving puzzles?",
+                    "question": "Which 1980s game show had contestants trying to win cash by solving word puzzles; known for its 'Gold Run' final round?",
                     "options": [
                         "Blockbusters",
                         "Jeopardy!",
@@ -352,26 +352,12 @@
                         "The Chase"
                     ],
                     "correctAnswer": "Blockbusters",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "The last existing one named after this show is in Alaska I think. Netflix made them obsolete.",
                     "image": "",
                     "additionalInfo": "Blockbusters first aired in 1983 and became a hit with its unique board game-style format."
                 },
                 "q5": {
-                    "question": "Which game show used a hexagonal board and was known for its 'Gold Run' final round?",
-                    "options": [
-                        "Wheel of Fortune",
-                        "Jeopardy!",
-                        "Family Feud",
-                        "Blockbusters"
-                    ],
-                    "correctAnswer": "Blockbusters",
-                    "points": 50,
-                    "aiHint": "YOU DEFINITELY SAW THIS ONE BEFORE.",
-                    "image": "",
-                    "additionalInfo": "Blockbusters was especially popular with students and involved a honeycomb-shaped grid of letters."
-                },
-                "q6": {
                     "question": "Which 1970s game show, hosted by Wink Martindale, challenged contestants to memorize answers before facing trivia questions?",
                     "options": [
                         "Tic-Tac-Dough",
@@ -380,24 +366,10 @@
                         "Las Vegas Gambit"
                     ],
                     "correctAnswer": "Gambit",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Two of them have Gambit in the name. Sometimes the simplest answer is the right one.",
                     "image": "",
                     "additionalInfo": "Gambit, which aired in the 1970s and was hosted by Wink Martindale, blended trivia with blackjack-style card play. Contestants answered questions to gain control of cards and aimed to reach 21."
-                },
-                "q7": {
-                    "question": "Which CBS game show had celebrity panelists trying to match the fill-in-the-blank answers of contestants in humorous ways?",
-                    "options": [
-                        "To Tell the Truth",
-                        "Match Game",
-                        "What's My Line?",
-                        "Name That Tune"
-                    ],
-                    "correctAnswer": "Match Game",
-                    "points": 50,
-                    "aiHint": "Some would say it's a game of similarities, or matching.",
-                    "image": "",
-                    "additionalInfo": "Match Game became a hit in the 1970s with its wild humor and innuendo-filled questions. It featured celebrity panelists like Brett Somers and Charles Nelson Reilly trying to match answers with contestants."
                 }
             },
             "hard": { 
@@ -410,7 +382,7 @@
                         "Knightmare"
                     ],
                     "correctAnswer": "Knightmare",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "It featured a virtual reality style maze and contestants wore helmets.",
                     "image": "",
                     "additionalInfo": "Knightmare aired in the UK starting in 1987 and was one of the first to use early virtual reality-style effects."
@@ -424,26 +396,12 @@
                         "The Crystal Maze"
                     ],
                     "correctAnswer": "Going for Gold",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "It had contestants from several different European countries.",
                     "image": "",
                     "additionalInfo": "Going for Gold was an international quiz competition that aired in the UK from 1987 to 1996."
                 },
                 "q3": {
-                    "question": "Which early-1990s game show (filmed in the 1980s) featured futuristic virtual reality puzzles and interactive team play?",
-                    "options": [
-                        "Knightmare",
-                        "The Crystal Maze",
-                        "Going for Gold",
-                        "Mastermind"
-                    ],
-                    "correctAnswer": "The Crystal Maze",
-                    "points": 75,
-                    "aiHint": "It involved physical challenges inside a giant maze.",
-                    "image": "",
-                    "additionalInfo": "The Crystal Maze aired in the UK from 1990 to 1995 and featured contestants completing tasks in various themed zones."
-                },
-                "q4": {
                     "question": "Which 1970s U.K. game show was hosted by Bob Monkhouse and featured a rotating conveyor belt of prizes in its final round?",
                     "options": [
                         "Sale of the Century",
@@ -452,12 +410,12 @@
                         "Bullseye"
                     ],
                     "correctAnswer": "The Generation Game",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Think family fun across the decades, and don’t forget the conveyor belt full of goodies!",
                     "image": "",
                     "additionalInfo": "The Generation Game was a hit British game show that encouraged multiple generations of families to compete. Its most iconic moment was the final round, where contestants memorized prizes rolling by on a conveyor belt."
                 },
-                "q5": {
+                "q4": {
                     "question": "Which 1980s game show had a famous segment where players solved anagrams and word puzzles?",
                     "options": [
                         "Wheel of Fortune",
@@ -466,26 +424,12 @@
                         "Catchphrase"
                     ],
                     "correctAnswer": "Catchphrase",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "This show featured a giant board where contestants tried to guess well-known phrases.",
                     "image": "",
                     "additionalInfo": "Catchphrase had a unique format where contestants tried to figure out phrases from animated clues."
                 },
-                "q6": {
-                    "question": "Which show had contestants compete in intellectual and physical challenges that tested their strength and intelligence?",
-                    "options": [
-                        "The Crystal Maze",
-                        "The Krypton Factor",
-                        "Knightmare",
-                        "Going for Gold"
-                    ],
-                    "correctAnswer": "The Krypton Factor",
-                    "points": 75,
-                    "aiHint": "This show was known for both its mental and physical tasks.",
-                    "image": "",
-                    "additionalInfo": "The Krypton Factor featured contestants completing tasks that tested intelligence, strength, and agility."
-                },
-                "q7": {
+                "q5": {
                     "question": "Which Japanese game show, debuting in 1979, became infamous for bizarre physical challenges and later inspired 'MXC' in the U.S.?",
                     "options": [
                         "Takeshi's Castle",
@@ -494,7 +438,7 @@
                         "Human Tetris" 
                     ],
                     "correctAnswer": "Takeshi's Castle",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Some would say it had a majestic structure and landscape surrounding it.",
                     "image": "",
                     "additionalInfo": "Takeshi's Castle was a massively popular Japanese game show starting in 1979. Its outlandish obstacles and over-the-top format inspired international spin-offs and parodies, including 'Most Extreme Elimination Challenge' (MXC)."
@@ -512,7 +456,7 @@
                         "Countdown"
                     ],
                     "correctAnswer": "Cash Cab",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "I mean... You might need to take a taxi home if you don't get this one right.",
                     "image": "",
@@ -527,7 +471,7 @@
                         "Family Feud"
                     ],
                     "correctAnswer": "Who Wants to Be a Millionaire?",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Contestants aim to win by answering progressively harder questions for increasing amounts of money.",
                     "image": "",
@@ -542,7 +486,7 @@
                         "Deal or No Deal"
                     ],
                     "correctAnswer": "Deal or No Deal",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Think about a show where a contestant chooses a case and then negotiates with a banker.",
                     "image": "",
@@ -557,43 +501,13 @@
                         "Jeopardy!"
                     ],
                     "correctAnswer": "Celebrity Family Feud",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "This show brings in celebrities who play alongside regular contestants to support charity.",
                     "image": "",
                     "additionalInfo": "Celebrity Family Feud has been a spin-off of the classic 'Family Feud', with celebrities playing for charity."
                 },
                 "q5": {
-                    "question": "Which game show hosted by Jane Lynch challenges contestants to complete lyrics from popular songs across multiple decades?",
-                    "options": [
-                        "Beat Shazam",
-                        "The Singing Bee",
-                        "Don't Forget the Lyrics!",
-                        "Name That Tune"
-                    ],
-                    "correctAnswer": "The Singing Bee",
-                    "points": 25
-                    ,
-                    "aiHint": "You might not know every word, but if you hum along, you’re close… just try not to miss the buzz!",
-                    "image": "",
-                    "additionalInfo": "The Singing Bee originally premiered in 2007 and was revived with Jane Lynch hosting in 2009. Contestants try to sing the correct lyrics after the music stops."
-                },
-                "q6": {
-                    "question": "Which reality-based game show had contestants competing in physical and mental challenges to win a cash prize?",
-                    "options": [
-                        "The Amazing Race",
-                        "Survivor",
-                        "The Challenge",
-                        "Big Brother"
-                    ],
-                    "correctAnswer": "The Amazing Race",
-                    "points": 25
-                    ,
-                    "aiHint": "Think about a global competition where teams race to various countries to complete tasks.",
-                    "image": "",
-                    "additionalInfo": "The Amazing Race, which started in 2001, is known for its adventure, teamwork, and cultural immersion."
-                },
-                "q7": {
                     "question": "Which game show features contestants answering trivia questions to win up to $1,000,000?",
                     "options": [
                         "The Chase",
@@ -602,7 +516,7 @@
                         "Who Wants to Be a Millionaire?"
                     ],
                     "correctAnswer": "Who Wants to Be a Millionaire?",
-                    "points": 25
+                    "points": 50
                     ,
                     "aiHint": "Contestants answer multiple-choice questions, each worth a higher cash value.",
                     "image": "",
@@ -611,7 +525,7 @@
             },
             "medium": {
                 "q1": {
-                    "question": "Which long-running game show challenges contestants to navigate topics from pop culture to ancient history, all while answering in a uniquely phrased format?",
+                    "question": "Which long-running game show challenges contestants to navigate topics from pop culture to ancient history, while answering in a uniquely phrased format?",
                     "options": [
                         "Jeopardy!",
                         "Who Wants to Be a Millionaire?",
@@ -619,7 +533,7 @@
                         "Deal or No Deal"
                     ],
                     "correctAnswer": "Jeopardy!",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Contestants respond to answers with questions, which is a signature format of the show.",
                     "image": "",
                     "additionalInfo": "Jeopardy! has become a cultural icon, with Alex Trebek hosting for over 30 years."
@@ -633,7 +547,7 @@
                         "Big Brother"
                     ],
                     "correctAnswer": "Celebrity Family Feud",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "This show often features celebrities answering survey-based questions against other stars.",
                     "image": "",
                     "additionalInfo": "Celebrity Family Feud is a star-studded version of 'Family Feud', where celebrities play for charity."
@@ -647,26 +561,12 @@
                         "Big Brother"
                     ],
                     "correctAnswer": "Survivor",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Contestants live in remote locations and form alliances to win challenges and outlast the competition.",
                     "image": "",
                     "additionalInfo": "Survivor is one of the longest-running reality TV shows, known for its survival and strategy elements."
                 },
                 "q4": {
-                    "question": "Which game show pits everyday contestants against elite quizzers in a rapid-fire trivia standoff?",
-                    "options": [
-                        "Who Wants to Be a Millionaire?",
-                        "Jeopardy!",
-                        "Deal or No Deal",
-                        "The Chase"
-                    ],
-                    "correctAnswer": "The Chase",
-                    "points": 50,
-                    "aiHint": "Contestants compete against a professional quizzer, known as the 'Chaser.'",
-                    "image": "",
-                    "additionalInfo": "The Chase is a high-stakes trivia competition where contestants attempt to outrun a Chaser to win a prize."
-                },
-                "q5": {
                     "question": "Which enduring show challenges players to rely on pricing instincts across quirky mini-games?",
                     "options": [
                         "The Price is Right",
@@ -675,12 +575,12 @@
                         "Jeopardy!"
                     ],
                     "correctAnswer": "The Price is Right",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "Contestants bid on products, with the closest estimate winning the prize.",
                     "image": "",
                     "additionalInfo": "'The Price is Right' has been a beloved game show for decades, known for its colorful set and iconic hosts."
                 },
-                "q6": {
+                "q5": {
                     "question": "Which fast-paced game show, hosted by Dwayne 'The Rock' Johnson, features physically intense challenges inspired by mythology?",
                     "options": [
                         "Floor Is Lava",
@@ -689,12 +589,14 @@
                         "Titan Games"
                     ],
                     "correctAnswer": "Titan Games",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "If you’re thinking Greek gods and gym gains, this one flexes both.",
                     "image": "",
                     "additionalInfo": "The Titan Games aired on NBC starting in 2019. Created and hosted by Dwayne Johnson, it pits everyday athletes against each other in competitions themed after legendary feats of strength."
-                },
-                "q7": {
+                }
+            },
+            "hard": {
+                  "q1": {
                     "question": "Which British-originated game show, revived in the U.S. in 2020, is known for its rapid-fire questions and the catchphrase 'You are the weakest link — goodbye'?",
                     "options": [
                         "The Weakest Link",
@@ -703,26 +605,10 @@
                         "Who Dares Wins"
                     ],
                     "correctAnswer": "The Weakest Link",
-                    "points": 50,
+                    "points": 100,
                     "aiHint": "You really don't need a hint for this!",
                     "image": "",
                     "additionalInfo": "The Weakest Link originally aired in the U.K. and was later revived in the U.S. in 2020, hosted by Jane Lynch. Contestants must answer trivia quickly and vote off the 'weakest' player each round."
-                }
-            },
-            "hard": {
-                "q1": {
-                    "question": "Which UK-based game show immersed players in themed rooms for time-sensitive mental and physical challenges?",
-                    "options": [
-                        "Big Brother",
-                        "The Crystal Maze",
-                        "The Chase",
-                        "Deal or No Deal"
-                    ],
-                    "correctAnswer": "The Crystal Maze",
-                    "points": 75,
-                    "aiHint": "Maze-Runner but with Crystals",
-                    "image": "",
-                    "additionalInfo": "The Crystal Maze was a major hit in the UK in the 1990s and was revived in the 2025s."
                 },
                 "q2": {
                     "question": "Which high-pressure trivia game features contestants trying to 'outrun' elite quiz professionals?",
@@ -733,7 +619,7 @@
                         "Deal or No Deal"
                     ],
                     "correctAnswer": "The Chase",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Contestants answer questions to outrun a professional quizzer, known as 'The Chaser.'",
                     "image": "",
                     "additionalInfo": "The Chase is known for its intense pace and the professional quizzers that challenge contestants."
@@ -747,40 +633,12 @@
                         "The House of Games"
                     ],
                     "correctAnswer": "Squid Game: The Challenge",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Based on a famous Netflix show",
                     "image": "",
                     "additionalInfo": "'Squid Game: The Challenge' is a reality competition based on the hit Korean drama 'Squid Game'. Contestants face games inspired by the original show, competing for a $4.56 million prize."
                 },
                 "q4": {
-                    "question": "Which mind-bending game show, hosted by Rob Lowe, tests contestants’ ability to think and react while literally strapped to a moving, spinning rig?",
-                    "options": [
-                        "Mental Samurai",
-                        "The Cube",
-                        "Brain Rush",
-                        "Trick or Truth"
-                    ],
-                    "correctAnswer": "Mental Samurai",
-                    "points": 75,
-                    "aiHint": "Think Cranium and a popular Japanese honorable figure.",
-                    "image": "",
-                    "additionalInfo": "'Mental Samurai' debuted in 2019 and was hosted by Rob Lowe. Contestants are quizzed while seated in a capsule that moves rapidly across a high-tech arena, challenging both knowledge and focus."
-                },
-                "q5": {
-                    "question": "Which animated puzzle-solving show tasked contestants with deciphering popular idioms?",
-                    "options": [
-                        "Catchphrase",
-                        "Jeopardy!",
-                        "The Crystal Maze",
-                        "Big Brother"
-                    ],
-                    "correctAnswer": "Catchphrase",
-                    "points": 75,
-                    "aiHint": "Think of a show where contestants solve animated puzzles to figure out common sayings.",
-                    "image": "",
-                    "additionalInfo": "'Catchphrase' was a popular show in the UK in the 1980s and 90s, featuring animated clues and famous phrases."
-                },
-                "q6": {
                     "question": "Which rebooted game show challenges contestants to match strange items to their creators, often involving cakes disguised as real objects?",
                     "options": [
                         "Eye Candy",
@@ -789,12 +647,12 @@
                         "Is It Cake?"
                     ],
                     "correctAnswer": "Is It Cake?",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Two of the answers are about cake. Which one is more literal?",
                     "image": "",
                     "additionalInfo": "'Is It Cake?' launched on Netflix in 2022 and features bakers crafting hyper-realistic cakes to fool judges into thinking they're everyday objects. The show is inspired by viral social media trends."
                 },
-                "q7": {
+                "q5": {
                     "question": "Which game show’s iconic 'Showcase Showdown' tests players’ ability to accurately value products and packages?",
                     "options": [
                         "The Price is Right",
@@ -803,7 +661,7 @@
                         "Jeopardy!"
                     ],
                     "correctAnswer": "The Price is Right",
-                    "points": 75,
+                    "points": 150,
                     "aiHint": "Contestants attempt to guess the price of retail items in order to win them.",
                     "image": "",
                     "additionalInfo": "'The Price is Right' has been a staple of American television for decades, combining fun and competition."

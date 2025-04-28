@@ -242,7 +242,8 @@ playerArray = [];
         },
         default: {
             pattern: 'doublecomet',
-            duration: '1800', // 30 minutes, just so it doesn't turn off
+            duration: '60000', //16 hours
+            // duration: '1800', // 30 minutes, just so it doesn't turn off
             foreground: '#ef4d25',
             background: '#f6f967',
             foreground2: '#32cd32',
@@ -542,7 +543,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                     <img src="./internalAssets/Player 4 State Indicator.png" alt="Player 4">
                 </div>
             </div>
-            <button id="bt" >Click for RFID</button>
+            <button hidden id="bt" >Click for RFID</button>
         </div>
 
         <div class="button-container">

@@ -215,7 +215,7 @@
     #Zilby {
       position: absolute;
       right: 9%;
-      bottom: 48%;
+      bottom: 47%;
       width: 550px;
     }
 
@@ -1154,18 +1154,18 @@
         case 'easy':
           logoSrc = './internalAssets/easylog.png';
           ezMode.play();
-          splashText = 'ALL QUESTIONS ARE WORTH 25 COINS';
+          splashText = 'ALL QUESTIONS ARE WORTH 50 COINS';
           optionsElement
           break;
         case 'medium':
           logoSrc = './internalAssets/medlog.png';
           mediumMode.play();
-          splashText = 'ALL QUESTIONS ARE WORTH 50 COINS';
+          splashText = 'ALL QUESTIONS ARE WORTH 100 COINS';
           break;
         case 'hard':
           logoSrc = './internalAssets/hardlog.png'; // Make sure you have this image
           hardMode.play();
-          splashText = 'ALL QUESTIONS ARE WORTH 75 COINS';
+          splashText = 'ALL QUESTIONS ARE WORTH 150 COINS';
           break;
         default:
           logoSrc = './internalAssets/easylog.png';
@@ -1214,7 +1214,7 @@
             }
           }, 500); // Wait for exit animation to complete
 
-        }, 2000); // Display for 2 seconds
+        }, 2500); // Display for 2 seconds
       }, 10); // Small delay to ensure DOM is ready
     }
 
@@ -1396,7 +1396,7 @@
       progressLightsContainer.innerHTML = '';
 
       // Determine which difficulty we're in and how many questions per difficulty
-      const questionsPerDifficulty = 7; // Default to 7 questions per difficulty
+      const questionsPerDifficulty = 5; // Default to 7 questions per difficulty
 
       // Calculate which difficulty set we're in (0-based)
       const currentDifficultySet = Math.floor(currentQuestionIndex / questionsPerDifficulty);
@@ -1427,7 +1427,7 @@
       progressLightsContainer.innerHTML = '';
 
       // Create 7 lights for the light show
-      for (let i = 0; i < 7; i++) {
+      for (let i = 0; i < 5; i++) {
         const light = document.createElement('div');
         light.className = 'progress-light';
         progressLightsContainer.appendChild(light);
@@ -1535,13 +1535,35 @@
         createFloatingScore(pointsValue, optionElement);
 
         // Update hint bubble and Zilby animation for correct answer
-        hintBubbleElement.textContent = "Great job! That's correct!";
+        hintBubbleElement.textContent = "Correct! Great job!";
         correctAudio.play();
         moneySound.play();
         
         starNess.src = './internalAssets/stracash.gif';
+      //   bottom: 36.3%;
+      // right: 15.8%;
+      // z-index: 9;
+      // width: 140px;
+      // height: 140px;
+      // /* Set a fixed height to match width */
+      // object-fit: contain;
+        starNess.style.position = 'absolute';
+        starNess.style.bottom = '32.3%';  // Adjust as needed
+        starNess.style.right = '13.8%'; // Adjust as needed
+        starNess.style.width = '280px';
+        starNess.style.height = '280px';
+        starNess.style.zIndex = '9';
+        starNess.style.objectFit = 'contain';
+        starNess.onload = function() {
+    // This ensures the GIF starts from the beginning
+    console.log("Star cash animation loaded");
+  };
         setTimeout(() => {
           starNess.src = './internalAssets/podiumCash.svg';
+          starNess.style.width = '140px';
+          starNess.style.bottom = '36.3%';
+          starNess.style.right = '15.8%';
+          starNess.style.height = '140px';
         }, 2200);
         board.src = './internalAssets/QuestionSign-Correct.webm';
         zilbyImg.src = './internalAssets/ZilbyReacts-Correct.webm';
@@ -1559,7 +1581,7 @@
         });
 
         // Update hint bubble and Zilby animation for incorrect answer
-        hintBubbleElement.textContent = "Oops! That's not right.";
+        hintBubbleElement.textContent = "Nope! Not quite right. Try again!";
         wrongAudio.play();
         board.src = './internalAssets/QuestionSign-Incorrect.webm';
         zilbyImg.src = './internalAssets/ZilbyReacts-Incorrect.webm';
