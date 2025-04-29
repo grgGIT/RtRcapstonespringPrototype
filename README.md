@@ -34,7 +34,7 @@ IF RUNNING LINUX on UBUNTU (Linux Mint is what distro this project used)!!!
 Start by opening a terminal and typing 
 
 ```
-sudo service mongod start```
+sudo service mongod start
 ```
 clone repo
 ```
