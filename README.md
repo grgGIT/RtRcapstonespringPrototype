@@ -22,3 +22,8 @@ To run this project locally, follow these steps:
 7. If successful, the Terminal will report back with a message stating "running on server port 3000"
 8. Copy this into your web browser: localhost:3000
 9. Enjoy the game! All you'll need now is a dome to play it in
+
+---
+## Installation and Use
+```clone repo
+```
