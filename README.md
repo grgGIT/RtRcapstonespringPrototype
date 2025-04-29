@@ -25,6 +25,16 @@ To run this project locally, follow these steps:
 
 ---
 ## Installation and Use
+
+- Ensure you have GitKraken or Github Desktop installed
+- Ensure you have MongoDB Compass installed
+- Ensure you have vsCode installed
+
+IF RUNNING LINUX on UBUNTU (Linux Mint is what distro this project used)!!! 
+Start by opening a terminal and typing 
+
+```
+sudo service mongod start```
 ```
 clone repo
 ```
