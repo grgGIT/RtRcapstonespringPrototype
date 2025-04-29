@@ -29,6 +29,15 @@ To run this project locally, follow these steps:
 - Ensure you have GitKraken or Github Desktop installed
 - Ensure you have MongoDB Compass installed
 - Ensure you have vsCode or IDE installed
+- You will need RFID connection on http://nm-rfid-1.rit.edu:8001/ if possible. Otherwise it likely just will not work
+
+
+FOR INTENDED VIEWPORT (Intended screen view) 
+- Use Firefox 
+- Right click browser
+- Click inspect
+- Go to right hand side of inspect menu and click on the phone shape (Responsive view) 
+- Set parameters to 3072 and 1700 in that respective order
 
 IF RUNNING LINUX ON UBUNTU START HERE (Linux Mint is what distro this project used)!!! 
 Start by opening a terminal and typing 
@@ -86,6 +95,6 @@ npm start
 
 then go to localhost:3000/finalDirect/homescreen.html
 
-You might have some issues if you don't have RFID hooked up but if it is broken, you can skip around the html pages within finalDirect
+You might have some issues if you don't have RFID hooked up. To return full computer use but if it is broken, you can skip around the html pages within finalDirect
 
 
