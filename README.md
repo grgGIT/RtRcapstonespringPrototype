@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 
 - Ensure you have GitKraken or Github Desktop installed
 - Ensure you have MongoDB Compass installed
-- Ensure you have vsCode installed
+- Ensure you have vsCode or IDE installed
 
 IF RUNNING LINUX ON UBUNTU START HERE (Linux Mint is what distro this project used)!!! 
 Start by opening a terminal and typing 
@@ -36,8 +36,36 @@ Start by opening a terminal and typing
 ```
 sudo service mongod start
 ```
+Then open Compass to your localhost database folder and click 'CONNECT'
+
 --
+ Clone Repo to your machine using GitKraken, Git command lines, or Github Desktop
 
 ```
 clone repo
+```
+
+Open the project folder in vsCode or IDE of choice. 
+
+You might see a ton of folders. 
+
+- All of our working final code is located in hosted/finalDirect/
+
+- Assets are in hosted/finalDirect/internalAssets and hosted/finalDirect/audio
+
+- Our starting page is hosted at hosted/finalDirect/homescreen.html
+
+- our server is located in the server folder at server/server.js
+
+- API's are in server folder as well: our questions are populated by server/finalQuestions.json; team names are in server/teamNamesAPI.json
+
+- Middleware and communication between RFID scanner and mongoDB team creation are in server/src/ and server/src/models
+
+
+TO RUN THE PROJECT
+
+open a command terminal
+
+```
+npm i
 ```
