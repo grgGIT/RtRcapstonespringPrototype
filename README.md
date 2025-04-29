@@ -65,6 +65,14 @@ You might see a ton of folders.
 
 TO RUN THE PROJECT
 
+FIRST
+
+go to hosted/finalDirect/playerJoincopy.html
+
+then go to line 546 and delete the 'hidden' property on the button 'bt'
+
+THEN
+
 open a command terminal
 
 ```
@@ -77,3 +85,7 @@ npm start
 ```
 
 then go to localhost:3000/finalDirect/homescreen.html
+
+You might have some issues if you don't have RFID hooked up but if it is broken, you can skip around the html pages within finalDirect
+
+
