@@ -36,5 +36,8 @@ Start by opening a terminal and typing
 ```
 sudo service mongod start
 ```
+--
+
+```
 clone repo
 ```
