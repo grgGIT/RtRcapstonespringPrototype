@@ -37,8 +37,7 @@ Start by opening a terminal and typing
 sudo service mongod start
 ```
 Then open Compass to your localhost database folder and click 'CONNECT'
-
--
+---
  Clone Repo to your machine using GitKraken, Git command lines, or Github Desktop
 
 ```
