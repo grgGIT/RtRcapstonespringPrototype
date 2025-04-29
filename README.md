@@ -70,3 +70,10 @@ open a command terminal
 ```
 npm i
 ```
+
+then 
+```
+npm start
+```
+
+then go to localhost:3000/finalDirect/homescreen.html
