@@ -95,6 +95,6 @@ npm start
 
 then go to localhost:3000/finalDirect/homescreen.html
 
-You might have some issues if you don't have RFID hooked up. To return full computer use but if it is broken, you can skip around the html pages within finalDirect
+You might have some issues if you don't have RFID hooked up. To return full computer use and not Arduino inclusion, you will need to likely fix the error lines on the localhost:3000/finalDirect/playerJoincopy.html page. But if it is broken, you can skip around the html pages within finalDirect
 
 
