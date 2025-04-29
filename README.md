@@ -9,7 +9,7 @@ To help Zilby return home, you’ll need to earn **Cosmic Coins** by answering q
 
 ---
 
-## Installation
+## Technical overview
 
 To run this project locally, follow these steps:
 
