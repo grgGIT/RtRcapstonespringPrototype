@@ -30,7 +30,7 @@ To run this project locally, follow these steps:
 - Ensure you have MongoDB Compass installed
 - Ensure you have vsCode installed
 
-IF RUNNING LINUX on UBUNTU (Linux Mint is what distro this project used)!!! 
+IF RUNNING LINUX ON UBUNTU START HERE (Linux Mint is what distro this project used)!!! 
 Start by opening a terminal and typing 
 
 ```
