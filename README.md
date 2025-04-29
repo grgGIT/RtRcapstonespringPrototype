@@ -38,12 +38,13 @@ sudo service mongod start
 ```
 Then open Compass to your localhost database folder and click 'CONNECT'
 
-## Running
- Clone Repo to your machine using GitKraken, Git command lines, or Github Desktop
+Clone Repo to your machine using GitKraken, Git command lines, or Github Desktop
 
 ```
 clone repo
 ```
+
+## Running
 
 Open the project folder in vsCode or IDE of choice. 
 
