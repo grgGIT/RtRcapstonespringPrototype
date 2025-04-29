@@ -25,5 +25,6 @@ To run this project locally, follow these steps:
 
 ---
 ## Installation and Use
-```clone repo
+```
+clone repo
 ```
