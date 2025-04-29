@@ -5,7 +5,7 @@
 **Race to Riches** is a trivia-based game inspired by the TV show *Cash Cab*. You’ll meet **Zilby**, an intergalactic taxi driver from the planet **Glimmeron**, who accidentally crashes on Earth.  
 
 To help Zilby return home, you’ll need to earn **Cosmic Coins** by answering questions and completing challenges. The faster you earn, the sooner Zilby gets home. Think you can fund his journey?
-[Our Framer Wesbite made by Jon Orris for more context](https://racetorichesrit.framer.website/)
+[Our Process section of the project's Framer website made by Jon Orris for more context](https://racetorichesrit.framer.website/process)
 
 ---
 
